@@ -14,6 +14,13 @@ I’m a 24-year-old aspiring software architect currently studying Computer Scie
 ### ImportSpy
 **ImportSpy** is a lightweight Python library that provides proactive control over how your Python code is used when imported by other modules. It allows developers to define custom validation rules to ensure that importing modules adhere to specific structures, thereby preventing misuse and ensuring stability within modular architectures.
 
+> **Key Features:**
+> - Proactive control over module imports.
+> - Dependency validation to ensure required structures are met.
+> - Real-time import tracking to facilitate debugging and optimization.
+
+For more details, check out the [ImportSpy documentation](https://importspy.readthedocs.io/en/latest/modules/importspy_utils.html).
+
 ## Location
 Based in Lucania, Italy, an ancient and beautiful region that inspires much of my work. 🚀
 
