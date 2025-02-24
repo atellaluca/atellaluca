@@ -1,5 +1,5 @@
 ## Hi there 👋
-I’m a 24-year-old aspiring software architect currently studying Computer Science at the University of Basilicata. With four years of experience in software engineering, I have developed skills in leadership, software architecture, backend development, and systems management.
+I’m a 25-year-old aspiring software architect currently studying Computer Science at the University of Basilicata. With four years of experience in software engineering, I have developed skills in leadership, software architecture, backend development, and systems management.
 
 ## Current Focus
 - 🔭 I’m currently working on innovative solutions in software design and cloud computing.
