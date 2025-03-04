@@ -1,30 +1,32 @@
-## Hi there 👋
-I’m a 25-year-old aspiring software architect currently studying Computer Science at the University of Basilicata. With four years of experience in software engineering, I have developed skills in leadership, software architecture, backend development, and systems management.
+# Hey, I’m Luca! 👋
 
-## Current Focus
-- 🔭 I’m currently working on innovative solutions in software design and cloud computing.
-- 🌱 I’m currently learning more about advanced software architectures and IoT integration.
-- 👯 I’m looking to collaborate on open-source projects and developer tools.
-- 💬 Ask me about software development, systems management, or cloud technologies.
-- 📫 How to reach me: [dev.atellaluca@gmail.com](mailto:dev.atellaluca@gmail.com).
-- 😄 Pronouns: He/Him
-- ⚡ Fun fact: I enjoy working with Raspberry Pi and Arduino projects!
+I’m a software engineer and aspiring architect passionate about designing structured, scalable, and predictable systems. My work revolves around building tools that enhance validation, compliance, and execution reliability in software architectures. Python is my primary playground, where I experiment with **modular design, backend development, and automation**.
 
-## Location
-Based in Lucania, Italy, an ancient and beautiful region that inspires much of my work. 🚀
+I take inspiration from my roots in **Lucania, Italy**—a land of resilience and timeless architecture. Just like well-built structures that stand the test of time, I believe software should be designed with **precision, stability, and adaptability** in mind. 
 
-## Projects
-### ImportSpy
-**ImportSpy** is a lightweight Python library that provides proactive control over how your Python code is used when imported by other modules. It allows developers to define custom validation rules to ensure that importing modules adhere to specific structures, thereby preventing misuse and ensuring stability within modular architectures.
+## 🚀 What I Do  
+- **Software Engineering** – Specializing in backend systems, runtime validation, and architecture design.  
+- **Open Source Development** – Focused on creating tools that ensure software integrity and stability.  
+- **System Optimization** – Working on improving execution reliability across different runtime environments.  
 
-> **Key Features:**
-> - Proactive control over module imports.
-> - Dependency validation to ensure required structures are met.
-> - Real-time import tracking to facilitate debugging and optimization.
+## 🛠️ Key Project: ImportSpy  
+One of my key projects is **ImportSpy**, a validation and compliance framework for Python modules. It ensures that imported dependencies follow strict structural rules, preventing **unexpected failures, security risks, and inconsistencies**.
 
-For more details, check out the [ImportSpy documentation](https://importspy.readthedocs.io/en/latest/modules/importspy_utils.html).
+### 🔎 Why ImportSpy?  
+- **Proactive Control** – Enforce strict validation on imported modules before execution.  
+- **Dependency Compliance** – Ensure that all integrations meet predefined architectural rules.  
+- **Runtime Stability** – Minimize failures by validating execution environments in real time.  
 
-## Get Involved
-Feel free to explore my repositories and join me on this journey of innovation and open-source contributions!
+📖 **Learn more:** [ImportSpy Documentation](https://importspy.readthedocs.io/)  
+⭐ **Support the project:** [Star on GitHub](https://github.com/atellaluca/ImportSpy)  
 
+## 💡 Always Learning  
+I’m always expanding my knowledge in **software validation, automation, and system reliability**. My interests extend to **IoT, cloud computing, and Python performance optimization**. I love experimenting with **Raspberry Pi, Arduino**, and new technologies that bridge the gap between software and hardware.
 
+## 📫 Let’s Connect!  
+If you’re interested in **open-source development, runtime validation, or just want to chat about building better software**, feel free to reach out!  
+
+📩 **Email:** [dev.atellaluca@gmail.com](mailto:dev.atellaluca@gmail.com)  
+🐙 **GitHub:** [github.com/atellaluca](https://github.com/atellaluca)  
+
+I believe that **software should be as structured and reliable as the systems it powers**—let’s build something great together! 🚀
