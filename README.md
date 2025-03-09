@@ -27,6 +27,6 @@ I’m always expanding my knowledge in **software validation, automation, and sy
 If you’re interested in **open-source development, runtime validation, or just want to chat about building better software**, feel free to reach out!  
 
 📩 **Email:** [dev.atellaluca@gmail.com](mailto:dev.atellaluca@gmail.com)  
-🐙 **GitHub:** [github.com/atellaluca](https://github.com/atellaluca)  
+👔 **Linkedin:** [linkedin.com/in/luca-atella](https://www.linkedin.com/in/luca-atella)  
 
 I believe that **software should be as structured and reliable as the systems it powers**—let’s build something great together! 🚀
