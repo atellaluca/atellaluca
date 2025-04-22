@@ -1,6 +1,6 @@
 # Hey, I’m Luca! 👋
 
-I’m a software engineer and aspiring architect passionate about designing structured, scalable, and predictable systems. My work revolves around building tools that enhance validation, compliance, and execution reliability in software architectures. Python is my primary playground, where I experiment with **modular design, backend development, and automation**.
+I’m a Software Architect passionate about designing structured, scalable, and predictable systems. My work revolves around building tools that enhance validation, compliance, and execution reliability in software architectures. Python is my primary playground, where I experiment with **modular design, backend development, and automation**.
 
 I take inspiration from my roots in **Lucania, Italy**—a land of resilience and timeless architecture. Just like well-built structures that stand the test of time, I believe software should be designed with **precision, stability, and adaptability** in mind. 
 
