@@ -17,7 +17,7 @@ One of my key projects is **ImportSpy**, a validation and compliance framework f
 - **Dependency Compliance** – Ensure that all integrations meet predefined architectural rules.  
 - **Runtime Stability** – Minimize failures by validating execution environments in real time.  
 
-📖 **Learn more:** [ImportSpy Documentation](https://importspy.readthedocs.io/)  
+📖 **Learn more:** [ImportSpy Documentation](https://atellaluca.github.io/ImportSpy/)
 ⭐ **Support the project:** [Star on GitHub](https://github.com/atellaluca/ImportSpy)  
 
 ## 💡 Always Learning  
