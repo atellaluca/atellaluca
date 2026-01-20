@@ -1,1 +1,38 @@
-site_name: My Docs
+site_name: "Luca Atella profile"
+site_description: "Luca Atella's personal profile and portfolio"
+site_author: "Luca Atella"
+site_url: "https://profile.atellaluca.com/"
+
+theme:
+  name: material
+  language: en
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Profile: profile.md
+  - CV: cv.md
+  - Case Studies:
+      - ImportSpy:
+          - Overview: case-studies/importspy/index.md
+          - Architecture: case-studies/importspy/architecture.md
+          - Validation System (Deep Dive): case-studies/importspy/validation.md
+          - Runtime Contracts (Deep Dive): case-studies/importspy/contracts.md
+          - Violation System and Contract Diagnostics (Deep Dive): case-studies/importspy/violation-system.md
+      - PyDelis (SAFE): case-studies/pydelis.md
+      - FLUIDOMOS (SAFE): case-studies/fluidomos.md
+  - Methodology: methodology.md
+  - Contact: contact.md
