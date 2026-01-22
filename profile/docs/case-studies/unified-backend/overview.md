@@ -1,8 +1,6 @@
 # Unified Backend for Heterogeneous Data Sources  
 ## SAFE Case Study — Overview
 
----
-
 ## Context and Motivation
 
 Modern backend platforms increasingly need to ingest and normalize data  

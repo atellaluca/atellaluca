@@ -1,8 +1,6 @@
 # Luca Atella  
 ## Software Architect · Backend Engineer · Systems Designer
 
----
-
 I design and build backend systems with a strong focus on:
 
 - modular and plugin-based architectures  

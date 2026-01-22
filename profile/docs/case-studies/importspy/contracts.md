@@ -1,8 +1,6 @@
 # Runtime Contracts for Safe Module Integration  
 ## ImportSpy — Runtime Contracts Deep Dive
 
----
-
 ## Why Runtime Contracts?
 
 In most modular systems, integration correctness is enforced implicitly.

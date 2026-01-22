@@ -1,7 +1,5 @@
 # ImportSpy — System Architecture
 
----
-
 ## Architectural Vision
 
 ImportSpy is designed as a **generic runtime validation framework** operating at the integration boundary between Python modules.

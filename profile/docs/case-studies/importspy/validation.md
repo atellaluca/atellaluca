@@ -1,8 +1,6 @@
 # Designing a Runtime Validation Engine  
 ## ImportSpy — Validation System Deep Dive
 
----
-
 ## The Problem
 
 In modular systems and plugin-based architectures, component validation is often:

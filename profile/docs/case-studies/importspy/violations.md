@@ -1,8 +1,6 @@
 # Violation System and Contract Diagnostics  
 ## ImportSpy — Violation System Deep Dive
 
----
-
 ## Why a Dedicated Violation System?
 
 In most runtime validation frameworks, failures are reported through:

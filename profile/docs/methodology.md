@@ -1,8 +1,6 @@
 # Methodology  
 ## How I Design Systems
 
----
-
 I approach software architecture as a **system design discipline**,  
 not as an accumulation of features or technologies.
 

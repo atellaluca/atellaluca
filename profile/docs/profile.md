@@ -1,7 +1,4 @@
 # Luca Atella  
-## Backend Engineer · Platform Architect · Systems Designer
-
----
 
 ## Overview
 

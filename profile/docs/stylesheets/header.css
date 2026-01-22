@@ -1,0 +1,15 @@
+/* Centra le tab della navigazione in alto */
+.md-header-nav__list,
+.md-tabs__list {
+  justify-content: center;
+}
+
+/* Evita che il logo spinga tutto a sinistra */
+.md-header-nav__button.md-logo {
+  margin-right: auto;
+}
+
+/* Mantiene la search allineata a destra */
+.md-search {
+  margin-left: auto;
+}

@@ -1,8 +1,6 @@
 # Architecture
 ## Unified Backend for Heterogeneous Data Sources (SAFE)
 
----
-
 ## Architectural Overview
 
 This system is a **centralized backend framework** designed to integrate heterogeneous devices and data sources

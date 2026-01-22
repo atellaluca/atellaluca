@@ -1,8 +1,6 @@
 # Operations and Developer Experience  
 ## Unified Backend for Heterogeneous Data Sources (SAFE)
 
----
-
 ## Why Operations is Part of the Architecture
 
 For integration-heavy backends, architecture is not only about runtime components,

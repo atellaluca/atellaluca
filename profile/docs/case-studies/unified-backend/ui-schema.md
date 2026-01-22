@@ -1,8 +1,6 @@
 # Declarative UI Schema (Widget DSL)
 ## Unified Backend for Heterogeneous Data Sources (SAFE)
 
----
-
 ## Why a Declarative UI Schema Exists
 
 In heterogeneous device ecosystems, frontend complexity grows faster than backend complexity.

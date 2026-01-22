@@ -1,8 +1,6 @@
 # Plugin System  
 ## Unified Backend for Heterogeneous Data Sources (SAFE)
 
----
-
 ## Why the Plugin System Matters
 
 The plugin system is the architectural core of the platform.

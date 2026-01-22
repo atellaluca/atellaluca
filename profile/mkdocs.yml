@@ -5,15 +5,17 @@ site_url: "https://profile.atellaluca.com/"
 
 theme:
   name: material
+  logo: assets/atellaluca.jpg
   language: en
   palette:
     - scheme: default
-      primary: indigo
-      accent: indigo
+      primary: grey
+      accent: amber
   font:
     text: Roboto
     code: Roboto Mono
   features:
+    - navigation.tabs
     - navigation.instant
     - navigation.tracking
     - navigation.top
@@ -38,6 +40,7 @@ markdown_extensions:
 extra_css:
   - stylesheets/cv-pdf.css
   - stylesheets/print.css
+  - stylesheets/header.css
 
 extra_javascript:
   - https://unpkg.com/mermaid@10/dist/mermaid.min.js
