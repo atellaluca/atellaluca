@@ -1,296 +1,160 @@
-# Methodology  
-## How I Design Systems
+# Engineering Methodology
 
-I approach software architecture as a **system design discipline**,  
-not as an accumulation of features or technologies.
+This page documents the methodological principles I apply when designing **long-lived, integration-heavy software systems**.
 
-My methodology is centered around:
-
-- explicit system boundaries  
-- formalization of invariants  
-- architectural governance  
-- long-term evolvability  
-- operational reliability  
-
-Rather than starting from frameworks or tools,  
-I start from **failure modes, constraints, and integration semantics**.
+It is not a generic development workflow, but a **system design doctrine** grounded in runtime governance, architectural invariants, and evolvability.
 
 ---
 
-## 1. Start from Invariants, Not from Features
+## System Design Doctrine
 
-Before writing any code, I define:
+I treat software systems as **governed execution environments**, not as collections of isolated features.
 
-- what must always be true  
-- what must never happen  
-- what can evolve safely over time  
+This implies:
 
-These invariants become:
+- architecture is a first-class artifact  
+- invariants are explicit and enforced  
+- runtime behavior is validated, not assumed  
+- execution contexts are isolated and controlled  
+- system evolution is an intentional design concern  
 
-- runtime contracts  
-- validation rules  
-- baseline constraints  
-- architectural guardrails  
-
-This prevents:
-
-- accidental coupling  
-- silent integration failures  
-- hidden assumptions  
-- fragile system behavior  
-
-and provides a formal foundation for system evolution.
+The goal is not to maximize short-term delivery speed, but to preserve **structural integrity** over time.
 
 ---
 
-## 2. Design Explicit System Boundaries
+## Contract-First Development
 
-I treat system boundaries as **first-class architectural entities**.
+I design systems starting from **contracts**, not implementations.
 
-For each boundary, I explicitly define:
+A contract defines:
 
-- what enters the system  
-- what leaves the system  
-- what assumptions are allowed  
-- what contracts must be enforced  
-
-This applies to:
-
-- module boundaries  
-- service boundaries  
-- plugin interfaces  
-- data ingestion layers  
-- external integrations  
-
-The goal is to make integration **intentional**,  
-not implicit or accidental.
-
----
-
-## 3. Separate Detection from Explanation
-
-I strictly separate:
-
-- detection of invalid states  
-- from explanation of failures  
-- from error propagation  
-
-Validation logic should never:
-
-- format messages  
-- throw generic exceptions  
-- embed presentation logic  
-
-Instead, failures are modeled as:
-
-- structured domain events  
-- categorized violations  
-- deterministic diagnostics  
+- what a component must provide  
+- what it is allowed to depend on  
+- under which conditions it is valid  
+- which invariants it must preserve  
 
 This approach:
 
-- simplifies validation logic  
-- improves observability  
-- reduces debugging cost  
-- makes failures actionable  
+- reduces implicit assumptions  
+- prevents architectural drift  
+- makes integration failures deterministic  
+- decouples evolution from breakage  
 
-and treats failure semantics  
-as part of system architecture.
-
----
-
-## 4. Prefer Declarative Models over Imperative Glue
-
-Whenever possible, I replace:
-
-- ad-hoc validation code  
-- hard-coded rules  
-- implicit conventions  
-
-with:
-
-- declarative models  
-- explicit schemas  
-- rule-based engines  
-- contract definitions  
-
-This enables:
-
-- system introspection  
-- automated validation  
-- governance at runtime  
-- safer evolution  
-
-and reduces the cognitive load  
-of large and evolving systems.
+Contracts act as architectural boundaries between components, plugins, and runtime layers.
 
 ---
 
-## 5. Design for Evolution, Not for the Snapshot
+## Runtime Governance
 
-I assume that:
+I explicitly govern what is allowed to enter a runtime.
 
-- requirements will change  
-- integrations will grow  
-- data sources will diversify  
-- usage patterns will shift  
+This includes:
 
-So I prioritize:
+- validating modules before execution  
+- enforcing environment constraints  
+- isolating plugin contexts  
+- blocking non-conforming components  
+- propagating structured diagnostics  
 
-- plugin-based architectures  
-- loose coupling  
-- versioned contracts  
-- backward compatibility  
-- migration paths  
-
-over:
-
-- premature optimization  
-- tightly bound abstractions  
-- rigid schemas  
-
-The goal is to keep systems  
-**evolvable without destabilization**.
+Runtime governance transforms runtime from a best-effort execution space into a **controlled and inspectable system layer**.
 
 ---
 
-## 6. Fail Fast, but Fail Transparently
+## Modularity & Plugin Architectures
 
-I design systems to:
+I favor plugin-based architectures when systems must:
 
-- detect invalid states as early as possible  
-- abort unsafe operations deterministically  
-- provide structured diagnostics  
-- avoid silent degradation  
+- integrate heterogeneous capabilities  
+- evolve without centralized redeployment  
+- support third-party extensions  
+- remain vendor-agnostic  
 
-Fail-fast behavior is only useful  
-if failures are:
+Key principles I apply:
 
-- intelligible  
+- strict plugin boundaries  
+- explicit plugin lifecycles  
+- context isolation  
+- versioned interfaces  
+- backward-compatible evolution  
+
+Plugins are treated as **first-class architectural units**, not as ad-hoc extensions.
+
+---
+
+## Validation & Diagnostics
+
+I design validation as a core architectural capability, not as an afterthought.
+
+This involves:
+
+- structural validation of components  
+- contextual validation of environments  
+- runtime invariant checks  
+- deterministic failure semantics  
+- structured error propagation  
+
+Failures should be:
+
+- early  
+- explicit  
 - reproducible  
-- actionable  
+- diagnosable  
 
-Otherwise, it only moves chaos earlier in time.
-
----
-
-## 7. Treat Validation as a First-Class Subsystem
-
-Validation is not an afterthought.
-
-In my systems it is:
-
-- an explicit pipeline  
-- governed by rules  
-- driven by contracts  
-- integrated with diagnostics  
-- observable and testable  
-
-This applies to:
-
-- runtime integration  
-- data ingestion  
-- plugin loading  
-- API input validation  
-- system configuration  
-
-Validation is part of  
-**the system’s control plane**,  
-not just a defensive coding practice.
+This significantly reduces operational ambiguity and debugging cost in production systems.
 
 ---
 
-## 8. Optimize for Operational Reality
+## Tooling as Architecture
 
-I design systems with production in mind:
+I treat developer tooling as part of the system architecture.
 
-- unstable networks  
-- partial failures  
-- malformed inputs  
-- misconfigurations  
-- unexpected load  
+This includes:
 
-This leads to:
+- CLI-driven workflows  
+- contract validation tools  
+- packaging and deployment automation  
+- reproducible environment setup  
+- runtime inspection utilities  
 
-- idempotent operations  
-- backpressure mechanisms  
-- retry strategies  
-- graceful degradation  
-- bounded resource usage  
-
-The goal is not theoretical purity,  
-but **predictable behavior under stress**.
+Tooling is not auxiliary; it is a **governance mechanism** that enforces architectural rules in practice.
 
 ---
 
-## 9. Prefer Architecture over Tooling
+## Testing Philosophy (TDD)
 
-Tools, frameworks, and libraries  
-are implementation details.
+I apply Test-Driven Development (TDD) not only at the code level, but at the **system behavior level**.
 
-I avoid:
+My approach to testing includes:
 
-- coupling architecture to a specific stack  
-- designing around transient trends  
-- locking core semantics into vendor tools  
+- unit tests for core logic  
+- contract tests for component boundaries  
+- integration tests for runtime flows  
+- regression tests for invariants  
+- failure-mode tests for diagnostics  
 
-Instead, I focus on:
+Tests are used to lock down:
 
-- transferable design patterns  
-- system invariants  
-- semantic contracts  
-- operational guarantees  
-
-This makes systems:
-
-- more durable  
-- easier to replatform  
-- easier to audit  
-- easier to evolve  
+- architectural assumptions  
+- compatibility guarantees  
+- runtime behavior  
+- evolution safety  
 
 ---
 
-## 10. Make Trade-offs Explicit
+## Long-Term Evolution Strategy
 
-Every system involves trade-offs.
+I design systems to evolve safely over time.
 
-I document:
+This involves:
 
-- what was optimized for  
-- what was intentionally deprioritized  
-- what risks were accepted  
-- what assumptions were made  
+- backward-compatible contract changes  
+- minimum-compatibility validation models  
+- versioned interfaces  
+- gradual deprecation paths  
+- explicit migration strategies  
 
-This makes decisions:
-
-- reviewable  
-- explainable  
-- reversible  
-
-and prevents architectural drift  
-caused by implicit or forgotten decisions.
+System evolution is treated as a **first-class architectural problem**, not as a maintenance afterthought.
 
 ---
 
-## Closing Principles
-
-My architectural approach can be summarized as:
-
-- design systems around invariants  
-- govern integration with contracts  
-- make failure semantics explicit  
-- separate concerns aggressively  
-- optimize for evolvability  
-- prioritize operational reliability  
-
-This methodology reflects how I approach:
-
-- backend platforms  
-- distributed systems  
-- IoT ingestion backends  
-- validation frameworks  
-- modular architectures  
-
-and how I structure systems  
-to remain robust under real-world constraints.
-
+This methodology reflects the design principles applied in the case studies and projects documented on this site, including ImportSpy and the SAFE backend platforms.

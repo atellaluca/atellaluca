@@ -1,11 +1,12 @@
-site_name: "Luca Atella profile"
-site_description: "Luca Atella's personal profile and portfolio"
+site_name: "Luca Atella — Systems & Platform Architecture"
+site_description: "Platform architecture, runtime systems, and long-lived backend design. Case studies and deep dives on building scalable, maintainable, and efficient systems."
 site_author: "Luca Atella"
-site_url: "https://profile.atellaluca.com/"
+site_url: "site_url: https://atellaluca.github.io/atellaluca/"
 
 theme:
   name: material
-  logo: assets/atellaluca.jpg
+  logo: assets/atellaluca.png
+  favicon: assets/favicon.ico
   language: en
   palette:
     - scheme: default
@@ -22,6 +23,7 @@ theme:
     - search.highlight
     - search.suggest
     - content.code.copy
+    - navigation.footer
 
 plugins:
   - search

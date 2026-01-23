@@ -1,126 +1,94 @@
 # Luca Atella  
-## Software Architect · Backend Engineer · Systems Designer
+## Systems & Platform Architect
 
-I design and build backend systems with a strong focus on:
+**Platform architecture, runtime systems, and long-lived backend design.**
 
-- modular and plugin-based architectures  
-- runtime validation and contract-driven design  
-- scalable backend platforms  
-- reliability and failure semantics  
-- developer tooling and system foundations  
-
-My work sits at the intersection of software architecture, applied research,  
-and production-grade backend engineering.
+I design backend platforms that enforce architectural invariants and evolve safely over time.
 
 ---
 
 ## What I Work On
 
-I specialize in designing backend systems that:
+I focus on building systems where **correctness, evolvability, and governance** matter more than short-term features.
 
-- integrate heterogeneous data sources  
-- enforce runtime contracts and system invariants  
-- scale across distributed environments  
-- fail fast and fail transparently  
-- remain maintainable under long-term evolution  
+My work typically involves:
 
-My projects focus on **system foundations** rather than surface features,  
-with particular attention to:
-
-- separation of concerns  
-- extensibility through plugins  
-- validation pipelines  
-- diagnostics and failure semantics  
-- architectural governance of dynamic systems  
+- backend platform architecture for integration-heavy systems  
+- runtime contracts and validation engines  
+- plugin-based and modular execution models  
+- real-time data pipelines and event-driven backends  
+- heterogeneous system normalization (IoT, telemetry, embedded)  
+- long-lived systems with strict architectural invariants  
 
 ---
 
-## Architectural Focus Areas
+## Signature Work
 
-- Runtime contracts and validation systems  
-- Plugin-based and modular backends  
-- Declarative DSLs for system governance  
-- Fault isolation and fail-fast design  
-- Data ingestion and normalization pipelines  
-- Distributed and cluster-ready architectures  
-- Unified backends for heterogeneous data sources  
-- Backend platforms for IoT and smart environments  
-- Developer tooling for reliability and safety  
+### ImportSpy — Runtime Contract Engine
 
----
+A declarative runtime contract system for Python modules that enforces:
 
-## Selected Case Studies
+- structural and contextual invariants  
+- architectural boundaries  
+- minimum execution requirements  
 
-### ImportSpy — Runtime Contract Validation Framework  
-A framework for enforcing runtime integration contracts  
-between Python modules using declarative models,  
-rule-based validation, and structured failure diagnostics.
+It is designed for modular backends, plugin ecosystems, embedded runtimes, and CI/CD validation.
 
-**Key themes:**
-
-- contract-driven integration  
-- declarative DSL design  
-- validation pipelines  
-- failure semantics and diagnostics  
-- provider → consumer integration model  
-
-→ [View case study](case-studies/importspy/overview.md)
+→ [Explore ImportSpy case study](case-studies/importspy/index.md)
 
 ---
 
-### Unified Backend for Heterogeneous Data Sources (SAFE)  
-A scalable, plugin-based and cluster-ready backend  
-designed to unify heterogeneous data sources  
-under a single backend and a unified data model.
+### Unified Backend Platform (SAFE)
 
-**Key themes:**
+A plugin-governed backend platform for heterogeneous device integration.
 
-- plugin-based ingestion  
-- data normalization pipelines  
-- backend unification  
-- scalability and clustering  
-- architectural separation of concerns  
+Key characteristics:
 
-→ [View case study](case-studies/unified-backend/overview.md)
+- centralized CRUD and REST APIs  
+- real-time updates via WebSocket  
+- declarative UI schema (Widget DSL)  
+- runtime validation and plugin governance  
+- containerized and Kubernetes-ready  
 
----
-
-### End-to-End Real-Time Fleet Telemetry Backend (SAFE)  
-A distributed backend system for real-time ingestion,  
-normalization and exposure of vehicle telemetry data  
-from heterogeneous tracking devices.
-
-**Key themes:**
-
-- socket-based real-time ingestion  
-- CAN bus data normalization  
-- telemetry pipelines  
-- REST API service layer  
-- scalability and fault tolerance  
-
-→ [View case study](case-studies/fleet-backend/overview.md)
+→ [Explore platform case study](case-studies/fleet-backend/overview.md)
 
 ---
 
-## How to Navigate This Portfolio
+## Methodology Snapshot
 
-This portfolio is organized around **architectural case studies**  
-rather than individual code samples.
+My engineering approach is grounded in:
 
-Each case study focuses on:
-
-- system design decisions  
-- architectural trade-offs  
-- validation and governance models  
-- scalability and reliability strategies  
-- lessons learned from real-world systems  
-
-The goal is to present transferable architectural patterns  
-and design thinking, not product documentation.
+- contract-first system design  
+- architectural invariants as first-class citizens  
+- explicit runtime governance  
+- deterministic validation and diagnostics  
+- modular execution boundaries  
+- test-driven development (TDD)  
+- long-term maintainability over short-term optimization  
 
 ---
 
-## Contact
+## Typical Application Domains
 
-- Email: info@atellaluca.com
-- GitHub: https://github.com/atellaluca
+My work is particularly relevant for:
+
+- plugin-based platforms  
+- industrial and embedded systems  
+- integration orchestrators  
+- modular enterprise backends  
+- real-time telemetry platforms  
+- long-lived software systems  
+
+---
+
+## Explore Further
+
+- [Technical Profile](profile.md)  
+- [Case Studies](case-studies/importspy/index.md)  
+- [Curriculum Vitae](cv.md)  
+- [Methodology](methodology.md)  
+- [Contact](contact.md)  
+
+---
+
+*This site documents selected architectural work, research-grade projects, and system design case studies.*
