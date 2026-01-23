@@ -34,7 +34,7 @@ A declarative runtime contract system for Python modules that enforces:
 
 It is designed for modular backends, plugin ecosystems, embedded runtimes, and CI/CD validation.
 
-→ [Explore ImportSpy case study](case-studies/importspy/index.md)
+→ [Explore ImportSpy case study](case-studies/importspy/overview.md)
 
 ---
 
@@ -84,7 +84,7 @@ My work is particularly relevant for:
 ## Explore Further
 
 - [Technical Profile](profile.md)  
-- [Case Studies](case-studies/importspy/index.md)  
+- [Case Studies](case-studies/importspy/overview.md)  
 - [Curriculum Vitae](cv.md)  
 - [Methodology](methodology.md)  
 - [Contact](contact.md)  
