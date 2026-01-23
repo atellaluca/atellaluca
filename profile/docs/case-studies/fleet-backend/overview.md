@@ -1,5 +1,4 @@
 # End-to-End Real-Time Fleet Telemetry Backend (SAFE)
-## Overview
 
 ## Context and Motivation
 

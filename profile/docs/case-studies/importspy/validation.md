@@ -1,5 +1,4 @@
 # Designing a Runtime Validation Engine  
-## ImportSpy — Validation System Deep Dive
 
 ## The Problem
 

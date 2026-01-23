@@ -1,8 +1,6 @@
 # Architecture  
 ## End-to-End Real-Time Fleet Telemetry Backend (SAFE)
 
-## Architectural Overview
-
 This system is a **real-time telemetry backend** designed to ingest, normalize, validate,
 and expose fleet data from heterogeneous tracking devices.
 

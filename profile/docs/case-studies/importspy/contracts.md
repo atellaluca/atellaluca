@@ -1,5 +1,4 @@
 # Runtime Contracts for Safe Module Integration  
-## ImportSpy — Runtime Contracts Deep Dive
 
 ## Why Runtime Contracts?
 

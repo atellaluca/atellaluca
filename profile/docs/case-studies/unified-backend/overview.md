@@ -1,5 +1,4 @@
-# Unified Backend for Heterogeneous Data Sources  
-## SAFE Case Study — Overview
+# Unified Backend for Heterogeneous Data Sources
 
 ## Context and Motivation
 
