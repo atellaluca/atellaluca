@@ -1,7 +1,7 @@
 site_name: "Luca Atella — Systems & Platform Architecture"
 site_description: "Platform architecture, runtime systems, and long-lived backend design. Case studies and deep dives on building scalable, maintainable, and efficient systems."
 site_author: "Luca Atella"
-site_url: "http://atellaluca.github.io/atellaluca/"
+site_url: "https://profile.atellaluca.com/"
 
 theme:
   name: material
@@ -27,6 +27,9 @@ theme:
 
 plugins:
   - search
+  - sitemap:
+      changefreq: weekly
+      priority: 0.7
 
 markdown_extensions:
   - attr_list
@@ -75,3 +78,9 @@ nav:
   - Profile: profile.md
   - CV: cv.md
   - Contact: contact.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/atellaluca
+
