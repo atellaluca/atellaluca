@@ -6,7 +6,7 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 REPO_ROOT = Path(__file__).resolve().parents[1]      
-PROFILE_DIR = REPO_ROOT / "profile"                  
+PROFILE_DIR = REPO_ROOT                  
 SITE_DIR = PROFILE_DIR / "site"
 CV_HTML = SITE_DIR / "cv-pdf" / "index.html"
 OUT_PDF = PROFILE_DIR / "docs" / "assets" / "Luca-Atella-CV.pdf"
