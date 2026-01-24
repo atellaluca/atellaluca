@@ -78,7 +78,63 @@ serializable, introspectable, and validatable independently from application cod
 The following diagram represents the conceptual structure of the SpyModel meta-model,  
 which defines the declarative language used by ImportSpy to express runtime contracts.
 
-![SpyModel conceptual architecture](https://raw.githubusercontent.com/atellaluca/ImportSpy/refs/heads/main/docs/assets/importspy-spy-model-architecture.png)
+```mermaid
+flowchart TB
+  SPY["SpyModel"]
+
+  subgraph RTCTX["Runtime Context"]
+    RT["Runtime"]
+    SYS["System"]
+    OS["Operating System"]
+    CPU["CPU Architecture"]
+
+    PY["Python Runtime"]
+    PYVER["Python Version"]
+    PYINT["Interpreter"]
+
+    ENV["Environment"]
+    VARS["Variables"]
+    SECRETS["Secrets"]
+
+    RT --> SYS
+    SYS --> OS
+    SYS --> CPU
+    SYS --> PY
+    PY --> PYVER
+    PY --> PYINT
+    RT --> ENV
+    ENV --> VARS
+    ENV --> SECRETS
+  end
+
+  subgraph MODCTX["Module Contract"]
+    MOD["Module"]
+    MODFILE["Filename"]
+    MODVER["Version"]
+
+    CLS["Class"]
+    SUP["Superclass"]
+    C_ATTR["Class Attributes"]
+    I_ATTR["Instance Attributes"]
+
+    FUN["Function"]
+    ARGS["Arguments"]
+    RET["Return Annotation"]
+
+    MOD --> MODFILE
+    MOD --> MODVER
+    MOD --> CLS
+    CLS --> SUP
+    CLS --> C_ATTR
+    CLS --> I_ATTR
+    CLS --> FUN
+    FUN --> ARGS
+    FUN --> RET
+  end
+
+  SPY -->|defines| RT
+  SPY -->|defines| MOD
+```
 
 ---
 

@@ -30,23 +30,23 @@ The architecture can be understood as a layered platform with explicit boundarie
 
 ```mermaid
 flowchart TB
-  UI[Frontend UI] <--> API[Service Layer / API]
-  API <--> CORE[Core Platform]
+  UI[Frontend UI] <--> API[Service Layer API]
+  API <--> CORE_NODE[Core Platform]
 
-  subgraph CORE
+  subgraph CORE_LAYER[Core Platform]
     MODEL[Unified Device Model]
-    VALID[Validation & Invariants]
-    EVENTS[Eventing (Pub/Sub)]
-    STORE[(Persistence / State)]
+    VALID[Validation and Invariants]
+    EVENTS[Eventing PubSub]
+    STORE[(Persistence and State)]
   end
 
-  CORE <--> PLUGINS[Plugin Execution Layer]
-  PLUGINS <--> EXT[External Devices & Systems]
+  CORE_NODE <--> PLUGINS[Plugin Execution Layer]
+  PLUGINS <--> EXT[External Devices and Systems]
 
   API --> MODEL
-  CORE --> VALID
-  CORE --> EVENTS
-  CORE --> STORE
+  CORE_NODE --> VALID
+  CORE_NODE --> EVENTS
+  CORE_NODE --> STORE
 ```
 
 This structure keeps the system evolvable:
@@ -166,14 +166,14 @@ flowchart LR
   INIT --> DISC[Discovery Phase]
   DISC --> MAP[Mapping Phase]
   MAP --> UDM[Unified Device Model]
-  UDM --> UIX[UI Schema (Widget DSL)]
+  UDM --> UIX[UI Schema Widget DSL]
   UDM --> API[REST API]
   UDM --> WS[WebSocket Updates]
-  UDM --> EV[Pub/Sub Events]
+  UDM --> EV[PubSub Events]
 
-  CV -.runtime contracts.-> GOV[Governance Rules]
-  GOV -.enforced across lifecycle.-> DISC
-  GOV -.enforced across lifecycle.-> MAP
+  CV -.->|runtime contracts| GOV[Governance Rules]
+  GOV -.->|enforced across lifecycle| DISC
+  GOV -.->|enforced across lifecycle| MAP
 ```
 
 ---
@@ -246,9 +246,9 @@ flowchart TB
   DEV[Developer] --> CLI[CLI Control Plane]
 
   subgraph CP[Control Plane Workflows]
-    V[Validate plugins & contracts]
-    T[Safe device testing (actions)]
-    C[Generate & operate composition setup]
+    V[Validate plugins and contracts]
+    T[Safe device testing actions]
+    C[Generate and operate composition setup]
     B[Build deployable artifacts]
     D[Dev-oriented orchestration deploy]
   end
@@ -259,7 +259,7 @@ flowchart TB
   CLI --> B
   CLI --> D
 
-  DU[Deployable Unit (Framework + Plugin)] --> RT[Target Runtime]
+  DU[Deployable Unit Framework plus Plugin] --> RT[Target Runtime]
   B --> DU
   D --> RT
   C --> RT

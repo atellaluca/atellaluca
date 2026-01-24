@@ -79,14 +79,15 @@ flowchart LR
   INIT --> DISC[Discovery Phase]
   DISC --> MAP[Mapping Phase]
   MAP --> UDM[Unified Device Model]
-  UDM --> UIX[UI Schema (Widget DSL)]
+  UDM --> UIX[UI Schema Widget DSL]
   UDM --> API[REST API]
   UDM --> WS[WebSocket Updates]
-  UDM --> EV[Pub/Sub Events]
+  UDM --> EV[PubSub Events]
 
-  CV -.runtime contracts.-> GOV[Governance Rules]
-  GOV -.enforced across lifecycle.-> DISC
-  GOV -.enforced across lifecycle.-> MAP
+  CV -.->|runtime contracts| GOV[Governance Rules]
+  GOV -.->|enforced across lifecycle| DISC
+  GOV -.->|enforced across lifecycle| MAP
+
 ```
 
 The key phases are:

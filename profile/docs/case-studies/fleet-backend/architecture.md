@@ -31,32 +31,26 @@ At a high level, the system consists of:
 ```mermaid
 flowchart TB
   DEV[Tracking Devices] --> NET[Mobile Networks]
-  NET --> ING[Ingestion Gateway
-(Persistent Connections)]
+  NET --> ING[Ingestion Gateway - Persistent Connections]
 
-  ING --> ADAPT[Protocol Adapters
-(Parsing & Framing)]
-  ADAPT --> NORM[Normalization
-(Unified Telemetry Model)]
-  NORM --> VAL[Validation
-(Runtime Contracts)]
-  VAL --> BUS[Event Bus
-(Pub/Sub)]
+  ING --> ADAPT[Protocol Adapters - Parsing and Framing]
+  ADAPT --> NORM[Normalization - Unified Telemetry Model]
+  NORM --> VAL[Validation - Runtime Contracts]
+  VAL --> BUS[Event Bus - PubSub]
 
-  BUS --> STATE[State Aggregation
-(Current Fleet State)]
-  BUS --> ALERT[Alerting & Rules]
-  BUS --> ANALYT[Analytics / Reporting]
+  BUS --> STATE[State Aggregation - Current Fleet State]
+  BUS --> ALERT[Alerting and Rules]
+  BUS --> ANALYT[Analytics and Reporting]
 
-  STATE --> API[Service Layer
-(REST APIs)]
+  STATE --> API[Service Layer - REST APIs]
   ANALYT --> API
   ALERT --> API
 
-  API --> UI[Frontends / Dashboards]
+  API --> UI[Frontends and Dashboards]
   API --> INT[External Integrations]
   BUS --> STREAM[Real-time Streams]
   STREAM --> UI
+
 ```
 
 ---

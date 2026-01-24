@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout repository
@@ -26,15 +26,22 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.13"
+          cache: "pip"
 
       - name: Install Poetry
         run: |
+          pip install --upgrade pip
           pip install poetry
+
+      - name: Configure Poetry
+        run: |
+          poetry --version
+          poetry config virtualenvs.in-project true
 
       - name: Install dependencies
         run: |
-          poetry install --no-root
+          poetry install --no-root -vvv
 
       - name: Build MkDocs site
         run: |
@@ -46,14 +53,14 @@ jobs:
           path: site
 
   deploy:
+    runs-on: ubuntu-24.04
+    needs: build
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
 
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
