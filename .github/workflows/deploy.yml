@@ -1,4 +1,4 @@
-name: Deploy MkDocs site to GitHub Pages
+name: Deploy MkDocs to GitHub Pages (mkdocs gh-deploy)
 
 on:
   push:
@@ -7,21 +7,21 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: "pages"
   cancel-in-progress: true
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -32,37 +32,16 @@ jobs:
       - name: Install Poetry
         run: |
           pip install --upgrade pip
-          pip install poetry
+          pip install poetry==1.8.4
 
       - name: Configure Poetry
         run: |
-          poetry --version
           poetry config virtualenvs.in-project true
 
       - name: Install dependencies
         run: |
-          poetry install --no-root -vvv
+          poetry install --no-root
 
-      # Build MkDocs usando il config dentro profile/
-      - name: Build MkDocs site
+      - name: Deploy with mkdocs gh-deploy
         run: |
-          poetry run mkdocs build -f profile/mkdocs.yml -d profile/site
-
-      # Upload della cartella generata
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: profile/site
-
-  deploy:
-    runs-on: ubuntu-24.04
-    needs: build
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          poetry run mkdocs gh-deploy --force
