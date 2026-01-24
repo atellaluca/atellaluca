@@ -43,14 +43,16 @@ jobs:
         run: |
           poetry install --no-root -vvv
 
+      # Build MkDocs usando il config dentro profile/
       - name: Build MkDocs site
         run: |
-          poetry run mkdocs build
+          poetry run mkdocs build -f profile/mkdocs.yml -d profile/site
 
+      # Upload della cartella generata
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: profile/site
 
   deploy:
     runs-on: ubuntu-24.04
