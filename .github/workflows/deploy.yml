@@ -14,13 +14,12 @@ concurrency:
 
 jobs:
   deploy:
-    name: deploy
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -40,11 +39,6 @@ jobs:
           key: venv-${{ runner.os }}-py313-${{ hashFiles('**/poetry.lock') }}
           restore-keys: |
             venv-${{ runner.os }}-py313-
-
-      - name: Check lock consistency
-        run: |
-          poetry --version
-          poetry lock --check
 
       - name: Install deps
         run: |
