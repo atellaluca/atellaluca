@@ -1,9 +1,8 @@
-name: Deploy MkDocs to GitHub Pages (mkdocs gh-deploy)
+name: Deploy MkDocs (Poetry + gh-deploy)
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   workflow_dispatch:
 
 permissions:
@@ -15,33 +14,44 @@ concurrency:
 
 jobs:
   deploy:
-    runs-on: ubuntu-24.04
+    name: deploy
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0  
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
-          cache: "pip"
 
       - name: Install Poetry
-        run: |
-          pip install --upgrade pip
-          pip install poetry==1.8.4
+        uses: snok/install-poetry@v1
+        with:
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+          installer-parallel: true
 
-      - name: Configure Poetry
-        run: |
-          poetry config virtualenvs.in-project true
+      - name: Cache venv
+        uses: actions/cache@v4
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-py313-${{ hashFiles('**/poetry.lock') }}
+          restore-keys: |
+            venv-${{ runner.os }}-py313-
 
-      - name: Install dependencies
+      - name: Check lock consistency
         run: |
-          poetry install --no-root
+          poetry --version
+          poetry lock --check
+
+      - name: Install deps
+        run: |
+          poetry install --no-interaction --no-root
 
       - name: Deploy with mkdocs gh-deploy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           poetry run mkdocs gh-deploy --force
