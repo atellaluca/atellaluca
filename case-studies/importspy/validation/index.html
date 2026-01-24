@@ -1,0 +1,1857 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Platform architecture, runtime systems, and long-lived backend design. Case studies and deep dives on building scalable, maintainable, and efficient systems.">
+      
+      
+        <meta name="author" content="Luca Atella">
+      
+      
+        <link rel="canonical" href="http://atellaluca.github.io/atellaluca/case-studies/importspy/validation/">
+      
+      
+        <link rel="prev" href="../architecture/">
+      
+      
+        <link rel="next" href="../contracts/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Validation System (Deep Dive) - Luca Atella — Systems & Platform Architecture</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/cv-pdf.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/print.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/header.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#designing-a-runtime-validation-engine" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Luca Atella — Systems &amp; Platform Architecture" class="md-header__button md-logo" aria-label="Luca Atella — Systems & Platform Architecture" data-md-component="logo">
+      
+  <img src="../../../assets/atellaluca.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Luca Atella — Systems & Platform Architecture
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Validation System (Deep Dive)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="amber"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../methodology/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Methodology
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../overview/" class="md-tabs__link">
+          
+  
+  
+  Case Studies
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../profile/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Profile
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../cv/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  CV
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../contact/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Contact
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Luca Atella — Systems &amp; Platform Architecture" class="md-nav__button md-logo" aria-label="Luca Atella — Systems & Platform Architecture" data-md-component="logo">
+      
+  <img src="../../../assets/atellaluca.png" alt="logo">
+
+    </a>
+    Luca Atella — Systems & Platform Architecture
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../methodology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methodology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Studies
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Case Studies
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ImportSpy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ImportSpy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation System (Deep Dive)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation System (Deep Dive)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Problem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Goals
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conceptual-architecture-of-the-validation-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conceptual Architecture of the Validation System
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-declarative-contract-model-spymodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Declarative Contract Model (SpyModel)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Declarative Contract Model (SpyModel)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conceptual-architecture-of-spymodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conceptual Architecture of SpyModel
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extending-the-module-model-and-baseline-contracts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extending the Module Model and Baseline Contracts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contract-satisfaction-semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contract Satisfaction Semantics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projecting-the-runtime-into-the-meta-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Projecting the Runtime into the Meta-Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rule-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rule Engine
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fail-fast-semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fail-Fast Semantics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications-of-the-validation-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Applications of the Validation System
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-trade-offs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Trade-offs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lessons-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lessons Learned
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runtime Contracts (Deep Dive)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../violations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Violation System and Contract Diagnostics (Deep Dive)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unified Backend for Heterogeneous Data Sources (SAFE)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unified Backend for Heterogeneous Data Sources (SAFE)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unified-backend/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unified-backend/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unified-backend/plugin-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plugin System (Deep Dive)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unified-backend/ui-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Declarative UI Schema (Widget DSL)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unified-backend/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations & DX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    End-to-End Real-Time Fleet Telemetry Backend (SAFE)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    End-to-End Real-Time Fleet Telemetry Backend (SAFE)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fleet-backend/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fleet-backend/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../profile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Problem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Goals
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conceptual-architecture-of-the-validation-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conceptual Architecture of the Validation System
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-declarative-contract-model-spymodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Declarative Contract Model (SpyModel)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Declarative Contract Model (SpyModel)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conceptual-architecture-of-spymodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conceptual Architecture of SpyModel
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extending-the-module-model-and-baseline-contracts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extending the Module Model and Baseline Contracts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contract-satisfaction-semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contract Satisfaction Semantics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projecting-the-runtime-into-the-meta-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Projecting the Runtime into the Meta-Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rule-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rule Engine
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fail-fast-semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fail-Fast Semantics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications-of-the-validation-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Applications of the Validation System
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-trade-offs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Trade-offs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lessons-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lessons Learned
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="designing-a-runtime-validation-engine">Designing a Runtime Validation Engine</h1>
+<h2 id="the-problem">The Problem</h2>
+<p>In modular systems and plugin-based architectures, component validation is often:</p>
+<ul>
+<li>performed too late in the execution flow  </li>
+<li>fragmented across the codebase  </li>
+<li>implemented through ad-hoc procedural checks  </li>
+</ul>
+<p>This typically leads to:</p>
+<ul>
+<li>failures surfacing only at advanced runtime stages  </li>
+<li>partially initialized states  </li>
+<li>unpredictable behavior  </li>
+<li>integration bugs that are difficult to diagnose  </li>
+</ul>
+<p>In the <em>provider → consumer</em> model adopted by ImportSpy, these issues are amplified by the fact that:</p>
+<ul>
+<li>a provider module exposes functionality to external modules  </li>
+<li>consumer modules may have heterogeneous structures and assumptions  </li>
+<li>there is no formal boundary governing integration correctness  </li>
+</ul>
+<p>As a result, integration correctness is often based on implicit assumptions rather than on enforceable, explicit contracts.</p>
+<hr />
+<h2 id="design-goals">Design Goals</h2>
+<p>The validation system of ImportSpy was designed around the following goals:</p>
+<ul>
+<li>generic applicability across domains  </li>
+<li>schema-driven validation  </li>
+<li>separation between model and execution logic  </li>
+<li>deterministic behavior  </li>
+<li>structured and diagnostic error reporting  </li>
+<li>long-term extensibility  </li>
+</ul>
+<p>The objective was not to build a collection of checks,<br />
+but a <strong>generic runtime validation engine</strong> reusable across different architectural contexts.</p>
+<hr />
+<h2 id="conceptual-architecture-of-the-validation-system">Conceptual Architecture of the Validation System</h2>
+<p>At a conceptual level, the validation system is composed of three primary layers:</p>
+<ol>
+<li>
+<p><strong>Schema Layer (SpyModel)</strong><br />
+   A declarative language for expressing runtime contracts.</p>
+</li>
+<li>
+<p><strong>Rule Engine</strong><br />
+   A collection of independent rules validating individual constraints.</p>
+</li>
+<li>
+<p><strong>Execution Pipeline</strong><br />
+   A deterministic flow orchestrating validation.</p>
+</li>
+</ol>
+<hr />
+<h2 id="the-declarative-contract-model-spymodel">The Declarative Contract Model (SpyModel)</h2>
+<p>To express runtime contracts in a formal, extensible, and implementation-independent way,<br />
+ImportSpy introduces a declarative meta-model called <strong>SpyModel</strong>.</p>
+<p>SpyModel is not a simple configuration structure, but a true conceptual model representing:</p>
+<ul>
+<li>the different types of expressible constraints  </li>
+<li>the semantic categories of requirements  </li>
+<li>the separation between structure, context, and environment  </li>
+<li>the hierarchical composition of contracts  </li>
+</ul>
+<p>This model makes it possible to treat a contract as a first-class object:<br />
+serializable, introspectable, and validatable independently from application code.</p>
+<hr />
+<h3 id="conceptual-architecture-of-spymodel">Conceptual Architecture of SpyModel</h3>
+<p>The following diagram represents the conceptual structure of the SpyModel meta-model,<br />
+which defines the declarative language used by ImportSpy to express runtime contracts.</p>
+<pre class="mermaid"><code>flowchart TB
+  SPY["SpyModel"]
+
+  subgraph RTCTX["Runtime Context"]
+    RT["Runtime"]
+    SYS["System"]
+    OS["Operating System"]
+    CPU["CPU Architecture"]
+
+    PY["Python Runtime"]
+    PYVER["Python Version"]
+    PYINT["Interpreter"]
+
+    ENV["Environment"]
+    VARS["Variables"]
+    SECRETS["Secrets"]
+
+    RT --&gt; SYS
+    SYS --&gt; OS
+    SYS --&gt; CPU
+    SYS --&gt; PY
+    PY --&gt; PYVER
+    PY --&gt; PYINT
+    RT --&gt; ENV
+    ENV --&gt; VARS
+    ENV --&gt; SECRETS
+  end
+
+  subgraph MODCTX["Module Contract"]
+    MOD["Module"]
+    MODFILE["Filename"]
+    MODVER["Version"]
+
+    CLS["Class"]
+    SUP["Superclass"]
+    C_ATTR["Class Attributes"]
+    I_ATTR["Instance Attributes"]
+
+    FUN["Function"]
+    ARGS["Arguments"]
+    RET["Return Annotation"]
+
+    MOD --&gt; MODFILE
+    MOD --&gt; MODVER
+    MOD --&gt; CLS
+    CLS --&gt; SUP
+    CLS --&gt; C_ATTR
+    CLS --&gt; I_ATTR
+    CLS --&gt; FUN
+    FUN --&gt; ARGS
+    FUN --&gt; RET
+  end
+
+  SPY --&gt;|defines| RT
+  SPY --&gt;|defines| MOD</code></pre>
+<hr />
+<h2 id="extending-the-module-model-and-baseline-contracts">Extending the Module Model and Baseline Contracts</h2>
+<p>SpyModel extends the conceptual model of a Python module (Module) by introducing<br />
+a formal and typed representation of its structural, contextual, and environmental<br />
+properties.</p>
+<p>This extension makes it possible to model a module not only for what it <strong>is</strong>,<br />
+but also for what it <strong>must be</strong> in order for integration to be considered valid.</p>
+<p>In particular, SpyModel introduces the notion of a <strong>baseline contract</strong>,<br />
+representing a lower bound of constraints that are always enforced,<br />
+independently of the application domain.</p>
+<p>This baseline includes, for example, constraints on:</p>
+<ul>
+<li>CPU architecture  </li>
+<li>operating system  </li>
+<li>Python version  </li>
+<li>interpreter implementation  </li>
+<li>minimal environment requirements  </li>
+</ul>
+<p>The baseline contract acts as a first level of enforcement, ensuring that any runtime<br />
+satisfies minimal compatibility requirements even before applying<br />
+provider-defined, domain-specific contracts.</p>
+<hr />
+<h2 id="contract-satisfaction-semantics">Contract Satisfaction Semantics</h2>
+<p>Validation in ImportSpy is not based on simple structural equality checks,<br />
+but on a <strong>contract satisfaction semantics</strong>.</p>
+<p>In this model:</p>
+<ul>
+<li>the SpyModel derived from the contract represents the set of constraints<br />
+  declared by the provider module  </li>
+<li>the SpyModel derived from the current runtime represents the effective properties<br />
+  of the execution environment and of the consumer module  </li>
+</ul>
+<p>Validation consists in verifying that:</p>
+<blockquote>
+<p>every constraint expressed in the contract SpyModel<br />
+is satisfied by the SpyModel representing the current runtime.</p>
+</blockquote>
+<p>Formally, this is equivalent to checking that:</p>
+<blockquote>
+<p><strong>contract model ⊆ runtime model</strong><br />
+i.e., that the runtime <strong>satisfies</strong> the contract.</p>
+</blockquote>
+<p>This approach makes it possible to:</p>
+<ul>
+<li>treat contracts and runtime as homogeneous models  </li>
+<li>apply a formal notion of conformance  </li>
+<li>avoid fragile, ad-hoc procedural checks  </li>
+</ul>
+<hr />
+<h2 id="projecting-the-runtime-into-the-meta-model">Projecting the Runtime into the Meta-Model</h2>
+<p>To make this satisfaction semantics possible, ImportSpy builds<br />
+a SpyModel instance in the background that represents the current execution context.</p>
+<p>This runtime model includes:</p>
+<ul>
+<li>Python interpreter metadata  </li>
+<li>platform information  </li>
+<li>environment variables  </li>
+<li>consumer module structure  </li>
+<li>relevant runtime properties  </li>
+</ul>
+<p>In this way, both the contract and the runtime are represented<br />
+within the same declarative meta-model.</p>
+<p>Validation therefore reduces to a comparison between models,<br />
+rather than to a collection of imperative checks scattered across the codebase.</p>
+<hr />
+<h2 id="rule-engine">Rule Engine</h2>
+<p>The validation engine is designed as a <strong>rule-based engine</strong>, where:</p>
+<ul>
+<li>each rule validates exactly one constraint  </li>
+<li>rules are independent from each other  </li>
+<li>rules do not mutate shared state  </li>
+<li>each rule produces a structured result  </li>
+</ul>
+<p>This design enables:</p>
+<ul>
+<li>deterministic execution  </li>
+<li>simplicity of testing  </li>
+<li>incremental extensibility  </li>
+<li>conceptual parallelization of rule evaluation  </li>
+</ul>
+<hr />
+<h2 id="validation-pipeline">Validation Pipeline</h2>
+<p>At an abstract level, validation follows a deterministic pipeline:</p>
+<ol>
+<li>Load the contract schema defined by the provider.  </li>
+<li>Build the execution context.  </li>
+<li>Resolve consumer module metadata.  </li>
+<li>Project the runtime into a SpyModel instance.  </li>
+<li>Execute all validation rules.  </li>
+<li>Aggregate validation results.  </li>
+<li>Produce the final validation outcome.</li>
+</ol>
+<p>Each step is isolated and testable.</p>
+<hr />
+<h2 id="fail-fast-semantics">Fail-Fast Semantics</h2>
+<p>The system adopts a <strong>fail-fast</strong> semantics:</p>
+<ul>
+<li>validation happens before provider–consumer interaction can occur  </li>
+<li>non-compliant modules never enter the system  </li>
+<li>no partially initialized states are allowed  </li>
+</ul>
+<p>This dramatically reduces:</p>
+<ul>
+<li>the runtime error surface  </li>
+<li>recovery complexity  </li>
+<li>undefined behavior  </li>
+</ul>
+<hr />
+<h2 id="applications-of-the-validation-system">Applications of the Validation System</h2>
+<p>This validation architecture is applicable to:</p>
+<ul>
+<li>plugin frameworks  </li>
+<li>modular backends  </li>
+<li>microservice bootstrapping  </li>
+<li>CI/CD policy enforcement  </li>
+<li>IoT and edge platforms  </li>
+</ul>
+<hr />
+<h2 id="design-trade-offs">Design Trade-offs</h2>
+<p>Several trade-offs were considered during design:</p>
+<ul>
+<li>
+<p><strong>Expressiveness vs complexity</strong><br />
+  A more expressive contract language is more powerful,<br />
+  but harder to use and maintain.</p>
+</li>
+<li>
+<p><strong>Performance vs validation depth</strong><br />
+  Deeper introspection increases import-time latency.</p>
+</li>
+<li>
+<p><strong>Generality vs domain specificity</strong><br />
+  Generic rules are less optimized than domain-specific rules.</p>
+</li>
+</ul>
+<hr />
+<h2 id="lessons-learned">Lessons Learned</h2>
+<ul>
+<li>Validation should be declarative and formal.  </li>
+<li>Contracts are architectural boundaries, not mere configurations.  </li>
+<li>Fail-fast semantics dramatically improve reliability.  </li>
+<li>Separating model and execution simplifies system evolution.  </li>
+<li>Treating runtime as a model enables formal reasoning about integration.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../architecture/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Architecture">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Architecture
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../contracts/" class="md-footer__link md-footer__link--next" aria-label="Next: Runtime Contracts (Deep Dive)">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Runtime Contracts (Deep Dive)
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../../../javascripts/mermaid-init.js"></script>
+      
+    
+  </body>
+</html>
