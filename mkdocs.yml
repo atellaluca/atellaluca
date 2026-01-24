@@ -27,9 +27,6 @@ theme:
 
 plugins:
   - search
-  - sitemap:
-      changefreq: weekly
-      priority: 0.7
 
 markdown_extensions:
   - attr_list
