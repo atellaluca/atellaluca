@@ -48,10 +48,7 @@ Key concepts:
 
 ## 🌐 Technical Profile & Case Studies
 
-A curated, architecture-focused presentation of my work  
-is available here:
-
-👉 **Profile in progress**
+A curated, architecture-focused presentation of my work is available on my [portfolio page](https://profile.atellaluca.com).
 
 It includes:
 
