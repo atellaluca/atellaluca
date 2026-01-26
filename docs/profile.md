@@ -1,100 +1,70 @@
-# Technical Profile
+# Luca Atella — Backend & Systems Architect
 
-## Identity
+I design and build backend systems where **reliability, extensibility, and long-term maintainability** matter more than short-term convenience.
 
-I am a backend engineer and systems architect focused on the design of **long-lived, integration-heavy platforms**.
+My work focuses on modular architectures, runtime governance, and integration-heavy platforms, with a strong emphasis on making complex systems predictable, debuggable, and evolution-friendly.
 
-My work centers on building systems that:
+Over the years, I have worked on:
 
-- normalize heterogeneous inputs  
-- enforce explicit architectural invariants  
-- remain evolvable under continuous change  
-- fail deterministically and diagnostically  
-- resist architectural drift over time  
+- extensible backend frameworks  
+- plugin-based architectures  
+- IoT and edge platforms  
+- real-time systems  
+- integration backends  
+- runtime validation engines  
 
-I am particularly interested in problems where correctness, governance, and long-term maintainability are more important than short-term feature velocity.
+I tend to operate at the intersection between **software engineering and system design**, where technical decisions have architectural consequences over time.
 
----
-
-## Engineering Philosophy
-
-I approach software systems as **governed execution environments**, not as collections of features.
-
-In practice, this means:
-
-- treating architecture as a first-class artifact  
-- making assumptions explicit through contracts  
-- enforcing invariants at runtime  
-- isolating execution contexts  
-- designing for evolution rather than static perfection  
-
-I strongly prefer **contract-first** design over implicit conventions and rely on **deterministic validation** to surface integration failures early and diagnostically.
+Rather than building isolated features, I design **execution models**, **contracts**, and **structural boundaries** that make systems easier to evolve without breaking production.
 
 ---
 
-## Architectural Focus Areas
+## What I Work On
 
-My work typically operates at the intersection of:
+My core areas of focus include:
 
-- backend platform architecture  
-- runtime contract systems and validation engines  
-- plugin-based and modular execution models  
-- integration-heavy and heterogeneous environments  
-- real-time and event-driven backends  
-- embedded and edge-adjacent systems  
-
-I am especially interested in architectures that must operate across:
-
-- multiple deployment targets  
-- varying runtime environments  
-- evolving plugin ecosystems  
-- long-lived operational contexts  
+- Backend architecture and platform design  
+- Modular and plugin-based systems  
+- Runtime validation and contract enforcement  
+- Integration-heavy backends (APIs, protocols, devices)  
+- Cloud-native and containerized infrastructures  
+- IoT and edge computing environments  
+- DevSecOps-oriented tooling  
 
 ---
 
-## Design Principles
+## How I Think About Systems
 
-The following principles guide my system design decisions:
+I approach software as a **living system**, not as a collection of scripts or endpoints.
 
-- **Contract-first, not feature-first**  
-- **Architectural invariants over local optimizations**  
-- **Explicit boundaries between execution contexts**  
-- **Deterministic and early failure modes**  
-- **Governance over orchestration**  
-- **Evolvability over premature optimization**  
-- **Tooling as a structural asset, not an afterthought**  
+That means:
 
----
+- making assumptions explicit  
+- defining architectural boundaries  
+- validating invariants at runtime  
+- designing for controlled extensibility  
+- minimizing hidden coupling  
+- prioritizing determinism over convenience  
 
-## Professional Trajectory (Abstracted)
+I am particularly interested in problems where:
 
-Over the past years, I have worked on:
-
-- plugin-governed backend platforms for heterogeneous device ecosystems  
-- real-time telemetry ingestion and normalization pipelines  
-- runtime validation and contract enforcement engines  
-- modular IoT backends and embedded-adjacent systems  
-- CLI-driven developer tooling for containerized platforms  
-- long-lived backend systems with strict architectural constraints  
-
-These experiences led to the design of **ImportSpy**, a runtime contract engine for Python modules, and to multiple SAFE case studies documented on this site.
-
-My professional focus has progressively shifted from feature delivery toward **architecture governance, runtime correctness, and system evolvability**.
+- components are loaded dynamically  
+- systems evolve over long periods  
+- failures must be detected early  
+- integrations must remain predictable  
+- environments are heterogeneous  
 
 ---
 
-## Current Interests
+## Current Direction
 
-I am currently exploring:
+I am currently focused on:
 
-- distributed runtime contracts  
-- policy-driven validation layers  
-- declarative execution environments  
-- long-lived plugin ecosystems  
-- architectural diagnostics and observability  
-- contract negotiation and compatibility models  
+- designing governance layers for modular systems  
+- improving runtime safety for Python-based platforms  
+- building developer tooling for long-lived backends  
+- exploring cloud-native architectures for extensible platforms  
+- deepening my expertise in distributed systems and DevSecOps  
 
----
-
-This profile documents my architectural orientation and technical identity rather than a chronological résumé.  
-For a structured overview of my professional background, see the [Curriculum Vitae](cv.md).
+You can explore a concrete example of this approach in the  
+[ImportSpy case study](case-studies/importspy/index.md). 

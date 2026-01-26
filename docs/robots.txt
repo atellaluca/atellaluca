@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /cv-pdf
+Disallow: /assets/talks/
+Disallow: /assets/cv/
+
+Sitemap: https://profile.atellaluca.com/sitemap.xml

@@ -1,3 +1,13 @@
+---
+title: Luca Atella CV (PDF Version)
+robots: noindex, nofollow
+---
+
+<!-- This page is intentionally excluded from search indexing -->
+
+<link rel="canonical" href="https://profile.atellaluca.com/cv/" />
+<meta name="robots" content="noindex, nofollow">
+
 <div class="cv-pdf"></div>
 
 <h1 class="cv-name">Luca Atella</h1>

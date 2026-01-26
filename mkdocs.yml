@@ -52,9 +52,11 @@ extra_javascript:
 
 nav:
   - Home: index.md
+  - About: about.md
   - Methodology: methodology.md
 
   - Case Studies:
+      - Overview: case-studies/index.md
       - ImportSpy:
           - Overview: case-studies/importspy/overview.md
           - Architecture: case-studies/importspy/architecture.md
@@ -70,8 +72,8 @@ nav:
           - Operations & DX: case-studies/unified-backend/operations.md
 
       - End-to-End Real-Time Fleet Telemetry Backend (SAFE):
-          - Overview: case-studies/fleet-backend/overview.md
-          - Architecture: case-studies/fleet-backend/architecture.md
+          - Overview: case-studies/fleet-tracking/overview.md
+          - Architecture: case-studies/fleet-tracking/architecture.md
 
   - Profile: profile.md
   - CV: cv.md

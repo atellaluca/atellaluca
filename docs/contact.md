@@ -1,45 +1,53 @@
 # Contact
 
-I am open to professional inquiries, research collaborations, and technical discussions related to:
+I am always open to meaningful conversations around software architecture, backend systems, and long-lived platforms.
 
-- backend platform architecture  
-- runtime governance and validation systems  
-- modular and plugin-based platforms  
-- integration-heavy systems  
-- real-time and embedded backends  
-- long-lived software systems  
+If you are working on:
+
+- modular or plugin-based systems  
+- backend or platform architecture  
+- developer tooling  
+- runtime governance  
+- IoT or edge platforms  
+- integration-heavy backends  
+- cloud-native or DevOps-oriented projects  
+
+and would like to exchange ideas, explore a collaboration, or discuss a technical challenge, feel free to reach out.
 
 ---
 
-## How to reach me
+## How to Reach Me
 
 **Email**  
-info@atellaluca.com
+[info@atellaluca.com](mailto:info@atellaluca.com)
 
 **GitHub**  
 https://github.com/atellaluca
 
 ---
 
-## Collaboration Scope
+## What I’m Most Interested In
 
-I am particularly interested in:
+I’m particularly interested in discussions and projects involving:
 
-- architecture consulting for complex backend platforms  
-- research-oriented software engineering projects  
-- Horizon Europe / EU-funded initiatives  
-- long-term technical collaborations  
-- open-source co-development  
-- systems design reviews  
+- system design and architecture  
+- extensible platforms  
+- modular backends  
+- runtime validation  
+- developer experience tooling  
+- cloud-native systems  
+- long-lived software products  
 
 ---
 
 ## Notes
 
-- I do not provide generic freelance services.  
-- I do not engage in short-term, low-scope development tasks.  
-- I prioritize projects with architectural depth, long-term impact, and technical rigor.  
+I may take some time to reply, but I do read all serious and thoughtful messages.
 
----
+If you’re reaching out about a project or idea, a short description of:
 
-If your project aligns with these areas, feel free to reach out and include a brief technical context in your message.
+- the problem space  
+- the system context  
+- the architectural challenges  
+
+is always appreciated.

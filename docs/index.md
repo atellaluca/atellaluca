@@ -50,7 +50,7 @@ Key characteristics:
 - runtime validation and plugin governance  
 - containerized and Kubernetes-ready  
 
-→ [Explore platform case study](case-studies/fleet-backend/overview.md)
+→ [Explore platform case study](case-studies/unified-backend/overview.md)
 
 ---
 
