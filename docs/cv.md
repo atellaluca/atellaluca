@@ -3,7 +3,7 @@
 **Backend Engineer · Platform Architect · Systems Designer**  
 Italy (remote) · Email: info@atellaluca.com · GitHub: github.com/atellaluca
 
-[Download PDF](assets/Luca-Atella-CV.pdf){ .md-button .md-button--primary }
+[Download PDF](assets/cv/Luca-Atella-CV.pdf){ .md-button .md-button--primary }
 
 ---
 
