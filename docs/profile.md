@@ -19,20 +19,6 @@ Rather than building isolated features, I design **execution models**, **contrac
 
 ---
 
-## Current
-
-I am currently part of the [MT Academy program](https://mtacademy.regione.basilicata.it/#ilprogetto), an initiative promoted by Regione Basilicata in collaboration with :contentReference[oaicite:0]{index=0}, focused on cloud-native systems, artificial intelligence, and production-grade architectures.
-
-Within this environment, AWS is used as the primary platform for designing and operating distributed systems, across domains that include [Cloud Practitioner](https://aws.amazon.com/training/digital/aws-cloud-practitioner-essentials/), [AI Practitioner](https://aws.amazon.com/training/digital/aws-ai-practitioner-essentials/), and [Solutions Architect](https://aws.amazon.com/certification/certified-solutions-architect-associate/). These are approached as system design domains rather than certification paths, and evaluated against real-world constraints.
-
-I have been included among the [selected candidates of MT Academy](https://mtacademy.regione.basilicata.it/candidati/), following a competitive selection process targeting profiles capable of operating within complex engineering environments.
-
-My focus in this context remains architectural: defining system boundaries, reasoning about invariants, and validating design decisions under production conditions.
-
-This experience integrates with my ongoing work on backend platforms and long-lived systems, reinforcing a methodology centered on correctness, explicit trade-offs, and controlled evolution across cloud-native ecosystems.
-
---
-
 ## What I Work On
 
 My core areas of focus include:
