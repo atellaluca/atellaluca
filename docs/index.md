@@ -19,7 +19,7 @@ My focus in this context remains architectural: defining system boundaries, reas
 
 This experience integrates with my ongoing work on backend platforms and long-lived systems, reinforcing a methodology centered on correctness, explicit trade-offs, and controlled evolution across cloud-native ecosystems.
 
---
+---
 
 ## What I Work On
 
