@@ -13,3 +13,59 @@
 .md-search {
   margin-left: auto;
 }
+
+.md-typeset h1 {
+  font-weight: 500;
+}
+
+.md-typeset h2 {
+  margin-top: 1.8rem;
+}
+
+.portfolio-proof-grid,
+.portfolio-card-grid {
+  display: grid;
+  gap: 0.8rem;
+  margin: 1.2rem 0;
+}
+
+.portfolio-proof-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.portfolio-card-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.portfolio-proof,
+.portfolio-card {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 8px;
+  background: var(--md-default-bg-color);
+  box-shadow: 0 0.2rem 0.7rem rgba(0, 0, 0, 0.04);
+}
+
+.portfolio-proof {
+  padding: 0.8rem 0.9rem;
+}
+
+.portfolio-card {
+  padding: 1rem;
+}
+
+.portfolio-card h2,
+.portfolio-card h3 {
+  margin-top: 0;
+}
+
+.portfolio-card p:last-child,
+.portfolio-proof p:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 960px) {
+  .portfolio-proof-grid,
+  .portfolio-card-grid {
+    grid-template-columns: 1fr;
+  }
+}

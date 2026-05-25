@@ -12,13 +12,13 @@
         <meta name="author" content="Luca Atella">
       
       
-        <link rel="canonical" href="https://profile.atellaluca.com/case-studies/unified-backend/overview/">
+        <link rel="canonical" href="https://profile.atellaluca.com/case-studies/cloud-portable-fleet-platform/overview/">
       
       
-        <link rel="prev" href="../../b3do/overview/">
+        <link rel="prev" href="../../">
       
       
-        <link rel="next" href="../architecture/">
+        <link rel="next" href="../../importspy/overview/">
       
       
         
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#unified-backend-for-heterogeneous-data-sources" class="md-skip">
+        <a href="#cloud-portable-fleet-management-platform" class="md-skip">
           Skip to content
         </a>
       
@@ -536,6 +536,8 @@
                 
   
   
+    
+  
   
   
     
@@ -546,11 +548,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
         
           
           <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
@@ -571,7 +573,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -586,10 +588,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../cloud-portable-fleet-platform/overview/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -605,6 +634,158 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problem-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Space
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloud-portability-by-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud Portability by Design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend Design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#infrastructure-abstraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure Abstraction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aws-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AWS Deployment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#observability-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observability &amp; Operations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-and-runtime-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security and Runtime Controls
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-adoption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production Adoption
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My Role
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-case-study-demonstrates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What This Case Study Demonstrates
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -906,8 +1087,6 @@
                 
   
   
-    
-  
   
   
     
@@ -918,11 +1097,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
         
           
           <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
@@ -943,7 +1122,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -958,37 +1137,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../unified-backend/overview/" class="md-nav__link">
         
   
   
@@ -1004,147 +1156,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#context-and-motivation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Context and Motivation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#problem-statement" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem Statement
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#architectural-goals" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Architectural Goals
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#high-level-architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        High-Level Architecture
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#plugin-based-ingestion-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Plugin-Based Ingestion Model
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unified-data-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Unified Data Model
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#runtime-validation-and-governance" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Runtime Validation and Governance
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scalability-and-fault-tolerance" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Scalability and Fault Tolerance
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-this-architecture-matters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why This Architecture Matters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#transferable-lessons" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Transferable Lessons
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scope-and-limitations-safe-disclosure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Scope and Limitations (SAFE Disclosure)
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1157,7 +1168,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../architecture/" class="md-nav__link">
+      <a href="../../unified-backend/architecture/" class="md-nav__link">
         
   
   
@@ -1185,7 +1196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../plugin-system/" class="md-nav__link">
+      <a href="../../unified-backend/plugin-system/" class="md-nav__link">
         
   
   
@@ -1213,7 +1224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ui-schema/" class="md-nav__link">
+      <a href="../../unified-backend/ui-schema/" class="md-nav__link">
         
   
   
@@ -1241,7 +1252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/" class="md-nav__link">
+      <a href="../../unified-backend/operations/" class="md-nav__link">
         
   
   
@@ -1585,10 +1596,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#context-and-motivation" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Context and Motivation
+        Overview
       
     </span>
   </a>
@@ -1596,10 +1607,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problem-statement" class="md-nav__link">
+  <a href="#problem-space" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problem Statement
+        Problem Space
       
     </span>
   </a>
@@ -1607,10 +1618,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#architectural-goals" class="md-nav__link">
+  <a href="#architecture-overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Architectural Goals
+        Architecture Overview
       
     </span>
   </a>
@@ -1618,10 +1629,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#high-level-architecture" class="md-nav__link">
+  <a href="#cloud-portability-by-design" class="md-nav__link">
     <span class="md-ellipsis">
       
-        High-Level Architecture
+        Cloud Portability by Design
       
     </span>
   </a>
@@ -1629,10 +1640,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#plugin-based-ingestion-model" class="md-nav__link">
+  <a href="#backend-design" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Plugin-Based Ingestion Model
+        Backend Design
       
     </span>
   </a>
@@ -1640,10 +1651,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#unified-data-model" class="md-nav__link">
+  <a href="#infrastructure-abstraction" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Unified Data Model
+        Infrastructure Abstraction
       
     </span>
   </a>
@@ -1651,10 +1662,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#runtime-validation-and-governance" class="md-nav__link">
+  <a href="#aws-deployment" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Runtime Validation and Governance
+        AWS Deployment
       
     </span>
   </a>
@@ -1662,10 +1673,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scalability-and-fault-tolerance" class="md-nav__link">
+  <a href="#observability-operations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Scalability and Fault Tolerance
+        Observability &amp; Operations
       
     </span>
   </a>
@@ -1673,10 +1684,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-this-architecture-matters" class="md-nav__link">
+  <a href="#security-and-runtime-controls" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why This Architecture Matters
+        Security and Runtime Controls
       
     </span>
   </a>
@@ -1684,10 +1695,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#transferable-lessons" class="md-nav__link">
+  <a href="#production-adoption" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Transferable Lessons
+        Production Adoption
       
     </span>
   </a>
@@ -1695,10 +1706,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scope-and-limitations-safe-disclosure" class="md-nav__link">
+  <a href="#my-role" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Scope and Limitations (SAFE Disclosure)
+        My Role
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-case-study-demonstrates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What This Case Study Demonstrates
       
     </span>
   </a>
@@ -1722,264 +1744,194 @@
 
 
 
-<h1 id="unified-backend-for-heterogeneous-data-sources">Unified Backend for Heterogeneous Data Sources</h1>
-<h2 id="context-and-motivation">Context and Motivation</h2>
-<p>Modern backend platforms increasingly need to ingest and normalize data<br />
-from <strong>heterogeneous sources</strong>:</p>
-<ul>
-<li>IoT devices  </li>
-<li>external APIs  </li>
-<li>event streams  </li>
-<li>legacy systems  </li>
-<li>domain-specific sensors  </li>
-</ul>
-<p>In real-world environments, these sources differ in:</p>
-<ul>
-<li>data formats  </li>
-<li>protocols  </li>
-<li>update frequencies  </li>
-<li>reliability  </li>
-<li>semantic meaning  </li>
-</ul>
-<p>This case study describes the architecture of a <strong>scalable, plugin-based backend</strong><br />
-designed to unify heterogeneous data sources under:</p>
-<ul>
-<li>a single backend  </li>
-<li>a unified data model  </li>
-<li>a consistent ingestion and validation pipeline  </li>
-</ul>
-<p>The goal is not to document a specific product,<br />
-but to present <strong>transferable architectural patterns</strong><br />
-for building evolvable data ingestion platforms.</p>
+<h1 id="cloud-portable-fleet-management-platform">Cloud-Portable Fleet Management Platform</h1>
+<p><strong>Type:</strong> Production-adopted cloud application<br />
+<strong>Role:</strong> Software Architect · Backend Engineer · Cloud Deployment<br />
+<strong>Period:</strong> 2026<br />
+<strong>Domain:</strong> Fleet management, backend systems, AWS, cloud-portable architecture<br />
+<strong>Status:</strong> Adopted in production in a real business context  </p>
 <hr />
-<h2 id="problem-statement">Problem Statement</h2>
-<p>The system was designed to address the following challenges:</p>
+<h2 id="overview">Overview</h2>
+<p>This case study describes a full-stack fleet management platform designed to support operational workflows around company vehicles, users, reservations, trips, refueling, maintenance, documents, and reporting.</p>
+<p>The system was developed as a complete application and later adopted in production in a real business context, serving an internal user base of approximately 50 employees.</p>
+<p>The most important architectural aspect of the project is not that it was deployed on AWS, but that it was designed as a <strong>cloud-portable system</strong>: the application logic is separated from infrastructure-specific services through explicit repository, storage, runtime, and deployment boundaries.</p>
+<p>AWS became the production target, not the architectural dependency.</p>
+<hr />
+<h2 id="problem-space">Problem Space</h2>
+<p>Fleet management systems often grow around operational urgency: reservations, vehicle usage, maintenance, refueling, driver activity, documents, and reporting are implemented as isolated workflows.</p>
+<p>This creates several risks:</p>
 <ul>
-<li>integrating heterogeneous data producers  </li>
-<li>normalizing incompatible data formats  </li>
-<li>validating incoming data at runtime  </li>
-<li>isolating ingestion logic from core processing  </li>
-<li>scaling ingestion independently from consumers  </li>
-<li>evolving data schemas without breaking integrations  </li>
+<li>business logic becomes tightly coupled to storage choices</li>
+<li>deployment environments drift between local development and production</li>
+<li>cloud services leak into the domain model</li>
+<li>operational visibility is added only after deployment</li>
+<li>changes to infrastructure require changes to application logic</li>
 </ul>
-<p>Traditional monolithic ingestion pipelines tend to:</p>
+<p>The goal was to design a platform that could support real operational use while remaining maintainable, portable, and evolvable.</p>
+<hr />
+<h2 id="architecture-overview">Architecture Overview</h2>
+<p>The platform is structured around a React frontend, a FastAPI backend, abstracted persistence and storage layers, and an AWS deployment target based on serverless and managed services.</p>
+<p><img alt="Cloud-portable fleet management platform architecture" src="../../../assets/images/case-studies/cloud-portable-fleet-platform/system-architecture.png" /></p>
+<p>At a high level:</p>
+<pre class="mermaid"><code>flowchart TB
+    U[Users] --&gt; CF[CloudFront]
+    CF --&gt; FE[S3 Static Frontend]
+    FE --&gt; API[FastAPI Backend]
+
+    API --&gt; AUTH[JWT Authentication]
+    API --&gt; DOMAIN[Application / Domain Layer]
+    DOMAIN --&gt; REPO[Repository Contracts]
+    DOMAIN --&gt; STORE[Storage Contracts]
+
+    REPO --&gt; DDB[DynamoDB Adapter]
+    STORE --&gt; S3[S3 Storage Adapter]
+
+    API --&gt; LOGS[CloudWatch Logs]
+
+    DEV[Local Docker Compose] --&gt; API
+    DEV --&gt; DDBL[DynamoDB Local]
+    DEV --&gt; MINIO[MinIO]
+
+    REPO -. local equivalent .-&gt; DDBL
+    STORE -. local equivalent .-&gt; MINIO</code></pre>
+<hr />
+<h2 id="cloud-portability-by-design">Cloud Portability by Design</h2>
+<p>The platform was designed to avoid coupling business logic directly to a specific cloud provider.</p>
+<p>The backend exposes application-level repository and storage contracts, while infrastructure-specific implementations handle DynamoDB, S3, and local development equivalents such as DynamoDB Local and MinIO.</p>
+<p>This allowed the same application architecture to run across:</p>
 <ul>
-<li>accumulate ad-hoc parsing logic  </li>
-<li>embed validation into business code  </li>
-<li>create tight coupling between sources and consumers  </li>
-<li>become brittle under change  </li>
+<li>local development environments using Docker Compose</li>
+<li>AWS production deployment using Lambda, ECR, DynamoDB, S3, CloudFront, CloudFormation, and CloudWatch</li>
+<li>future alternative deployment targets with limited infrastructure adapter changes</li>
 </ul>
-<p>The objective was to design a backend that:</p>
+<p>The result is not just an AWS application, but a <strong>cloud-portable system with AWS as the production target</strong>.</p>
+<pre class="mermaid"><code>flowchart LR
+    D[Domain Logic] --&gt; C[Application Contracts]
+
+    C --&gt; R[Repository Interface]
+    C --&gt; S[Storage Interface]
+
+    R --&gt; AWSDB[DynamoDB Adapter]
+    R --&gt; LOCALDB[DynamoDB Local Adapter]
+
+    S --&gt; AWSS3[S3 Adapter]
+    S --&gt; LOCALMINIO[MinIO Adapter]
+
+    AWSDB --&gt; AWS[AWS Production]
+    AWSS3 --&gt; AWS
+
+    LOCALDB --&gt; DEV[Local Development]
+    LOCALMINIO --&gt; DEV</code></pre>
+<hr />
+<h2 id="backend-design">Backend Design</h2>
+<p>The backend was implemented with <strong>FastAPI</strong> and organized around explicit application boundaries.</p>
+<p>Key backend characteristics include:</p>
 <ul>
-<li>treats ingestion as a first-class subsystem  </li>
-<li>enforces explicit data contracts  </li>
-<li>supports dynamic extensibility  </li>
-<li>remains stable under long-term evolution  </li>
+<li>domain models for users, cars, trips, reservations, refueling, maintenance, and commits</li>
+<li>Pydantic schemas for validation and API contracts</li>
+<li>JWT-based authentication</li>
+<li>password hashing with Argon2</li>
+<li>repository interfaces based on Python <code>Protocol</code></li>
+<li>application transaction abstractions</li>
+<li>structured routers for user, car, trip, reservation, maintenance, refueling, statistics, and reports</li>
+<li>export workflows for Excel reports</li>
+<li>PDF report generation for trip-related documents</li>
+<li>structured HTTP request logging</li>
+</ul>
+<p>This design kept the domain and application layers independent from the AWS runtime and from the specific persistence implementation.</p>
+<hr />
+<h2 id="infrastructure-abstraction">Infrastructure Abstraction</h2>
+<p>The persistence and storage layers were deliberately abstracted.</p>
+<p>DynamoDB is treated as an <strong>infrastructure adapter</strong>, not as the domain model.<br />
+S3 is treated as an <strong>object storage implementation</strong>, not as an application dependency.</p>
+<p>Local development uses cloud-compatible substitutes:</p>
+<ul>
+<li>DynamoDB Local for table-oriented persistence</li>
+<li>MinIO for S3-compatible object storage</li>
+<li>Docker Compose to reproduce the production topology without requiring live AWS resources</li>
+</ul>
+<p>This made the development environment faster, safer, and closer to production behavior.</p>
+<hr />
+<h2 id="aws-deployment">AWS Deployment</h2>
+<p>The production deployment was implemented using AWS managed services and Infrastructure as Code.</p>
+<p>Backend deployment:</p>
+<ul>
+<li>FastAPI application packaged as a container image</li>
+<li>image published to Amazon ECR</li>
+<li>AWS Lambda running the backend through Mangum</li>
+<li>Lambda Function URL as the HTTPS entry point</li>
+<li>DynamoDB tables for application persistence</li>
+<li>S3 bucket for document and receipt storage</li>
+<li>IAM role with scoped access to the required tables and bucket</li>
+<li>CloudWatch Logs for backend observability</li>
+</ul>
+<p>Frontend deployment:</p>
+<ul>
+<li>React / TypeScript / Vite static build</li>
+<li>private S3 bucket for frontend assets</li>
+<li>CloudFront distribution with Origin Access Control</li>
+<li>HTTPS delivery using the default CloudFront domain</li>
+<li>CloudFront access logs stored in a dedicated S3 bucket</li>
+<li>SPA fallback handling for client-side routing</li>
+</ul>
+<p>Deployment automation:</p>
+<ul>
+<li>CloudFormation templates for backend and frontend resources</li>
+<li>Bash scripts for backend deployment, frontend deployment, full deployment, admin seeding, and log inspection</li>
+<li>configurable environment variables for region, profile, JWT secret, CORS origins, logging, and retention</li>
 </ul>
 <hr />
-<h2 id="architectural-goals">Architectural Goals</h2>
-<p>The architecture was driven by the following goals:</p>
-<ul>
-<li>
-<p><strong>Heterogeneity-first design</strong><br />
-  Support multiple data sources with incompatible formats and protocols.</p>
-</li>
-<li>
-<p><strong>Plugin-based extensibility</strong><br />
-  Add new ingestion modules without modifying core services.</p>
-</li>
-<li>
-<p><strong>Unified data model</strong><br />
-  Normalize all inputs into a single logical structure.</p>
-</li>
-<li>
-<p><strong>Runtime validation</strong><br />
-  Enforce data contracts and invariants during ingestion.</p>
-</li>
-<li>
-<p><strong>Scalability and clustering</strong><br />
-  Scale ingestion and processing independently.</p>
-</li>
-<li>
-<p><strong>Fault isolation</strong><br />
-  Prevent a faulty source from destabilizing the entire system.</p>
-</li>
-<li>
-<p><strong>Operational observability</strong><br />
-  Make ingestion behavior diagnosable and debuggable.</p>
-</li>
-</ul>
-<hr />
-<h2 id="high-level-architecture">High-Level Architecture</h2>
-<p>At a high level, the system is organized into four conceptual layers:</p>
+<h2 id="observability-operations">Observability &amp; Operations</h2>
+<p>The platform includes operational visibility at multiple levels.</p>
+<p>Backend logs are collected in CloudWatch.<br />
+Frontend browser-side errors can be sent to a hidden backend endpoint and written to the same CloudWatch log group.<br />
+CloudFront access logs are stored in S3 with retention management.</p>
+<p>This produced three complementary observability layers:</p>
 <ol>
-<li>
-<p><strong>Ingestion Layer</strong><br />
-   Pluggable modules responsible for connecting to external sources,<br />
-   parsing raw inputs, and producing normalized events.</p>
-</li>
-<li>
-<p><strong>Normalization Layer</strong><br />
-   A transformation pipeline that maps heterogeneous inputs<br />
-   into a unified internal data model.</p>
-</li>
-<li>
-<p><strong>Validation Layer</strong><br />
-   A rule-based validation subsystem that enforces data contracts<br />
-   and rejects invalid or inconsistent inputs.</p>
-</li>
-<li>
-<p><strong>Service Layer</strong><br />
-   Backend services that expose normalized data<br />
-   to downstream consumers and frontend applications.</p>
-</li>
+<li>backend application logs</li>
+<li>browser-side frontend error logs</li>
+<li>HTTP access logs from the static frontend distribution</li>
 </ol>
-<p>Each layer is:</p>
-<ul>
-<li>independently testable  </li>
-<li>loosely coupled  </li>
-<li>replaceable  </li>
-<li>horizontally scalable  </li>
-</ul>
+<p>The design made production troubleshooting part of the deployment model rather than a later addition.</p>
 <hr />
-<h2 id="plugin-based-ingestion-model">Plugin-Based Ingestion Model</h2>
-<p>The ingestion subsystem is designed around a <strong>plugin architecture</strong>.</p>
-<p>Each plugin:</p>
+<h2 id="security-and-runtime-controls">Security and Runtime Controls</h2>
+<p>The platform includes several security-oriented decisions:</p>
 <ul>
-<li>encapsulates the logic for a specific data source  </li>
-<li>handles protocol-specific parsing  </li>
-<li>performs initial validation  </li>
-<li>emits normalized events into the core pipeline  </li>
+<li>JWT-based authentication</li>
+<li>Argon2 password hashing</li>
+<li>production API documentation disabled</li>
+<li>CORS configured through deployment variables</li>
+<li>private S3 bucket for frontend hosting behind CloudFront</li>
+<li>private S3 bucket for receipts/documents</li>
+<li>IAM permissions scoped to the required DynamoDB tables and S3 resources</li>
+<li>hidden frontend client-log endpoint excluded from public API documentation</li>
+<li>HTTPS delivery through AWS managed endpoints</li>
 </ul>
-<p>The core system:</p>
-<ul>
-<li>does not depend on any specific plugin  </li>
-<li>treats all plugins as interchangeable producers  </li>
-<li>enforces uniform contracts on their outputs  </li>
-</ul>
-<p>This design enables:</p>
-<ul>
-<li>zero-downtime integration of new data sources  </li>
-<li>independent development of ingestion modules  </li>
-<li>isolation of source-specific failures  </li>
-<li>long-term maintainability of the ingestion layer  </li>
-</ul>
+<p>The focus was not only to deploy the application, but to deploy it with explicit runtime and operational boundaries.</p>
 <hr />
-<h2 id="unified-data-model">Unified Data Model</h2>
-<p>All ingested data is transformed into a <strong>unified internal representation</strong><br />
-before entering the core processing pipeline.</p>
-<p>The unified model:</p>
-<ul>
-<li>abstracts away source-specific formats  </li>
-<li>normalizes units and naming conventions  </li>
-<li>enforces required fields and constraints  </li>
-<li>provides semantic consistency across sources  </li>
-</ul>
-<p>This ensures that downstream services:</p>
-<ul>
-<li>never depend on source-specific assumptions  </li>
-<li>operate on a stable data contract  </li>
-<li>remain insulated from upstream changes  </li>
-</ul>
-<p>and can evolve independently of ingestion details.</p>
+<h2 id="production-adoption">Production Adoption</h2>
+<p>The platform moved beyond a training exercise and was adopted in production in a real business context.</p>
+<p>This is the most relevant outcome of the project: the system was considered useful and stable enough to support internal operational workflows, with an estimated user base of approximately 50 employees.</p>
+<p>For portfolio purposes, the business context is intentionally described without exposing company-specific implementation details, internal URLs, or proprietary operational data.</p>
 <hr />
-<h2 id="runtime-validation-and-governance">Runtime Validation and Governance</h2>
-<p>Data validation is treated as a <strong>first-class architectural concern</strong>.</p>
-<p>Incoming events are validated against:</p>
-<ul>
-<li>explicit data contracts  </li>
-<li>structural constraints  </li>
-<li>semantic invariants  </li>
-<li>versioned schemas  </li>
-</ul>
-<p>The validation layer:</p>
-<ul>
-<li>rejects malformed or inconsistent inputs  </li>
-<li>produces structured diagnostics  </li>
-<li>isolates invalid data from core services  </li>
-<li>provides observability into ingestion failures  </li>
-</ul>
-<p>This prevents:</p>
-<ul>
-<li>silent data corruption  </li>
-<li>propagation of invalid state  </li>
-<li>hidden integration failures  </li>
-</ul>
-<p>and formalizes <strong>data governance at runtime</strong>.</p>
+<h2 id="my-role">My Role</h2>
+<p>I designed and implemented the system end-to-end, covering application architecture, backend development, cloud deployment, infrastructure automation, and part of the frontend integration.</p>
+<p>My work included defining the backend domain structure, repository and storage abstractions, AWS deployment model, local Docker Compose environment, CloudFormation templates, deployment scripts, logging strategy, and production-oriented runtime configuration.</p>
+<p>This project strengthened the connection between my previous work on modular backend systems and my current focus on cloud-portable architectures: systems where infrastructure abstraction, containerized runtime boundaries, and operational reliability are part of the architecture from the beginning.</p>
 <hr />
-<h2 id="scalability-and-fault-tolerance">Scalability and Fault Tolerance</h2>
-<p>The system is designed to scale horizontally and tolerate partial failures.</p>
-<p>Key properties include:</p>
+<h2 id="what-this-case-study-demonstrates">What This Case Study Demonstrates</h2>
+<p>This project demonstrates experience in:</p>
 <ul>
-<li>independent scaling of ingestion and processing  </li>
-<li>stateless plugin execution where possible  </li>
-<li>idempotent ingestion operations  </li>
-<li>backpressure handling under load  </li>
-<li>graceful degradation for faulty sources  </li>
+<li>cloud-portable application architecture</li>
+<li>AWS serverless deployment</li>
+<li>backend architecture with FastAPI</li>
+<li>infrastructure abstraction</li>
+<li>Docker Compose-based local environments</li>
+<li>CloudFormation-based Infrastructure as Code</li>
+<li>production-oriented observability</li>
+<li>frontend/backend integration</li>
+<li>operational delivery of a real business application</li>
 </ul>
-<p>This ensures that:</p>
-<ul>
-<li>
-<p>a spike in one data source<br />
-  does not overload the entire backend  </p>
-</li>
-<li>
-<p>a misbehaving plugin<br />
-  does not destabilize core services  </p>
-</li>
-</ul>
-<p>and that the platform remains predictable under stress.</p>
-<hr />
-<h2 id="why-this-architecture-matters">Why This Architecture Matters</h2>
-<p>This architecture demonstrates how to build backend platforms that:</p>
-<ul>
-<li>integrate heterogeneous systems safely  </li>
-<li>evolve without breaking existing integrations  </li>
-<li>enforce contracts at runtime  </li>
-<li>remain operationally reliable  </li>
-<li>scale across distributed environments  </li>
-</ul>
-<p>It reflects a design philosophy focused on:</p>
-<ul>
-<li>architectural governance  </li>
-<li>explicit system boundaries  </li>
-<li>separation of concerns  </li>
-<li>long-term evolvability  </li>
-</ul>
-<p>rather than on short-term feature delivery.</p>
-<hr />
-<h2 id="transferable-lessons">Transferable Lessons</h2>
-<p>Key architectural lessons from this case study:</p>
-<ul>
-<li>Treat ingestion as a first-class subsystem.  </li>
-<li>Normalize early, not late.  </li>
-<li>Enforce data contracts at runtime.  </li>
-<li>Isolate source-specific logic through plugins.  </li>
-<li>Design for evolution, not for snapshots.  </li>
-<li>Make failures observable and intelligible.  </li>
-<li>Optimize for operational reality.</li>
-</ul>
-<p>These patterns are broadly applicable<br />
-to modern data platforms, IoT backends,<br />
-and integration-heavy systems.</p>
-<hr />
-<h2 id="scope-and-limitations-safe-disclosure">Scope and Limitations (SAFE Disclosure)</h2>
-<p>This case study is presented in a <strong>SAFE</strong> and abstracted form.</p>
-<p>It intentionally omits:</p>
-<ul>
-<li>product names  </li>
-<li>company names  </li>
-<li>hardware brands  </li>
-<li>proprietary protocols  </li>
-<li>implementation-specific details  </li>
-</ul>
-<p>The focus is exclusively on:</p>
-<ul>
-<li>architectural patterns  </li>
-<li>system design decisions  </li>
-<li>transferable engineering principles  </li>
-</ul>
-<p>rather than on any specific commercial system.</p>
 
 
 
@@ -2015,7 +1967,7 @@ and integration-heavy systems.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../b3do/overview/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
+          <a href="../../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2032,13 +1984,13 @@ and integration-heavy systems.</p>
         
         
           
-          <a href="../architecture/" class="md-footer__link md-footer__link--next" aria-label="Next: Architecture">
+          <a href="../../importspy/overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Architecture
+                Overview
               </div>
             </div>
             <div class="md-footer__button md-icon">
