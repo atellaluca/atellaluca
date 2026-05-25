@@ -1,70 +1,121 @@
 # Luca Atella  
-## Systems & Platform Architect
+## Software Architect · Backend & Platform Engineering
 
-**Platform architecture, runtime systems, and long-lived backend design.**
+**Modular backend systems, cloud-portable architectures, runtime governance, and long-lived software platforms.**
 
-I design backend platforms that enforce architectural invariants and evolve safely over time.
-
----
-
-## Current
-
-I am currently part of the [MT Academy program](https://mtacademy.regione.basilicata.it/#ilprogetto), an initiative promoted by Regione Basilicata in collaboration with :contentReference[oaicite:0]{index=0}, focused on cloud-native systems, artificial intelligence, and production-grade architectures.
-
-Within this environment, AWS is used as the primary platform for designing and operating distributed systems, across domains that include [Cloud Practitioner](https://aws.amazon.com/training/digital/aws-cloud-practitioner-essentials/), [AI Practitioner](https://aws.amazon.com/training/digital/aws-ai-practitioner-essentials/), and [Solutions Architect](https://aws.amazon.com/certification/certified-solutions-architect-associate/). These are approached as system design domains rather than certification paths, and evaluated against real-world constraints.
-
-I have been included among the [selected candidates of MT Academy](https://mtacademy.regione.basilicata.it/candidati/), following a competitive selection process targeting profiles capable of operating within complex engineering environments.
-
-My focus in this context remains architectural: defining system boundaries, reasoning about invariants, and validating design decisions under production conditions.
-
-This experience integrates with my ongoing work on backend platforms and long-lived systems, reinforcing a methodology centered on correctness, explicit trade-offs, and controlled evolution across cloud-native ecosystems.
+I design modular backend and cloud-portable systems where infrastructure abstraction, runtime boundaries, and operational reliability are part of the architecture from the beginning.
 
 ---
 
-## What I Work On
+<div class="portfolio-proof-grid" markdown>
 
-I focus on building systems where **correctness, evolvability, and governance** matter more than short-term features.
+<div class="portfolio-proof" markdown>
+**Production platform**  
+Cloud-portable fleet management system adopted in a real business context.
+</div>
 
-My work typically involves:
+<div class="portfolio-proof" markdown>
+**Open-source architecture**  
+ImportSpy brings runtime contracts and governance to modular Python systems.
+</div>
 
-- backend platform architecture for integration-heavy systems  
-- runtime contracts and validation engines  
-- plugin-based and modular execution models  
-- real-time data pipelines and event-driven backends  
-- heterogeneous system normalization (IoT, telemetry, embedded)  
-- long-lived systems with strict architectural invariants  
+<div class="portfolio-proof" markdown>
+**Geospatial pipeline**  
+B3DO transforms public terrain data into 3D Basilicata models.
+</div>
+
+</div>
+
+---
+
+## Current Focus
+
+My current work and case studies focus on:
+
+- cloud-portable backend architectures
+- AWS serverless and managed-service deployment models
+- runtime governance for modular systems
+- infrastructure abstraction and deployment boundaries
+- geospatial and data-to-model processing pipelines
+- edge/cloud integration for IoT and Digital Twin scenarios
+- long-lived software platforms designed for operational reliability
 
 ---
 
 ## Signature Work
 
+<div class="portfolio-card-grid" markdown>
+
+<div class="portfolio-card" markdown>
+
+### Cloud-Portable Fleet Management Platform
+
+A full-stack fleet management platform designed with infrastructure abstraction, containerized local development, and AWS production deployment.
+
+Key characteristics:
+
+- FastAPI backend and React/TypeScript frontend
+- repository and storage abstraction layers
+- local Docker Compose environment with DynamoDB Local and MinIO
+- AWS deployment using Lambda, ECR, DynamoDB, S3, CloudFront, CloudFormation, and CloudWatch
+- adopted in production in a real business context
+
+→ [Explore cloud-portable case study](case-studies/cloud-portable-fleet-platform/overview.md)
+
+</div>
+
+<div class="portfolio-card" markdown>
+
 ### ImportSpy — Runtime Contract Engine
 
 A declarative runtime contract system for Python modules that enforces:
 
-- structural and contextual invariants  
-- architectural boundaries  
-- minimum execution requirements  
+- structural and contextual invariants
+- architectural boundaries
+- minimum execution requirements
 
 It is designed for modular backends, plugin ecosystems, embedded runtimes, and CI/CD validation.
 
 → [Explore ImportSpy case study](case-studies/importspy/overview.md)
 
----
+</div>
 
-### Unified Backend Platform (SAFE)
+<div class="portfolio-card" markdown>
 
-A plugin-governed backend platform for heterogeneous device integration.
+### B3DO — Basilicata 3D Open
+
+A geospatial processing pipeline for turning public Basilicata terrain datasets into 3D terrain models.
 
 Key characteristics:
 
-- centralized CRUD and REST APIs  
-- real-time updates via WebSocket  
-- declarative UI schema (Widget DSL)  
-- runtime validation and plugin governance  
-- containerized and Kubernetes-ready  
+- DTM tile merge, regional boundary extraction, and raster clipping
+- multi-resolution LOD generation for 3D terrain meshes
+- hillshade, hypsometric color relief, texture generation, and river overlay
+- CLI-driven workflow using GDAL, Rasterio, NumPy, PyVista, Fiona, and Typer
+- unpublished pipeline, designed as an open geospatial/model-generation project
 
-→ [Explore platform case study](case-studies/unified-backend/overview.md)
+→ [Explore B3DO case study](case-studies/b3do/overview.md)
+
+</div>
+
+<div class="portfolio-card" markdown>
+
+### IoT Data Aggregation Architecture
+
+A conceptual edge-to-cloud architecture for heterogeneous IoT data acquisition and aggregation in Digital Twin scenarios.
+
+Key characteristics:
+
+- edge acquisition from cameras, sensors, and devices
+- BLE/Zigbee mesh and gateway communication
+- ingestion layer for real-time, GeoJSON, and domain-specific data
+- GraphQL API, data-specific layers, microfrontends, storage gateway, and AI-assisted processing
+
+→ [Explore Digital Twin architecture case study](case-studies/iot-data-aggregation-digital-twin/overview.md)
+
+</div>
+
+</div>
 
 ---
 
@@ -72,13 +123,13 @@ Key characteristics:
 
 My engineering approach is grounded in:
 
-- contract-first system design  
-- architectural invariants as first-class citizens  
-- explicit runtime governance  
-- deterministic validation and diagnostics  
-- modular execution boundaries  
-- test-driven development (TDD)  
-- long-term maintainability over short-term optimization  
+- contract-first system design
+- architectural invariants as first-class citizens
+- explicit runtime governance
+- deterministic validation and diagnostics
+- modular execution boundaries
+- infrastructure abstraction
+- long-term maintainability over short-term optimization
 
 ---
 
@@ -86,23 +137,26 @@ My engineering approach is grounded in:
 
 My work is particularly relevant for:
 
-- plugin-based platforms  
-- industrial and embedded systems  
-- integration orchestrators  
-- modular enterprise backends  
-- real-time telemetry platforms  
-- long-lived software systems  
+- cloud-portable backend platforms
+- AWS and serverless application architectures
+- plugin-based and modular systems
+- geospatial processing pipelines
+- industrial and embedded systems
+- integration orchestrators
+- Digital Twin and edge/cloud data platforms
+- real-time telemetry systems
+- long-lived software systems
 
 ---
 
 ## Explore Further
 
 - [Technical Profile](profile.md)  
-- [Case Studies](case-studies/importspy/overview.md)  
+- [Case Studies](case-studies/index.md)  
 - [Curriculum Vitae](cv.md)  
 - [Methodology](methodology.md)  
 - [Contact](contact.md)  
 
 ---
 
-*This site documents selected architectural work, research-grade projects, and system design case studies.*
+*This site documents selected architectural work, production-oriented systems, and system design case studies.*

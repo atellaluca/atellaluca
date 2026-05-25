@@ -1,5 +1,5 @@
 site_name: "Luca Atella · Engineering"
-site_description: "Platform architecture, runtime systems, and long-lived backend design. Case studies and deep dives on building scalable, maintainable, and efficient systems."
+site_description: "Software architecture, backend platforms, cloud-portable systems, runtime governance, and edge/cloud integration."
 site_author: "Luca Atella"
 site_url: "https://profile.atellaluca.com/"
 
@@ -30,6 +30,7 @@ plugins:
   - search
 
 markdown_extensions:
+  - md_in_html
   - attr_list
   - pymdownx.superfences:
       custom_fences:
@@ -57,6 +58,8 @@ nav:
 
   - Case Studies:
       - Overview: case-studies/index.md
+      - Cloud-Portable Fleet Management Platform:
+          - Overview: case-studies/cloud-portable-fleet-platform/overview.md
       - ImportSpy:
           - Overview: case-studies/importspy/overview.md
           - Architecture: case-studies/importspy/architecture.md
@@ -64,12 +67,18 @@ nav:
           - Runtime Contracts (Deep Dive): case-studies/importspy/contracts.md
           - Violation System and Contract Diagnostics (Deep Dive): case-studies/importspy/violations.md
 
+      - B3DO:
+          - Overview: case-studies/b3do/overview.md
+
       - Unified Backend for Heterogeneous Data Sources (SAFE):
           - Overview: case-studies/unified-backend/overview.md
           - Architecture: case-studies/unified-backend/architecture.md
           - Plugin System (Deep Dive): case-studies/unified-backend/plugin-system.md
           - Declarative UI Schema (Widget DSL): case-studies/unified-backend/ui-schema.md
           - Operations & DX: case-studies/unified-backend/operations.md
+
+      - IoT Data Aggregation Architecture for Digital Twin Systems:
+          - Overview: case-studies/iot-data-aggregation-digital-twin/overview.md
 
       - End-to-End Real-Time Fleet Telemetry Backend (SAFE):
           - Overview: case-studies/fleet-tracking/overview.md
@@ -83,4 +92,3 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/atellaluca
-

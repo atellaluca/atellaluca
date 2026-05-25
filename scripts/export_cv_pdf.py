@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import subprocess
+import shutil
 from pathlib import Path
 
 from playwright.sync_api import sync_playwright
@@ -10,6 +11,7 @@ PROFILE_DIR = REPO_ROOT
 SITE_DIR = PROFILE_DIR / "site"
 CV_HTML = SITE_DIR / "cv-pdf" / "index.html"
 OUT_PDF = PROFILE_DIR / "docs" / "assets" / "Luca-Atella-CV.pdf"
+OUT_LINKED_PDF = PROFILE_DIR / "docs" / "assets" / "cv" / "Luca-Atella-CV.pdf"
 
 
 def run(cmd: list[str], cwd: Path) -> None:
@@ -42,7 +44,11 @@ def main() -> None:
 
         browser.close()
 
+    OUT_LINKED_PDF.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(OUT_PDF, OUT_LINKED_PDF)
+
     print(f"✅ CV PDF generated: {OUT_PDF}")
+    print(f"✅ Linked CV PDF updated: {OUT_LINKED_PDF}")
 
 
 if __name__ == "__main__":

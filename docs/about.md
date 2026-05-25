@@ -10,6 +10,7 @@ My interests sit at the intersection of:
 - integration platforms  
 - developer tooling  
 - cloud-native infrastructure  
+- geospatial and data-processing pipelines  
 
 I am particularly drawn to problems where:
 
@@ -40,6 +41,7 @@ I have worked on projects involving:
 - real-time APIs  
 - distributed backend systems  
 - infrastructure automation  
+- terrain/model-generation pipelines  
 
 Rather than specializing in a single framework or stack, I focus on **transferable architectural patterns** that remain valid across technologies.
 
