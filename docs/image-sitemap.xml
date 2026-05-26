@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://profile.atellaluca.com/</loc>
+    <image:image>
+      <image:loc>https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png</image:loc>
+      <image:title>Luca Atella software architect and backend platform engineer</image:title>
+      <image:caption>Portfolio identity image for Luca Atella, focused on backend architecture, platform engineering, AWS and cloud-portable systems.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://profile.atellaluca.com/case-studies/cloud-portable-fleet-platform/overview/</loc>
+    <image:image>
+      <image:loc>https://profile.atellaluca.com/assets/images/case-studies/cloud-portable-fleet-platform/cloud-portable-fleet-management-platform-aws-fastapi-architecture.png</image:loc>
+      <image:title>Cloud-portable fleet management platform AWS FastAPI architecture</image:title>
+      <image:caption>Architecture diagram for a production-adopted fleet management platform built with FastAPI, React, AWS Lambda, DynamoDB, S3, CloudFront and CloudFormation.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://profile.atellaluca.com/assets/images/case-studies/cloud-portable-fleet-platform/cloud-portable-fleet-management-platform-domain-data-model.png</image:loc>
+      <image:title>Cloud-portable fleet management platform domain data model</image:title>
+      <image:caption>Data model diagram for vehicles, users, reservations, trips, refueling, maintenance, documents and reporting in Luca Atella fleet management platform case study.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://profile.atellaluca.com/it/case-studies/cloud-portable-fleet-platform/overview/</loc>
+    <image:image>
+      <image:loc>https://profile.atellaluca.com/assets/images/case-studies/cloud-portable-fleet-platform/cloud-portable-fleet-management-platform-aws-fastapi-architecture.png</image:loc>
+      <image:title>Architettura AWS FastAPI per piattaforma fleet management cloud-portable</image:title>
+      <image:caption>Diagramma architetturale della piattaforma fleet management production-adopted costruita con FastAPI, React, AWS Lambda, DynamoDB, S3, CloudFront e CloudFormation.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://profile.atellaluca.com/assets/images/case-studies/cloud-portable-fleet-platform/cloud-portable-fleet-management-platform-domain-data-model.png</image:loc>
+      <image:title>Modello dati della piattaforma fleet management cloud-portable</image:title>
+      <image:caption>Diagramma del modello dati per utenti, veicoli, prenotazioni, viaggi, rifornimenti, manutenzioni, documenti e reporting nel caso studio di Luca Atella.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://profile.atellaluca.com/case-studies/iot-data-aggregation-digital-twin/overview/</loc>
+    <image:image>
+      <image:loc>https://profile.atellaluca.com/assets/images/case-studies/iot-data-aggregation-digital-twin/iot-data-aggregation-digital-twin-edge-cloud-architecture.png</image:loc>
+      <image:title>IoT data aggregation and Digital Twin edge-cloud architecture</image:title>
+      <image:caption>Edge-to-cloud architecture diagram for heterogeneous IoT data aggregation, GraphQL APIs, microfrontends, storage gateways and Digital Twin systems.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://profile.atellaluca.com/it/case-studies/iot-data-aggregation-digital-twin/overview/</loc>
+    <image:image>
+      <image:loc>https://profile.atellaluca.com/assets/images/case-studies/iot-data-aggregation-digital-twin/iot-data-aggregation-digital-twin-edge-cloud-architecture.png</image:loc>
+      <image:title>Architettura edge-to-cloud per IoT data aggregation e Digital Twin</image:title>
+      <image:caption>Diagramma architetturale per aggregazione dati IoT eterogenei, GraphQL API, microfrontends, storage gateway e sistemi Digital Twin.</image:caption>
+    </image:image>
+  </url>
+</urlset>

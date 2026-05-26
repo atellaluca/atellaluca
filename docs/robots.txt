@@ -6,3 +6,4 @@ Disallow: /assets/talks/
 Disallow: /assets/cv/
 
 Sitemap: https://profile.atellaluca.com/sitemap.xml
+Sitemap: https://profile.atellaluca.com/image-sitemap.xml

@@ -1,12 +1,12 @@
-site_name: "Luca Atella · Engineering"
-site_description: "Software architecture, backend platforms, cloud-portable systems, runtime governance, and edge/cloud integration."
+site_name: "Luca Atella · Software Architect & Backend Platform Engineer"
+site_description: "Luca Atella portfolio: software architect and backend platform engineer focused on AWS, FastAPI, cloud-portable backend architecture, runtime contract validation, IoT and Digital Twin systems."
 site_author: "Luca Atella"
 site_url: "https://profile.atellaluca.com/"
 
 theme:
   name: material
   custom_dir: overrides
-  logo: assets/atellaluca.png
+  logo: assets/luca-atella-software-architect-backend-platform-engineer.png
   favicon: assets/favicon.ico
   language: en
   palette:
@@ -14,11 +14,10 @@ theme:
       primary: grey
       accent: amber
   font:
-    text: Roboto
+    text: Inter
     code: Roboto Mono
   features:
     - navigation.tabs
-    - navigation.instant
     - navigation.tracking
     - navigation.top
     - search.highlight
@@ -28,6 +27,39 @@ theme:
 
 plugins:
   - search
+  - i18n:
+      docs_structure: suffix
+      reconfigure_material: true
+      languages:
+        - locale: en
+          name: English
+          build: true
+          default: true
+        - locale: it
+          name: Italiano
+          build: true
+          site_name: "Luca Atella · Software Architect & Backend Platform Engineer"
+          site_description: "Portfolio di Luca Atella: software architect e backend platform engineer lucano, focalizzato su AWS, FastAPI, architetture backend cloud-portable, runtime contract validation, IoT e Digital Twin."
+          nav_translations:
+            Home: Home
+            About: Chi sono
+            Methodology: Metodo
+            Case Studies: Casi Studio
+            Overview: Panoramica
+            Cloud-Portable Fleet Management Platform: Piattaforma Fleet Cloud-Portable
+            Architecture: Architettura
+            Validation System (Deep Dive): Sistema di Validazione
+            Runtime Contracts (Deep Dive): Runtime Contracts
+            Violation System and Contract Diagnostics (Deep Dive): Diagnostica Contratti
+            Unified Backend for Heterogeneous Data Sources (SAFE): Backend Unificato per Sorgenti Eterogenee
+            Plugin System (Deep Dive): Sistema Plugin
+            Declarative UI Schema (Widget DSL): Schema UI Dichiarativo
+            Operations & DX: Operations e Developer Experience
+            IoT Data Aggregation Architecture for Digital Twin Systems: Architettura IoT per Digital Twin
+            End-to-End Real-Time Fleet Telemetry Backend (SAFE): Backend Telemetria Fleet Real-Time
+            Profile: Profilo
+            CV: CV
+            Contact: Contatti
 
 markdown_extensions:
   - md_in_html
@@ -92,3 +124,5 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/atellaluca
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/luca-atella/

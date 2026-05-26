@@ -1,3 +1,11 @@
+---
+title: "Plugin System Architecture | Governed Backend Integration Platform"
+description: "Plugin system deep dive for a unified backend architecture: extension points, runtime boundaries, device integrations and governed backend platform design."
+image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
+image_alt: "Plugin system architecture for governed backend integration platform"
+schema_type: "TechArticle"
+---
+
 # Plugin System  
 ## Unified Backend for Heterogeneous Data Sources (SAFE)
 

@@ -1,3 +1,11 @@
+---
+title: "Fleet Telemetry Architecture | Real-Time GPS and CAN Bus Backend"
+description: "Architecture deep dive for a real-time fleet telemetry backend with GPS tracking, CAN bus normalization, event-driven processing, APIs and secure communication."
+image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
+image_alt: "Fleet telemetry architecture for real-time GPS and CAN bus backend"
+schema_type: "TechArticle"
+---
+
 # Architecture  
 ## End-to-End Real-Time Fleet Telemetry Backend (SAFE)
 

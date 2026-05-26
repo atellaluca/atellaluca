@@ -1,30 +1,38 @@
+---
+title: "Cloud-Portable Fleet Management Platform | AWS FastAPI Case Study"
+description: "Production-adopted fleet management platform by Luca Atella built with FastAPI, React, AWS Lambda, DynamoDB, S3, CloudFront and cloud-portable backend architecture."
+image: "assets/images/case-studies/cloud-portable-fleet-platform/cloud-portable-fleet-management-platform-aws-fastapi-architecture.png"
+image_alt: "AWS FastAPI architecture diagram for a cloud-portable fleet management platform"
+schema_type: "TechArticle"
+---
+
 # Cloud-Portable Fleet Management Platform
 
-**Type:** Production-adopted cloud application  
-**Role:** Software Architect · Backend Engineer · Cloud Deployment  
-**Period:** 2026  
-**Domain:** Fleet management, backend systems, AWS, cloud-portable architecture  
-**Status:** Adopted in production in a real business context  
+**Type:** Production-adopted cloud application
+**Role:** Software Architect · Backend Engineer · Cloud Deployment
+**Period:** 2026
+**Domain:** Fleet management, backend systems, AWS, cloud-portable architecture
+**Status:** Adopted in production in a real business context
 
 ---
 
 ## Overview
 
-This case study describes a full-stack fleet management platform designed to support operational workflows around company vehicles, users, reservations, trips, refueling, maintenance, documents, and reporting.
+This case study describes a full-stack fleet management platform for company vehicle operations.
 
-The system was developed as a complete application and later adopted in production in a real business context, serving an internal user base of approximately 50 employees.
+The platform supports users, vehicles, reservations, trips, refueling, maintenance, documents, statistics, and reports. It was developed as a complete application and later adopted in production in a real business context, serving an internal user base of approximately 50 employees.
 
-The most important architectural aspect of the project is not that it was deployed on AWS, but that it was designed as a **cloud-portable system**: the application logic is separated from infrastructure-specific services through explicit repository, storage, runtime, and deployment boundaries.
+The most important architectural choice was to keep the business logic separate from the cloud services used in production. AWS is the production target, but the application is not designed as a set of AWS-specific workflows.
 
-AWS became the production target, not the architectural dependency.
+Instead, the backend uses explicit repository, storage, runtime, and deployment boundaries. That makes the same system easier to run locally, deploy on AWS, and adapt later if the infrastructure changes.
 
 ---
 
 ## Problem Space
 
-Fleet management systems often grow around operational urgency: reservations, vehicle usage, maintenance, refueling, driver activity, documents, and reporting are implemented as isolated workflows.
+Fleet management systems often grow from immediate operational needs: a reservation feature here, a maintenance workflow there, then refueling, documents, reporting, and user management.
 
-This creates several risks:
+If those pieces are added without a clear structure, the system can become difficult to change:
 
 - business logic becomes tightly coupled to storage choices
 - deployment environments drift between local development and production
@@ -32,15 +40,15 @@ This creates several risks:
 - operational visibility is added only after deployment
 - changes to infrastructure require changes to application logic
 
-The goal was to design a platform that could support real operational use while remaining maintainable, portable, and evolvable.
+The goal was to build a real operational tool while keeping the architecture understandable and maintainable.
 
 ---
 
 ## Architecture Overview
 
-The platform is structured around a React frontend, a FastAPI backend, abstracted persistence and storage layers, and an AWS deployment target based on serverless and managed services.
+The platform is structured around a React frontend, a FastAPI backend, abstracted persistence and storage layers, and an AWS deployment model based on serverless and managed services.
 
-![Cloud-portable fleet management platform architecture](../../assets/images/case-studies/cloud-portable-fleet-platform/system-architecture.png)
+![AWS FastAPI architecture diagram for Luca Atella cloud-portable fleet management platform with Lambda, DynamoDB, S3, CloudFront and Docker local development](../../assets/images/case-studies/cloud-portable-fleet-platform/cloud-portable-fleet-management-platform-aws-fastapi-architecture.png)
 
 At a high level:
 
@@ -70,11 +78,23 @@ flowchart TB
 
 ---
 
+## Data Model
+
+The application model covers the main operational entities of a fleet management system: users, vehicles, reservations, trips, refueling events, maintenance records, commits, files, and reporting-related data.
+
+The important design choice is that these entities are modeled at the application level first. Persistence is handled behind repository interfaces, so the domain model is not forced to look like DynamoDB tables or S3 objects.
+
+![Domain data model for Luca Atella fleet management platform showing users, vehicles, reservations, trips, refueling, maintenance, documents and reporting entities](../../assets/images/case-studies/cloud-portable-fleet-platform/cloud-portable-fleet-management-platform-domain-data-model.png)
+
+This model was imported from the backend project diagrams and added here to make the case study easier to understand from the domain side, not only from the infrastructure side.
+
+---
+
 ## Cloud Portability by Design
 
 The platform was designed to avoid coupling business logic directly to a specific cloud provider.
 
-The backend exposes application-level repository and storage contracts, while infrastructure-specific implementations handle DynamoDB, S3, and local development equivalents such as DynamoDB Local and MinIO.
+The backend exposes application-level repository and storage contracts. Infrastructure-specific implementations handle DynamoDB and S3 in production, while local development uses DynamoDB Local and MinIO.
 
 This allowed the same application architecture to run across:
 
@@ -82,7 +102,7 @@ This allowed the same application architecture to run across:
 - AWS production deployment using Lambda, ECR, DynamoDB, S3, CloudFront, CloudFormation, and CloudWatch
 - future alternative deployment targets with limited infrastructure adapter changes
 
-The result is not just an AWS application, but a **cloud-portable system with AWS as the production target**.
+The result is a cloud-portable system with AWS as the production target.
 
 ```mermaid
 flowchart LR
@@ -108,7 +128,7 @@ flowchart LR
 
 ## Backend Design
 
-The backend was implemented with **FastAPI** and organized around explicit application boundaries.
+The backend was implemented with FastAPI and organized around explicit application boundaries.
 
 Key backend characteristics include:
 
@@ -131,8 +151,8 @@ This design kept the domain and application layers independent from the AWS runt
 
 The persistence and storage layers were deliberately abstracted.
 
-DynamoDB is treated as an **infrastructure adapter**, not as the domain model.  
-S3 is treated as an **object storage implementation**, not as an application dependency.
+DynamoDB is treated as an infrastructure adapter, not as the domain model.
+S3 is treated as an object storage implementation, not as an application dependency.
 
 Local development uses cloud-compatible substitutes:
 
@@ -140,7 +160,7 @@ Local development uses cloud-compatible substitutes:
 - MinIO for S3-compatible object storage
 - Docker Compose to reproduce the production topology without requiring live AWS resources
 
-This made the development environment faster, safer, and closer to production behavior.
+This made the development environment faster to use, safer to experiment with, and closer to production behavior.
 
 ---
 
@@ -180,8 +200,8 @@ Deployment automation:
 
 The platform includes operational visibility at multiple levels.
 
-Backend logs are collected in CloudWatch.  
-Frontend browser-side errors can be sent to a hidden backend endpoint and written to the same CloudWatch log group.  
+Backend logs are collected in CloudWatch.
+Frontend browser-side errors can be sent to a hidden backend endpoint and written to the same CloudWatch log group.
 CloudFront access logs are stored in S3 with retention management.
 
 This produced three complementary observability layers:
@@ -226,7 +246,7 @@ For portfolio purposes, the business context is intentionally described without 
 
 I designed and implemented the system end-to-end, covering application architecture, backend development, cloud deployment, infrastructure automation, and part of the frontend integration.
 
-My work included defining the backend domain structure, repository and storage abstractions, AWS deployment model, local Docker Compose environment, CloudFormation templates, deployment scripts, logging strategy, and production-oriented runtime configuration.
+My work included defining the backend domain structure, the data model, repository and storage abstractions, AWS deployment model, local Docker Compose environment, CloudFormation templates, deployment scripts, logging strategy, and production-oriented runtime configuration.
 
 This project strengthened the connection between my previous work on modular backend systems and my current focus on cloud-portable architectures: systems where infrastructure abstraction, containerized runtime boundaries, and operational reliability are part of the architecture from the beginning.
 

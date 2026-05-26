@@ -1,3 +1,11 @@
+---
+title: "Backend Operations and Developer Experience | Unified IoT Platform"
+description: "Operations and developer experience for a unified backend platform: deployment workflows, Docker environments, repeatability, maintainability and integration-heavy systems."
+image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
+image_alt: "Backend operations and developer experience for unified IoT platform"
+schema_type: "TechArticle"
+---
+
 # Operations and Developer Experience  
 ## Unified Backend for Heterogeneous Data Sources (SAFE)
 

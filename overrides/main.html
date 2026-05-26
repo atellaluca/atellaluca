@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  <script>
+    (function () {
+      var path = window.location.pathname;
+      var isItalianPath = path === "/it/" || path.indexOf("/it/") === 0;
+      var isAssetPath = path.indexOf("/assets/") === 0;
+      var hasManualChoice = window.sessionStorage.getItem("portfolioLanguageChoice");
+
+      if (isItalianPath) {
+        window.sessionStorage.setItem("portfolioLanguageChoice", "it");
+        return;
+      }
+
+      if (isAssetPath || hasManualChoice) {
+        return;
+      }
+
+      var languages = window.navigator.languages || [window.navigator.language || ""];
+      var prefersItalian = languages.some(function (language) {
+        return language && language.toLowerCase().indexOf("it") === 0;
+      });
+
+      if (prefersItalian) {
+        var target = "/it" + (path === "/" ? "/" : path);
+        window.location.replace(target + window.location.search + window.location.hash);
+      } else {
+        window.sessionStorage.setItem("portfolioLanguageChoice", "en");
+      }
+    })();
+  </script>
+  {% set page_title = page.meta.title if page.meta and page.meta.title else (page.title | striptags if page and page.title else config.site_name) %}
+  {% set page_description = page.meta.description if page.meta and page.meta.description else config.site_description %}
+  {% set page_image = page.meta.image if page.meta and page.meta.image else config.theme.logo %}
+  {% set page_image_url = page_image if page_image.startswith('http') else config.site_url ~ page_image %}
+  {% set page_url = page.canonical_url if page.canonical_url else config.site_url %}
+  <meta name="robots" content="{{ page.meta.robots if page.meta and page.meta.robots else 'index,follow,max-image-preview:large' }}">
+  {% set og_type = page.meta.og_type if page.meta and page.meta.og_type else ('article' if page.meta and page.meta.schema_type == 'TechArticle' else 'website') %}
+  <meta property="og:type" content="{{ og_type }}">
+  <meta property="og:site_name" content="{{ config.site_name }}">
+  <meta property="og:title" content="{{ page_title }}">
+  <meta property="og:description" content="{{ page_description }}">
+  <meta property="og:url" content="{{ page_url }}">
+  <meta property="og:image" content="{{ page_image_url }}">
+  {% if page.meta and page.meta.image_alt %}
+    <meta property="og:image:alt" content="{{ page.meta.image_alt }}">
+  {% endif %}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page_title }}">
+  <meta name="twitter:description" content="{{ page_description }}">
+  <meta name="twitter:image" content="{{ page_image_url }}">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "{{ page.meta.schema_type if page.meta and page.meta.schema_type else 'WebPage' }}",
+    "name": {{ page_title | tojson }},
+    "description": {{ page_description | tojson }},
+    "url": {{ page_url | tojson }},
+    "image": {{ page_image_url | tojson }},
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": {{ config.site_name | tojson }},
+      "url": {{ config.site_url | tojson }}
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Luca Atella",
+      "url": {{ config.site_url | tojson }},
+      "sameAs": [
+        "https://github.com/atellaluca",
+        "https://www.linkedin.com/in/luca-atella/"
+      ],
+      "jobTitle": "Software Architect and Backend Platform Engineer",
+      "knowsAbout": [
+        "Backend architecture",
+        "Platform engineering",
+        "AWS serverless architecture",
+        "Cloud-portable backend systems",
+        "FastAPI",
+        "DynamoDB",
+        "Runtime contract validation",
+        "Modular Python systems",
+        "IoT backend architecture",
+        "Digital Twin architecture",
+        "Geospatial data pipelines"
+      ]
+    }
+  }
+  </script>
+{% endblock %}

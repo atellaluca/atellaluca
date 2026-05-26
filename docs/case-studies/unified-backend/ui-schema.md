@@ -1,3 +1,11 @@
+---
+title: "Declarative UI Schema | Widget DSL for Heterogeneous Device Backends"
+description: "Declarative UI schema case study for backend-driven interfaces, widget DSLs, heterogeneous devices and maintainable frontend-backend contracts."
+image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
+image_alt: "Declarative UI schema and widget DSL for heterogeneous device backends"
+schema_type: "TechArticle"
+---
+
 # Declarative UI Schema (Widget DSL)
 ## Unified Backend for Heterogeneous Data Sources (SAFE)
 

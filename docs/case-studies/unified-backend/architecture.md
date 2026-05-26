@@ -1,3 +1,11 @@
+---
+title: "Unified Backend System Architecture | Plugin-Based Integration Platform"
+description: "Architecture deep dive for a unified backend platform integrating heterogeneous devices and data sources through plugins, API boundaries and repeatable backend structure."
+image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
+image_alt: "Plugin-based unified backend system architecture"
+schema_type: "TechArticle"
+---
+
 # Architecture
 ## Unified Backend for Heterogeneous Data Sources (SAFE)
 

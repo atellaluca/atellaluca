@@ -1,3 +1,11 @@
+---
+title: "Contract Diagnostics | ImportSpy Violation System"
+description: "ImportSpy violation system deep dive: structured diagnostics, deterministic error reporting and runtime contract failures for modular Python architectures."
+image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
+image_alt: "ImportSpy contract diagnostics and violation system"
+schema_type: "TechArticle"
+---
+
 # Violation System and Contract Diagnostics  
 
 ## Why a Dedicated Violation System?

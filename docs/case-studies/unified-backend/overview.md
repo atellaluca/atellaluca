@@ -1,3 +1,11 @@
+---
+title: "Unified Backend Architecture | Plugin-Based IoT Data Platform"
+description: "Unified backend case study by Luca Atella for heterogeneous IoT data sources, plugin-based architecture, REST APIs, WebSockets, deployment workflows and maintainable platforms."
+image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
+image_alt: "Unified backend architecture for heterogeneous IoT data sources by Luca Atella"
+schema_type: "TechArticle"
+---
+
 # Unified Backend for Heterogeneous Data Sources
 
 ## Context and Motivation
@@ -273,4 +281,3 @@ The focus is exclusively on:
 - transferable engineering principles  
 
 rather than on any specific commercial system.
-

@@ -1,3 +1,11 @@
+---
+title: "IoT Data Aggregation Architecture | Digital Twin Edge-to-Cloud Case Study"
+description: "Luca Atella case study for IoT data aggregation and Digital Twin architecture covering edge acquisition, gateways, GraphQL APIs, microfrontends and storage layers."
+image: "assets/images/case-studies/iot-data-aggregation-digital-twin/iot-data-aggregation-digital-twin-edge-cloud-architecture.png"
+image_alt: "Edge-to-cloud IoT data aggregation and Digital Twin architecture diagram"
+schema_type: "TechArticle"
+---
+
 # IoT Data Aggregation Architecture for Digital Twin Systems
 
 **Type:** Architecture concept / design proposal  
@@ -54,7 +62,7 @@ The design addresses this by separating:
 
 ## Architecture Overview
 
-![Integrated IoT data aggregation architecture](../../assets/images/case-studies/iot-data-aggregation-digital-twin/digital-twin-architecture.png)
+![Edge-to-cloud IoT data aggregation architecture for Digital Twin systems with sensors, gateways, ingestion, GraphQL API, microfrontends and storage layers](../../assets/images/case-studies/iot-data-aggregation-digital-twin/iot-data-aggregation-digital-twin-edge-cloud-architecture.png)
 
 The architecture is divided into two main macro-areas:
 

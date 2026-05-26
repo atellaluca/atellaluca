@@ -1,3 +1,11 @@
+---
+title: "ImportSpy Architecture | Runtime Validation Engine for Python Modules"
+description: "System architecture of ImportSpy, Luca Atella runtime validation framework for Python modules, provider-consumer contracts, plugin safety and architectural governance."
+image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
+image_alt: "ImportSpy architecture for Python runtime validation and modular systems"
+schema_type: "TechArticle"
+---
+
 # ImportSpy — System Architecture
 
 ## Architectural Vision

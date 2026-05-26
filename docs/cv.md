@@ -1,7 +1,15 @@
+---
+title: "Luca Atella CV | Software Architect, Backend Engineer, AWS Certified"
+description: "Curriculum vitae of Luca Atella: software architect, backend platform engineer and AWS certified professional with experience in FastAPI, DynamoDB, serverless, IoT and modular systems."
+image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
+image_alt: "Luca Atella CV software architect backend engineer AWS certified"
+schema_type: "ProfilePage"
+---
+
 # Luca Atella — Curriculum Vitae
 
 **Software Architect · Backend & Platform Engineering · AWS Certified**  
-Basilicata, Italy · Email: [info@atellaluca.com](mailto:info@atellaluca.com) · GitHub: [github.com/atellaluca](https://github.com/atellaluca)
+Basilicata, Italy · Email: [info@atellaluca.com](mailto:info@atellaluca.com) · GitHub: [github.com/atellaluca](https://github.com/atellaluca) · LinkedIn: [linkedin.com/in/luca-atella](https://www.linkedin.com/in/luca-atella/)
 
 [Download PDF](assets/cv/Luca-Atella-CV.pdf){ .md-button .md-button--primary }
 
@@ -9,9 +17,9 @@ Basilicata, Italy · Email: [info@atellaluca.com](mailto:info@atellaluca.com) ·
 
 ## Profile
 
-Software architect with a backend and platform engineering background, focused on **modular systems, cloud-portable architectures, runtime governance, and long-lived backend platforms**.
+Software architect with a backend and platform engineering background, focused on modular systems, cloud-portable architectures, runtime validation, and long-lived backend platforms.
 
-I design systems where infrastructure abstraction, explicit runtime boundaries, operational reliability, and maintainability are part of the architecture from the beginning.
+I design systems where infrastructure choices, runtime boundaries, operational reliability, and maintainability are considered from the beginning instead of added late in the project.
 
 My experience spans plugin-based backend frameworks, IoT and edge platforms, cloud deployment pipelines, AWS serverless architectures, runtime contract validation, and integration-heavy systems.
 

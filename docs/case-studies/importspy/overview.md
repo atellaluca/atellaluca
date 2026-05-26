@@ -1,3 +1,11 @@
+---
+title: "ImportSpy | Runtime Contract Validation for Modular Python Systems"
+description: "ImportSpy case study by Luca Atella: open-source Python runtime contract engine for modular systems, plugin validation, architectural boundaries and deterministic diagnostics."
+image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
+image_alt: "ImportSpy runtime contract validation for modular Python systems by Luca Atella"
+schema_type: "SoftwareSourceCode"
+---
+
 # ImportSpy — Runtime Import Contracts for Modular Python Systems
 
 **Type:** Open-source software project  

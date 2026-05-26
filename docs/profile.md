@@ -1,8 +1,16 @@
+---
+title: "Technical Profile | Luca Atella Software Architect"
+description: "Technical profile of Luca Atella, software architect focused on backend platforms, AWS serverless systems, FastAPI, modular Python, runtime contracts, IoT and Digital Twin architectures."
+image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
+image_alt: "Technical profile of Luca Atella software architect and backend engineer"
+schema_type: "ProfilePage"
+---
+
 # Luca Atella — Software Architect
 
-I design and build backend and platform systems where **reliability, extensibility, cloud portability, and long-term maintainability** matter more than short-term convenience.
+I design and build backend and platform systems for products that need to be reliable, extensible, and understandable over time.
 
-My work focuses on modular architectures, runtime governance, cloud-portable deployment models, and integration-heavy platforms, with a strong emphasis on making complex systems predictable, debuggable, and evolution-friendly.
+My work focuses on modular architectures, cloud-portable deployment models, runtime validation, and integration-heavy backends. In practice, that means I spend a lot of time on boundaries: where domain logic ends, where infrastructure begins, how components communicate, and how failures are detected.
 
 Over the years, I have worked on:
 
@@ -16,9 +24,13 @@ Over the years, I have worked on:
 - integration backends
 - runtime validation engines
 
-I tend to operate at the intersection between **software engineering and system design**, where technical decisions have architectural consequences over time.
+I tend to operate where software engineering meets system design: the place where technical choices shape how easy the system will be to evolve, deploy, debug, and trust.
 
-Rather than building isolated features, I design **execution models**, **contracts**, **infrastructure boundaries**, and **structural interfaces** that make systems easier to evolve without breaking production.
+Rather than focusing only on isolated features, I design execution models, contracts, infrastructure boundaries, and structural interfaces that help a system grow without becoming harder to control.
+
+I am based in Basilicata, Italy, and I am open to remote or hybrid collaborations where backend architecture, platform engineering, AWS deployment, runtime validation, or integration-heavy systems are central to the work.
+
+[LinkedIn](https://www.linkedin.com/in/luca-atella/) · [GitHub](https://github.com/atellaluca) · [Email](mailto:info@atellaluca.com)
 
 ---
 
@@ -40,7 +52,7 @@ My core areas of focus include:
 
 ## How I Think About Systems
 
-I approach software as a **living system**, not as a collection of scripts or endpoints.
+I approach software as a system that will keep changing, not as a one-time delivery.
 
 That means:
 
@@ -75,7 +87,7 @@ I am currently focused on:
 - exploring edge/cloud architectures for IoT and Digital Twin scenarios
 - deepening my expertise in distributed systems and DevSecOps
 
-You can explore concrete examples of this approach in the following case studies:
+Concrete examples:
 
 - [Cloud-Portable Fleet Management Platform](case-studies/cloud-portable-fleet-platform/overview.md)
 - [ImportSpy](case-studies/importspy/overview.md)

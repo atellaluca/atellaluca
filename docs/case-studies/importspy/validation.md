@@ -1,3 +1,11 @@
+---
+title: "Runtime Validation Engine | ImportSpy Python Contract System"
+description: "Design of the ImportSpy runtime validation engine for modular Python systems, deterministic checks, contract loading, failure reporting and CI/CD validation."
+image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
+image_alt: "ImportSpy runtime validation engine for Python contract systems"
+schema_type: "TechArticle"
+---
+
 # Designing a Runtime Validation Engine  
 
 ## The Problem

@@ -1,27 +1,37 @@
-# Luca Atella  
+---
+title: "Luca Atella | Software Architect, Backend Platform Engineer"
+description: "Portfolio of Luca Atella, software architect and backend platform engineer focused on AWS, FastAPI, cloud-portable backend architecture, runtime contract validation, IoT and Digital Twin systems."
+image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
+image_alt: "Luca Atella software architect and backend platform engineer portfolio"
+schema_type: "ProfilePage"
+---
+
+# Luca Atella
 ## Software Architect · Backend & Platform Engineering
 
-**Modular backend systems, cloud-portable architectures, runtime governance, and long-lived software platforms.**
+**I design backend platforms that are clear to extend, reliable in production, and not locked to one runtime or cloud provider.**
 
-I design modular backend and cloud-portable systems where infrastructure abstraction, runtime boundaries, and operational reliability are part of the architecture from the beginning.
+My work sits between backend engineering, system design, cloud infrastructure, and developer tooling. I like projects where the system has to last: multiple environments, real users, integrations, operational constraints, and architecture that must remain understandable after the first release.
+
+I am based in Basilicata, Italy, and I work well with teams that need calm technical ownership across backend architecture, cloud deployment, integration-heavy systems, and long-term platform evolution.
 
 ---
 
 <div class="portfolio-proof-grid" markdown>
 
 <div class="portfolio-proof" markdown>
-**Production platform**  
-Cloud-portable fleet management system adopted in a real business context.
+**Production platform**
+A fleet management platform adopted in a real business context and designed to run locally or on AWS.
 </div>
 
 <div class="portfolio-proof" markdown>
-**Open-source architecture**  
-ImportSpy brings runtime contracts and governance to modular Python systems.
+**Open-source architecture**
+ImportSpy makes architectural assumptions explicit in modular Python systems.
 </div>
 
 <div class="portfolio-proof" markdown>
-**Geospatial pipeline**  
-B3DO transforms public terrain data into 3D Basilicata models.
+**Geospatial pipeline**
+B3DO turns public terrain datasets into 3D models of Basilicata.
 </div>
 
 </div>
@@ -30,15 +40,15 @@ B3DO transforms public terrain data into 3D Basilicata models.
 
 ## Current Focus
 
-My current work and case studies focus on:
+Right now I am focused on:
 
-- cloud-portable backend architectures
-- AWS serverless and managed-service deployment models
-- runtime governance for modular systems
-- infrastructure abstraction and deployment boundaries
+- backend platforms that can evolve without constant rewrites
+- AWS serverless deployments with clear infrastructure boundaries
+- modular systems, plugins, and runtime validation
+- local development environments that mirror production behavior
 - geospatial and data-to-model processing pipelines
-- edge/cloud integration for IoT and Digital Twin scenarios
-- long-lived software platforms designed for operational reliability
+- IoT, edge/cloud integration, and Digital Twin architectures
+- operational reliability: logs, deployment scripts, permissions, and production visibility
 
 ---
 
@@ -50,15 +60,15 @@ My current work and case studies focus on:
 
 ### Cloud-Portable Fleet Management Platform
 
-A full-stack fleet management platform designed with infrastructure abstraction, containerized local development, and AWS production deployment.
+A production-adopted fleet management platform for vehicles, users, reservations, trips, refueling, maintenance, documents, and reports.
 
-Key characteristics:
+What matters about it:
 
 - FastAPI backend and React/TypeScript frontend
-- repository and storage abstraction layers
-- local Docker Compose environment with DynamoDB Local and MinIO
-- AWS deployment using Lambda, ECR, DynamoDB, S3, CloudFront, CloudFormation, and CloudWatch
-- adopted in production in a real business context
+- same application structure for local development and AWS production
+- repository and storage interfaces instead of cloud-specific business logic
+- Docker Compose with DynamoDB Local and MinIO
+- AWS deployment with Lambda, ECR, DynamoDB, S3, CloudFront, CloudFormation, and CloudWatch
 
 → [Explore cloud-portable case study](case-studies/cloud-portable-fleet-platform/overview.md)
 
@@ -68,13 +78,11 @@ Key characteristics:
 
 ### ImportSpy — Runtime Contract Engine
 
-A declarative runtime contract system for Python modules that enforces:
+An open-source Python project for checking module contracts at runtime.
 
-- structural and contextual invariants
-- architectural boundaries
-- minimum execution requirements
+It helps modular systems fail early when a plugin, module, or integration does not respect the expected structure or execution context.
 
-It is designed for modular backends, plugin ecosystems, embedded runtimes, and CI/CD validation.
+Useful for plugin ecosystems, modular backends, embedded runtimes, and CI/CD validation.
 
 → [Explore ImportSpy case study](case-studies/importspy/overview.md)
 
@@ -84,9 +92,9 @@ It is designed for modular backends, plugin ecosystems, embedded runtimes, and C
 
 ### B3DO — Basilicata 3D Open
 
-A geospatial processing pipeline for turning public Basilicata terrain datasets into 3D terrain models.
+A geospatial pipeline that converts public Basilicata terrain datasets into textured 3D terrain models.
 
-Key characteristics:
+The project covers:
 
 - DTM tile merge, regional boundary extraction, and raster clipping
 - multi-resolution LOD generation for 3D terrain meshes
@@ -102,9 +110,9 @@ Key characteristics:
 
 ### IoT Data Aggregation Architecture
 
-A conceptual edge-to-cloud architecture for heterogeneous IoT data acquisition and aggregation in Digital Twin scenarios.
+An edge-to-cloud reference architecture for collecting heterogeneous IoT data and making it usable in Digital Twin systems.
 
-Key characteristics:
+It covers:
 
 - edge acquisition from cameras, sensors, and devices
 - BLE/Zigbee mesh and gateway communication
@@ -121,21 +129,20 @@ Key characteristics:
 
 ## Methodology Snapshot
 
-My engineering approach is grounded in:
+I usually work from a few simple principles:
 
-- contract-first system design
-- architectural invariants as first-class citizens
-- explicit runtime governance
-- deterministic validation and diagnostics
-- modular execution boundaries
-- infrastructure abstraction
-- long-term maintainability over short-term optimization
+- make assumptions visible
+- keep domain logic separate from infrastructure choices
+- validate important boundaries early
+- make failures understandable
+- design local, staging, and production environments as part of the same system
+- prefer maintainability and operational clarity over clever shortcuts
 
 ---
 
 ## Typical Application Domains
 
-My work is particularly relevant for:
+This portfolio is most relevant to:
 
 - cloud-portable backend platforms
 - AWS and serverless application architectures
@@ -149,14 +156,32 @@ My work is particularly relevant for:
 
 ---
 
-## Explore Further
+## Work Conversations
 
-- [Technical Profile](profile.md)  
-- [Case Studies](case-studies/index.md)  
-- [Curriculum Vitae](cv.md)  
-- [Methodology](methodology.md)  
-- [Contact](contact.md)  
+The best fit is usually a project where backend architecture, deployment, integrations, or maintainability are starting to matter as much as feature delivery.
+
+I am especially interested in conversations around:
+
+- backend and platform architecture
+- AWS and cloud-portable deployments
+- modular systems and runtime validation
+- IoT, telemetry, and integration backends
+- geospatial and data-processing pipelines
+- technical direction for long-lived software products
+
+→ [Contact me](contact.md) · [LinkedIn](https://www.linkedin.com/in/luca-atella/)
 
 ---
 
-*This site documents selected architectural work, production-oriented systems, and system design case studies.*
+## Explore Further
+
+- [Technical Profile](profile.md)
+- [Case Studies](case-studies/index.md)
+- [Curriculum Vitae](cv.md)
+- [Methodology](methodology.md)
+- [Contact](contact.md)
+- [LinkedIn](https://www.linkedin.com/in/luca-atella/)
+
+---
+
+*This site collects selected projects, architectural notes, and case studies from my backend and platform engineering work.*

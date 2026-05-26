@@ -1,3 +1,11 @@
+---
+title: "Runtime Contracts | Safe Python Module Integration with ImportSpy"
+description: "Deep dive into ImportSpy runtime contracts for safe Python module integration, structural constraints, execution requirements and plugin compatibility validation."
+image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
+image_alt: "Runtime contracts for safe Python module integration with ImportSpy"
+schema_type: "TechArticle"
+---
+
 # Runtime Contracts for Safe Module Integration  
 
 ## Why Runtime Contracts?

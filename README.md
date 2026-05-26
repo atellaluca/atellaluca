@@ -2,64 +2,73 @@
 
 **Software Architect · Backend Engineer · Systems Designer**
 
-I design and build backend systems with a strong focus on:
+This repository contains my technical portfolio: selected case studies, architecture notes, and profile material.
 
-- modular and plugin-based architectures  
-- runtime validation and contract-driven design  
-- scalable backend platforms  
-- reliability and failure semantics  
-- developer tooling and system foundations  
+I design and build backend and platform systems with a focus on:
 
-My work sits at the intersection of software architecture, applied research,  
-and production-grade backend engineering.
+- modular and plugin-based architectures
+- runtime validation and contract-driven design
+- cloud-portable backend platforms
+- reliability, observability, and clear failure semantics
+- developer tooling and system foundations
 
----
-
-## 🔍 Areas of Focus
-
-- Runtime contracts and validation systems  
-- Plugin-based and modular backends  
-- Declarative DSLs for system governance  
-- Fault isolation and fail-fast design  
-- Data ingestion and validation pipelines  
-- Distributed and cluster-ready architectures  
-- Unified backends for heterogeneous data sources  
-- Backend platforms for IoT and smart environments  
-- Developer tooling for reliability and safety  
+My work sits at the intersection of software architecture, production backend engineering, cloud infrastructure, and system design.
 
 ---
 
-## 🧠 Selected Work
+## Areas of Focus
 
-### ImportSpy  
-A runtime contract and validation framework for Python modules,  
-designed around declarative contracts, formal failure semantics,  
-and provider–consumer integration models.
+- Runtime contracts and validation systems
+- Plugin-based and modular backends
+- Declarative DSLs for system governance
+- Fault isolation and fail-fast design
+- Data ingestion and validation pipelines
+- Distributed and cluster-ready architectures
+- Unified backends for heterogeneous data sources
+- Backend platforms for IoT and smart environments
+- Developer tooling for reliability and safety
+
+---
+
+## Selected Work
+
+### ImportSpy
+A runtime contract and validation framework for Python modules.
+
+It is designed around declarative contracts, clear failure semantics, and provider-consumer integration models.
 
 Key concepts:
 
-- runtime contracts and baseline constraints  
-- declarative DSLs for contract modeling  
-- rule-based validation engine  
-- structured violation and diagnostics system  
-- fail-fast integration semantics  
+- runtime contracts and baseline constraints
+- declarative DSLs for contract modeling
+- rule-based validation engine
+- structured violation and diagnostics system
+- fail-fast integration semantics
 
 ---
 
-## 🌐 Technical Profile & Case Studies
+## Technical Profile & Case Studies
 
 A curated, architecture-focused presentation of my work is available on my [portfolio page](https://profile.atellaluca.com).
 
 It includes:
 
-- deep-dive case studies  
-- system design and architectural rationale  
-- validation and contract models  
-- modular backend architectures  
-- reliability and diagnostics systems  
+- deep-dive case studies
+- system design and architectural rationale
+- validation and contract models
+- modular backend architectures
+- reliability and diagnostics systems
+
+The portfolio is bilingual:
+
+- English is served from the root path (`/`)
+- Italian is served from `/it/`
+- browser language detection redirects Italian-language visitors to the Italian version on first visit
+- Material for MkDocs language alternates keep the language switcher and SEO `hreflang` links aligned
 
 ---
 
-## 📬 Contact
+## Contact
 
-- ✉️ E-mail: info@atellaluca.com
+- E-mail: [info@atellaluca.com](mailto:info@atellaluca.com)
+- LinkedIn: [linkedin.com/in/luca-atella](https://www.linkedin.com/in/luca-atella/)

@@ -1,3 +1,11 @@
+---
+title: "Engineering Methodology | Backend Architecture and Runtime Contracts"
+description: "Luca Atella engineering methodology for backend architecture, explicit contracts, runtime validation, infrastructure boundaries, observability and maintainable platform systems."
+image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
+image_alt: "Luca Atella engineering methodology for backend architecture"
+schema_type: "TechArticle"
+---
+
 # Methodology
 
 My approach to software engineering is **architecture-first** rather than feature-first.

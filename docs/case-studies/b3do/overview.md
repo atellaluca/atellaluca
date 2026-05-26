@@ -1,3 +1,11 @@
+---
+title: "B3DO | Geospatial Pipeline for 3D Terrain Models"
+description: "B3DO case study by Luca Atella: Python geospatial data pipeline using GDAL, Rasterio, NumPy and PyVista to generate 3D terrain models from Basilicata open data."
+image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
+image_alt: "B3DO geospatial pipeline for 3D terrain model generation by Luca Atella"
+schema_type: "TechArticle"
+---
+
 # B3DO — Basilicata 3D Open
 
 **Type:** Geospatial processing pipeline  
