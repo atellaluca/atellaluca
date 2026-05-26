@@ -1,8 +1,8 @@
 ---
 title: "CV Luca Atella | Software Architect, Backend Engineer, AWS Certified"
-description: "Curriculum vitae di Luca Atella: software architect, backend platform engineer e AWS certified con esperienza in FastAPI, DynamoDB, serverless, IoT e sistemi modulari."
+description: "Curriculum vitae di Luca Atella: Software Architect, backend platform engineer e AWS certified con esperienza in FastAPI, DynamoDB, serverless, IoT e sistemi modulari."
 image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
-image_alt: "CV di Luca Atella software architect backend engineer AWS certified"
+image_alt: "CV di Luca Atella Software Architect backend engineer AWS certified"
 schema_type: "ProfilePage"
 ---
 
@@ -17,7 +17,7 @@ Basilicata, Italy · Email: [info@atellaluca.com](mailto:info@atellaluca.com) ·
 
 ## Profilo
 
-Software architect con background in backend e platform engineering, focalizzato su sistemi modulari, architetture cloud-portable, runtime validation e piattaforme backend long-lived.
+Software Architect con background in backend e platform engineering, focalizzato su sistemi modulari, architetture cloud-portable, runtime validation e piattaforme backend pensate per durare.
 
 Progetto sistemi in cui scelte infrastrutturali, confini runtime, affidabilità operativa e manutenibilità vengono considerate dall’inizio.
 
@@ -58,9 +58,9 @@ Progetto sistemi in cui scelte infrastrutturali, confini runtime, affidabilità 
 - Contract-driven design
 - Infrastructure abstraction
 - Edge/cloud integration
-- IoT e Digital Twin concepts
+- concetti IoT e Digital Twin
 - Geospatial data processing
-- Developer tooling e CLI workflows
+- developer tooling e workflow CLI
 
 ---
 
@@ -69,7 +69,7 @@ Progetto sistemi in cui scelte infrastrutturali, confini runtime, affidabilità 
 ### Software Architect / Backend & Platform Engineer — Vemar S.A.S.
 **April 2021 - October 2024**
 
-Ho progettato e sviluppato la core backend architecture per sistemi IoT distribuiti e integrazioni con dispositivi eterogenei.
+Ho progettato e sviluppato l’architettura backend principale per sistemi IoT distribuiti e integrazioni con dispositivi eterogenei.
 
 Responsabilità principali:
 
@@ -78,7 +78,7 @@ Responsabilità principali:
 - definizione di REST API contracts e struttura backend
 - progettazione di confini di caricamento ed esecuzione plugin
 - introduzione di workflow Docker-based
-- supporto a decisioni backend/frontend e deployment operations
+- supporto a decisioni backend/frontend e attività di deployment
 
 ---
 

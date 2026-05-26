@@ -1,6 +1,6 @@
 ---
 title: "Declarative UI Schema | Widget DSL per Backend Eterogenei"
-description: "Caso studio declarative UI schema per interfacce backend-driven, widget DSL, dispositivi eterogenei e contratti frontend-backend manutenibili."
+description: "Caso studio declarative UI schema per interfacce guidate dal backend, widget DSL, dispositivi eterogenei e contratti frontend-backend manutenibili."
 image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
 image_alt: "Declarative UI schema e widget DSL per backend eterogenei"
 schema_type: "TechArticle"

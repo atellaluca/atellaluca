@@ -11,15 +11,15 @@ schema_type: "TechArticle"
 **Tipo:** applicazione cloud adottata in produzione  
 **Ruolo:** Software Architect · Backend Engineer · Cloud Deployment  
 **Periodo:** 2026  
-**Dominio:** fleet management, backend systems, AWS, cloud-portable architecture  
+**Dominio:** fleet management, sistemi backend, AWS, cloud-portable architecture
 
 ---
 
-## Overview
+## Panoramica
 
 Questo caso studio descrive una piattaforma full-stack per gestire operazioni su veicoli aziendali: utenti, auto, prenotazioni, viaggi, rifornimenti, manutenzioni, documenti, statistiche e report.
 
-La scelta architetturale più importante è stata separare la logica applicativa dai servizi cloud usati in produzione. AWS è il target produttivo, non il modello mentale dell’applicazione.
+La scelta architetturale più importante è stata separare la logica applicativa dai servizi cloud usati in produzione. AWS è l’ambiente di produzione, non il modello mentale dell’applicazione.
 
 ---
 
@@ -86,7 +86,7 @@ Il backend FastAPI include:
 
 ## Deployment AWS
 
-Il backend viene pacchettizzato come container image, pubblicato su ECR ed eseguito su AWS Lambda tramite Mangum. DynamoDB gestisce la persistenza, S3 conserva documenti e ricevute, CloudWatch raccoglie i log applicativi.
+Il backend viene pacchettizzato come immagine container, pubblicato su ECR ed eseguito su AWS Lambda tramite Mangum. DynamoDB gestisce la persistenza, S3 conserva documenti e ricevute, CloudWatch raccoglie i log applicativi.
 
 Il frontend React/TypeScript viene distribuito come build statica su S3 privata e servito tramite CloudFront con Origin Access Control.
 
@@ -96,11 +96,11 @@ Il frontend React/TypeScript viene distribuito come build statica su S3 privata 
 
 Questo progetto dimostra esperienza in:
 
-- cloud-portable application architecture
-- AWS serverless deployment
-- backend architecture con FastAPI
+- architettura applicativa cloud-portable
+- deployment serverless su AWS
+- architettura backend con FastAPI
 - infrastructure abstraction
 - ambienti locali Docker Compose
 - Infrastructure as Code con CloudFormation
-- osservabilità production-oriented
-- delivery di un’applicazione reale
+- osservabilità orientata alla produzione
+- rilascio di un’applicazione reale

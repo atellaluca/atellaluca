@@ -15,11 +15,11 @@ schema_type: "TechArticle"
 
 ---
 
-## Overview
+## Panoramica
 
 B3DO è una pipeline Python pensata per trasformare dataset pubblici del territorio lucano in modelli 3D del terreno.
 
-Il progetto nasce dall’interesse per Basilicata, open data e sistemi di processing riproducibili: non un workflow GIS manuale, ma una pipeline tecnica che separa sorgenti, dati processati, artifact intermedi e modelli finali.
+Il progetto nasce dall’interesse per Basilicata, open data e sistemi di elaborazione riproducibili: non un flusso GIS manuale, ma una pipeline tecnica che separa sorgenti, dati processati, artefatti intermedi e modelli finali.
 
 ---
 
@@ -50,6 +50,6 @@ Il progetto nasce dall’interesse per Basilicata, open data e sistemi di proces
 
 ## Valore Architetturale
 
-B3DO dimostra come principi di backend architecture possano essere applicati anche a pipeline dati: input espliciti, step riproducibili, separazione degli artifact, diagnostica e workflow CLI.
+B3DO dimostra come principi di backend architecture possano essere applicati anche a pipeline dati: input espliciti, step riproducibili, separazione degli artefatti, diagnostica e workflow CLI.
 
 È anche un progetto legato al territorio: usa dati pubblici della Basilicata per generare rappresentazioni tecniche e visive del territorio lucano.

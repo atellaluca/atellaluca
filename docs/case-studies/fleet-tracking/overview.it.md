@@ -1,6 +1,6 @@
 ---
 title: "Backend Telemetria Fleet Real-Time | Architettura GPS e CAN Bus"
-description: "Caso studio fleet tracking backend di Luca Atella per real-time telemetry ingestion, GPS e CAN bus data normalization, APIs, comunicazione sicura e sistemi logistici."
+description: "Caso studio fleet tracking backend di Luca Atella per ingestione real-time della telemetria, normalizzazione dati GPS e CAN bus, API, comunicazione sicura e sistemi logistici."
 image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
 image_alt: "Backend real-time fleet telemetry architecture"
 schema_type: "TechArticle"
@@ -22,7 +22,7 @@ Questo caso studio descrive un backend per ingestione, normalizzazione e esposiz
 - normalizzazione dati GPS e CAN bus
 - API per monitoraggio e analytics
 - comunicazione sicura con dispositivi
-- separazione tra protocol handling e business logic
+- separazione tra gestione dei protocolli e business logic
 - affidabilità in ambienti misti embedded/cloud
 
 ---

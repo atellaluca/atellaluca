@@ -1,12 +1,12 @@
 ---
 title: "Runtime Validation Engine | Sistema di Contratti Python ImportSpy"
-description: "Design del runtime validation engine di ImportSpy per sistemi Python modulari: controlli deterministici, contract loading, failure reporting e CI/CD validation."
+description: "Design del runtime validation engine di ImportSpy per sistemi Python modulari: controlli deterministici, caricamento dei contratti, diagnostica degli errori e validazione CI/CD."
 image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
 image_alt: "Runtime validation engine ImportSpy per sistemi Python modulari"
 schema_type: "TechArticle"
 ---
 
-# Designing a Runtime Validation Engine
+# Progettare un Runtime Validation Engine
 
 ## Il Problema
 
@@ -29,8 +29,8 @@ ImportSpy sposta la validazione al momento dell’import.
 ## Obiettivi del Motore
 
 - essere deterministico
-- produrre failure leggibili
-- supportare nuove rules senza riscrivere il core
+- produrre errori leggibili
+- supportare nuove regole senza riscrivere il core
 - rimanere indipendente dal dominio applicativo
 - funzionare sia in runtime sia in pipeline di validazione
 
@@ -38,4 +38,4 @@ ImportSpy sposta la validazione al momento dell’import.
 
 ## Risultato
 
-Il validation engine trasforma l’import dinamico da punto fragile a boundary controllata, riducendo il rischio di moduli incompatibili in sistemi plugin-based.
+Il validation engine trasforma l’import dinamico da punto fragile a confine controllato, riducendo il rischio di moduli incompatibili in sistemi plugin-based.

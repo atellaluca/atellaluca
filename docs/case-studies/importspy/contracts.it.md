@@ -1,6 +1,6 @@
 ---
 title: "Runtime Contracts | Integrazione Sicura di Moduli Python con ImportSpy"
-description: "Deep dive sui runtime contracts di ImportSpy per integrazione sicura di moduli Python, vincoli strutturali, execution requirements e plugin compatibility validation."
+description: "Approfondimento sui runtime contracts di ImportSpy per integrazione sicura di moduli Python, vincoli strutturali, requisiti di esecuzione e validazione della compatibilità dei plugin."
 image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
 image_alt: "Runtime contracts per integrazione sicura di moduli Python con ImportSpy"
 schema_type: "TechArticle"
@@ -29,14 +29,14 @@ ImportSpy rende queste assunzioni esplicite tramite contratti dichiarativi.
 
 ## Beneficio Architetturale
 
-Il contratto diventa una boundary machine-readable tra provider e consumer. Questo riduce coupling nascosto, documentazione fragile e failure tardivi.
+Il contratto diventa un confine leggibile dalla macchina tra provider e consumer. Questo riduce coupling nascosto, documentazione fragile ed errori tardivi.
 
 ---
 
-## Use Case
+## Scenari d'Uso
 
-- plugin ecosystems
-- modular backends
-- embedded runtime
-- CI/CD validation
+- ecosistemi plugin-based
+- backend modulari
+- runtime embedded
+- validazione CI/CD
 - sicurezza operativa in sistemi long-running

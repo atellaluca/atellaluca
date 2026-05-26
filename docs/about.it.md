@@ -1,6 +1,6 @@
 ---
 title: "Chi è Luca Atella | Backend Architecture e Platform Engineering"
-description: "Chi è Luca Atella: software architect lucano e backend platform engineer che lavora su sistemi modulari, architetture cloud-portable, runtime validation, IoT e pipeline geospaziali."
+description: "Chi è Luca Atella: Software Architect lucano e backend platform engineer che lavora su sistemi modulari, architetture cloud-portable, runtime validation, IoT e pipeline geospaziali."
 image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
 image_alt: "Profilo di Luca Atella backend architecture e platform engineering"
 schema_type: "AboutPage"
@@ -19,28 +19,28 @@ Sono lucano, della Basilicata. Questo per me non è solo un dato geografico: sig
 ## Cosa Mi Interessa
 
 - software architecture
-- runtime systems
+- sistemi runtime
 - modular design
-- integration platforms
+- piattaforme di integrazione
 - developer tooling
-- cloud-native infrastructure
-- geospatial e data-processing pipelines
+- infrastrutture cloud-native
+- pipeline geospaziali e di elaborazione dati
 
 Mi interessano soprattutto problemi in cui:
 
 - i sistemi evolvono nel tempo
 - i componenti vengono caricati dinamicamente
 - gli ambienti sono eterogenei
-- i failure devono essere capiti presto
+- gli errori devono essere intercettati e compresi presto
 - le integrazioni devono restare prevedibili
 
 ---
 
-## Background
+## Esperienza
 
-Ho lavorato su backend modulari, sistemi IoT ed edge, infrastrutture containerizzate, API real-time, plugin architecture, runtime validation engine e pipeline di generazione terrain/model.
+Ho lavorato su backend modulari, sistemi IoT ed edge, infrastrutture containerizzate, API real-time, plugin architecture, runtime validation engine e pipeline di generazione di modelli 3D del terreno.
 
-Non mi definisco attraverso un singolo framework. Mi interessano pattern trasferibili: confini espliciti, contratti chiari, failure leggibili e deployment model che i team possano eseguire e comprendere.
+Non mi definisco attraverso un singolo framework. Mi interessano pattern trasferibili: confini espliciti, contratti chiari, errori leggibili e modelli di deployment che i team possano eseguire e comprendere.
 
 ---
 

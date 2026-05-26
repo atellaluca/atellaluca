@@ -1,6 +1,6 @@
 ---
 title: "Architettura ImportSpy | Runtime Validation Engine per Moduli Python"
-description: "Architettura di ImportSpy, framework di Luca Atella per runtime validation di moduli Python, contratti provider-consumer, plugin safety e governance architetturale."
+description: "Architettura di ImportSpy, framework di Luca Atella per runtime validation di moduli Python, contratti provider-consumer, sicurezza dei plugin e governance architetturale."
 image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
 image_alt: "Architettura ImportSpy per runtime validation Python"
 schema_type: "TechArticle"
@@ -18,11 +18,11 @@ L’idea è trattare l’import non come un semplice dettaglio tecnico, ma come 
 
 Il sistema è composto da:
 
-- import interception layer
-- contract definition layer
+- layer di intercettazione degli import
+- layer di definizione dei contratti
 - validation engine
-- execution context inspection
-- structured violation model
+- ispezione del contesto di esecuzione
+- modello strutturato delle violazioni
 
 Questi elementi permettono di validare struttura del modulo, ambiente runtime, variabili richieste, OS, versione Python e requisiti contestuali.
 
@@ -30,14 +30,14 @@ Questi elementi permettono di validare struttura del modulo, ambiente runtime, v
 
 ## Perché Conta
 
-Nei sistemi plugin-based, un componente incompatibile può causare errori tardivi e difficili da diagnosticare. ImportSpy porta la validazione all’ingresso del modulo, rendendo i failure più prevedibili.
+Nei sistemi plugin-based, un componente incompatibile può causare errori tardivi e difficili da diagnosticare. ImportSpy porta la validazione all’ingresso del modulo, rendendo gli errori più prevedibili.
 
 ---
 
 ## Proprietà Chiave
 
 - contratti dichiarativi
-- failure deterministici
+- errori deterministici
 - basso coupling con l’applicazione
 - diagnostica strutturata
 - estendibilità del validation engine

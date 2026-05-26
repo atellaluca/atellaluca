@@ -1,8 +1,8 @@
 ---
 title: "Profilo Tecnico | Luca Atella Software Architect"
-description: "Profilo tecnico di Luca Atella, software architect e backend platform engineer focalizzato su AWS, FastAPI, modular Python, runtime contracts, IoT e Digital Twin."
+description: "Profilo tecnico di Luca Atella, Software Architect e backend platform engineer focalizzato su AWS, FastAPI, Python modulare, runtime contracts, IoT e Digital Twin."
 image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
-image_alt: "Profilo tecnico di Luca Atella software architect e backend engineer"
+image_alt: "Profilo tecnico di Luca Atella Software Architect e backend engineer"
 schema_type: "ProfilePage"
 ---
 
@@ -10,9 +10,9 @@ schema_type: "ProfilePage"
 
 Progetto e costruisco sistemi backend e piattaforme software per prodotti che devono essere affidabili, estendibili e comprensibili nel tempo.
 
-Il mio lavoro riguarda architetture modulari, deployment cloud-portable, runtime validation e backend con molte integrazioni. In pratica, passo molto tempo sui confini: dove finisce la logica di dominio, dove inizia l’infrastruttura, come comunicano i componenti e come vengono intercettati i failure.
+Il mio lavoro riguarda architetture modulari, deployment cloud-portable, runtime validation e backend con molte integrazioni. In pratica, passo molto tempo sui confini: dove finisce la logica di dominio, dove inizia l’infrastruttura, come comunicano i componenti e come vengono intercettati gli errori.
 
-Sono basato in Basilicata, Italia, e sono aperto a collaborazioni remote o ibride dove backend architecture, platform engineering, AWS deployment, runtime validation o sistemi integration-heavy sono centrali.
+Vivo in Basilicata, in Italia, e sono aperto a collaborazioni da remoto o in modalità ibrida in cui backend architecture, platform engineering, deployment AWS, runtime validation o sistemi ricchi di integrazioni sono centrali.
 
 [LinkedIn](https://www.linkedin.com/in/luca-atella/) · [GitHub](https://github.com/atellaluca) · [Email](mailto:info@atellaluca.com)
 
@@ -54,8 +54,8 @@ Sto approfondendo:
 
 - backend cloud-portable
 - uso di AWS con confini infrastrutturali chiari
-- runtime safety per piattaforme modulari
-- developer tooling per backend long-lived
+- sicurezza runtime per piattaforme modulari
+- developer tooling per backend pensati per durare
 - pipeline geospaziali
 - architetture edge/cloud per IoT e Digital Twin
 

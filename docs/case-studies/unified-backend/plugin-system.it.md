@@ -1,6 +1,6 @@
 ---
 title: "Plugin System Architecture | Backend Integration Platform Governata"
-description: "Deep dive sul plugin system per unified backend architecture: extension points, runtime boundaries, device integrations e platform design governato."
+description: "Approfondimento sul plugin system per unified backend architecture: extension point, confini runtime, integrazioni con dispositivi e platform design governato."
 image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
 image_alt: "Plugin system architecture per backend integration platform"
 schema_type: "TechArticle"
@@ -20,7 +20,7 @@ Permette al backend di integrare nuove sorgenti dati o famiglie di dispositivi s
 - isolamento della logica device-specific
 - contratti tra plugin e core
 - validazione dei plugin
-- failure contenuti
+- errori contenuti
 - sviluppo indipendente delle integrazioni
 
 ---

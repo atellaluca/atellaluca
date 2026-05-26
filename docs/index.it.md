@@ -1,8 +1,8 @@
 ---
 title: "Luca Atella | Software Architect e Backend Platform Engineer"
-description: "Portfolio di Luca Atella, software architect e backend platform engineer lucano focalizzato su AWS, FastAPI, architetture backend cloud-portable, runtime contract validation, IoT e Digital Twin."
+description: "Portfolio di Luca Atella, Software Architect e backend platform engineer lucano focalizzato su AWS, FastAPI, architetture backend cloud-portable, runtime contract validation, IoT e Digital Twin."
 image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
-image_alt: "Portfolio di Luca Atella software architect e backend platform engineer"
+image_alt: "Portfolio di Luca Atella Software Architect e backend platform engineer"
 schema_type: "ProfilePage"
 ---
 
@@ -11,9 +11,9 @@ schema_type: "ProfilePage"
 
 **Progetto architetture backend pensate per durare: chiare da estendere, affidabili in produzione e non legate rigidamente a un singolo cloud o runtime.**
 
-Lavoro tra backend engineering, system design, cloud infrastructure e developer tooling. Mi interessano i progetti in cui il sistema deve crescere nel tempo: più ambienti, utenti reali, integrazioni, vincoli operativi e decisioni architetturali che restano comprensibili anche dopo il primo rilascio.
+Lavoro tra backend engineering, system design, infrastruttura cloud e developer tooling. Mi interessano i progetti in cui il sistema deve crescere nel tempo: più ambienti, utenti reali, integrazioni, vincoli operativi e decisioni architetturali che restano comprensibili anche dopo il primo rilascio.
 
-Sono lucano, della Basilicata, e lavoro bene con team che hanno bisogno di ownership tecnica su backend architecture, deployment cloud, integrazioni complesse e piattaforme software pensate per evolvere.
+Sono lucano, della Basilicata, e lavoro bene con team che hanno bisogno di responsabilità tecnica su backend architecture, deployment su cloud, integrazioni complesse e piattaforme software pensate per evolvere.
 
 ---
 
@@ -24,7 +24,7 @@ Sono lucano, della Basilicata, e lavoro bene con team che hanno bisogno di owner
 - sistemi modulari, plugin e runtime validation
 - ambienti locali vicini al comportamento di produzione
 - IoT, edge/cloud integration e Digital Twin
-- pipeline geospaziali e data-to-model
+- pipeline geospaziali e trasformazione dati-modello
 - osservabilità, deployment, permessi e affidabilità operativa
 
 ---
@@ -66,7 +66,7 @@ Architettura edge-to-cloud per raccogliere dati IoT eterogenei e renderli utiliz
 
 ## Conversazioni di Lavoro
 
-Il fit migliore è un progetto in cui backend architecture, deployment, integrazioni o manutenibilità stanno diventando importanti quanto la delivery delle feature.
+Il contesto ideale è un progetto in cui backend architecture, deployment, integrazioni o manutenibilità stanno diventando importanti quanto il rilascio delle funzionalità.
 
 Sono particolarmente interessato a:
 
@@ -74,8 +74,8 @@ Sono particolarmente interessato a:
 - AWS e deployment cloud-portable
 - sistemi modulari e runtime validation
 - IoT, telemetria e backend di integrazione
-- pipeline geospaziali e data-processing
-- direzione tecnica per prodotti software long-lived
+- pipeline geospaziali e data processing
+- direzione tecnica per prodotti software pensati per durare
 
 → [Contattami](contact.md) · [LinkedIn](https://www.linkedin.com/in/luca-atella/)
 

@@ -18,7 +18,7 @@ Ogni pagina spiega il problema, la forma del sistema, le decisioni tecniche prin
 
 Piattaforma per gestione veicoli, prenotazioni, viaggi, rifornimenti, manutenzioni, documenti e report. È stata adottata in un contesto reale ed è stata progettata per girare localmente con Docker o in produzione su AWS.
 
-- Focus: cloud portability, infrastructure abstraction, production deployment
+- Focus: cloud portability, astrazione infrastrutturale, deployment in produzione
 - Topics: AWS, FastAPI, React, DynamoDB, S3, Docker Compose, CloudFormation
 
 → [Leggi il caso studio](cloud-portable-fleet-platform/overview.md)
@@ -27,8 +27,8 @@ Piattaforma per gestione veicoli, prenotazioni, viaggi, rifornimenti, manutenzio
 
 Progetto open-source Python per runtime contract validation di moduli e sistemi plugin-based.
 
-- Focus: runtime contracts, modular safety, architectural invariants
-- Topics: plugin governance, deterministic failure modes, validation models
+- Focus: runtime contracts, sicurezza modulare, invarianti architetturali
+- Topics: plugin governance, errori deterministici, modelli di validazione
 
 → [Leggi il caso studio](importspy/overview.md)
 
@@ -36,7 +36,7 @@ Progetto open-source Python per runtime contract validation di moduli e sistemi 
 
 Pipeline geospaziale per trasformare dataset pubblici di Basilicata in modelli 3D del terreno.
 
-- Focus: geospatial data processing, 3D model generation, reproducible pipelines
+- Focus: geospatial data processing, generazione di modelli 3D, pipeline riproducibili
 - Topics: GDAL, Rasterio, NumPy, PyVista, Fiona, Typer
 
 → [Leggi il caso studio](b3do/overview.md)

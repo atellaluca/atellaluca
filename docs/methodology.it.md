@@ -14,13 +14,13 @@ Il mio approccio è architecture-first: non significa progettare tutto in antici
 
 ## 1. Partire dagli Invarianti
 
-Prima delle feature identifico cosa deve restare vero: assunzioni, requisiti minimi, failure inaccettabili e condizioni di correttezza. Quando possibile, questi invarianti vengono documentati, modellati e validati a runtime.
+Prima delle feature identifico cosa deve restare vero: assunzioni, requisiti minimi, errori inaccettabili e condizioni di correttezza. Quando possibile, questi invarianti vengono documentati, modellati e validati a runtime.
 
 ---
 
 ## 2. Rendere Espliciti i Contratti
 
-Preferisco sistemi in cui interfacce, assunzioni e compatibilità siano verificabili. Questo può avvenire tramite schemi dichiarativi, validation rules, runtime contracts o controlli di versione.
+Preferisco sistemi in cui interfacce, assunzioni e compatibilità siano verificabili. Questo può avvenire tramite schemi dichiarativi, regole di validazione, runtime contracts o controlli di versione.
 
 ---
 
@@ -32,13 +32,13 @@ Un sistema estendibile non è solo un sistema con plugin. Servono extension poin
 
 ## 4. Fallire Presto e Chiaramente
 
-Un failure deterministico e diagnosticabile è preferibile a una corruzione silenziosa. Questo principio guida il modo in cui progetto validazione, error model e runtime checks.
+Un errore deterministico e diagnosticabile è preferibile a una corruzione silenziosa. Questo principio guida il modo in cui progetto validazione, modello degli errori e controlli runtime.
 
 ---
 
 ## 5. Trattare l’Infrastruttura Come Parte del Sistema
 
-Container, deployment, networking, secrets, logging e permission model non sono dettagli esterni. Fanno parte del modello di esecuzione e della strategia di affidabilità.
+Container, deployment, networking, secret, logging e modello dei permessi non sono dettagli esterni. Fanno parte del modello di esecuzione e della strategia di affidabilità.
 
 ---
 

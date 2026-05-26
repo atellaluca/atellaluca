@@ -1,6 +1,6 @@
 ---
 title: "Unified Backend Architecture | Piattaforma IoT Plugin-Based"
-description: "Caso studio unified backend di Luca Atella per sorgenti dati IoT eterogenee, plugin-based architecture, REST APIs, WebSockets, deployment workflows e piattaforme manutenibili."
+description: "Caso studio unified backend di Luca Atella per sorgenti dati IoT eterogenee, plugin-based architecture, REST API, WebSocket, workflow di deployment e piattaforme manutenibili."
 image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
 image_alt: "Unified backend architecture per sorgenti dati IoT eterogenee"
 schema_type: "TechArticle"
@@ -36,7 +36,7 @@ Il sistema è organizzato in layer:
 3. runtime validation
 4. service layer e API
 
-Ogni layer è pensato per essere testabile, sostituibile e scalabile.
+Ogni layer è progettato per essere testabile, sostituibile e scalabile.
 
 ---
 

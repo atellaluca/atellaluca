@@ -1,6 +1,6 @@
 ---
 title: "ImportSpy | Runtime Contract Validation per Python Modulare"
-description: "Caso studio ImportSpy di Luca Atella: runtime contract engine open-source per Python, plugin validation, confini architetturali e diagnostica deterministica."
+description: "Caso studio ImportSpy di Luca Atella: runtime contract engine open-source per Python, validazione dei plugin, confini architetturali e diagnostica deterministica."
 image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
 image_alt: "ImportSpy runtime contract validation per sistemi Python modulari"
 schema_type: "SoftwareSourceCode"
@@ -17,11 +17,11 @@ schema_type: "SoftwareSourceCode"
 
 ---
 
-## Overview
+## Panoramica
 
 ImportSpy è una libreria Python open-source progettata per applicare contratti runtime durante l’import dei moduli.
 
-Il problema nasce nei sistemi modulari, plugin-based ed estendibili: i componenti caricati dinamicamente spesso vengono considerati validi sulla base di assunzioni implicite. ImportSpy introduce un layer di validazione contract-driven che intercetta l’import e verifica struttura, contesto ed environment prima dell’esecuzione.
+Il problema nasce nei sistemi modulari, plugin-based ed estendibili: i componenti caricati dinamicamente spesso vengono considerati validi sulla base di assunzioni implicite. ImportSpy introduce un layer di validazione contract-driven che intercetta l’import e verifica struttura, contesto e ambiente prima dell’esecuzione.
 
 ---
 
@@ -34,7 +34,7 @@ Il sistema di import di Python non verifica automaticamente:
 - vincoli strutturali
 - condizioni minime di esecuzione
 
-Questo porta a failure tardivi, integrazioni fragili e debugging complesso.
+Questo porta a errori tardivi, integrazioni fragili e debugging complesso.
 
 ---
 
@@ -60,15 +60,15 @@ ImportSpy opera come pipeline di runtime governance:
 
 ---
 
-## Use Case
+## Scenari d'Uso
 
 ImportSpy è utile per:
 
-- plugin-based systems
+- sistemi plugin-based
 - backend modulari
 - CI/CD validation
-- IoT ed edge platforms
-- runtime environment sicuri
+- piattaforme IoT ed edge
+- ambienti runtime sicuri
 - sistemi Python long-running
 
 ---

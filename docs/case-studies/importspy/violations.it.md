@@ -1,6 +1,6 @@
 ---
 title: "Diagnostica Contratti | Violation System di ImportSpy"
-description: "Deep dive sul violation system di ImportSpy: diagnostica strutturata, error reporting deterministico e failure di runtime contracts per architetture Python modulari."
+description: "Approfondimento sul violation system di ImportSpy: diagnostica strutturata, error reporting deterministico e violazioni di runtime contracts per architetture Python modulari."
 image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
 image_alt: "Diagnostica contratti e violation system di ImportSpy"
 schema_type: "TechArticle"
@@ -10,7 +10,7 @@ schema_type: "TechArticle"
 
 ## Perché un Sistema di Violazioni
 
-Un runtime contract engine non deve limitarsi a lanciare eccezioni generiche. Deve spiegare cosa è fallito, quale contratto è stato violato e quale parte del contesto ha causato il problema.
+Un runtime contract engine non deve limitarsi a lanciare eccezioni generiche. Deve spiegare cosa non ha funzionato, quale contratto è stato violato e quale parte del contesto ha causato il problema.
 
 ---
 
@@ -27,7 +27,7 @@ Un runtime contract engine non deve limitarsi a lanciare eccezioni generiche. De
 ## Benefici
 
 - debugging più rapido
-- failure leggibili in CI/CD
+- errori leggibili in CI/CD
 - errori più utili per sviluppatori e operatori
 - separazione tra rilevazione del problema e presentazione diagnostica
 
@@ -35,4 +35,4 @@ Un runtime contract engine non deve limitarsi a lanciare eccezioni generiche. De
 
 ## Valore Architetturale
 
-Il violation system rende ImportSpy adatto a sistemi long-running, plugin ecosystems e ambienti dove l’incompatibilità di un modulo deve essere intercettata in modo chiaro e ripetibile.
+Il violation system rende ImportSpy adatto a sistemi long-running, ecosistemi plugin-based e ambienti dove l’incompatibilità di un modulo deve essere intercettata in modo chiaro e ripetibile.
