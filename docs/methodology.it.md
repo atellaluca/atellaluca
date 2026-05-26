@@ -14,7 +14,7 @@ Il mio approccio è architecture-first: non significa progettare tutto in antici
 
 ## 1. Partire dagli Invarianti
 
-Prima delle feature identifico cosa deve restare vero: assunzioni, requisiti minimi, errori inaccettabili e condizioni di correttezza. Quando possibile, questi invarianti vengono documentati, modellati e validati a runtime.
+Prima delle funzionalità identifico cosa deve restare vero: assunzioni, requisiti minimi, errori inaccettabili e condizioni di correttezza. Quando possibile, questi invarianti vengono documentati, modellati e validati a runtime.
 
 ---
 
@@ -38,10 +38,10 @@ Un errore deterministico e diagnosticabile è preferibile a una corruzione silen
 
 ## 5. Trattare l’Infrastruttura Come Parte del Sistema
 
-Container, deployment, networking, secret, logging e modello dei permessi non sono dettagli esterni. Fanno parte del modello di esecuzione e della strategia di affidabilità.
+Container, deployment, networking, secrets, logging e modello dei permessi non sono dettagli esterni. Fanno parte del modello di esecuzione e della strategia di affidabilità.
 
 ---
 
-## 6. Preferire Prevedibilità a Cleverness
+## 6. Preferire la Prevedibilità alle Soluzioni Furbe
 
 Ottimizzo per chiarezza, determinismo e manutenibilità. Un sistema leggermente meno elegante ma più leggibile e debuggabile spesso è una scelta migliore.

@@ -19,7 +19,7 @@ schema_type: "SoftwareSourceCode"
 
 ## Panoramica
 
-ImportSpy è una libreria Python open-source progettata per applicare contratti runtime durante l’import dei moduli.
+ImportSpy è una libreria Python open-source progettata per applicare runtime contracts durante l’import dei moduli.
 
 Il problema nasce nei sistemi modulari, plugin-based ed estendibili: i componenti caricati dinamicamente spesso vengono considerati validi sulla base di assunzioni implicite. ImportSpy introduce un layer di validazione contract-driven che intercetta l’import e verifica struttura, contesto e ambiente prima dell’esecuzione.
 

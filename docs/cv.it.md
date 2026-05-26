@@ -9,15 +9,15 @@ schema_type: "ProfilePage"
 # Luca Atella — Curriculum Vitae
 
 **Software Architect · Backend & Platform Engineering · AWS Certified**  
-Basilicata, Italy · Email: [info@atellaluca.com](mailto:info@atellaluca.com) · GitHub: [github.com/atellaluca](https://github.com/atellaluca) · LinkedIn: [linkedin.com/in/luca-atella](https://www.linkedin.com/in/luca-atella/)
+Basilicata, Italia · Email: [info@atellaluca.com](mailto:info@atellaluca.com) · GitHub: [github.com/atellaluca](https://github.com/atellaluca) · LinkedIn: [linkedin.com/in/luca-atella](https://www.linkedin.com/in/luca-atella/)
 
-[Download PDF](assets/cv/Luca-Atella-CV.pdf){ .md-button .md-button--primary }
+[Scarica il PDF](assets/cv/Luca-Atella-CV.pdf){ .md-button .md-button--primary }
 
 ---
 
 ## Profilo
 
-Software Architect con background in backend e platform engineering, focalizzato su sistemi modulari, architetture cloud-portable, runtime validation e piattaforme backend pensate per durare.
+Software Architect con esperienza in backend e platform engineering, focalizzato su sistemi modulari, architetture cloud-portable, runtime validation e piattaforme backend pensate per durare.
 
 Progetto sistemi in cui scelte infrastrutturali, confini runtime, affidabilità operativa e manutenibilità vengono considerate dall’inizio.
 
@@ -43,23 +43,23 @@ Progetto sistemi in cui scelte infrastrutturali, confini runtime, affidabilità 
 - Repository e storage abstraction
 - MongoDB, PostgreSQL, DynamoDB
 
-### Cloud & Infrastructure
+### Cloud e Infrastruttura
 
 - AWS Lambda, ECR, DynamoDB, S3, CloudFront, CloudFormation, CloudWatch
 - Docker e Docker Compose
 - Cloud-portable application design
 - Infrastructure as Code
-- Serverless deployment pipelines
+- pipeline di deployment serverless
 - Linux, Nginx, networking, VPN, DNS e firewalling
 
-### Architecture
+### Architettura
 
 - Runtime governance
 - Contract-driven design
 - Infrastructure abstraction
 - Edge/cloud integration
 - concetti IoT e Digital Twin
-- Geospatial data processing
+- elaborazione dati geospaziali
 - developer tooling e workflow CLI
 
 ---
@@ -67,17 +67,17 @@ Progetto sistemi in cui scelte infrastrutturali, confini runtime, affidabilità 
 ## Esperienza Professionale
 
 ### Software Architect / Backend & Platform Engineer — Vemar S.A.S.
-**April 2021 - October 2024**
+**Aprile 2021 - Ottobre 2024**
 
 Ho progettato e sviluppato l’architettura backend principale per sistemi IoT distribuiti e integrazioni con dispositivi eterogenei.
 
 Responsabilità principali:
 
 - progettazione di un framework backend plugin-based
-- centralizzazione di business logic, autenticazione, API e persistenza
+- centralizzazione di logica di business, autenticazione, API e persistenza
 - definizione di REST API contracts e struttura backend
 - progettazione di confini di caricamento ed esecuzione plugin
-- introduzione di workflow Docker-based
+- introduzione di workflow basati su Docker
 - supporto a decisioni backend/frontend e attività di deployment
 
 ---
@@ -86,7 +86,7 @@ Responsabilità principali:
 
 ### Cloud-Portable Fleet Management Platform
 
-Piattaforma adottata in produzione per fleet management con FastAPI, React/TypeScript, repository e storage abstraction, Docker Compose locale e deployment AWS con Lambda, ECR, DynamoDB, S3, CloudFront, CloudFormation e CloudWatch.
+Piattaforma adottata in produzione per fleet management con FastAPI, React/TypeScript, astrazione di repository e storage, Docker Compose locale e deployment AWS con Lambda, ECR, DynamoDB, S3, CloudFront, CloudFormation e CloudWatch.
 
 ### ImportSpy
 

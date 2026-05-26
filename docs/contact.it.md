@@ -8,9 +8,9 @@ schema_type: "ContactPage"
 
 # Contatti
 
-Sono aperto a conversazioni su software architecture, sistemi backend, deployment su cloud e piattaforme software pensate per durare.
+Sono disponibile a confrontarmi su software architecture, sistemi backend, deployment su cloud e piattaforme software pensate per durare.
 
-Vivo in Basilicata, in Italia, e sono disponibile a conversazioni di lavoro da remoto o in modalità ibrida con team italiani e internazionali.
+Vivo in Basilicata, in Italia, e sono disponibile a collaborazioni da remoto o in modalità ibrida con team italiani e internazionali.
 
 ---
 

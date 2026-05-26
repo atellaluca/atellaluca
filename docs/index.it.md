@@ -44,7 +44,7 @@ Piattaforma full-stack per la gestione di veicoli aziendali, utenti, prenotazion
 
 ### ImportSpy
 
-Progetto open-source Python per validare contratti runtime durante l’import dei moduli.
+Progetto open-source Python per validare runtime contracts durante l’import dei moduli.
 
 Aiuta sistemi modulari e plugin-based a fallire presto quando un modulo non rispetta struttura, contesto o requisiti di esecuzione attesi.
 

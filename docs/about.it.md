@@ -10,7 +10,7 @@ schema_type: "AboutPage"
 
 Sono un backend e platform engineer focalizzato su sistemi che devono restare manutenibili dopo la fase di prototipo.
 
-Lavoro sulle parti che determinano come un prodotto crescerà nel tempo: struttura backend, confini API, comportamento runtime, deployment model, flussi dati e visibilità operativa.
+Lavoro sulle parti che determinano come un prodotto crescerà nel tempo: struttura backend, confini API, comportamento runtime, modello di deployment, flussi dati e visibilità operativa.
 
 Sono lucano, della Basilicata. Questo per me non è solo un dato geografico: significa essere legato a un territorio dove spesso la tecnologia va costruita con risorse limitate, vincoli reali e bisogno di soluzioni solide. Porto questo approccio anche nel lavoro tecnico: strutture chiare, trade-off consapevoli e sistemi che continuano a funzionare quando l’entusiasmo iniziale è passato.
 
@@ -46,7 +46,7 @@ Non mi definisco attraverso un singolo framework. Mi interessano pattern trasfer
 
 ## Come Lavoro
 
-Tendo a lavorare in modo iterativo ma deliberato, con attenzione alle conseguenze architetturali, alla manutenibilità e agli aspetti operativi.
+Tendo a lavorare in modo iterativo ma consapevole, con attenzione alle conseguenze architetturali, alla manutenibilità e agli aspetti operativi.
 
 Mi trovo bene in contesti dove:
 

@@ -25,11 +25,11 @@ La scelta architetturale più importante è stata separare la logica applicativa
 
 ## Problema
 
-I sistemi di fleet management spesso crescono per urgenza operativa: una feature per le prenotazioni, una per i documenti, una per la manutenzione, poi report e statistiche.
+I sistemi di fleet management spesso crescono per urgenza operativa: una funzionalità per le prenotazioni, una per i documenti, una per la manutenzione, poi report e statistiche.
 
 Senza una struttura chiara emergono rischi concreti:
 
-- business logic legata alla persistenza
+- logica di business legata alla persistenza
 - ambienti locali lontani dalla produzione
 - servizi cloud che entrano nel dominio
 - osservabilità aggiunta troppo tardi
@@ -41,7 +41,7 @@ L’obiettivo era costruire uno strumento operativo reale mantenendo l’archite
 
 ## Architettura
 
-La piattaforma è composta da frontend React, backend FastAPI, layer di persistenza e storage astratti, e deployment AWS basato su serverless e managed services.
+La piattaforma è composta da frontend React, backend FastAPI, livelli astratti di persistenza e storage, e deployment AWS basato su serverless e managed services.
 
 ![Diagramma AWS FastAPI della piattaforma fleet management cloud-portable di Luca Atella con Lambda, DynamoDB, S3, CloudFront e sviluppo locale Docker](../../assets/images/case-studies/cloud-portable-fleet-platform/cloud-portable-fleet-management-platform-aws-fastapi-architecture.png)
 
@@ -65,7 +65,7 @@ Questo permette di mantenere la stessa architettura applicativa tra:
 
 - sviluppo locale con Docker Compose
 - produzione su AWS con Lambda, ECR, DynamoDB, S3, CloudFront, CloudFormation e CloudWatch
-- possibili target futuri con cambi limitati agli adapter infrastrutturali
+- possibili ambienti futuri con modifiche limitate agli adattatori infrastrutturali
 
 ---
 
@@ -77,7 +77,7 @@ Il backend FastAPI include:
 - schemi Pydantic per validazione e API contracts
 - autenticazione JWT
 - password hashing con Argon2
-- repository interfaces basate su Python `Protocol`
+- interfacce repository basate su Python `Protocol`
 - router per user, car, trip, reservation, maintenance, refueling, statistics e reports
 - export Excel e report PDF
 - logging strutturato delle richieste HTTP
@@ -99,7 +99,7 @@ Questo progetto dimostra esperienza in:
 - architettura applicativa cloud-portable
 - deployment serverless su AWS
 - architettura backend con FastAPI
-- infrastructure abstraction
+- astrazione infrastrutturale
 - ambienti locali Docker Compose
 - Infrastructure as Code con CloudFormation
 - osservabilità orientata alla produzione
