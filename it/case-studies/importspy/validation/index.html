@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Design del runtime validation engine di ImportSpy per sistemi Python modulari: controlli deterministici, contract loading, failure reporting e CI/CD validation.">
+        <meta name="description" content="Design del runtime validation engine di ImportSpy per sistemi Python modulari: controlli deterministici, caricamento dei contratti, diagnostica degli errori e validazione CI/CD.">
       
       
         <meta name="author" content="Luca Atella">
@@ -111,7 +111,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Luca Atella · Software Architect & Backend Platform Engineer">
   <meta property="og:title" content="Runtime Validation Engine | Sistema di Contratti Python ImportSpy">
-  <meta property="og:description" content="Design del runtime validation engine di ImportSpy per sistemi Python modulari: controlli deterministici, contract loading, failure reporting e CI/CD validation.">
+  <meta property="og:description" content="Design del runtime validation engine di ImportSpy per sistemi Python modulari: controlli deterministici, caricamento dei contratti, diagnostica degli errori e validazione CI/CD.">
   <meta property="og:url" content="https://profile.atellaluca.com/it/case-studies/importspy/validation/">
   <meta property="og:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
@@ -119,14 +119,14 @@
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Runtime Validation Engine | Sistema di Contratti Python ImportSpy">
-  <meta name="twitter:description" content="Design del runtime validation engine di ImportSpy per sistemi Python modulari: controlli deterministici, contract loading, failure reporting e CI/CD validation.">
+  <meta name="twitter:description" content="Design del runtime validation engine di ImportSpy per sistemi Python modulari: controlli deterministici, caricamento dei contratti, diagnostica degli errori e validazione CI/CD.">
   <meta name="twitter:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "TechArticle",
     "name": "Runtime Validation Engine | Sistema di Contratti Python ImportSpy",
-    "description": "Design del runtime validation engine di ImportSpy per sistemi Python modulari: controlli deterministici, contract loading, failure reporting e CI/CD validation.",
+    "description": "Design del runtime validation engine di ImportSpy per sistemi Python modulari: controlli deterministici, caricamento dei contratti, diagnostica degli errori e validazione CI/CD.",
     "url": "https://profile.atellaluca.com/it/case-studies/importspy/validation/",
     "image": "https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png",
     "isPartOf": {
@@ -179,7 +179,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#designing-a-runtime-validation-engine" class="md-skip">
+        <a href="#progettare-un-runtime-validation-engine" class="md-skip">
           Vai al contenuto
         </a>
       
@@ -1687,7 +1687,7 @@
 
 
 
-<h1 id="designing-a-runtime-validation-engine">Designing a Runtime Validation Engine</h1>
+<h1 id="progettare-un-runtime-validation-engine">Progettare un Runtime Validation Engine</h1>
 <h2 id="il-problema">Il Problema</h2>
 <p>Nei sistemi modulari, la validazione dei componenti avviene spesso troppo tardi: durante l’esecuzione, dopo che il modulo è stato caricato e magari ha già prodotto side effect.</p>
 <p>ImportSpy sposta la validazione al momento dell’import.</p>
@@ -1704,14 +1704,14 @@
 <h2 id="obiettivi-del-motore">Obiettivi del Motore</h2>
 <ul>
 <li>essere deterministico</li>
-<li>produrre failure leggibili</li>
-<li>supportare nuove rules senza riscrivere il core</li>
+<li>produrre errori leggibili</li>
+<li>supportare nuove regole senza riscrivere il core</li>
 <li>rimanere indipendente dal dominio applicativo</li>
 <li>funzionare sia in runtime sia in pipeline di validazione</li>
 </ul>
 <hr />
 <h2 id="risultato">Risultato</h2>
-<p>Il validation engine trasforma l’import dinamico da punto fragile a boundary controllata, riducendo il rischio di moduli incompatibili in sistemi plugin-based.</p>
+<p>Il validation engine trasforma l’import dinamico da punto fragile a confine controllato, riducendo il rischio di moduli incompatibili in sistemi plugin-based.</p>
 
 
 

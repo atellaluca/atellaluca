@@ -1728,19 +1728,19 @@
 <p>Il mio approccio è architecture-first: non significa progettare tutto in anticipo, ma chiarire presto i confini che permettono al sistema di evolvere.</p>
 <hr />
 <h2 id="1-partire-dagli-invarianti">1. Partire dagli Invarianti</h2>
-<p>Prima delle feature identifico cosa deve restare vero: assunzioni, requisiti minimi, failure inaccettabili e condizioni di correttezza. Quando possibile, questi invarianti vengono documentati, modellati e validati a runtime.</p>
+<p>Prima delle feature identifico cosa deve restare vero: assunzioni, requisiti minimi, errori inaccettabili e condizioni di correttezza. Quando possibile, questi invarianti vengono documentati, modellati e validati a runtime.</p>
 <hr />
 <h2 id="2-rendere-espliciti-i-contratti">2. Rendere Espliciti i Contratti</h2>
-<p>Preferisco sistemi in cui interfacce, assunzioni e compatibilità siano verificabili. Questo può avvenire tramite schemi dichiarativi, validation rules, runtime contracts o controlli di versione.</p>
+<p>Preferisco sistemi in cui interfacce, assunzioni e compatibilità siano verificabili. Questo può avvenire tramite schemi dichiarativi, regole di validazione, runtime contracts o controlli di versione.</p>
 <hr />
 <h2 id="3-estendibilita-senza-caos">3. Estendibilità Senza Caos</h2>
 <p>Un sistema estendibile non è solo un sistema con plugin. Servono extension point chiari, contesti isolati, validazione dei componenti e prevenzione del coupling nascosto.</p>
 <hr />
 <h2 id="4-fallire-presto-e-chiaramente">4. Fallire Presto e Chiaramente</h2>
-<p>Un failure deterministico e diagnosticabile è preferibile a una corruzione silenziosa. Questo principio guida il modo in cui progetto validazione, error model e runtime checks.</p>
+<p>Un errore deterministico e diagnosticabile è preferibile a una corruzione silenziosa. Questo principio guida il modo in cui progetto validazione, modello degli errori e controlli runtime.</p>
 <hr />
 <h2 id="5-trattare-linfrastruttura-come-parte-del-sistema">5. Trattare l’Infrastruttura Come Parte del Sistema</h2>
-<p>Container, deployment, networking, secrets, logging e permission model non sono dettagli esterni. Fanno parte del modello di esecuzione e della strategia di affidabilità.</p>
+<p>Container, deployment, networking, secret, logging e modello dei permessi non sono dettagli esterni. Fanno parte del modello di esecuzione e della strategia di affidabilità.</p>
 <hr />
 <h2 id="6-preferire-prevedibilita-a-cleverness">6. Preferire Prevedibilità a Cleverness</h2>
 <p>Ottimizzo per chiarezza, determinismo e manutenibilità. Un sistema leggermente meno elegante ma più leggibile e debuggabile spesso è una scelta migliore.</p>

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Deep dive sul violation system di ImportSpy: diagnostica strutturata, error reporting deterministico e failure di runtime contracts per architetture Python modulari.">
+        <meta name="description" content="Approfondimento sul violation system di ImportSpy: diagnostica strutturata, error reporting deterministico e violazioni di runtime contracts per architetture Python modulari.">
       
       
         <meta name="author" content="Luca Atella">
@@ -111,7 +111,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Luca Atella · Software Architect & Backend Platform Engineer">
   <meta property="og:title" content="Diagnostica Contratti | Violation System di ImportSpy">
-  <meta property="og:description" content="Deep dive sul violation system di ImportSpy: diagnostica strutturata, error reporting deterministico e failure di runtime contracts per architetture Python modulari.">
+  <meta property="og:description" content="Approfondimento sul violation system di ImportSpy: diagnostica strutturata, error reporting deterministico e violazioni di runtime contracts per architetture Python modulari.">
   <meta property="og:url" content="https://profile.atellaluca.com/it/case-studies/importspy/violations/">
   <meta property="og:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
@@ -119,14 +119,14 @@
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Diagnostica Contratti | Violation System di ImportSpy">
-  <meta name="twitter:description" content="Deep dive sul violation system di ImportSpy: diagnostica strutturata, error reporting deterministico e failure di runtime contracts per architetture Python modulari.">
+  <meta name="twitter:description" content="Approfondimento sul violation system di ImportSpy: diagnostica strutturata, error reporting deterministico e violazioni di runtime contracts per architetture Python modulari.">
   <meta name="twitter:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "TechArticle",
     "name": "Diagnostica Contratti | Violation System di ImportSpy",
-    "description": "Deep dive sul violation system di ImportSpy: diagnostica strutturata, error reporting deterministico e failure di runtime contracts per architetture Python modulari.",
+    "description": "Approfondimento sul violation system di ImportSpy: diagnostica strutturata, error reporting deterministico e violazioni di runtime contracts per architetture Python modulari.",
     "url": "https://profile.atellaluca.com/it/case-studies/importspy/violations/",
     "image": "https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png",
     "isPartOf": {
@@ -1689,7 +1689,7 @@
 
 <h1 id="violation-system-e-contract-diagnostics">Violation System e Contract Diagnostics</h1>
 <h2 id="perche-un-sistema-di-violazioni">Perché un Sistema di Violazioni</h2>
-<p>Un runtime contract engine non deve limitarsi a lanciare eccezioni generiche. Deve spiegare cosa è fallito, quale contratto è stato violato e quale parte del contesto ha causato il problema.</p>
+<p>Un runtime contract engine non deve limitarsi a lanciare eccezioni generiche. Deve spiegare cosa non ha funzionato, quale contratto è stato violato e quale parte del contesto ha causato il problema.</p>
 <hr />
 <h2 id="cosa-contiene-una-violazione">Cosa Contiene una Violazione</h2>
 <ul>
@@ -1703,13 +1703,13 @@
 <h2 id="benefici">Benefici</h2>
 <ul>
 <li>debugging più rapido</li>
-<li>failure leggibili in CI/CD</li>
+<li>errori leggibili in CI/CD</li>
 <li>errori più utili per sviluppatori e operatori</li>
 <li>separazione tra rilevazione del problema e presentazione diagnostica</li>
 </ul>
 <hr />
 <h2 id="valore-architetturale">Valore Architetturale</h2>
-<p>Il violation system rende ImportSpy adatto a sistemi long-running, plugin ecosystems e ambienti dove l’incompatibilità di un modulo deve essere intercettata in modo chiaro e ripetibile.</p>
+<p>Il violation system rende ImportSpy adatto a sistemi long-running, ecosistemi plugin-based e ambienti dove l’incompatibilità di un modulo deve essere intercettata in modo chiaro e ripetibile.</p>
 
 
 

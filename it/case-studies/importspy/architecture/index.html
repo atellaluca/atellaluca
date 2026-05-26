@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Architettura di ImportSpy, framework di Luca Atella per runtime validation di moduli Python, contratti provider-consumer, plugin safety e governance architetturale.">
+        <meta name="description" content="Architettura di ImportSpy, framework di Luca Atella per runtime validation di moduli Python, contratti provider-consumer, sicurezza dei plugin e governance architetturale.">
       
       
         <meta name="author" content="Luca Atella">
@@ -111,7 +111,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Luca Atella · Software Architect & Backend Platform Engineer">
   <meta property="og:title" content="Architettura ImportSpy | Runtime Validation Engine per Moduli Python">
-  <meta property="og:description" content="Architettura di ImportSpy, framework di Luca Atella per runtime validation di moduli Python, contratti provider-consumer, plugin safety e governance architetturale.">
+  <meta property="og:description" content="Architettura di ImportSpy, framework di Luca Atella per runtime validation di moduli Python, contratti provider-consumer, sicurezza dei plugin e governance architetturale.">
   <meta property="og:url" content="https://profile.atellaluca.com/it/case-studies/importspy/architecture/">
   <meta property="og:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
@@ -119,14 +119,14 @@
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Architettura ImportSpy | Runtime Validation Engine per Moduli Python">
-  <meta name="twitter:description" content="Architettura di ImportSpy, framework di Luca Atella per runtime validation di moduli Python, contratti provider-consumer, plugin safety e governance architetturale.">
+  <meta name="twitter:description" content="Architettura di ImportSpy, framework di Luca Atella per runtime validation di moduli Python, contratti provider-consumer, sicurezza dei plugin e governance architetturale.">
   <meta name="twitter:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "TechArticle",
     "name": "Architettura ImportSpy | Runtime Validation Engine per Moduli Python",
-    "description": "Architettura di ImportSpy, framework di Luca Atella per runtime validation di moduli Python, contratti provider-consumer, plugin safety e governance architetturale.",
+    "description": "Architettura di ImportSpy, framework di Luca Atella per runtime validation di moduli Python, contratti provider-consumer, sicurezza dei plugin e governance architetturale.",
     "url": "https://profile.atellaluca.com/it/case-studies/importspy/architecture/",
     "image": "https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png",
     "isPartOf": {
@@ -1672,21 +1672,21 @@
 <h2 id="visione-architetturale">Visione Architetturale</h2>
 <p>Il sistema è composto da:</p>
 <ul>
-<li>import interception layer</li>
-<li>contract definition layer</li>
+<li>layer di intercettazione degli import</li>
+<li>layer di definizione dei contratti</li>
 <li>validation engine</li>
-<li>execution context inspection</li>
-<li>structured violation model</li>
+<li>ispezione del contesto di esecuzione</li>
+<li>modello strutturato delle violazioni</li>
 </ul>
 <p>Questi elementi permettono di validare struttura del modulo, ambiente runtime, variabili richieste, OS, versione Python e requisiti contestuali.</p>
 <hr />
 <h2 id="perche-conta">Perché Conta</h2>
-<p>Nei sistemi plugin-based, un componente incompatibile può causare errori tardivi e difficili da diagnosticare. ImportSpy porta la validazione all’ingresso del modulo, rendendo i failure più prevedibili.</p>
+<p>Nei sistemi plugin-based, un componente incompatibile può causare errori tardivi e difficili da diagnosticare. ImportSpy porta la validazione all’ingresso del modulo, rendendo gli errori più prevedibili.</p>
 <hr />
 <h2 id="proprieta-chiave">Proprietà Chiave</h2>
 <ul>
 <li>contratti dichiarativi</li>
-<li>failure deterministici</li>
+<li>errori deterministici</li>
 <li>basso coupling con l’applicazione</li>
 <li>diagnostica strutturata</li>
 <li>estendibilità del validation engine</li>

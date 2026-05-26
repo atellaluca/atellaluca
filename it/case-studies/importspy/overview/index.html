@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Caso studio ImportSpy di Luca Atella: runtime contract engine open-source per Python, plugin validation, confini architetturali e diagnostica deterministica.">
+        <meta name="description" content="Caso studio ImportSpy di Luca Atella: runtime contract engine open-source per Python, validazione dei plugin, confini architetturali e diagnostica deterministica.">
       
       
         <meta name="author" content="Luca Atella">
@@ -111,7 +111,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Luca Atella · Software Architect & Backend Platform Engineer">
   <meta property="og:title" content="ImportSpy | Runtime Contract Validation per Python Modulare">
-  <meta property="og:description" content="Caso studio ImportSpy di Luca Atella: runtime contract engine open-source per Python, plugin validation, confini architetturali e diagnostica deterministica.">
+  <meta property="og:description" content="Caso studio ImportSpy di Luca Atella: runtime contract engine open-source per Python, validazione dei plugin, confini architetturali e diagnostica deterministica.">
   <meta property="og:url" content="https://profile.atellaluca.com/it/case-studies/importspy/overview/">
   <meta property="og:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
@@ -119,14 +119,14 @@
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="ImportSpy | Runtime Contract Validation per Python Modulare">
-  <meta name="twitter:description" content="Caso studio ImportSpy di Luca Atella: runtime contract engine open-source per Python, plugin validation, confini architetturali e diagnostica deterministica.">
+  <meta name="twitter:description" content="Caso studio ImportSpy di Luca Atella: runtime contract engine open-source per Python, validazione dei plugin, confini architetturali e diagnostica deterministica.">
   <meta name="twitter:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareSourceCode",
     "name": "ImportSpy | Runtime Contract Validation per Python Modulare",
-    "description": "Caso studio ImportSpy di Luca Atella: runtime contract engine open-source per Python, plugin validation, confini architetturali e diagnostica deterministica.",
+    "description": "Caso studio ImportSpy di Luca Atella: runtime contract engine open-source per Python, validazione dei plugin, confini architetturali e diagnostica deterministica.",
     "url": "https://profile.atellaluca.com/it/case-studies/importspy/overview/",
     "image": "https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png",
     "isPartOf": {
@@ -856,10 +856,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#panoramica" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Panoramica
       
     </span>
   </a>
@@ -900,10 +900,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#use-case" class="md-nav__link">
+  <a href="#scenari-duso" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Use Case
+        Scenari d'Uso
       
     </span>
   </a>
@@ -1649,10 +1649,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#panoramica" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Panoramica
       
     </span>
   </a>
@@ -1693,10 +1693,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#use-case" class="md-nav__link">
+  <a href="#scenari-duso" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Use Case
+        Scenari d'Uso
       
     </span>
   </a>
@@ -1739,9 +1739,9 @@
 <strong>Repository:</strong> <a href="https://github.com/atellaluca/importspy">ImportSpy su GitHub</a><br />
 <strong>Adozione:</strong> 15.000+ download su PyPI  </p>
 <hr />
-<h2 id="overview">Overview</h2>
+<h2 id="panoramica">Panoramica</h2>
 <p>ImportSpy è una libreria Python open-source progettata per applicare contratti runtime durante l’import dei moduli.</p>
-<p>Il problema nasce nei sistemi modulari, plugin-based ed estendibili: i componenti caricati dinamicamente spesso vengono considerati validi sulla base di assunzioni implicite. ImportSpy introduce un layer di validazione contract-driven che intercetta l’import e verifica struttura, contesto ed environment prima dell’esecuzione.</p>
+<p>Il problema nasce nei sistemi modulari, plugin-based ed estendibili: i componenti caricati dinamicamente spesso vengono considerati validi sulla base di assunzioni implicite. ImportSpy introduce un layer di validazione contract-driven che intercetta l’import e verifica struttura, contesto e ambiente prima dell’esecuzione.</p>
 <hr />
 <h2 id="problema">Problema</h2>
 <p>Il sistema di import di Python non verifica automaticamente:</p>
@@ -1751,7 +1751,7 @@
 <li>vincoli strutturali</li>
 <li>condizioni minime di esecuzione</li>
 </ul>
-<p>Questo porta a failure tardivi, integrazioni fragili e debugging complesso.</p>
+<p>Questo porta a errori tardivi, integrazioni fragili e debugging complesso.</p>
 <hr />
 <h2 id="obiettivi-di-design">Obiettivi di Design</h2>
 <ul>
@@ -1772,14 +1772,14 @@
 <li>consente l’esecuzione solo se il modulo rispetta il contratto</li>
 </ol>
 <hr />
-<h2 id="use-case">Use Case</h2>
+<h2 id="scenari-duso">Scenari d'Uso</h2>
 <p>ImportSpy è utile per:</p>
 <ul>
-<li>plugin-based systems</li>
+<li>sistemi plugin-based</li>
 <li>backend modulari</li>
 <li>CI/CD validation</li>
-<li>IoT ed edge platforms</li>
-<li>runtime environment sicuri</li>
+<li>piattaforme IoT ed edge</li>
+<li>ambienti runtime sicuri</li>
 <li>sistemi Python long-running</li>
 </ul>
 <hr />

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Caso studio di Luca Atella per IoT data aggregation e Digital Twin architecture: edge acquisition, gateway, GraphQL API, microfrontends e storage layers.">
+        <meta name="description" content="Caso studio di Luca Atella per IoT data aggregation e Digital Twin architecture: acquisizione edge, gateway, GraphQL API, microfrontend e layer di storage.">
       
       
         <meta name="author" content="Luca Atella">
@@ -111,7 +111,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Luca Atella · Software Architect & Backend Platform Engineer">
   <meta property="og:title" content="Architettura IoT Data Aggregation | Digital Twin Edge-to-Cloud">
-  <meta property="og:description" content="Caso studio di Luca Atella per IoT data aggregation e Digital Twin architecture: edge acquisition, gateway, GraphQL API, microfrontends e storage layers.">
+  <meta property="og:description" content="Caso studio di Luca Atella per IoT data aggregation e Digital Twin architecture: acquisizione edge, gateway, GraphQL API, microfrontend e layer di storage.">
   <meta property="og:url" content="https://profile.atellaluca.com/it/case-studies/iot-data-aggregation-digital-twin/overview/">
   <meta property="og:image" content="https://profile.atellaluca.com/assets/images/case-studies/iot-data-aggregation-digital-twin/iot-data-aggregation-digital-twin-edge-cloud-architecture.png">
   
@@ -119,14 +119,14 @@
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Architettura IoT Data Aggregation | Digital Twin Edge-to-Cloud">
-  <meta name="twitter:description" content="Caso studio di Luca Atella per IoT data aggregation e Digital Twin architecture: edge acquisition, gateway, GraphQL API, microfrontends e storage layers.">
+  <meta name="twitter:description" content="Caso studio di Luca Atella per IoT data aggregation e Digital Twin architecture: acquisizione edge, gateway, GraphQL API, microfrontend e layer di storage.">
   <meta name="twitter:image" content="https://profile.atellaluca.com/assets/images/case-studies/iot-data-aggregation-digital-twin/iot-data-aggregation-digital-twin-edge-cloud-architecture.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "TechArticle",
     "name": "Architettura IoT Data Aggregation | Digital Twin Edge-to-Cloud",
-    "description": "Caso studio di Luca Atella per IoT data aggregation e Digital Twin architecture: edge acquisition, gateway, GraphQL API, microfrontends e storage layers.",
+    "description": "Caso studio di Luca Atella per IoT data aggregation e Digital Twin architecture: acquisizione edge, gateway, GraphQL API, microfrontend e layer di storage.",
     "url": "https://profile.atellaluca.com/it/case-studies/iot-data-aggregation-digital-twin/overview/",
     "image": "https://profile.atellaluca.com/assets/images/case-studies/iot-data-aggregation-digital-twin/iot-data-aggregation-digital-twin-edge-cloud-architecture.png",
     "isPartOf": {
@@ -1338,10 +1338,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#panoramica" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Panoramica
       
     </span>
   </a>
@@ -1627,10 +1627,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#panoramica" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Panoramica
       
     </span>
   </a>
@@ -1688,33 +1688,33 @@
 
 
 <h1 id="iot-data-aggregation-architecture-per-digital-twin">IoT Data Aggregation Architecture per Digital Twin</h1>
-<h2 id="overview">Overview</h2>
+<h2 id="panoramica">Panoramica</h2>
 <p>Questo caso studio descrive un’architettura edge-to-cloud per acquisire, normalizzare e aggregare dati IoT eterogenei in scenari Digital Twin.</p>
-<p>L’obiettivo è rendere osservabili e utilizzabili dati provenienti da sensori, videocamere, dispositivi e gateway, mantenendo separati acquisition, ingestion, API, storage e visualizzazione.</p>
-<p><img alt="Architettura edge-to-cloud per IoT data aggregation e Digital Twin con sensori, gateway, ingestion, GraphQL API, microfrontends e storage layers" src="../../../../assets/images/case-studies/iot-data-aggregation-digital-twin/iot-data-aggregation-digital-twin-edge-cloud-architecture.png" /></p>
+<p>L’obiettivo è rendere osservabili e utilizzabili dati provenienti da sensori, videocamere, dispositivi e gateway, mantenendo separati acquisizione, ingestion, API, storage e visualizzazione.</p>
+<p><img alt="Architettura edge-to-cloud per IoT data aggregation e Digital Twin con sensori, gateway, ingestion, GraphQL API, microfrontend e layer di storage" src="../../../../assets/images/case-studies/iot-data-aggregation-digital-twin/iot-data-aggregation-digital-twin-edge-cloud-architecture.png" /></p>
 <hr />
 <h2 id="componenti-principali">Componenti Principali</h2>
 <ul>
-<li>edge acquisition da sensori, camere e dispositivi</li>
+<li>acquisizione edge da sensori, camere e dispositivi</li>
 <li>comunicazione BLE/Zigbee mesh e gateway</li>
-<li>ingestion layer per dati real-time, GeoJSON e domain-specific</li>
+<li>layer di ingestion per dati real-time, GeoJSON e domain-specific</li>
 <li>GraphQL API</li>
-<li>data-specific application layers</li>
+<li>layer applicativi specifici per tipologia di dato</li>
 <li>microfrontends</li>
 <li>storage gateway</li>
-<li>AI-assisted processing</li>
+<li>elaborazione assistita da AI</li>
 </ul>
 <hr />
 <h2 id="decisioni-architetturali">Decisioni Architetturali</h2>
 <p>L’architettura separa le responsabilità per evitare che dispositivi, protocolli e storage influenzino direttamente il modello applicativo.</p>
-<p>I gateway raccolgono e normalizzano il dato, l’ingestion layer gestisce validazione e routing, mentre API e microfrontends consumano dati già stabilizzati.</p>
+<p>I gateway raccolgono e normalizzano il dato, il layer di ingestion gestisce validazione e routing, mentre API e microfrontend consumano dati già stabilizzati.</p>
 <hr />
 <h2 id="cosa-dimostra">Cosa Dimostra</h2>
 <ul>
-<li>edge/cloud integration</li>
+<li>integrazione edge/cloud</li>
 <li>sistemi IoT eterogenei</li>
 <li>data aggregation per Digital Twin</li>
-<li>separazione tra acquisition, ingestion e presentation</li>
+<li>separazione tra acquisizione, ingestion e presentazione</li>
 <li>architetture pronte per evolvere con nuove sorgenti dati</li>
 </ul>
 

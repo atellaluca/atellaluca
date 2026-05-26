@@ -770,10 +770,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#panoramica" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Panoramica
       
     </span>
   </a>
@@ -1671,10 +1671,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#panoramica" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Panoramica
       
     </span>
   </a>
@@ -1779,11 +1779,11 @@
 <p><strong>Tipo:</strong> applicazione cloud adottata in produzione<br />
 <strong>Ruolo:</strong> Software Architect · Backend Engineer · Cloud Deployment<br />
 <strong>Periodo:</strong> 2026<br />
-<strong>Dominio:</strong> fleet management, backend systems, AWS, cloud-portable architecture  </p>
+<strong>Dominio:</strong> fleet management, sistemi backend, AWS, cloud-portable architecture</p>
 <hr />
-<h2 id="overview">Overview</h2>
+<h2 id="panoramica">Panoramica</h2>
 <p>Questo caso studio descrive una piattaforma full-stack per gestire operazioni su veicoli aziendali: utenti, auto, prenotazioni, viaggi, rifornimenti, manutenzioni, documenti, statistiche e report.</p>
-<p>La scelta architetturale più importante è stata separare la logica applicativa dai servizi cloud usati in produzione. AWS è il target produttivo, non il modello mentale dell’applicazione.</p>
+<p>La scelta architetturale più importante è stata separare la logica applicativa dai servizi cloud usati in produzione. AWS è l’ambiente di produzione, non il modello mentale dell’applicazione.</p>
 <hr />
 <h2 id="problema">Problema</h2>
 <p>I sistemi di fleet management spesso crescono per urgenza operativa: una feature per le prenotazioni, una per i documenti, una per la manutenzione, poi report e statistiche.</p>
@@ -1829,20 +1829,20 @@
 </ul>
 <hr />
 <h2 id="deployment-aws">Deployment AWS</h2>
-<p>Il backend viene pacchettizzato come container image, pubblicato su ECR ed eseguito su AWS Lambda tramite Mangum. DynamoDB gestisce la persistenza, S3 conserva documenti e ricevute, CloudWatch raccoglie i log applicativi.</p>
+<p>Il backend viene pacchettizzato come immagine container, pubblicato su ECR ed eseguito su AWS Lambda tramite Mangum. DynamoDB gestisce la persistenza, S3 conserva documenti e ricevute, CloudWatch raccoglie i log applicativi.</p>
 <p>Il frontend React/TypeScript viene distribuito come build statica su S3 privata e servito tramite CloudFront con Origin Access Control.</p>
 <hr />
 <h2 id="cosa-dimostra">Cosa Dimostra</h2>
 <p>Questo progetto dimostra esperienza in:</p>
 <ul>
-<li>cloud-portable application architecture</li>
-<li>AWS serverless deployment</li>
-<li>backend architecture con FastAPI</li>
+<li>architettura applicativa cloud-portable</li>
+<li>deployment serverless su AWS</li>
+<li>architettura backend con FastAPI</li>
 <li>infrastructure abstraction</li>
 <li>ambienti locali Docker Compose</li>
 <li>Infrastructure as Code con CloudFormation</li>
-<li>osservabilità production-oriented</li>
-<li>delivery di un’applicazione reale</li>
+<li>osservabilità orientata alla produzione</li>
+<li>rilascio di un’applicazione reale</li>
 </ul>
 
 
