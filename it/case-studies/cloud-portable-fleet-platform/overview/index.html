@@ -1786,10 +1786,10 @@
 <p>La scelta architetturale più importante è stata separare la logica applicativa dai servizi cloud usati in produzione. AWS è l’ambiente di produzione, non il modello mentale dell’applicazione.</p>
 <hr />
 <h2 id="problema">Problema</h2>
-<p>I sistemi di fleet management spesso crescono per urgenza operativa: una feature per le prenotazioni, una per i documenti, una per la manutenzione, poi report e statistiche.</p>
+<p>I sistemi di fleet management spesso crescono per urgenza operativa: una funzionalità per le prenotazioni, una per i documenti, una per la manutenzione, poi report e statistiche.</p>
 <p>Senza una struttura chiara emergono rischi concreti:</p>
 <ul>
-<li>business logic legata alla persistenza</li>
+<li>logica di business legata alla persistenza</li>
 <li>ambienti locali lontani dalla produzione</li>
 <li>servizi cloud che entrano nel dominio</li>
 <li>osservabilità aggiunta troppo tardi</li>
@@ -1798,7 +1798,7 @@
 <p>L’obiettivo era costruire uno strumento operativo reale mantenendo l’architettura comprensibile e manutenibile.</p>
 <hr />
 <h2 id="architettura">Architettura</h2>
-<p>La piattaforma è composta da frontend React, backend FastAPI, layer di persistenza e storage astratti, e deployment AWS basato su serverless e managed services.</p>
+<p>La piattaforma è composta da frontend React, backend FastAPI, livelli astratti di persistenza e storage, e deployment AWS basato su serverless e managed services.</p>
 <p><img alt="Diagramma AWS FastAPI della piattaforma fleet management cloud-portable di Luca Atella con Lambda, DynamoDB, S3, CloudFront e sviluppo locale Docker" src="../../../../assets/images/case-studies/cloud-portable-fleet-platform/cloud-portable-fleet-management-platform-aws-fastapi-architecture.png" /></p>
 <hr />
 <h2 id="modello-dati">Modello Dati</h2>
@@ -1812,7 +1812,7 @@
 <ul>
 <li>sviluppo locale con Docker Compose</li>
 <li>produzione su AWS con Lambda, ECR, DynamoDB, S3, CloudFront, CloudFormation e CloudWatch</li>
-<li>possibili target futuri con cambi limitati agli adapter infrastrutturali</li>
+<li>possibili ambienti futuri con modifiche limitate agli adattatori infrastrutturali</li>
 </ul>
 <hr />
 <h2 id="backend-design">Backend Design</h2>
@@ -1822,7 +1822,7 @@
 <li>schemi Pydantic per validazione e API contracts</li>
 <li>autenticazione JWT</li>
 <li>password hashing con Argon2</li>
-<li>repository interfaces basate su Python <code>Protocol</code></li>
+<li>interfacce repository basate su Python <code>Protocol</code></li>
 <li>router per user, car, trip, reservation, maintenance, refueling, statistics e reports</li>
 <li>export Excel e report PDF</li>
 <li>logging strutturato delle richieste HTTP</li>
@@ -1838,7 +1838,7 @@
 <li>architettura applicativa cloud-portable</li>
 <li>deployment serverless su AWS</li>
 <li>architettura backend con FastAPI</li>
-<li>infrastructure abstraction</li>
+<li>astrazione infrastrutturale</li>
 <li>ambienti locali Docker Compose</li>
 <li>Infrastructure as Code con CloudFormation</li>
 <li>osservabilità orientata alla produzione</li>
