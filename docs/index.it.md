@@ -64,17 +64,17 @@ Architettura edge-to-cloud per raccogliere dati IoT eterogenei e renderli utiliz
 
 ---
 
-## Conversazioni di Lavoro
+## Lavoriamo Insieme
 
-Il contesto ideale è un progetto in cui backend architecture, deployment, integrazioni o manutenibilità stanno diventando importanti quanto il rilascio delle funzionalità.
+Se stai costruendo o facendo crescere un prodotto software e il backend sta diventando difficile da estendere, distribuire o mantenere, posso aiutarti a rimettere ordine nell’architettura.
 
-Sono particolarmente interessato a:
+Mi interessano soprattutto progetti in cui servono:
 
-- backend e platform architecture
-- AWS e deployment cloud-portable
-- sistemi modulari e runtime validation
-- IoT, telemetria e backend di integrazione
-- pipeline geospaziali e data processing
+- una backend architecture più chiara
+- deployment su AWS o architetture cloud-portable
+- sistemi modulari, plugin e runtime validation
+- integrazioni IoT, telemetria o backend di orchestrazione
+- pipeline geospaziali o di elaborazione dati
 - direzione tecnica per prodotti software pensati per durare
 
 → [Contattami](contact.md) · [LinkedIn](https://www.linkedin.com/in/luca-atella/)
