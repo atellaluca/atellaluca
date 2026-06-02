@@ -51,11 +51,14 @@
   <meta name="twitter:title" content="{{ page_title }}">
   <meta name="twitter:description" content="{{ page_description }}">
   <meta name="twitter:image" content="{{ page_image_url }}">
+  {% set requested_schema_type = page.meta.schema_type if page.meta and page.meta.schema_type else 'WebPage' %}
+  {% set is_profile_page = requested_schema_type == 'ProfilePage' and page.file and page.file.src_path in ['index.md', 'index.it.md', 'profile.md', 'profile.it.md'] %}
+  {% set schema_type = 'ProfilePage' if is_profile_page else ('WebPage' if requested_schema_type == 'ProfilePage' else requested_schema_type) %}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "{{ page.meta.schema_type if page.meta and page.meta.schema_type else 'WebPage' }}",
-    "name": {{ page_title | tojson }},
+    "@type": {{ schema_type | tojson }},
+    "name": {{ ('Luca Atella - Software Architect' if is_profile_page else page_title) | tojson }},
     "description": {{ page_description | tojson }},
     "url": {{ page_url | tojson }},
     "image": {{ page_image_url | tojson }},
@@ -63,7 +66,31 @@
       "@type": "WebSite",
       "name": {{ config.site_name | tojson }},
       "url": {{ config.site_url | tojson }}
-    },
+    }{% if is_profile_page %},
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Luca Atella",
+      "url": {{ config.site_url | tojson }},
+      "jobTitle": "Software Architect",
+      "description": "Software Architect with a backend and platform engineering background, focused on modular systems, cloud-portable architectures, runtime governance, and long-lived backend platforms.",
+      "sameAs": [
+        "https://github.com/atellaluca",
+        "https://www.linkedin.com/in/luca-atella/"
+      ],
+      "knowsAbout": [
+        "Software Architecture",
+        "Backend Engineering",
+        "Platform Engineering",
+        "AWS",
+        "Cloud Architecture",
+        "Cloud-Portable Systems",
+        "Runtime Governance",
+        "Modular Systems",
+        "IoT",
+        "Digital Twin",
+        "Infrastructure Abstraction"
+      ]
+    }{% elif schema_type == 'TechArticle' %},
     "author": {
       "@type": "Person",
       "name": "Luca Atella",
@@ -86,7 +113,7 @@
         "Digital Twin architecture",
         "Geospatial data pipelines"
       ]
-    }
+    }{% endif %}
   }
   </script>
 {% endblock %}
