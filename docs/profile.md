@@ -89,7 +89,7 @@ I am currently focused on:
 
 Concrete examples:
 
-- [Cloud-Portable Fleet Management Platform](case-studies/cloud-portable-fleet-platform/overview.md)
-- [ImportSpy](case-studies/importspy/overview.md)
-- [B3DO — Basilicata 3D Open](case-studies/b3do/overview.md)
-- [IoT Data Aggregation Architecture](case-studies/iot-data-aggregation-digital-twin/overview.md)
+- [Cloud-Portable Fleet Management Platform](case-studies/cloud-portable-fleet-platform/index.md)
+- [ImportSpy](case-studies/importspy/index.md)
+- [B3DO — Basilicata 3D Open](case-studies/b3do/index.md)
+- [IoT Data Aggregation Architecture](case-studies/iot-data-aggregation-digital-twin/index.md)

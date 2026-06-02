@@ -26,7 +26,7 @@ A fleet management platform for vehicles, reservations, trips, refueling, mainte
 - Focus: Cloud portability, infrastructure abstraction, production deployment  
 - Topics: AWS, FastAPI, React, DynamoDB, S3, Docker Compose, CloudFormation  
 
-→ [View case study](cloud-portable-fleet-platform/overview.md)
+→ [View case study](cloud-portable-fleet-platform/index.md)
 
 </div>
 
@@ -42,7 +42,7 @@ It helps plugin-based and modular systems detect incompatible modules early, wit
 - Focus: Runtime contracts, modular safety, architectural invariants  
 - Topics: Plugin governance, deterministic failure modes, validation models  
 
-→ [View case study](importspy/overview.md)
+→ [View case study](importspy/index.md)
 
 </div>
 
@@ -58,7 +58,7 @@ It demonstrates data pipeline architecture outside traditional web backends: DTM
 - Focus: Geospatial data processing, 3D model generation, reproducible pipelines  
 - Topics: GDAL, Rasterio, NumPy, PyVista, Fiona, Typer, terrain meshes  
 
-→ [View case study](b3do/overview.md)
+→ [View case study](b3do/index.md)
 
 </div>
 
@@ -74,7 +74,7 @@ The platform focuses on repeatability, extensibility, and maintainability across
 - Focus: Platform design, plugin systems, deployment architecture  
 - Topics: Device modeling, REST APIs, WebSockets, deployment workflows  
 
-→ [View case study](unified-backend/overview.md)
+→ [View case study](unified-backend/index.md)
 
 </div>
 
@@ -88,7 +88,7 @@ An edge-to-cloud architecture for collecting heterogeneous IoT data and making i
 - Focus: Edge/cloud architecture, data aggregation, Digital Twin systems  
 - Topics: IoT, BLE/Zigbee mesh, GraphQL, microfrontends, AI agents, storage gateways  
 
-→ [View case study](iot-data-aggregation-digital-twin/overview.md)
+→ [View case study](iot-data-aggregation-digital-twin/index.md)
 
 </div>
 
@@ -104,7 +104,7 @@ The architecture emphasizes reliability, scalability, and secure communication i
 - Focus: Real-time data pipelines, networking, API design  
 - Topics: telemetry ingestion, socket communication, containerized deployment  
 
-→ [View case study](fleet-tracking/overview.md)
+→ [View case study](fleet-tracking/index.md)
 
 </div>
 

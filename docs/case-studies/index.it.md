@@ -21,7 +21,7 @@ Piattaforma per gestione veicoli, prenotazioni, viaggi, rifornimenti, manutenzio
 - Focus: cloud portability, astrazione infrastrutturale, deployment in produzione
 - Topics: AWS, FastAPI, React, DynamoDB, S3, Docker Compose, CloudFormation
 
-→ [Leggi il caso studio](cloud-portable-fleet-platform/overview.md)
+→ [Leggi il caso studio](cloud-portable-fleet-platform/index.md)
 
 ## ImportSpy
 
@@ -30,7 +30,7 @@ Progetto open-source Python per runtime contract validation di moduli e sistemi 
 - Focus: runtime contracts, sicurezza modulare, invarianti architetturali
 - Topics: plugin governance, errori deterministici, modelli di validazione
 
-→ [Leggi il caso studio](importspy/overview.md)
+→ [Leggi il caso studio](importspy/index.md)
 
 ## B3DO
 
@@ -39,22 +39,22 @@ Pipeline geospaziale per trasformare dataset pubblici di Basilicata in modelli 3
 - Focus: geospatial data processing, generazione di modelli 3D, pipeline riproducibili
 - Topics: GDAL, Rasterio, NumPy, PyVista, Fiona, Typer
 
-→ [Leggi il caso studio](b3do/overview.md)
+→ [Leggi il caso studio](b3do/index.md)
 
 ## Unified Backend Architecture
 
 Architettura backend plugin-driven per gestire dispositivi IoT eterogenei dietro un modello dati e una superficie API unificata.
 
-→ [Leggi il caso studio](unified-backend/overview.md)
+→ [Leggi il caso studio](unified-backend/index.md)
 
 ## IoT Data Aggregation Architecture
 
 Architettura edge-to-cloud per raccogliere dati IoT eterogenei e renderli utilizzabili in sistemi Digital Twin.
 
-→ [Leggi il caso studio](iot-data-aggregation-digital-twin/overview.md)
+→ [Leggi il caso studio](iot-data-aggregation-digital-twin/index.md)
 
 ## Fleet Tracking Platform
 
 Backend per ingestione real-time di telemetria GPS e CAN bus, con monitoraggio fleet, analytics e workflow operativi.
 
-→ [Leggi il caso studio](fleet-tracking/overview.md)
+→ [Leggi il caso studio](fleet-tracking/index.md)

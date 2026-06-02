@@ -40,7 +40,7 @@ Piattaforma full-stack per la gestione di veicoli aziendali, utenti, prenotazion
 - produzione su AWS con Lambda, ECR, DynamoDB, S3, CloudFront, CloudFormation e CloudWatch
 - modello applicativo separato dalle scelte infrastrutturali
 
-→ [Leggi il caso studio](case-studies/cloud-portable-fleet-platform/overview.md)
+→ [Leggi il caso studio](case-studies/cloud-portable-fleet-platform/index.md)
 
 ### ImportSpy
 
@@ -48,19 +48,19 @@ Progetto open-source Python per validare runtime contracts durante l’import de
 
 Aiuta sistemi modulari e plugin-based a fallire presto quando un modulo non rispetta struttura, contesto o requisiti di esecuzione attesi.
 
-→ [Leggi il caso studio](case-studies/importspy/overview.md)
+→ [Leggi il caso studio](case-studies/importspy/index.md)
 
 ### B3DO — Basilicata 3D Open
 
 Pipeline geospaziale per trasformare dataset pubblici del territorio lucano in modelli 3D del terreno.
 
-→ [Leggi il caso studio](case-studies/b3do/overview.md)
+→ [Leggi il caso studio](case-studies/b3do/index.md)
 
 ### IoT Data Aggregation Architecture
 
 Architettura edge-to-cloud per raccogliere dati IoT eterogenei e renderli utilizzabili in scenari Digital Twin.
 
-→ [Leggi il caso studio](case-studies/iot-data-aggregation-digital-twin/overview.md)
+→ [Leggi il caso studio](case-studies/iot-data-aggregation-digital-twin/index.md)
 
 ---
 

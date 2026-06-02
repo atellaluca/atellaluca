@@ -70,7 +70,7 @@ What matters about it:
 - Docker Compose with DynamoDB Local and MinIO
 - AWS deployment with Lambda, ECR, DynamoDB, S3, CloudFront, CloudFormation, and CloudWatch
 
-→ [Explore cloud-portable case study](case-studies/cloud-portable-fleet-platform/overview.md)
+→ [Explore cloud-portable case study](case-studies/cloud-portable-fleet-platform/index.md)
 
 </div>
 
@@ -84,7 +84,7 @@ It helps modular systems fail early when a plugin, module, or integration does n
 
 Useful for plugin ecosystems, modular backends, embedded runtimes, and CI/CD validation.
 
-→ [Explore ImportSpy case study](case-studies/importspy/overview.md)
+→ [Explore ImportSpy case study](case-studies/importspy/index.md)
 
 </div>
 
@@ -102,7 +102,7 @@ The project covers:
 - CLI-driven workflow using GDAL, Rasterio, NumPy, PyVista, Fiona, and Typer
 - unpublished pipeline, designed as an open geospatial/model-generation project
 
-→ [Explore B3DO case study](case-studies/b3do/overview.md)
+→ [Explore B3DO case study](case-studies/b3do/index.md)
 
 </div>
 
@@ -119,7 +119,7 @@ It covers:
 - ingestion layer for real-time, GeoJSON, and domain-specific data
 - GraphQL API, data-specific layers, microfrontends, storage gateway, and AI-assisted processing
 
-→ [Explore Digital Twin architecture case study](case-studies/iot-data-aggregation-digital-twin/overview.md)
+→ [Explore Digital Twin architecture case study](case-studies/iot-data-aggregation-digital-twin/index.md)
 
 </div>
 

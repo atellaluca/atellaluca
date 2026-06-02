@@ -3,6 +3,9 @@ site_description: "Luca Atella portfolio: software architect and backend platfor
 site_author: "Luca Atella"
 site_url: "https://profile.atellaluca.com/"
 
+hooks:
+  - hooks/seo.py
+
 theme:
   name: material
   custom_dir: overrides
@@ -91,29 +94,29 @@ nav:
   - Case Studies:
       - Overview: case-studies/index.md
       - Cloud-Portable Fleet Management Platform:
-          - Overview: case-studies/cloud-portable-fleet-platform/overview.md
+          - Overview: case-studies/cloud-portable-fleet-platform/index.md
       - ImportSpy:
-          - Overview: case-studies/importspy/overview.md
+          - Overview: case-studies/importspy/index.md
           - Architecture: case-studies/importspy/architecture.md
           - Validation System (Deep Dive): case-studies/importspy/validation.md
           - Runtime Contracts (Deep Dive): case-studies/importspy/contracts.md
           - Violation System and Contract Diagnostics (Deep Dive): case-studies/importspy/violations.md
 
       - B3DO:
-          - Overview: case-studies/b3do/overview.md
+          - Overview: case-studies/b3do/index.md
 
       - Unified Backend for Heterogeneous Data Sources (SAFE):
-          - Overview: case-studies/unified-backend/overview.md
+          - Overview: case-studies/unified-backend/index.md
           - Architecture: case-studies/unified-backend/architecture.md
           - Plugin System (Deep Dive): case-studies/unified-backend/plugin-system.md
           - Declarative UI Schema (Widget DSL): case-studies/unified-backend/ui-schema.md
           - Operations & DX: case-studies/unified-backend/operations.md
 
       - IoT Data Aggregation Architecture for Digital Twin Systems:
-          - Overview: case-studies/iot-data-aggregation-digital-twin/overview.md
+          - Overview: case-studies/iot-data-aggregation-digital-twin/index.md
 
       - End-to-End Real-Time Fleet Telemetry Backend (SAFE):
-          - Overview: case-studies/fleet-tracking/overview.md
+          - Overview: case-studies/fleet-tracking/index.md
           - Architecture: case-studies/fleet-tracking/architecture.md
 
   - Profile: profile.md
