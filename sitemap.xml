@@ -22,11 +22,10 @@
         <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/contact/"/>
     </url>
     <url>
-        <loc>https://profile.atellaluca.com/cv-pdf/</loc>
+        <loc>https://profile.atellaluca.com/cv/</loc>
         <lastmod>2026-06-02</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/cv-pdf/"/>
-        <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/cv-pdf/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/cv/"/>
     </url>
     <url>
         <loc>https://profile.atellaluca.com/cv/</loc>
@@ -57,18 +56,25 @@
         <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/"/>
     </url>
     <url>
-        <loc>https://profile.atellaluca.com/case-studies/b3do/overview/</loc>
+        <loc>https://profile.atellaluca.com/case-studies/b3do/</loc>
         <lastmod>2026-06-02</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/b3do/overview/"/>
-        <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/b3do/overview/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/b3do/"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/b3do/"/>
     </url>
     <url>
-        <loc>https://profile.atellaluca.com/case-studies/cloud-portable-fleet-platform/overview/</loc>
+        <loc>https://profile.atellaluca.com/case-studies/cloud-portable-fleet-platform/</loc>
         <lastmod>2026-06-02</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/cloud-portable-fleet-platform/overview/"/>
-        <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/cloud-portable-fleet-platform/overview/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/cloud-portable-fleet-platform/"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/cloud-portable-fleet-platform/"/>
+    </url>
+    <url>
+        <loc>https://profile.atellaluca.com/case-studies/fleet-tracking/</loc>
+        <lastmod>2026-06-02</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/fleet-tracking/"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/fleet-tracking/"/>
     </url>
     <url>
         <loc>https://profile.atellaluca.com/case-studies/fleet-tracking/architecture/</loc>
@@ -78,11 +84,11 @@
         <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/fleet-tracking/architecture/"/>
     </url>
     <url>
-        <loc>https://profile.atellaluca.com/case-studies/fleet-tracking/overview/</loc>
+        <loc>https://profile.atellaluca.com/case-studies/importspy/</loc>
         <lastmod>2026-06-02</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/fleet-tracking/overview/"/>
-        <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/fleet-tracking/overview/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/importspy/"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/importspy/"/>
     </url>
     <url>
         <loc>https://profile.atellaluca.com/case-studies/importspy/architecture/</loc>
@@ -99,13 +105,6 @@
         <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/importspy/contracts/"/>
     </url>
     <url>
-        <loc>https://profile.atellaluca.com/case-studies/importspy/overview/</loc>
-        <lastmod>2026-06-02</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/importspy/overview/"/>
-        <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/importspy/overview/"/>
-    </url>
-    <url>
         <loc>https://profile.atellaluca.com/case-studies/importspy/validation/</loc>
         <lastmod>2026-06-02</lastmod>
         <changefreq>daily</changefreq>
@@ -120,11 +119,18 @@
         <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/importspy/violations/"/>
     </url>
     <url>
-        <loc>https://profile.atellaluca.com/case-studies/iot-data-aggregation-digital-twin/overview/</loc>
+        <loc>https://profile.atellaluca.com/case-studies/iot-data-aggregation-digital-twin/</loc>
         <lastmod>2026-06-02</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/iot-data-aggregation-digital-twin/overview/"/>
-        <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/iot-data-aggregation-digital-twin/overview/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/iot-data-aggregation-digital-twin/"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/iot-data-aggregation-digital-twin/"/>
+    </url>
+    <url>
+        <loc>https://profile.atellaluca.com/case-studies/unified-backend/</loc>
+        <lastmod>2026-06-02</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/unified-backend/"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/unified-backend/"/>
     </url>
     <url>
         <loc>https://profile.atellaluca.com/case-studies/unified-backend/architecture/</loc>
@@ -139,13 +145,6 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/unified-backend/operations/"/>
         <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/unified-backend/operations/"/>
-    </url>
-    <url>
-        <loc>https://profile.atellaluca.com/case-studies/unified-backend/overview/</loc>
-        <lastmod>2026-06-02</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/unified-backend/overview/"/>
-        <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/unified-backend/overview/"/>
     </url>
     <url>
         <loc>https://profile.atellaluca.com/case-studies/unified-backend/plugin-system/</loc>
@@ -183,13 +182,6 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/contact/"/>
     </url>
     <url>
-        <loc>https://profile.atellaluca.com/it/cv-pdf/</loc>
-        <lastmod>2026-06-02</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/cv-pdf/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/cv-pdf/"/>
-    </url>
-    <url>
         <loc>https://profile.atellaluca.com/it/cv/</loc>
         <lastmod>2026-06-02</lastmod>
         <changefreq>daily</changefreq>
@@ -218,18 +210,25 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/"/>
     </url>
     <url>
-        <loc>https://profile.atellaluca.com/it/case-studies/b3do/overview/</loc>
+        <loc>https://profile.atellaluca.com/it/case-studies/b3do/</loc>
         <lastmod>2026-06-02</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/b3do/overview/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/b3do/overview/"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/b3do/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/b3do/"/>
     </url>
     <url>
-        <loc>https://profile.atellaluca.com/it/case-studies/cloud-portable-fleet-platform/overview/</loc>
+        <loc>https://profile.atellaluca.com/it/case-studies/cloud-portable-fleet-platform/</loc>
         <lastmod>2026-06-02</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/cloud-portable-fleet-platform/overview/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/cloud-portable-fleet-platform/overview/"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/cloud-portable-fleet-platform/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/cloud-portable-fleet-platform/"/>
+    </url>
+    <url>
+        <loc>https://profile.atellaluca.com/it/case-studies/fleet-tracking/</loc>
+        <lastmod>2026-06-02</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/fleet-tracking/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/fleet-tracking/"/>
     </url>
     <url>
         <loc>https://profile.atellaluca.com/it/case-studies/fleet-tracking/architecture/</loc>
@@ -239,11 +238,11 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/fleet-tracking/architecture/"/>
     </url>
     <url>
-        <loc>https://profile.atellaluca.com/it/case-studies/fleet-tracking/overview/</loc>
+        <loc>https://profile.atellaluca.com/it/case-studies/importspy/</loc>
         <lastmod>2026-06-02</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/fleet-tracking/overview/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/fleet-tracking/overview/"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/importspy/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/importspy/"/>
     </url>
     <url>
         <loc>https://profile.atellaluca.com/it/case-studies/importspy/architecture/</loc>
@@ -260,13 +259,6 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/importspy/contracts/"/>
     </url>
     <url>
-        <loc>https://profile.atellaluca.com/it/case-studies/importspy/overview/</loc>
-        <lastmod>2026-06-02</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/importspy/overview/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/importspy/overview/"/>
-    </url>
-    <url>
         <loc>https://profile.atellaluca.com/it/case-studies/importspy/validation/</loc>
         <lastmod>2026-06-02</lastmod>
         <changefreq>daily</changefreq>
@@ -281,11 +273,18 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/importspy/violations/"/>
     </url>
     <url>
-        <loc>https://profile.atellaluca.com/it/case-studies/iot-data-aggregation-digital-twin/overview/</loc>
+        <loc>https://profile.atellaluca.com/it/case-studies/iot-data-aggregation-digital-twin/</loc>
         <lastmod>2026-06-02</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/iot-data-aggregation-digital-twin/overview/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/iot-data-aggregation-digital-twin/overview/"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/iot-data-aggregation-digital-twin/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/iot-data-aggregation-digital-twin/"/>
+    </url>
+    <url>
+        <loc>https://profile.atellaluca.com/it/case-studies/unified-backend/</loc>
+        <lastmod>2026-06-02</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/unified-backend/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/unified-backend/"/>
     </url>
     <url>
         <loc>https://profile.atellaluca.com/it/case-studies/unified-backend/architecture/</loc>
@@ -300,13 +299,6 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/unified-backend/operations/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/unified-backend/operations/"/>
-    </url>
-    <url>
-        <loc>https://profile.atellaluca.com/it/case-studies/unified-backend/overview/</loc>
-        <lastmod>2026-06-02</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="it" href="https://profile.atellaluca.com/it/case-studies/unified-backend/overview/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://profile.atellaluca.com/case-studies/unified-backend/overview/"/>
     </url>
     <url>
         <loc>https://profile.atellaluca.com/it/case-studies/unified-backend/plugin-system/</loc>

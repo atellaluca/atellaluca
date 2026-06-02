@@ -10,7 +10,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://profile.atellaluca.com/case-studies/cloud-portable-fleet-platform/overview/</loc>
+    <loc>https://profile.atellaluca.com/case-studies/cloud-portable-fleet-platform/</loc>
     <image:image>
       <image:loc>https://profile.atellaluca.com/assets/images/case-studies/cloud-portable-fleet-platform/cloud-portable-fleet-management-platform-aws-fastapi-architecture.png</image:loc>
       <image:title>Cloud-portable fleet management platform AWS FastAPI architecture</image:title>
@@ -23,7 +23,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://profile.atellaluca.com/it/case-studies/cloud-portable-fleet-platform/overview/</loc>
+    <loc>https://profile.atellaluca.com/it/case-studies/cloud-portable-fleet-platform/</loc>
     <image:image>
       <image:loc>https://profile.atellaluca.com/assets/images/case-studies/cloud-portable-fleet-platform/cloud-portable-fleet-management-platform-aws-fastapi-architecture.png</image:loc>
       <image:title>Architettura AWS FastAPI per piattaforma fleet management cloud-portable</image:title>
@@ -36,7 +36,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://profile.atellaluca.com/case-studies/iot-data-aggregation-digital-twin/overview/</loc>
+    <loc>https://profile.atellaluca.com/case-studies/iot-data-aggregation-digital-twin/</loc>
     <image:image>
       <image:loc>https://profile.atellaluca.com/assets/images/case-studies/iot-data-aggregation-digital-twin/iot-data-aggregation-digital-twin-edge-cloud-architecture.png</image:loc>
       <image:title>IoT data aggregation and Digital Twin edge-cloud architecture</image:title>
@@ -44,7 +44,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://profile.atellaluca.com/it/case-studies/iot-data-aggregation-digital-twin/overview/</loc>
+    <loc>https://profile.atellaluca.com/it/case-studies/iot-data-aggregation-digital-twin/</loc>
     <image:image>
       <image:loc>https://profile.atellaluca.com/assets/images/case-studies/iot-data-aggregation-digital-twin/iot-data-aggregation-digital-twin-edge-cloud-architecture.png</image:loc>
       <image:title>Architettura edge-to-cloud per IoT data aggregation e Digital Twin</image:title>

@@ -6,41 +6,41 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Piattaforma fleet management adottata in produzione di Luca Atella, costruita con FastAPI, React, AWS Lambda, DynamoDB, S3, CloudFront e architettura backend cloud-portable.">
+        <meta name="description" content="Caso studio di Luca Atella per IoT data aggregation e Digital Twin architecture: acquisizione edge, gateway, GraphQL API, microfrontend e layer di storage.">
       
       
         <meta name="author" content="Luca Atella">
       
       
-        <link rel="canonical" href="https://profile.atellaluca.com/it/case-studies/cloud-portable-fleet-platform/overview/">
+        <link rel="canonical" href="https://profile.atellaluca.com/it/case-studies/iot-data-aggregation-digital-twin/">
       
       
-        <link rel="prev" href="../../">
+        <link rel="prev" href="../unified-backend/operations/">
       
       
-        <link rel="next" href="../../importspy/overview/">
+        <link rel="next" href="../fleet-tracking/">
       
       
         
-          <link rel="alternate" href="../../../../case-studies/cloud-portable-fleet-platform/overview/" hreflang="en">
+          <link rel="alternate" href="../../../case-studies/iot-data-aggregation-digital-twin/" hreflang="en">
         
           <link rel="alternate" href="./" hreflang="it">
         
       
       
-      <link rel="icon" href="../../../../assets/favicon.ico">
+      <link rel="icon" href="../../../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Cloud-Portable Fleet Management Platform | Caso Studio AWS FastAPI - Luca Atella · Software Architect & Backend Platform Engineer</title>
+        <title>Architettura IoT Data Aggregation | Digital Twin Edge-to-Cloud - Luca Atella · Software Architect & Backend Platform Engineer</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -59,13 +59,13 @@
       
     
     
-      <link rel="stylesheet" href="../../../../stylesheets/cv-pdf.css">
+      <link rel="stylesheet" href="../../../stylesheets/cv-pdf.css">
     
-      <link rel="stylesheet" href="../../../../stylesheets/print.css">
+      <link rel="stylesheet" href="../../../stylesheets/print.css">
     
-      <link rel="stylesheet" href="../../../../stylesheets/header.css">
+      <link rel="stylesheet" href="../../../stylesheets/header.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -110,17 +110,17 @@
   
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Luca Atella · Software Architect & Backend Platform Engineer">
-  <meta property="og:title" content="Cloud-Portable Fleet Management Platform | Caso Studio AWS FastAPI">
-  <meta property="og:description" content="Piattaforma fleet management adottata in produzione di Luca Atella, costruita con FastAPI, React, AWS Lambda, DynamoDB, S3, CloudFront e architettura backend cloud-portable.">
-  <meta property="og:url" content="https://profile.atellaluca.com/it/case-studies/cloud-portable-fleet-platform/overview/">
-  <meta property="og:image" content="https://profile.atellaluca.com/assets/images/case-studies/cloud-portable-fleet-platform/cloud-portable-fleet-management-platform-aws-fastapi-architecture.png">
+  <meta property="og:title" content="Architettura IoT Data Aggregation | Digital Twin Edge-to-Cloud">
+  <meta property="og:description" content="Caso studio di Luca Atella per IoT data aggregation e Digital Twin architecture: acquisizione edge, gateway, GraphQL API, microfrontend e layer di storage.">
+  <meta property="og:url" content="https://profile.atellaluca.com/it/case-studies/iot-data-aggregation-digital-twin/">
+  <meta property="og:image" content="https://profile.atellaluca.com/assets/images/case-studies/iot-data-aggregation-digital-twin/iot-data-aggregation-digital-twin-edge-cloud-architecture.png">
   
-    <meta property="og:image:alt" content="Diagramma architetturale AWS FastAPI per piattaforma fleet management cloud-portable">
+    <meta property="og:image:alt" content="Diagramma edge-to-cloud IoT data aggregation e Digital Twin architecture">
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Cloud-Portable Fleet Management Platform | Caso Studio AWS FastAPI">
-  <meta name="twitter:description" content="Piattaforma fleet management adottata in produzione di Luca Atella, costruita con FastAPI, React, AWS Lambda, DynamoDB, S3, CloudFront e architettura backend cloud-portable.">
-  <meta name="twitter:image" content="https://profile.atellaluca.com/assets/images/case-studies/cloud-portable-fleet-platform/cloud-portable-fleet-management-platform-aws-fastapi-architecture.png">
+  <meta name="twitter:title" content="Architettura IoT Data Aggregation | Digital Twin Edge-to-Cloud">
+  <meta name="twitter:description" content="Caso studio di Luca Atella per IoT data aggregation e Digital Twin architecture: acquisizione edge, gateway, GraphQL API, microfrontend e layer di storage.">
+  <meta name="twitter:image" content="https://profile.atellaluca.com/assets/images/case-studies/iot-data-aggregation-digital-twin/iot-data-aggregation-digital-twin-edge-cloud-architecture.png">
   
   
   
@@ -128,10 +128,10 @@
   {
     "@context": "https://schema.org",
     "@type": "TechArticle",
-    "name": "Cloud-Portable Fleet Management Platform | Caso Studio AWS FastAPI",
-    "description": "Piattaforma fleet management adottata in produzione di Luca Atella, costruita con FastAPI, React, AWS Lambda, DynamoDB, S3, CloudFront e architettura backend cloud-portable.",
-    "url": "https://profile.atellaluca.com/it/case-studies/cloud-portable-fleet-platform/overview/",
-    "image": "https://profile.atellaluca.com/assets/images/case-studies/cloud-portable-fleet-platform/cloud-portable-fleet-management-platform-aws-fastapi-architecture.png",
+    "name": "Architettura IoT Data Aggregation | Digital Twin Edge-to-Cloud",
+    "description": "Caso studio di Luca Atella per IoT data aggregation e Digital Twin architecture: acquisizione edge, gateway, GraphQL API, microfrontend e layer di storage.",
+    "url": "https://profile.atellaluca.com/it/case-studies/iot-data-aggregation-digital-twin/",
+    "image": "https://profile.atellaluca.com/assets/images/case-studies/iot-data-aggregation-digital-twin/iot-data-aggregation-digital-twin-edge-cloud-architecture.png",
     "isPartOf": {
       "@type": "WebSite",
       "name": "Luca Atella \u00b7 Software Architect \u0026 Backend Platform Engineer",
@@ -182,7 +182,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cloud-portable-fleet-management-platform" class="md-skip">
+        <a href="#iot-data-aggregation-architecture-per-digital-twin" class="md-skip">
           Vai al contenuto
         </a>
       
@@ -196,9 +196,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Intestazione">
-    <a href="../../../" title="Luca Atella · Software Architect &amp; Backend Platform Engineer" class="md-header__button md-logo" aria-label="Luca Atella · Software Architect & Backend Platform Engineer" data-md-component="logo">
+    <a href="../../" title="Luca Atella · Software Architect &amp; Backend Platform Engineer" class="md-header__button md-logo" aria-label="Luca Atella · Software Architect & Backend Platform Engineer" data-md-component="logo">
       
-  <img src="../../../../assets/luca-atella-software-architect-backend-platform-engineer.png" alt="logo">
+  <img src="../../../assets/luca-atella-software-architect-backend-platform-engineer.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -215,7 +215,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cloud-Portable Fleet Management Platform | Caso Studio AWS FastAPI
+              Architettura IoT Data Aggregation | Digital Twin Edge-to-Cloud
             
           </span>
         </div>
@@ -248,7 +248,7 @@
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="../../../../case-studies/cloud-portable-fleet-platform/overview/" hreflang="en" class="md-select__link">
+            <a href="../../../case-studies/iot-data-aggregation-digital-twin/" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
@@ -328,7 +328,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link">
         
   
   
@@ -347,7 +347,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../about/" class="md-tabs__link">
+      <a href="../../about/" class="md-tabs__link">
         
   
   
@@ -366,7 +366,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../methodology/" class="md-tabs__link">
+      <a href="../../methodology/" class="md-tabs__link">
         
   
   
@@ -389,7 +389,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -407,7 +407,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../profile/" class="md-tabs__link">
+      <a href="../../profile/" class="md-tabs__link">
         
   
   
@@ -426,7 +426,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../cv/" class="md-tabs__link">
+      <a href="../../cv/" class="md-tabs__link">
         
   
   
@@ -445,7 +445,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../contact/" class="md-tabs__link">
+      <a href="../../contact/" class="md-tabs__link">
         
   
   
@@ -480,9 +480,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../" title="Luca Atella · Software Architect &amp; Backend Platform Engineer" class="md-nav__button md-logo" aria-label="Luca Atella · Software Architect & Backend Platform Engineer" data-md-component="logo">
+    <a href="../../" title="Luca Atella · Software Architect &amp; Backend Platform Engineer" class="md-nav__button md-logo" aria-label="Luca Atella · Software Architect & Backend Platform Engineer" data-md-component="logo">
       
-  <img src="../../../../assets/luca-atella-software-architect-backend-platform-engineer.png" alt="logo">
+  <img src="../../../assets/luca-atella-software-architect-backend-platform-engineer.png" alt="logo">
 
     </a>
     Luca Atella · Software Architect & Backend Platform Engineer
@@ -497,7 +497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -524,7 +524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   
@@ -551,7 +551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../methodology/" class="md-nav__link">
+      <a href="../../methodology/" class="md-nav__link">
         
   
   
@@ -633,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -658,8 +658,6 @@
                 
   
   
-    
-  
   
   
     
@@ -670,11 +668,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
           <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
@@ -695,7 +693,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -710,37 +708,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Panoramica
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../cloud-portable-fleet-platform/" class="md-nav__link">
         
   
   
@@ -756,114 +727,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Indice">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Indice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#panoramica" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Panoramica
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#problema" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problema
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#architettura" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Architettura
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modello-dati" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Modello Dati
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cloud-portability" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cloud Portability
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backend-design" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Backend Design
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment-aws" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deployment AWS
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cosa-dimostra" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cosa Dimostra
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -934,7 +797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../importspy/overview/" class="md-nav__link">
+      <a href="../importspy/" class="md-nav__link">
         
   
   
@@ -962,7 +825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../importspy/architecture/" class="md-nav__link">
+      <a href="../importspy/architecture/" class="md-nav__link">
         
   
   
@@ -990,7 +853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../importspy/validation/" class="md-nav__link">
+      <a href="../importspy/validation/" class="md-nav__link">
         
   
   
@@ -1018,7 +881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../importspy/contracts/" class="md-nav__link">
+      <a href="../importspy/contracts/" class="md-nav__link">
         
   
   
@@ -1046,7 +909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../importspy/violations/" class="md-nav__link">
+      <a href="../importspy/violations/" class="md-nav__link">
         
   
   
@@ -1132,7 +995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../b3do/overview/" class="md-nav__link">
+      <a href="../b3do/" class="md-nav__link">
         
   
   
@@ -1218,7 +1081,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../unified-backend/overview/" class="md-nav__link">
+      <a href="../unified-backend/" class="md-nav__link">
         
   
   
@@ -1246,7 +1109,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../unified-backend/architecture/" class="md-nav__link">
+      <a href="../unified-backend/architecture/" class="md-nav__link">
         
   
   
@@ -1274,7 +1137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../unified-backend/plugin-system/" class="md-nav__link">
+      <a href="../unified-backend/plugin-system/" class="md-nav__link">
         
   
   
@@ -1302,7 +1165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../unified-backend/ui-schema/" class="md-nav__link">
+      <a href="../unified-backend/ui-schema/" class="md-nav__link">
         
   
   
@@ -1330,7 +1193,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../unified-backend/operations/" class="md-nav__link">
+      <a href="../unified-backend/operations/" class="md-nav__link">
         
   
   
@@ -1363,6 +1226,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1373,11 +1238,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" checked>
         
           
           <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
@@ -1398,7 +1263,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1413,10 +1278,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../iot-data-aggregation-digital-twin/overview/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Panoramica
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1432,6 +1324,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#panoramica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Panoramica
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componenti-principali" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Componenti Principali
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decisioni-architetturali" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decisioni Architetturali
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cosa-dimostra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cosa Dimostra
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1502,7 +1458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fleet-tracking/overview/" class="md-nav__link">
+      <a href="../fleet-tracking/" class="md-nav__link">
         
   
   
@@ -1530,7 +1486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fleet-tracking/architecture/" class="md-nav__link">
+      <a href="../fleet-tracking/architecture/" class="md-nav__link">
         
   
   
@@ -1573,7 +1529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../profile/" class="md-nav__link">
+      <a href="../../profile/" class="md-nav__link">
         
   
   
@@ -1600,7 +1556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cv/" class="md-nav__link">
+      <a href="../../cv/" class="md-nav__link">
         
   
   
@@ -1627,7 +1583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contact/" class="md-nav__link">
+      <a href="../../contact/" class="md-nav__link">
         
   
   
@@ -1685,10 +1641,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problema" class="md-nav__link">
+  <a href="#componenti-principali" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problema
+        Componenti Principali
       
     </span>
   </a>
@@ -1696,54 +1652,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#architettura" class="md-nav__link">
+  <a href="#decisioni-architetturali" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Architettura
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modello-dati" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Modello Dati
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cloud-portability" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cloud Portability
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backend-design" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Backend Design
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment-aws" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deployment AWS
+        Decisioni Architetturali
       
     </span>
   </a>
@@ -1778,74 +1690,35 @@
 
 
 
-<h1 id="cloud-portable-fleet-management-platform">Cloud-Portable Fleet Management Platform</h1>
-<p><strong>Tipo:</strong> applicazione cloud adottata in produzione<br />
-<strong>Ruolo:</strong> Software Architect · Backend Engineer · Cloud Deployment<br />
-<strong>Periodo:</strong> 2026<br />
-<strong>Dominio:</strong> fleet management, sistemi backend, AWS, cloud-portable architecture</p>
-<hr />
+<h1 id="iot-data-aggregation-architecture-per-digital-twin">IoT Data Aggregation Architecture per Digital Twin</h1>
 <h2 id="panoramica">Panoramica</h2>
-<p>Questo caso studio descrive una piattaforma full-stack per gestire operazioni su veicoli aziendali: utenti, auto, prenotazioni, viaggi, rifornimenti, manutenzioni, documenti, statistiche e report.</p>
-<p>La scelta architetturale più importante è stata separare la logica applicativa dai servizi cloud usati in produzione. AWS è l’ambiente di produzione, non il modello mentale dell’applicazione.</p>
+<p>Questo caso studio descrive un’architettura edge-to-cloud per acquisire, normalizzare e aggregare dati IoT eterogenei in scenari Digital Twin.</p>
+<p>L’obiettivo è rendere osservabili e utilizzabili dati provenienti da sensori, videocamere, dispositivi e gateway, mantenendo separati acquisizione, ingestion, API, storage e visualizzazione.</p>
+<p><img alt="Architettura edge-to-cloud per IoT data aggregation e Digital Twin con sensori, gateway, ingestion, GraphQL API, microfrontend e layer di storage" src="../../../assets/images/case-studies/iot-data-aggregation-digital-twin/iot-data-aggregation-digital-twin-edge-cloud-architecture.png" /></p>
 <hr />
-<h2 id="problema">Problema</h2>
-<p>I sistemi di fleet management spesso crescono per urgenza operativa: una funzionalità per le prenotazioni, una per i documenti, una per la manutenzione, poi report e statistiche.</p>
-<p>Senza una struttura chiara emergono rischi concreti:</p>
+<h2 id="componenti-principali">Componenti Principali</h2>
 <ul>
-<li>logica di business legata alla persistenza</li>
-<li>ambienti locali lontani dalla produzione</li>
-<li>servizi cloud che entrano nel dominio</li>
-<li>osservabilità aggiunta troppo tardi</li>
-<li>modifiche infrastrutturali che richiedono modifiche applicative</li>
-</ul>
-<p>L’obiettivo era costruire uno strumento operativo reale mantenendo l’architettura comprensibile e manutenibile.</p>
-<hr />
-<h2 id="architettura">Architettura</h2>
-<p>La piattaforma è composta da frontend React, backend FastAPI, livelli astratti di persistenza e storage, e deployment AWS basato su serverless e managed services.</p>
-<p><img alt="Diagramma AWS FastAPI della piattaforma fleet management cloud-portable di Luca Atella con Lambda, DynamoDB, S3, CloudFront e sviluppo locale Docker" src="../../../../assets/images/case-studies/cloud-portable-fleet-platform/cloud-portable-fleet-management-platform-aws-fastapi-architecture.png" /></p>
-<hr />
-<h2 id="modello-dati">Modello Dati</h2>
-<p>Il modello applicativo copre le principali entità operative: utenti, veicoli, prenotazioni, viaggi, rifornimenti, manutenzioni, commit, file e dati di reporting.</p>
-<p>La scelta chiave è modellare queste entità a livello applicativo, non come riflesso diretto di tabelle DynamoDB o oggetti S3.</p>
-<p><img alt="Modello dati della piattaforma fleet management di Luca Atella con utenti, veicoli, prenotazioni, viaggi, rifornimenti, manutenzioni, documenti e reporting" src="../../../../assets/images/case-studies/cloud-portable-fleet-platform/cloud-portable-fleet-management-platform-domain-data-model.png" /></p>
-<hr />
-<h2 id="cloud-portability">Cloud Portability</h2>
-<p>Il backend espone repository e storage contracts. Le implementazioni infrastrutturali gestiscono DynamoDB e S3 in produzione, mentre lo sviluppo locale usa DynamoDB Local e MinIO.</p>
-<p>Questo permette di mantenere la stessa architettura applicativa tra:</p>
-<ul>
-<li>sviluppo locale con Docker Compose</li>
-<li>produzione su AWS con Lambda, ECR, DynamoDB, S3, CloudFront, CloudFormation e CloudWatch</li>
-<li>possibili ambienti futuri con modifiche limitate agli adattatori infrastrutturali</li>
+<li>acquisizione edge da sensori, camere e dispositivi</li>
+<li>comunicazione BLE/Zigbee mesh e gateway</li>
+<li>layer di ingestion per dati real-time, GeoJSON e domain-specific</li>
+<li>GraphQL API</li>
+<li>layer applicativi specifici per tipologia di dato</li>
+<li>microfrontends</li>
+<li>storage gateway</li>
+<li>elaborazione assistita da AI</li>
 </ul>
 <hr />
-<h2 id="backend-design">Backend Design</h2>
-<p>Il backend FastAPI include:</p>
-<ul>
-<li>modelli di dominio per utenti, auto, viaggi, prenotazioni, rifornimenti e manutenzioni</li>
-<li>schemi Pydantic per validazione e API contracts</li>
-<li>autenticazione JWT</li>
-<li>password hashing con Argon2</li>
-<li>interfacce repository basate su Python <code>Protocol</code></li>
-<li>router per user, car, trip, reservation, maintenance, refueling, statistics e reports</li>
-<li>export Excel e report PDF</li>
-<li>logging strutturato delle richieste HTTP</li>
-</ul>
-<hr />
-<h2 id="deployment-aws">Deployment AWS</h2>
-<p>Il backend viene pacchettizzato come immagine container, pubblicato su ECR ed eseguito su AWS Lambda tramite Mangum. DynamoDB gestisce la persistenza, S3 conserva documenti e ricevute, CloudWatch raccoglie i log applicativi.</p>
-<p>Il frontend React/TypeScript viene distribuito come build statica su S3 privata e servito tramite CloudFront con Origin Access Control.</p>
+<h2 id="decisioni-architetturali">Decisioni Architetturali</h2>
+<p>L’architettura separa le responsabilità per evitare che dispositivi, protocolli e storage influenzino direttamente il modello applicativo.</p>
+<p>I gateway raccolgono e normalizzano il dato, il layer di ingestion gestisce validazione e routing, mentre API e microfrontend consumano dati già stabilizzati.</p>
 <hr />
 <h2 id="cosa-dimostra">Cosa Dimostra</h2>
-<p>Questo progetto dimostra esperienza in:</p>
 <ul>
-<li>architettura applicativa cloud-portable</li>
-<li>deployment serverless su AWS</li>
-<li>architettura backend con FastAPI</li>
-<li>astrazione infrastrutturale</li>
-<li>ambienti locali Docker Compose</li>
-<li>Infrastructure as Code con CloudFormation</li>
-<li>osservabilità orientata alla produzione</li>
-<li>rilascio di un’applicazione reale</li>
+<li>integrazione edge/cloud</li>
+<li>sistemi IoT eterogenei</li>
+<li>data aggregation per Digital Twin</li>
+<li>separazione tra acquisizione, ingestion e presentazione</li>
+<li>architetture pronte per evolvere con nuove sorgenti dati</li>
 </ul>
 
 
@@ -1885,7 +1758,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Piede" >
         
           
-          <a href="../../" class="md-footer__link md-footer__link--prev" aria-label="Precedente: Panoramica">
+          <a href="../unified-backend/operations/" class="md-footer__link md-footer__link--prev" aria-label="Precedente: Operations e Developer Experience">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1895,14 +1768,14 @@
                 Precedente
               </span>
               <div class="md-ellipsis">
-                Panoramica
+                Operations e Developer Experience
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../importspy/overview/" class="md-footer__link md-footer__link--next" aria-label="Successivo: Panoramica">
+          <a href="../fleet-tracking/" class="md-footer__link md-footer__link--next" aria-label="Successivo: Panoramica">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Successivo
@@ -1972,14 +1845,14 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "navigation.footer"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
       
-        <script src="../../../../javascripts/mermaid-init.js"></script>
+        <script src="../../../javascripts/mermaid-init.js"></script>
       
     
   </body>

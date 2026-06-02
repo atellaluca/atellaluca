@@ -6,41 +6,41 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="ImportSpy case study by Luca Atella: open-source Python runtime contract engine for modular systems, plugin validation, architectural boundaries and deterministic diagnostics.">
+        <meta name="description" content="Fleet tracking backend case study by Luca Atella for real-time telemetry ingestion, GPS and CAN bus data normalization, APIs, secure communication and logistics systems.">
       
       
         <meta name="author" content="Luca Atella">
       
       
-        <link rel="canonical" href="https://profile.atellaluca.com/case-studies/importspy/overview/">
+        <link rel="canonical" href="https://profile.atellaluca.com/case-studies/fleet-tracking/">
       
       
-        <link rel="prev" href="../../cloud-portable-fleet-platform/overview/">
+        <link rel="prev" href="../iot-data-aggregation-digital-twin/">
       
       
-        <link rel="next" href="../architecture/">
+        <link rel="next" href="architecture/">
       
       
         
           <link rel="alternate" href="./" hreflang="en">
         
-          <link rel="alternate" href="../../../it/case-studies/importspy/overview/" hreflang="it">
+          <link rel="alternate" href="../../it/case-studies/fleet-tracking/" hreflang="it">
         
       
       
-      <link rel="icon" href="../../../assets/favicon.ico">
+      <link rel="icon" href="../../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>ImportSpy | Runtime Contract Validation for Modular Python Systems - Luca Atella · Software Architect & Backend Platform Engineer</title>
+        <title>Real-Time Fleet Telemetry Backend | GPS and CAN Bus Architecture - Luca Atella · Software Architect & Backend Platform Engineer</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -59,13 +59,13 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/cv-pdf.css">
+      <link rel="stylesheet" href="../../stylesheets/cv-pdf.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/print.css">
+      <link rel="stylesheet" href="../../stylesheets/print.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/header.css">
+      <link rel="stylesheet" href="../../stylesheets/header.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -108,18 +108,18 @@
   
   <meta name="robots" content="index,follow,max-image-preview:large">
   
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
   <meta property="og:site_name" content="Luca Atella · Software Architect & Backend Platform Engineer">
-  <meta property="og:title" content="ImportSpy | Runtime Contract Validation for Modular Python Systems">
-  <meta property="og:description" content="ImportSpy case study by Luca Atella: open-source Python runtime contract engine for modular systems, plugin validation, architectural boundaries and deterministic diagnostics.">
-  <meta property="og:url" content="https://profile.atellaluca.com/case-studies/importspy/overview/">
+  <meta property="og:title" content="Real-Time Fleet Telemetry Backend | GPS and CAN Bus Architecture">
+  <meta property="og:description" content="Fleet tracking backend case study by Luca Atella for real-time telemetry ingestion, GPS and CAN bus data normalization, APIs, secure communication and logistics systems.">
+  <meta property="og:url" content="https://profile.atellaluca.com/case-studies/fleet-tracking/">
   <meta property="og:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
-    <meta property="og:image:alt" content="ImportSpy runtime contract validation for modular Python systems by Luca Atella">
+    <meta property="og:image:alt" content="Real-time fleet telemetry backend architecture by Luca Atella">
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ImportSpy | Runtime Contract Validation for Modular Python Systems">
-  <meta name="twitter:description" content="ImportSpy case study by Luca Atella: open-source Python runtime contract engine for modular systems, plugin validation, architectural boundaries and deterministic diagnostics.">
+  <meta name="twitter:title" content="Real-Time Fleet Telemetry Backend | GPS and CAN Bus Architecture">
+  <meta name="twitter:description" content="Fleet tracking backend case study by Luca Atella for real-time telemetry ingestion, GPS and CAN bus data normalization, APIs, secure communication and logistics systems.">
   <meta name="twitter:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
   
@@ -127,15 +127,38 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareSourceCode",
-    "name": "ImportSpy | Runtime Contract Validation for Modular Python Systems",
-    "description": "ImportSpy case study by Luca Atella: open-source Python runtime contract engine for modular systems, plugin validation, architectural boundaries and deterministic diagnostics.",
-    "url": "https://profile.atellaluca.com/case-studies/importspy/overview/",
+    "@type": "TechArticle",
+    "name": "Real-Time Fleet Telemetry Backend | GPS and CAN Bus Architecture",
+    "description": "Fleet tracking backend case study by Luca Atella for real-time telemetry ingestion, GPS and CAN bus data normalization, APIs, secure communication and logistics systems.",
+    "url": "https://profile.atellaluca.com/case-studies/fleet-tracking/",
     "image": "https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png",
     "isPartOf": {
       "@type": "WebSite",
       "name": "Luca Atella \u00b7 Software Architect \u0026 Backend Platform Engineer",
       "url": "https://profile.atellaluca.com/"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Luca Atella",
+      "url": "https://profile.atellaluca.com/",
+      "sameAs": [
+        "https://github.com/atellaluca",
+        "https://www.linkedin.com/in/luca-atella/"
+      ],
+      "jobTitle": "Software Architect and Backend Platform Engineer",
+      "knowsAbout": [
+        "Backend architecture",
+        "Platform engineering",
+        "AWS serverless architecture",
+        "Cloud-portable backend systems",
+        "FastAPI",
+        "DynamoDB",
+        "Runtime contract validation",
+        "Modular Python systems",
+        "IoT backend architecture",
+        "Digital Twin architecture",
+        "Geospatial data pipelines"
+      ]
     }
   }
   </script>
@@ -159,7 +182,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#importspy-runtime-import-contracts-for-modular-python-systems" class="md-skip">
+        <a href="#end-to-end-real-time-fleet-telemetry-backend-safe" class="md-skip">
           Skip to content
         </a>
       
@@ -173,9 +196,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Luca Atella · Software Architect &amp; Backend Platform Engineer" class="md-header__button md-logo" aria-label="Luca Atella · Software Architect & Backend Platform Engineer" data-md-component="logo">
+    <a href="../.." title="Luca Atella · Software Architect &amp; Backend Platform Engineer" class="md-header__button md-logo" aria-label="Luca Atella · Software Architect & Backend Platform Engineer" data-md-component="logo">
       
-  <img src="../../../assets/luca-atella-software-architect-backend-platform-engineer.png" alt="logo">
+  <img src="../../assets/luca-atella-software-architect-backend-platform-engineer.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -192,7 +215,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ImportSpy | Runtime Contract Validation for Modular Python Systems
+              Real-Time Fleet Telemetry Backend | GPS and CAN Bus Architecture
             
           </span>
         </div>
@@ -231,7 +254,7 @@
           </li>
         
           <li class="md-select__item">
-            <a href="../../../it/case-studies/importspy/overview/" hreflang="it" class="md-select__link">
+            <a href="../../it/case-studies/fleet-tracking/" hreflang="it" class="md-select__link">
               Italiano
             </a>
           </li>
@@ -305,7 +328,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -324,7 +347,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../about/" class="md-tabs__link">
+      <a href="../../about/" class="md-tabs__link">
         
   
   
@@ -343,7 +366,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../methodology/" class="md-tabs__link">
+      <a href="../../methodology/" class="md-tabs__link">
         
   
   
@@ -366,7 +389,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -384,7 +407,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../profile/" class="md-tabs__link">
+      <a href="../../profile/" class="md-tabs__link">
         
   
   
@@ -403,7 +426,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../cv/" class="md-tabs__link">
+      <a href="../../cv/" class="md-tabs__link">
         
   
   
@@ -422,7 +445,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../contact/" class="md-tabs__link">
+      <a href="../../contact/" class="md-tabs__link">
         
   
   
@@ -457,9 +480,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Luca Atella · Software Architect &amp; Backend Platform Engineer" class="md-nav__button md-logo" aria-label="Luca Atella · Software Architect & Backend Platform Engineer" data-md-component="logo">
+    <a href="../.." title="Luca Atella · Software Architect &amp; Backend Platform Engineer" class="md-nav__button md-logo" aria-label="Luca Atella · Software Architect & Backend Platform Engineer" data-md-component="logo">
       
-  <img src="../../../assets/luca-atella-software-architect-backend-platform-engineer.png" alt="logo">
+  <img src="../../assets/luca-atella-software-architect-backend-platform-engineer.png" alt="logo">
 
     </a>
     Luca Atella · Software Architect & Backend Platform Engineer
@@ -474,7 +497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -501,7 +524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   
@@ -528,7 +551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../methodology/" class="md-nav__link">
+      <a href="../../methodology/" class="md-nav__link">
         
   
   
@@ -610,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -688,7 +711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cloud-portable-fleet-platform/overview/" class="md-nav__link">
+      <a href="../cloud-portable-fleet-platform/" class="md-nav__link">
         
   
   
@@ -721,8 +744,6 @@
                 
   
   
-    
-  
   
   
     
@@ -733,11 +754,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
         
           
           <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
@@ -758,7 +779,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -773,37 +794,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../importspy/" class="md-nav__link">
         
   
   
@@ -819,137 +813,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#problem-statement" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem Statement
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Problem Statement">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#problem-solution-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem → Solution Flow
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#design-goals" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Design Goals
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#high-level-architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        High-Level Architecture
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#applications-and-use-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Applications and Use Cases
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#talks-community" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Talks &amp; Community
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Talks &amp; Community">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#importspy-quando-i-moduli-python-sanno-dire-di-no" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ImportSpy: Quando i moduli Python sanno dire di no.
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#my-role" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        My Role
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -962,7 +825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../architecture/" class="md-nav__link">
+      <a href="../importspy/architecture/" class="md-nav__link">
         
   
   
@@ -990,7 +853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../validation/" class="md-nav__link">
+      <a href="../importspy/validation/" class="md-nav__link">
         
   
   
@@ -1018,7 +881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../contracts/" class="md-nav__link">
+      <a href="../importspy/contracts/" class="md-nav__link">
         
   
   
@@ -1046,7 +909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../violations/" class="md-nav__link">
+      <a href="../importspy/violations/" class="md-nav__link">
         
   
   
@@ -1132,7 +995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../b3do/overview/" class="md-nav__link">
+      <a href="../b3do/" class="md-nav__link">
         
   
   
@@ -1218,7 +1081,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../unified-backend/overview/" class="md-nav__link">
+      <a href="../unified-backend/" class="md-nav__link">
         
   
   
@@ -1246,7 +1109,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../unified-backend/architecture/" class="md-nav__link">
+      <a href="../unified-backend/architecture/" class="md-nav__link">
         
   
   
@@ -1274,7 +1137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../unified-backend/plugin-system/" class="md-nav__link">
+      <a href="../unified-backend/plugin-system/" class="md-nav__link">
         
   
   
@@ -1302,7 +1165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../unified-backend/ui-schema/" class="md-nav__link">
+      <a href="../unified-backend/ui-schema/" class="md-nav__link">
         
   
   
@@ -1330,7 +1193,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../unified-backend/operations/" class="md-nav__link">
+      <a href="../unified-backend/operations/" class="md-nav__link">
         
   
   
@@ -1416,7 +1279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../iot-data-aggregation-digital-twin/overview/" class="md-nav__link">
+      <a href="../iot-data-aggregation-digital-twin/" class="md-nav__link">
         
   
   
@@ -1449,6 +1312,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1459,11 +1324,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" checked>
         
           
           <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
@@ -1484,7 +1349,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1499,10 +1364,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../fleet-tracking/overview/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1518,6 +1410,180 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#context-and-motivation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context and Motivation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architectural-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architectural Goals
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#high-level-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High-Level Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingestion-over-persistent-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ingestion Over Persistent Connections
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unified-telemetry-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unified Telemetry Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runtime-validation-and-data-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime Validation and Data Governance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-driven-processing-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event-Driven Processing Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service Interfaces
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-and-trust-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security and Trust Boundaries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scalability-and-fault-tolerance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scalability and Fault Tolerance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-architecture-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Architecture Matters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transferable-lessons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transferable Lessons
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safe-disclosure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SAFE Disclosure
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1530,7 +1596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fleet-tracking/architecture/" class="md-nav__link">
+      <a href="architecture/" class="md-nav__link">
         
   
   
@@ -1573,7 +1639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../profile/" class="md-nav__link">
+      <a href="../../profile/" class="md-nav__link">
         
   
   
@@ -1600,7 +1666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cv/" class="md-nav__link">
+      <a href="../../cv/" class="md-nav__link">
         
   
   
@@ -1627,7 +1693,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contact/" class="md-nav__link">
+      <a href="../../contact/" class="md-nav__link">
         
   
   
@@ -1674,10 +1740,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#context-and-motivation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Context and Motivation
       
     </span>
   </a>
@@ -1693,30 +1759,13 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Problem Statement">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#problem-solution-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem → Solution Flow
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#design-goals" class="md-nav__link">
+  <a href="#architectural-goals" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Design Goals
+        Architectural Goals
       
     </span>
   </a>
@@ -1735,10 +1784,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#applications-and-use-cases" class="md-nav__link">
+  <a href="#ingestion-over-persistent-connections" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Applications and Use Cases
+        Ingestion Over Persistent Connections
       
     </span>
   </a>
@@ -1746,38 +1795,98 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#talks-community" class="md-nav__link">
+  <a href="#unified-telemetry-model" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Talks &amp; Community
+        Unified Telemetry Model
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Talks &amp; Community">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#importspy-quando-i-moduli-python-sanno-dire-di-no" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ImportSpy: Quando i moduli Python sanno dire di no.
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#my-role" class="md-nav__link">
+  <a href="#runtime-validation-and-data-governance" class="md-nav__link">
     <span class="md-ellipsis">
       
-        My Role
+        Runtime Validation and Data Governance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-driven-processing-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event-Driven Processing Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service Interfaces
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-and-trust-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security and Trust Boundaries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scalability-and-fault-tolerance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scalability and Fault Tolerance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-architecture-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Architecture Matters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transferable-lessons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transferable Lessons
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safe-disclosure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SAFE Disclosure
       
     </span>
   </a>
@@ -1801,127 +1910,275 @@
 
 
 
-<h1 id="importspy-runtime-import-contracts-for-modular-python-systems">ImportSpy — Runtime Import Contracts for Modular Python Systems</h1>
-<p><strong>Type:</strong> Open-source software project<br />
-<strong>Role:</strong> Project Lead &amp; Software Architect<br />
-<strong>Period:</strong> 2024 – Present<br />
-<strong>Domain:</strong> Python, modular systems, runtime validation<br />
-<strong>Repository:</strong> <a href="https://github.com/atellaluca/importspy">ImportSpy on GitHub — runtime contract engine for Python</a><br />
-<strong>Adoption:</strong> 15,000+ downloads on PyPI  </p>
-<hr />
-<h2 id="overview">Overview</h2>
-<p>ImportSpy is an open-source Python library designed to enforce <strong>runtime contracts at module import time</strong>.<br />
-Its goal is to prevent unsafe or incompatible modules from being loaded into a running system by validating their structural, environmental, and contextual properties before execution.</p>
-<p>The project was conceived to address a recurring problem in <strong>modular architectures, plugin-based systems, and extensible platforms</strong>:<br />
-the lack of a reliable mechanism to ensure that dynamically loaded components satisfy predefined integration requirements.</p>
-<p>ImportSpy introduces a <strong>contract-driven validation layer</strong> that operates at import time, enabling developers to:</p>
+<h1 id="end-to-end-real-time-fleet-telemetry-backend-safe">End-to-End Real-Time Fleet Telemetry Backend (SAFE)</h1>
+<h2 id="context-and-motivation">Context and Motivation</h2>
+<p>Modern logistics and mobility systems rely on continuous telemetry
+to monitor fleets of heterogeneous vehicles and assets in real time.</p>
+<p>Typical operational requirements include:</p>
 <ul>
-<li>enforce structural constraints on modules  </li>
-<li>validate runtime environment assumptions  </li>
-<li>prevent unsafe or incompatible imports  </li>
-<li>fail fast before corrupted system states are reached  </li>
+<li>live vehicle location tracking  </li>
+<li>engine and system telemetry ingestion  </li>
+<li>driver behavior and compliance monitoring  </li>
+<li>event-based alerts and notifications  </li>
+<li>historical data analysis and reporting  </li>
 </ul>
+<p>In practice, these systems must integrate:</p>
+<ul>
+<li>heterogeneous tracking devices  </li>
+<li>unreliable mobile networks  </li>
+<li>high-frequency event streams  </li>
+<li>structured and unstructured telemetry  </li>
+<li>multiple downstream consumers  </li>
+</ul>
+<p>This case study presents a <strong>real-time telemetry backend architecture</strong>
+designed to unify fleet data under a scalable, event-driven platform.</p>
+<p>The system is described in a SAFE and abstracted form,
+focusing on transferable architectural patterns
+rather than on any specific commercial product.</p>
 <hr />
 <h2 id="problem-statement">Problem Statement</h2>
-<p>In modern Python systems, dynamic imports are widely used to support:</p>
+<p>The core challenge was to design a backend that could:</p>
 <ul>
-<li>plugin architectures  </li>
-<li>runtime extensibility  </li>
-<li>dependency injection  </li>
-<li>distributed and modular services  </li>
+<li>ingest real-time telemetry from heterogeneous trackers  </li>
+<li>operate reliably over unstable network links  </li>
+<li>normalize incompatible data formats  </li>
+<li>validate incoming events at runtime  </li>
+<li>expose fleet data through stable APIs  </li>
+<li>support real-time monitoring use cases  </li>
+<li>scale across growing vehicle fleets  </li>
 </ul>
-<p>However, Python’s import system provides <strong>no built-in mechanism</strong> to:</p>
+<p>Traditional batch-oriented or tightly coupled ingestion pipelines
+are poorly suited for:</p>
 <ul>
-<li>verify the structure of imported modules  </li>
-<li>validate required functions, classes, or interfaces  </li>
-<li>enforce environmental or contextual constraints  </li>
-<li>prevent incompatible runtime conditions  </li>
+<li>high-frequency location updates  </li>
+<li>event-driven state changes  </li>
+<li>near-real-time dashboards  </li>
+<li>reactive alerting workflows  </li>
 </ul>
-<p>As a result, many systems rely on:</p>
-<ul>
-<li>implicit assumptions  </li>
-<li>ad-hoc runtime checks  </li>
-<li>late failures occurring deep in the execution flow  </li>
-</ul>
-<p>This leads to fragile integrations, unpredictable failures, and difficult-to-debug runtime errors.</p>
-<h3 id="problem-solution-flow">Problem → Solution Flow</h3>
-<pre class="mermaid"><code>flowchart LR
-    A[Dynamic Import in Python] --&gt; B[Implicit Assumptions]
-    B --&gt; C[Late Runtime Failures]
-    C --&gt; D[Fragile Integrations]
-    D --&gt; E[Difficult Debugging]
-
-    A --&gt; F[ImportSpy Intercepts Import]
-    F --&gt; G[Contract Validation]
-    G --&gt; H[Deterministic Failure]
-    H --&gt; I[Safe Module Execution]
-
-    style A fill:#f5f5f5,stroke:#333
-    style F fill:#e8f0fe,stroke:#333
-    style H fill:#e8f0fe,stroke:#333</code></pre>
+<p>The goal was to build a backend that treats telemetry ingestion
+as a first-class streaming concern.</p>
 <hr />
-<h2 id="design-goals">Design Goals</h2>
-<p>ImportSpy was designed around the following core principles:</p>
+<h2 id="architectural-goals">Architectural Goals</h2>
+<p>The architecture was driven by the following goals:</p>
 <ul>
-<li><strong>Fail fast:</strong> detect incompatibilities at import time  </li>
-<li><strong>Declarative contracts:</strong> express requirements as structured schemas  </li>
-<li><strong>Low coupling:</strong> keep contracts independent from implementation  </li>
-<li><strong>Runtime safety:</strong> prevent invalid modules from entering the system  </li>
-<li><strong>Extensibility:</strong> support future validation rules and constraints  </li>
-<li><strong>Minimal intrusion:</strong> avoid invasive changes to application code  </li>
+<li>
+<p><strong>Real-time ingestion</strong><br />
+  Process telemetry streams with minimal latency.</p>
+</li>
+<li>
+<p><strong>Heterogeneity tolerance</strong><br />
+  Support multiple tracker types and data formats.</p>
+</li>
+<li>
+<p><strong>Event-driven processing</strong><br />
+  Model state changes as streams of events.</p>
+</li>
+<li>
+<p><strong>Runtime validation</strong><br />
+  Enforce data contracts and invariants on incoming telemetry.</p>
+</li>
+<li>
+<p><strong>Scalable fan-out</strong><br />
+  Deliver telemetry to multiple consumers without coupling.</p>
+</li>
+<li>
+<p><strong>Operational resilience</strong><br />
+  Tolerate partial failures and unstable connectivity.</p>
+</li>
+<li>
+<p><strong>Secure access</strong><br />
+  Protect fleet data through explicit authentication boundaries.</p>
+</li>
 </ul>
 <hr />
 <h2 id="high-level-architecture">High-Level Architecture</h2>
-<p>At a conceptual level, ImportSpy is structured as a runtime governance pipeline that intercepts module imports and validates them against declarative contracts before execution.</p>
-<pre class="mermaid"><code>flowchart TB
-    U[Application Code] --&gt; I[Import Request]
-    I --&gt; H[Import Interception Layer]
-    H --&gt; C[Contract Definition Layer]
-    C --&gt; V[Validation Engine]
-    V --&gt; R[Validation Result]
-
-    R --&gt;|Valid| M[Module Execution]
-    R --&gt;|Invalid| E[Structured Failure]
-
-    V --&gt; X[Execution Context]
-    X --&gt; OS[Operating System]
-    X --&gt; PY[Python Runtime]
-    X --&gt; ENV[Environment Variables]
-    X --&gt; CFG[Configuration]
-
-    style H fill:#e8f0fe,stroke:#333
-    style V fill:#e8f0fe,stroke:#333
-    style R fill:#e8f0fe,stroke:#333</code></pre>
-<hr />
-<h2 id="applications-and-use-cases">Applications and Use Cases</h2>
-<p>ImportSpy is applicable to a wide range of scenarios, including:</p>
+<p>At a high level, the system is organized into the following layers:</p>
+<ol>
+<li>
+<p><strong>Ingestion Layer</strong><br />
+   Accepts telemetry over persistent socket connections
+   and protocol-specific adapters.</p>
+</li>
+<li>
+<p><strong>Normalization Layer</strong><br />
+   Transforms heterogeneous telemetry into a unified event schema.</p>
+</li>
+<li>
+<p><strong>Validation Layer</strong><br />
+   Applies runtime contracts to incoming events.</p>
+</li>
+<li>
+<p><strong>Event Processing Layer</strong><br />
+   Routes validated events through an internal pub/sub pipeline.</p>
+</li>
+<li>
+<p><strong>Service Layer</strong><br />
+   Exposes fleet state and history via REST APIs and real-time streams.</p>
+</li>
+</ol>
+<p>Each layer is:</p>
 <ul>
-<li>plugin-based systems  </li>
-<li>modular backends  </li>
-<li>microservice bootstrapping  </li>
-<li>CI/CD validation pipelines  </li>
-<li>IoT and edge platforms  </li>
-<li>secure runtime environments  </li>
+<li>independently scalable  </li>
+<li>loosely coupled  </li>
+<li>replaceable  </li>
+<li>observable  </li>
 </ul>
 <hr />
-<h2 id="talks-community">Talks &amp; Community</h2>
-<p>The architectural concepts behind ImportSpy have been shared publicly within technical communities as part of a broader effort to promote runtime governance patterns for modular and extensible Python systems.</p>
-<h3 id="importspy-quando-i-moduli-python-sanno-dire-di-no">ImportSpy: Quando i moduli Python sanno dire di no.</h3>
-<p><strong>GDG Basilicata · Flash Talks Arena</strong></p>
-<p>A community talk focused on <em>import-time contracts</em> and how modular systems can enforce architectural assumptions (Python version, OS, environment variables, and other runtime constraints) before executing non-conforming modules.</p>
-<p>This talk introduces ImportSpy not as a utility library, but as an architectural governance layer for plugin-based and long-running backend systems.</p>
-<p><strong>Resources</strong></p>
+<h2 id="ingestion-over-persistent-connections">Ingestion Over Persistent Connections</h2>
+<p>Telemetry ingestion is built around <strong>persistent socket connections</strong>
+to accommodate:</p>
 <ul>
-<li>Slides (PDF, Italian): <a href="../../../assets/talks/importspy-gdg-basilicata-it.pdf">ImportSpy GDG Basilicata talk — Runtime import contracts for Python</a>  </li>
-<li>Slides (PDF, English — technical translation): <a href="../../../assets/talks/importspy-runtime-contract-validation-en.pdf">Runtime Contract Validation in Modular Python Systems</a>  </li>
-<li>Official GDG Basilicata event page: <a href="https://gdg.community.dev/events/details/google-gdg-basilicata-presents-flash-talks-arena/">Flash Talks Arena — ImportSpy session</a>  </li>
-<li>Community listing: <a href="https://www.pignolalug.it/iniziative/flash-talks-arena/">PignolaLUG — Flash Talks Arena (ImportSpy)</a></li>
+<li>high-frequency updates  </li>
+<li>mobile network variability  </li>
+<li>intermittent connectivity  </li>
+<li>bidirectional communication  </li>
+</ul>
+<p>This approach enables:</p>
+<ul>
+<li>efficient streaming without repeated handshake overhead  </li>
+<li>server-driven acknowledgements  </li>
+<li>flow control and backpressure handling  </li>
+<li>low-latency event propagation  </li>
+</ul>
+<p>Protocol-specific logic is isolated into adapter components
+to prevent ingestion complexity from leaking into the core.</p>
+<hr />
+<h2 id="unified-telemetry-model">Unified Telemetry Model</h2>
+<p>All inbound telemetry is normalized into a <strong>unified event model</strong>.</p>
+<p>This model abstracts away:</p>
+<ul>
+<li>tracker-specific message formats  </li>
+<li>vendor-specific field naming  </li>
+<li>protocol idiosyncrasies  </li>
+</ul>
+<p>and provides:</p>
+<ul>
+<li>consistent field semantics  </li>
+<li>normalized units of measurement  </li>
+<li>explicit timestamps and identifiers  </li>
+<li>versioned event schemas  </li>
+</ul>
+<p>This ensures that downstream services never depend
+on device-specific assumptions.</p>
+<hr />
+<h2 id="runtime-validation-and-data-governance">Runtime Validation and Data Governance</h2>
+<p>Telemetry events are validated against <strong>runtime contracts</strong>.</p>
+<p>Validation rules enforce:</p>
+<ul>
+<li>required structural fields  </li>
+<li>value ranges and constraints  </li>
+<li>timestamp consistency  </li>
+<li>schema version compatibility  </li>
+</ul>
+<p>Invalid events are:</p>
+<ul>
+<li>rejected early  </li>
+<li>logged with structured diagnostics  </li>
+<li>isolated from downstream consumers  </li>
+</ul>
+<p>This prevents silent data corruption
+and supports long-term data quality governance.</p>
+<hr />
+<h2 id="event-driven-processing-pipeline">Event-Driven Processing Pipeline</h2>
+<p>Validated telemetry is routed through
+an internal <strong>publish/subscribe pipeline</strong>.</p>
+<p>This enables:</p>
+<ul>
+<li>independent consumers for analytics, monitoring, and alerting  </li>
+<li>scalable fan-out without tight coupling  </li>
+<li>asynchronous processing of heavy workloads  </li>
+<li>real-time dashboards fed by event streams  </li>
+</ul>
+<p>Event routing rules remain declarative and configurable,
+allowing new consumers to be added without modifying ingestion logic.</p>
+<hr />
+<h2 id="service-interfaces">Service Interfaces</h2>
+<p>The service layer exposes telemetry through:</p>
+<ul>
+<li>REST APIs for historical queries and state inspection  </li>
+<li>real-time streams for live dashboards  </li>
+<li>event subscriptions for reactive workflows  </li>
+</ul>
+<p>This multi-interface approach supports:</p>
+<ul>
+<li>operational monitoring tools  </li>
+<li>frontend applications  </li>
+<li>downstream analytics services  </li>
+<li>third-party integrations  </li>
+</ul>
+<p>without binding clients to ingestion internals.</p>
+<hr />
+<h2 id="security-and-trust-boundaries">Security and Trust Boundaries</h2>
+<p>The platform enforces explicit trust boundaries.</p>
+<p>Security measures include:</p>
+<ul>
+<li>authentication of ingestion clients  </li>
+<li>scoped access tokens for fleet resources  </li>
+<li>isolation between tenant contexts  </li>
+<li>controlled exposure of telemetry endpoints  </li>
+</ul>
+<p>This prevents unauthorized access
+and limits the blast radius of compromised components.</p>
+<hr />
+<h2 id="scalability-and-fault-tolerance">Scalability and Fault Tolerance</h2>
+<p>The system is designed to scale horizontally
+and tolerate partial failures.</p>
+<p>Key properties include:</p>
+<ul>
+<li>stateless ingestion adapters  </li>
+<li>idempotent event processing  </li>
+<li>backpressure handling under load  </li>
+<li>graceful degradation for unstable sources  </li>
+<li>independent scaling of ingestion and processing layers  </li>
+</ul>
+<p>This ensures predictable behavior
+as fleet size and telemetry volume grow.</p>
+<hr />
+<h2 id="why-this-architecture-matters">Why This Architecture Matters</h2>
+<p>This architecture demonstrates how to build telemetry platforms that:</p>
+<ul>
+<li>ingest heterogeneous real-time data safely  </li>
+<li>enforce data contracts at runtime  </li>
+<li>scale across distributed environments  </li>
+<li>remain resilient under network instability  </li>
+<li>support reactive, event-driven use cases  </li>
+</ul>
+<p>It reflects a design philosophy focused on:</p>
+<ul>
+<li>architectural governance  </li>
+<li>explicit system boundaries  </li>
+<li>separation of concerns  </li>
+<li>long-term evolvability  </li>
+</ul>
+<p>rather than on short-term feature delivery.</p>
+<hr />
+<h2 id="transferable-lessons">Transferable Lessons</h2>
+<p>Key architectural lessons from this system:</p>
+<ul>
+<li>Treat telemetry ingestion as a streaming concern.  </li>
+<li>Normalize early, not late.  </li>
+<li>Enforce data contracts at runtime.  </li>
+<li>Design for unreliable networks.  </li>
+<li>Decouple producers from consumers via pub/sub.  </li>
+<li>Make failures observable and intelligible.  </li>
+<li>Optimize for operational reality.</li>
 </ul>
 <hr />
-<h2 id="my-role">My Role</h2>
-<p>I designed and implemented ImportSpy end-to-end, starting from the conceptual architecture and evolving it into a production-ready open-source system.</p>
-<p>My work covered the definition of the contract model, the design of the validation engine, and the implementation of the runtime import interception mechanism, with a strong focus on determinism, clarity, and architectural correctness. I also curated the project documentation, packaging, and release workflow to ensure long-term maintainability and ease of adoption.</p>
-<p>Through this project, I consolidated my experience in software architecture, runtime systems, modular design, and DevSecOps-oriented tooling, while leading the full lifecycle of an open-source initiative from initial design to public release.</p>
+<h2 id="safe-disclosure">SAFE Disclosure</h2>
+<p>This case study intentionally omits:</p>
+<ul>
+<li>product identifiers and company references  </li>
+<li>tracker brands and hardware models  </li>
+<li>proprietary protocols and message formats  </li>
+<li>implementation-specific deployment details  </li>
+</ul>
+<p>The focus is exclusively on:</p>
+<ul>
+<li>architectural patterns  </li>
+<li>event-driven telemetry processing  </li>
+<li>runtime validation and governance  </li>
+<li>transferable backend design principles  </li>
+</ul>
 
 
 
@@ -1960,7 +2217,7 @@ the lack of a reliable mechanism to ensure that dynamically loaded components sa
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../cloud-portable-fleet-platform/overview/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
+          <a href="../iot-data-aggregation-digital-twin/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1977,7 +2234,7 @@ the lack of a reliable mechanism to ensure that dynamically loaded components sa
         
         
           
-          <a href="../architecture/" class="md-footer__link md-footer__link--next" aria-label="Next: Architecture">
+          <a href="architecture/" class="md-footer__link md-footer__link--next" aria-label="Next: Architecture">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
@@ -2047,14 +2304,14 @@ the lack of a reliable mechanism to ensure that dynamically loaded components sa
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "navigation.footer"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
       
-        <script src="../../../javascripts/mermaid-init.js"></script>
+        <script src="../../javascripts/mermaid-init.js"></script>
       
     
   </body>

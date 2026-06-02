@@ -1,46 +1,46 @@
 
 <!doctype html>
-<html lang="it" class="no-js">
+<html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Caso studio B3DO di Luca Atella: pipeline geospaziale Python con GDAL, Rasterio, NumPy e PyVista per generare modelli 3D da open data della Basilicata.">
+        <meta name="description" content="Luca Atella case study for IoT data aggregation and Digital Twin architecture covering edge acquisition, gateways, GraphQL APIs, microfrontends and storage layers.">
       
       
         <meta name="author" content="Luca Atella">
       
       
-        <link rel="canonical" href="https://profile.atellaluca.com/it/case-studies/b3do/overview/">
+        <link rel="canonical" href="https://profile.atellaluca.com/case-studies/iot-data-aggregation-digital-twin/">
       
       
-        <link rel="prev" href="../../importspy/violations/">
+        <link rel="prev" href="../unified-backend/operations/">
       
       
-        <link rel="next" href="../../unified-backend/overview/">
+        <link rel="next" href="../fleet-tracking/">
       
       
         
-          <link rel="alternate" href="../../../../case-studies/b3do/overview/" hreflang="en">
+          <link rel="alternate" href="./" hreflang="en">
         
-          <link rel="alternate" href="./" hreflang="it">
+          <link rel="alternate" href="../../it/case-studies/iot-data-aggregation-digital-twin/" hreflang="it">
         
       
       
-      <link rel="icon" href="../../../../assets/favicon.ico">
+      <link rel="icon" href="../../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>B3DO | Pipeline Geospaziale per Modelli 3D del Territorio - Luca Atella · Software Architect & Backend Platform Engineer</title>
+        <title>IoT Data Aggregation Architecture | Digital Twin Edge-to-Cloud Case Study - Luca Atella · Software Architect & Backend Platform Engineer</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -59,13 +59,13 @@
       
     
     
-      <link rel="stylesheet" href="../../../../stylesheets/cv-pdf.css">
+      <link rel="stylesheet" href="../../stylesheets/cv-pdf.css">
     
-      <link rel="stylesheet" href="../../../../stylesheets/print.css">
+      <link rel="stylesheet" href="../../stylesheets/print.css">
     
-      <link rel="stylesheet" href="../../../../stylesheets/header.css">
+      <link rel="stylesheet" href="../../stylesheets/header.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -110,17 +110,17 @@
   
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Luca Atella · Software Architect & Backend Platform Engineer">
-  <meta property="og:title" content="B3DO | Pipeline Geospaziale per Modelli 3D del Territorio">
-  <meta property="og:description" content="Caso studio B3DO di Luca Atella: pipeline geospaziale Python con GDAL, Rasterio, NumPy e PyVista per generare modelli 3D da open data della Basilicata.">
-  <meta property="og:url" content="https://profile.atellaluca.com/it/case-studies/b3do/overview/">
-  <meta property="og:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
+  <meta property="og:title" content="IoT Data Aggregation Architecture | Digital Twin Edge-to-Cloud Case Study">
+  <meta property="og:description" content="Luca Atella case study for IoT data aggregation and Digital Twin architecture covering edge acquisition, gateways, GraphQL APIs, microfrontends and storage layers.">
+  <meta property="og:url" content="https://profile.atellaluca.com/case-studies/iot-data-aggregation-digital-twin/">
+  <meta property="og:image" content="https://profile.atellaluca.com/assets/images/case-studies/iot-data-aggregation-digital-twin/iot-data-aggregation-digital-twin-edge-cloud-architecture.png">
   
-    <meta property="og:image:alt" content="B3DO pipeline geospaziale per modelli 3D della Basilicata">
+    <meta property="og:image:alt" content="Edge-to-cloud IoT data aggregation and Digital Twin architecture diagram">
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="B3DO | Pipeline Geospaziale per Modelli 3D del Territorio">
-  <meta name="twitter:description" content="Caso studio B3DO di Luca Atella: pipeline geospaziale Python con GDAL, Rasterio, NumPy e PyVista per generare modelli 3D da open data della Basilicata.">
-  <meta name="twitter:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
+  <meta name="twitter:title" content="IoT Data Aggregation Architecture | Digital Twin Edge-to-Cloud Case Study">
+  <meta name="twitter:description" content="Luca Atella case study for IoT data aggregation and Digital Twin architecture covering edge acquisition, gateways, GraphQL APIs, microfrontends and storage layers.">
+  <meta name="twitter:image" content="https://profile.atellaluca.com/assets/images/case-studies/iot-data-aggregation-digital-twin/iot-data-aggregation-digital-twin-edge-cloud-architecture.png">
   
   
   
@@ -128,10 +128,10 @@
   {
     "@context": "https://schema.org",
     "@type": "TechArticle",
-    "name": "B3DO | Pipeline Geospaziale per Modelli 3D del Territorio",
-    "description": "Caso studio B3DO di Luca Atella: pipeline geospaziale Python con GDAL, Rasterio, NumPy e PyVista per generare modelli 3D da open data della Basilicata.",
-    "url": "https://profile.atellaluca.com/it/case-studies/b3do/overview/",
-    "image": "https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png",
+    "name": "IoT Data Aggregation Architecture | Digital Twin Edge-to-Cloud Case Study",
+    "description": "Luca Atella case study for IoT data aggregation and Digital Twin architecture covering edge acquisition, gateways, GraphQL APIs, microfrontends and storage layers.",
+    "url": "https://profile.atellaluca.com/case-studies/iot-data-aggregation-digital-twin/",
+    "image": "https://profile.atellaluca.com/assets/images/case-studies/iot-data-aggregation-digital-twin/iot-data-aggregation-digital-twin-edge-cloud-architecture.png",
     "isPartOf": {
       "@type": "WebSite",
       "name": "Luca Atella \u00b7 Software Architect \u0026 Backend Platform Engineer",
@@ -182,8 +182,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#b3do-basilicata-3d-open" class="md-skip">
-          Vai al contenuto
+        <a href="#iot-data-aggregation-architecture-for-digital-twin-systems" class="md-skip">
+          Skip to content
         </a>
       
     </div>
@@ -195,10 +195,10 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Intestazione">
-    <a href="../../../" title="Luca Atella · Software Architect &amp; Backend Platform Engineer" class="md-header__button md-logo" aria-label="Luca Atella · Software Architect & Backend Platform Engineer" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Luca Atella · Software Architect &amp; Backend Platform Engineer" class="md-header__button md-logo" aria-label="Luca Atella · Software Architect & Backend Platform Engineer" data-md-component="logo">
       
-  <img src="../../../../assets/luca-atella-software-architect-backend-platform-engineer.png" alt="logo">
+  <img src="../../assets/luca-atella-software-architect-backend-platform-engineer.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -215,7 +215,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              B3DO | Pipeline Geospaziale per Modelli 3D del Territorio
+              IoT Data Aggregation Architecture | Digital Twin Edge-to-Cloud Case Study
             
           </span>
         </div>
@@ -241,20 +241,20 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="Seleziona la lingua">
+    <button class="md-header__button md-icon" aria-label="Select language">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="../../../../case-studies/b3do/overview/" hreflang="en" class="md-select__link">
+            <a href="./" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="./" hreflang="it" class="md-select__link">
+            <a href="../../it/case-studies/iot-data-aggregation-digital-twin/" hreflang="it" class="md-select__link">
               Italiano
             </a>
           </li>
@@ -275,16 +275,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Cerca">
+      <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -297,7 +297,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Inizializza la ricerca
+            Initializing search
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -328,7 +328,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../" class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -347,13 +347,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../about/" class="md-tabs__link">
+      <a href="../../about/" class="md-tabs__link">
         
   
   
     
   
-  Chi sono
+  About
 
       </a>
     </li>
@@ -366,13 +366,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../methodology/" class="md-tabs__link">
+      <a href="../../methodology/" class="md-tabs__link">
         
   
   
     
   
-  Metodo
+  Methodology
 
       </a>
     </li>
@@ -389,11 +389,11 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
   
-  Casi Studio
+  Case Studies
 
         </a>
       </li>
@@ -407,13 +407,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../profile/" class="md-tabs__link">
+      <a href="../../profile/" class="md-tabs__link">
         
   
   
     
   
-  Profilo
+  Profile
 
       </a>
     </li>
@@ -426,7 +426,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../cv/" class="md-tabs__link">
+      <a href="../../cv/" class="md-tabs__link">
         
   
   
@@ -445,13 +445,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../contact/" class="md-tabs__link">
+      <a href="../../contact/" class="md-tabs__link">
         
   
   
     
   
-  Contatti
+  Contact
 
       </a>
     </li>
@@ -478,11 +478,11 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../" title="Luca Atella · Software Architect &amp; Backend Platform Engineer" class="md-nav__button md-logo" aria-label="Luca Atella · Software Architect & Backend Platform Engineer" data-md-component="logo">
+    <a href="../.." title="Luca Atella · Software Architect &amp; Backend Platform Engineer" class="md-nav__button md-logo" aria-label="Luca Atella · Software Architect & Backend Platform Engineer" data-md-component="logo">
       
-  <img src="../../../../assets/luca-atella-software-architect-backend-platform-engineer.png" alt="logo">
+  <img src="../../assets/luca-atella-software-architect-backend-platform-engineer.png" alt="logo">
 
     </a>
     Luca Atella · Software Architect & Backend Platform Engineer
@@ -497,7 +497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../" class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -524,14 +524,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Chi sono
+    About
   
 
     
@@ -551,14 +551,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../methodology/" class="md-nav__link">
+      <a href="../../methodology/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Metodo
+    Methodology
   
 
     
@@ -604,7 +604,7 @@
   <span class="md-ellipsis">
     
   
-    Casi Studio
+    Case Studies
   
 
     
@@ -620,7 +620,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Casi Studio
+    Case Studies
   
 
           </label>
@@ -633,14 +633,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Panoramica
+    Overview
   
 
     
@@ -682,7 +682,7 @@
   <span class="md-ellipsis">
     
   
-    Piattaforma Fleet Cloud-Portable
+    Cloud-Portable Fleet Management Platform
   
 
     
@@ -698,7 +698,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Piattaforma Fleet Cloud-Portable
+    Cloud-Portable Fleet Management Platform
   
 
           </label>
@@ -711,14 +711,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cloud-portable-fleet-platform/overview/" class="md-nav__link">
+      <a href="../cloud-portable-fleet-platform/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Panoramica
+    Overview
   
 
     
@@ -797,14 +797,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../importspy/overview/" class="md-nav__link">
+      <a href="../importspy/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Panoramica
+    Overview
   
 
     
@@ -825,14 +825,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../importspy/architecture/" class="md-nav__link">
+      <a href="../importspy/architecture/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Architettura
+    Architecture
   
 
     
@@ -853,14 +853,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../importspy/validation/" class="md-nav__link">
+      <a href="../importspy/validation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Sistema di Validazione
+    Validation System (Deep Dive)
   
 
     
@@ -881,14 +881,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../importspy/contracts/" class="md-nav__link">
+      <a href="../importspy/contracts/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Runtime Contracts
+    Runtime Contracts (Deep Dive)
   
 
     
@@ -909,14 +909,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../importspy/violations/" class="md-nav__link">
+      <a href="../importspy/violations/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Diagnostica Contratti
+    Violation System and Contract Diagnostics (Deep Dive)
   
 
     
@@ -942,8 +942,6 @@
                 
   
   
-    
-  
   
   
     
@@ -954,11 +952,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
         
           
           <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
@@ -979,7 +977,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -994,44 +992,17 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Panoramica
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../b3do/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Panoramica
+    Overview
   
 
     
@@ -1040,70 +1011,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Indice">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Indice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#panoramica" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Panoramica
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cosa-fa" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cosa Fa
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#stack" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Stack
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#valore-architetturale" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Valore Architetturale
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1145,7 +1052,7 @@
   <span class="md-ellipsis">
     
   
-    Backend Unificato per Sorgenti Eterogenee
+    Unified Backend for Heterogeneous Data Sources (SAFE)
   
 
     
@@ -1161,7 +1068,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Backend Unificato per Sorgenti Eterogenee
+    Unified Backend for Heterogeneous Data Sources (SAFE)
   
 
           </label>
@@ -1174,14 +1081,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../unified-backend/overview/" class="md-nav__link">
+      <a href="../unified-backend/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Panoramica
+    Overview
   
 
     
@@ -1202,14 +1109,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../unified-backend/architecture/" class="md-nav__link">
+      <a href="../unified-backend/architecture/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Architettura
+    Architecture
   
 
     
@@ -1230,14 +1137,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../unified-backend/plugin-system/" class="md-nav__link">
+      <a href="../unified-backend/plugin-system/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Sistema Plugin
+    Plugin System (Deep Dive)
   
 
     
@@ -1258,14 +1165,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../unified-backend/ui-schema/" class="md-nav__link">
+      <a href="../unified-backend/ui-schema/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Schema UI Dichiarativo
+    Declarative UI Schema (Widget DSL)
   
 
     
@@ -1286,14 +1193,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../unified-backend/operations/" class="md-nav__link">
+      <a href="../unified-backend/operations/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Operations e Developer Experience
+    Operations & DX
   
 
     
@@ -1319,6 +1226,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1329,11 +1238,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" checked>
         
           
           <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
@@ -1343,7 +1252,7 @@
   <span class="md-ellipsis">
     
   
-    Architettura IoT per Digital Twin
+    IoT Data Aggregation Architecture for Digital Twin Systems
   
 
     
@@ -1354,12 +1263,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_6">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Architettura IoT per Digital Twin
+    IoT Data Aggregation Architecture for Digital Twin Systems
   
 
           </label>
@@ -1369,17 +1278,44 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../iot-data-aggregation-digital-twin/overview/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    Panoramica
+    Overview
   
 
     
@@ -1388,6 +1324,180 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problem-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Space
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-acquisition-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Acquisition Layer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingestion-and-data-aggregation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ingestion and Data Aggregation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-and-application-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API and Application Framework
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microfrontend-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microfrontend Strategy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage-gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage Gateway
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-and-advanced-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI and Advanced Processing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Principles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My Role
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-case-study-demonstrates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What This Case Study Demonstrates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read Next
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1429,7 +1539,7 @@
   <span class="md-ellipsis">
     
   
-    Backend Telemetria Fleet Real-Time
+    End-to-End Real-Time Fleet Telemetry Backend (SAFE)
   
 
     
@@ -1445,7 +1555,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Backend Telemetria Fleet Real-Time
+    End-to-End Real-Time Fleet Telemetry Backend (SAFE)
   
 
           </label>
@@ -1458,14 +1568,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fleet-tracking/overview/" class="md-nav__link">
+      <a href="../fleet-tracking/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Panoramica
+    Overview
   
 
     
@@ -1486,14 +1596,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fleet-tracking/architecture/" class="md-nav__link">
+      <a href="../fleet-tracking/architecture/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Architettura
+    Architecture
   
 
     
@@ -1529,14 +1639,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../profile/" class="md-nav__link">
+      <a href="../../profile/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Profilo
+    Profile
   
 
     
@@ -1556,7 +1666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cv/" class="md-nav__link">
+      <a href="../../cv/" class="md-nav__link">
         
   
   
@@ -1583,14 +1693,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contact/" class="md-nav__link">
+      <a href="../../contact/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Contatti
+    Contact
   
 
     
@@ -1616,7 +1726,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Indice">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -1625,15 +1735,15 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Indice
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#panoramica" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Panoramica
+        Overview
       
     </span>
   </a>
@@ -1641,10 +1751,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cosa-fa" class="md-nav__link">
+  <a href="#context" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cosa Fa
+        Context
       
     </span>
   </a>
@@ -1652,10 +1762,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#stack" class="md-nav__link">
+  <a href="#problem-space" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Stack
+        Problem Space
       
     </span>
   </a>
@@ -1663,10 +1773,120 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#valore-architetturale" class="md-nav__link">
+  <a href="#architecture-overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Valore Architetturale
+        Architecture Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-acquisition-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Acquisition Layer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingestion-and-data-aggregation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ingestion and Data Aggregation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-and-application-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API and Application Framework
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microfrontend-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microfrontend Strategy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage-gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage Gateway
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-and-advanced-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI and Advanced Processing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Principles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My Role
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-case-study-demonstrates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What This Case Study Demonstrates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read Next
       
     </span>
   </a>
@@ -1690,42 +1910,185 @@
 
 
 
-<h1 id="b3do-basilicata-3d-open">B3DO — Basilicata 3D Open</h1>
-<p><strong>Tipo:</strong> pipeline geospaziale<br />
-<strong>Ruolo:</strong> Project Lead · Software Architect · Data Pipeline Engineer<br />
-<strong>Stato:</strong> in sviluppo<br />
-<strong>Dominio:</strong> geospatial data, terrain modeling, 3D model generation, open data  </p>
+<h1 id="iot-data-aggregation-architecture-for-digital-twin-systems">IoT Data Aggregation Architecture for Digital Twin Systems</h1>
+<p><strong>Type:</strong> Architecture concept / design proposal<br />
+<strong>Role:</strong> Software Architect<br />
+<strong>Context:</strong> Technical discussion with CNR and Sviluppo Basilicata<br />
+<strong>Domain:</strong> IoT, Digital Twin, edge/cloud data aggregation<br />
+<strong>Status:</strong> Conceptual architecture  </p>
 <hr />
-<h2 id="panoramica">Panoramica</h2>
-<p>B3DO è una pipeline Python pensata per trasformare dataset pubblici del territorio lucano in modelli 3D del terreno.</p>
-<p>Il progetto nasce dall’interesse per Basilicata, open data e sistemi di elaborazione riproducibili: non un flusso GIS manuale, ma una pipeline tecnica che separa sorgenti, dati processati, artefatti intermedi e modelli finali.</p>
+<h2 id="overview">Overview</h2>
+<p>This case study presents a conceptual edge-to-cloud architecture for collecting, aggregating, and exposing heterogeneous IoT data in Digital Twin scenarios.</p>
+<p>The design separates data acquisition from data aggregation and introduces an application framework capable of handling multiple data-specific layers, including real-time streams, GeoJSON data, and other domain-specific formats.</p>
+<p>The goal was to reason about how heterogeneous physical-world data can be normalized, stored, queried, and visualized without coupling the acquisition layer to a single frontend, storage model, or data type.</p>
 <hr />
-<h2 id="cosa-fa">Cosa Fa</h2>
+<h2 id="context">Context</h2>
+<p>The architecture was developed in the context of a technical discussion involving CNR, Sviluppo Basilicata, and the Academy environment.</p>
+<p>It should be read as a <strong>conceptual architecture</strong>, not as a production deployment. Its value lies in the system design: the separation of edge acquisition, ingestion, aggregation, API exposure, visualization, and advanced processing.</p>
+<hr />
+<h2 id="problem-space">Problem Space</h2>
+<p>Digital Twin systems require data from many heterogeneous sources:</p>
 <ul>
-<li>merge di tile DTM</li>
-<li>estrazione dei confini regionali</li>
-<li>clipping raster</li>
-<li>generazione LOD multi-risoluzione</li>
-<li>mesh 3D del terreno</li>
-<li>hillshade e hypsometric color relief</li>
-<li>overlay idrografico</li>
-<li>preview e output testurizzati</li>
+<li>cameras</li>
+<li>sensors</li>
+<li>IoT devices</li>
+<li>gateway networks</li>
+<li>real-time telemetry</li>
+<li>geospatial data</li>
+<li>domain-specific data formats</li>
+</ul>
+<p>A recurring architectural risk is treating all incoming data as if it had the same lifecycle, structure, storage needs, and visualization model.</p>
+<p>The design addresses this by separating:</p>
+<ul>
+<li>edge acquisition</li>
+<li>ingestion</li>
+<li>data-specific processing</li>
+<li>application framework behavior</li>
+<li>API exposure</li>
+<li>storage paths</li>
+<li>visualization surfaces</li>
 </ul>
 <hr />
-<h2 id="stack">Stack</h2>
+<h2 id="architecture-overview">Architecture Overview</h2>
+<p><img alt="Edge-to-cloud IoT data aggregation architecture for Digital Twin systems with sensors, gateways, ingestion, GraphQL API, microfrontends and storage layers" src="../../assets/images/case-studies/iot-data-aggregation-digital-twin/iot-data-aggregation-digital-twin-edge-cloud-architecture.png" /></p>
+<p>The architecture is divided into two main macro-areas:</p>
+<ol>
+<li><strong>Data acquisition at the edge</strong></li>
+<li><strong>Data aggregation and application services</strong></li>
+</ol>
+<pre class="mermaid"><code>flowchart LR
+    subgraph EDGE[Edge / Data Acquisition]
+        DEV[IoT Devices&lt;br/&gt;Cameras · Sensors · Devices]
+        MESH[BLE / Zigbee Mesh]
+        GW[Gateway]
+        PIPE[Data Aggregation Pipeline]
+        DEV --&gt; MESH --&gt; GW --&gt; PIPE
+    end
+
+    subgraph CLOUD[Data Aggregation / Application Layer]
+        ING[Ingestion Layer]
+        API[GraphQL API]
+        APP[Application Framework]
+        LAYERS[Data-Specific Layers]
+        SG[Storage Gateway]
+        DBQ[DB Queue]
+        OBJQ[Object Queue]
+        DB[(DB)]
+        STORE[(Object Storage)]
+        MF[Microfrontends]
+        AI[AI Agent]
+    end
+
+    PIPE --&gt; ING
+    ING --&gt; API
+    API --&gt; APP
+    APP --&gt; LAYERS
+    APP --&gt; SG
+    SG --&gt; DBQ --&gt; DB
+    SG --&gt; OBJQ --&gt; STORE
+    MF --&gt; API
+    AI --&gt; API</code></pre>
+<hr />
+<h2 id="data-acquisition-layer">Data Acquisition Layer</h2>
+<p>The edge side of the architecture collects data from heterogeneous sources such as cameras, sensors, and generic IoT devices.</p>
+<p>A BLE/Zigbee mesh acts as the local communication fabric, while a gateway bridges edge data into the aggregation pipeline.</p>
+<p>This design keeps device-level communication concerns separated from the application framework and storage architecture.</p>
+<p>The edge layer is responsible for:</p>
 <ul>
-<li>Python</li>
-<li>GDAL</li>
-<li>Rasterio</li>
-<li>NumPy</li>
-<li>PyVista</li>
-<li>Fiona</li>
-<li>Typer</li>
+<li>collecting data from physical devices</li>
+<li>handling local connectivity constraints</li>
+<li>aggregating signals before cloud ingestion</li>
+<li>minimizing direct coupling between devices and application services</li>
 </ul>
 <hr />
-<h2 id="valore-architetturale">Valore Architetturale</h2>
-<p>B3DO dimostra come principi di backend architecture possano essere applicati anche a pipeline dati: input espliciti, step riproducibili, separazione degli artefatti, diagnostica e workflow CLI.</p>
-<p>È anche un progetto legato al territorio: usa dati pubblici della Basilicata per generare rappresentazioni tecniche e visive del territorio lucano.</p>
+<h2 id="ingestion-and-data-aggregation">Ingestion and Data Aggregation</h2>
+<p>The ingestion layer accepts different categories of data, including:</p>
+<ul>
+<li>real-time data</li>
+<li>GeoJSON data</li>
+<li>other domain-specific formats</li>
+</ul>
+<p>Instead of forcing every data type into a single generic pipeline, the architecture introduces <strong>data-specific layers</strong> under a common application framework.</p>
+<p>This makes it possible to define different processing, storage, and visualization strategies depending on the nature of the data.</p>
+<hr />
+<h2 id="api-and-application-framework">API and Application Framework</h2>
+<p>The GraphQL API acts as a query and aggregation boundary between frontend surfaces, AI agents, and backend application layers.</p>
+<p>GraphQL is useful in this context because different consumers may need different projections of the same underlying data:</p>
+<ul>
+<li>dashboards may need real-time status</li>
+<li>geospatial views may need GeoJSON data</li>
+<li>analytics services may need aggregated historical data</li>
+<li>AI agents may need contextualized data access</li>
+</ul>
+<p>The application framework coordinates these access patterns without exposing internal storage or ingestion details directly to clients.</p>
+<hr />
+<h2 id="microfrontend-strategy">Microfrontend Strategy</h2>
+<p>The architecture includes data-specific microfrontends:</p>
+<ul>
+<li>real-time-specific GUI</li>
+<li>GeoJSON-specific GUI</li>
+<li>other data-specific GUI modules</li>
+</ul>
+<p>This avoids forcing a single frontend model over heterogeneous data types.</p>
+<p>Each microfrontend can evolve independently while consuming data through the shared API layer and application framework.</p>
+<p>The approach is aligned with the broader idea of modular systems: different data domains can have different interaction models without fragmenting the whole platform.</p>
+<hr />
+<h2 id="storage-gateway">Storage Gateway</h2>
+<p>The storage gateway separates application logic from persistence concerns.</p>
+<p>It routes data toward:</p>
+<ul>
+<li>DB-oriented queues for structured data</li>
+<li>object queues for files, media, payloads, or large semi-structured artifacts</li>
+<li>persistent database storage</li>
+<li>object storage</li>
+</ul>
+<p>This prevents ingestion and application logic from depending directly on concrete storage mechanisms.</p>
+<p>The storage gateway becomes the architectural boundary between data processing and persistence.</p>
+<hr />
+<h2 id="ai-and-advanced-processing">AI and Advanced Processing</h2>
+<p>The diagram includes an AI agent as an external intelligence layer interacting with the application/API layer.</p>
+<p>In this architecture, AI is not treated as a replacement for the application framework. It is modeled as an additional consumer of structured, governed, and contextualized data.</p>
+<p>This distinction matters: the AI layer should operate on data exposed through architectural boundaries rather than bypassing the system model.</p>
+<hr />
+<h2 id="design-principles">Design Principles</h2>
+<p>The architecture is based on several principles:</p>
+<ul>
+<li>separate edge acquisition from cloud aggregation</li>
+<li>avoid coupling devices directly to frontend views</li>
+<li>support heterogeneous data types through data-specific layers</li>
+<li>expose data through a governed API boundary</li>
+<li>separate application logic from storage mechanisms</li>
+<li>allow visualization layers to evolve independently</li>
+<li>keep advanced processing and AI behind explicit system boundaries</li>
+</ul>
+<hr />
+<h2 id="my-role">My Role</h2>
+<p>I designed the architecture as a conceptual model for edge-to-cloud IoT data aggregation in Digital Twin scenarios.</p>
+<p>My contribution focused on structuring the system boundaries: edge acquisition, gateway communication, ingestion, GraphQL API, application framework, data-specific layers, microfrontends, storage gateway, and AI-assisted processing.</p>
+<p>The work extends my broader architectural focus on modular systems, integration-heavy platforms, and runtime boundaries into an edge/cloud and Digital Twin context.</p>
+<hr />
+<h2 id="what-this-case-study-demonstrates">What This Case Study Demonstrates</h2>
+<p>This case study demonstrates experience in:</p>
+<ul>
+<li>edge-to-cloud architecture</li>
+<li>IoT data acquisition</li>
+<li>heterogeneous data aggregation</li>
+<li>Digital Twin system design</li>
+<li>GraphQL API positioning</li>
+<li>microfrontend architecture</li>
+<li>storage abstraction</li>
+<li>AI-enabled data access patterns</li>
+<li>conceptual architecture for complex systems</li>
+</ul>
+<hr />
+<h2 id="read-next">Read Next</h2>
+<ul>
+<li><a href="../">Back to case studies</a></li>
+<li><a href="../cloud-portable-fleet-platform/">Cloud-Portable Fleet Management Platform</a></li>
+<li><a href="../../profile/">Technical profile</a></li>
+<li><a href="../../cv/">CV</a></li>
+<li><a href="../../contact/">Contact</a></li>
+</ul>
 
 
 
@@ -1752,7 +2115,7 @@
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
-  Torna su
+  Back to top
 </button>
         
       </main>
@@ -1761,33 +2124,33 @@
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="Piede" >
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../importspy/violations/" class="md-footer__link md-footer__link--prev" aria-label="Precedente: Diagnostica Contratti">
+          <a href="../unified-backend/operations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Operations &amp; DX">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                Precedente
+                Previous
               </span>
               <div class="md-ellipsis">
-                Diagnostica Contratti
+                Operations & DX
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../unified-backend/overview/" class="md-footer__link md-footer__link--next" aria-label="Successivo: Panoramica">
+          <a href="../fleet-tracking/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                Successivo
+                Next
               </span>
               <div class="md-ellipsis">
-                Panoramica
+                Overview
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1851,14 +2214,14 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "navigation.footer"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "navigation.footer"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
       
-        <script src="../../../../javascripts/mermaid-init.js"></script>
+        <script src="../../javascripts/mermaid-init.js"></script>
       
     
   </body>

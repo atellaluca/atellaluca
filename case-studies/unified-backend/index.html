@@ -6,41 +6,41 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Luca Atella case study for IoT data aggregation and Digital Twin architecture covering edge acquisition, gateways, GraphQL APIs, microfrontends and storage layers.">
+        <meta name="description" content="Unified backend case study by Luca Atella for heterogeneous IoT data sources, plugin-based architecture, REST APIs, WebSockets, deployment workflows and maintainable platforms.">
       
       
         <meta name="author" content="Luca Atella">
       
       
-        <link rel="canonical" href="https://profile.atellaluca.com/case-studies/iot-data-aggregation-digital-twin/overview/">
+        <link rel="canonical" href="https://profile.atellaluca.com/case-studies/unified-backend/">
       
       
-        <link rel="prev" href="../../unified-backend/operations/">
+        <link rel="prev" href="../b3do/">
       
       
-        <link rel="next" href="../../fleet-tracking/overview/">
+        <link rel="next" href="architecture/">
       
       
         
           <link rel="alternate" href="./" hreflang="en">
         
-          <link rel="alternate" href="../../../it/case-studies/iot-data-aggregation-digital-twin/overview/" hreflang="it">
+          <link rel="alternate" href="../../it/case-studies/unified-backend/" hreflang="it">
         
       
       
-      <link rel="icon" href="../../../assets/favicon.ico">
+      <link rel="icon" href="../../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>IoT Data Aggregation Architecture | Digital Twin Edge-to-Cloud Case Study - Luca Atella · Software Architect & Backend Platform Engineer</title>
+        <title>Unified Backend Architecture | Plugin-Based IoT Data Platform - Luca Atella · Software Architect & Backend Platform Engineer</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -59,13 +59,13 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/cv-pdf.css">
+      <link rel="stylesheet" href="../../stylesheets/cv-pdf.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/print.css">
+      <link rel="stylesheet" href="../../stylesheets/print.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/header.css">
+      <link rel="stylesheet" href="../../stylesheets/header.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -110,17 +110,17 @@
   
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Luca Atella · Software Architect & Backend Platform Engineer">
-  <meta property="og:title" content="IoT Data Aggregation Architecture | Digital Twin Edge-to-Cloud Case Study">
-  <meta property="og:description" content="Luca Atella case study for IoT data aggregation and Digital Twin architecture covering edge acquisition, gateways, GraphQL APIs, microfrontends and storage layers.">
-  <meta property="og:url" content="https://profile.atellaluca.com/case-studies/iot-data-aggregation-digital-twin/overview/">
-  <meta property="og:image" content="https://profile.atellaluca.com/assets/images/case-studies/iot-data-aggregation-digital-twin/iot-data-aggregation-digital-twin-edge-cloud-architecture.png">
+  <meta property="og:title" content="Unified Backend Architecture | Plugin-Based IoT Data Platform">
+  <meta property="og:description" content="Unified backend case study by Luca Atella for heterogeneous IoT data sources, plugin-based architecture, REST APIs, WebSockets, deployment workflows and maintainable platforms.">
+  <meta property="og:url" content="https://profile.atellaluca.com/case-studies/unified-backend/">
+  <meta property="og:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
-    <meta property="og:image:alt" content="Edge-to-cloud IoT data aggregation and Digital Twin architecture diagram">
+    <meta property="og:image:alt" content="Unified backend architecture for heterogeneous IoT data sources by Luca Atella">
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="IoT Data Aggregation Architecture | Digital Twin Edge-to-Cloud Case Study">
-  <meta name="twitter:description" content="Luca Atella case study for IoT data aggregation and Digital Twin architecture covering edge acquisition, gateways, GraphQL APIs, microfrontends and storage layers.">
-  <meta name="twitter:image" content="https://profile.atellaluca.com/assets/images/case-studies/iot-data-aggregation-digital-twin/iot-data-aggregation-digital-twin-edge-cloud-architecture.png">
+  <meta name="twitter:title" content="Unified Backend Architecture | Plugin-Based IoT Data Platform">
+  <meta name="twitter:description" content="Unified backend case study by Luca Atella for heterogeneous IoT data sources, plugin-based architecture, REST APIs, WebSockets, deployment workflows and maintainable platforms.">
+  <meta name="twitter:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
   
   
@@ -128,10 +128,10 @@
   {
     "@context": "https://schema.org",
     "@type": "TechArticle",
-    "name": "IoT Data Aggregation Architecture | Digital Twin Edge-to-Cloud Case Study",
-    "description": "Luca Atella case study for IoT data aggregation and Digital Twin architecture covering edge acquisition, gateways, GraphQL APIs, microfrontends and storage layers.",
-    "url": "https://profile.atellaluca.com/case-studies/iot-data-aggregation-digital-twin/overview/",
-    "image": "https://profile.atellaluca.com/assets/images/case-studies/iot-data-aggregation-digital-twin/iot-data-aggregation-digital-twin-edge-cloud-architecture.png",
+    "name": "Unified Backend Architecture | Plugin-Based IoT Data Platform",
+    "description": "Unified backend case study by Luca Atella for heterogeneous IoT data sources, plugin-based architecture, REST APIs, WebSockets, deployment workflows and maintainable platforms.",
+    "url": "https://profile.atellaluca.com/case-studies/unified-backend/",
+    "image": "https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png",
     "isPartOf": {
       "@type": "WebSite",
       "name": "Luca Atella \u00b7 Software Architect \u0026 Backend Platform Engineer",
@@ -182,7 +182,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#iot-data-aggregation-architecture-for-digital-twin-systems" class="md-skip">
+        <a href="#unified-backend-for-heterogeneous-data-sources" class="md-skip">
           Skip to content
         </a>
       
@@ -196,9 +196,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Luca Atella · Software Architect &amp; Backend Platform Engineer" class="md-header__button md-logo" aria-label="Luca Atella · Software Architect & Backend Platform Engineer" data-md-component="logo">
+    <a href="../.." title="Luca Atella · Software Architect &amp; Backend Platform Engineer" class="md-header__button md-logo" aria-label="Luca Atella · Software Architect & Backend Platform Engineer" data-md-component="logo">
       
-  <img src="../../../assets/luca-atella-software-architect-backend-platform-engineer.png" alt="logo">
+  <img src="../../assets/luca-atella-software-architect-backend-platform-engineer.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -215,7 +215,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              IoT Data Aggregation Architecture | Digital Twin Edge-to-Cloud Case Study
+              Unified Backend Architecture | Plugin-Based IoT Data Platform
             
           </span>
         </div>
@@ -254,7 +254,7 @@
           </li>
         
           <li class="md-select__item">
-            <a href="../../../it/case-studies/iot-data-aggregation-digital-twin/overview/" hreflang="it" class="md-select__link">
+            <a href="../../it/case-studies/unified-backend/" hreflang="it" class="md-select__link">
               Italiano
             </a>
           </li>
@@ -328,7 +328,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -347,7 +347,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../about/" class="md-tabs__link">
+      <a href="../../about/" class="md-tabs__link">
         
   
   
@@ -366,7 +366,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../methodology/" class="md-tabs__link">
+      <a href="../../methodology/" class="md-tabs__link">
         
   
   
@@ -389,7 +389,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -407,7 +407,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../profile/" class="md-tabs__link">
+      <a href="../../profile/" class="md-tabs__link">
         
   
   
@@ -426,7 +426,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../cv/" class="md-tabs__link">
+      <a href="../../cv/" class="md-tabs__link">
         
   
   
@@ -445,7 +445,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../contact/" class="md-tabs__link">
+      <a href="../../contact/" class="md-tabs__link">
         
   
   
@@ -480,9 +480,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Luca Atella · Software Architect &amp; Backend Platform Engineer" class="md-nav__button md-logo" aria-label="Luca Atella · Software Architect & Backend Platform Engineer" data-md-component="logo">
+    <a href="../.." title="Luca Atella · Software Architect &amp; Backend Platform Engineer" class="md-nav__button md-logo" aria-label="Luca Atella · Software Architect & Backend Platform Engineer" data-md-component="logo">
       
-  <img src="../../../assets/luca-atella-software-architect-backend-platform-engineer.png" alt="logo">
+  <img src="../../assets/luca-atella-software-architect-backend-platform-engineer.png" alt="logo">
 
     </a>
     Luca Atella · Software Architect & Backend Platform Engineer
@@ -497,7 +497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -524,7 +524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   
@@ -551,7 +551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../methodology/" class="md-nav__link">
+      <a href="../../methodology/" class="md-nav__link">
         
   
   
@@ -633,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -711,7 +711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cloud-portable-fleet-platform/overview/" class="md-nav__link">
+      <a href="../cloud-portable-fleet-platform/" class="md-nav__link">
         
   
   
@@ -797,7 +797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../importspy/overview/" class="md-nav__link">
+      <a href="../importspy/" class="md-nav__link">
         
   
   
@@ -825,7 +825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../importspy/architecture/" class="md-nav__link">
+      <a href="../importspy/architecture/" class="md-nav__link">
         
   
   
@@ -853,7 +853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../importspy/validation/" class="md-nav__link">
+      <a href="../importspy/validation/" class="md-nav__link">
         
   
   
@@ -881,7 +881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../importspy/contracts/" class="md-nav__link">
+      <a href="../importspy/contracts/" class="md-nav__link">
         
   
   
@@ -909,7 +909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../importspy/violations/" class="md-nav__link">
+      <a href="../importspy/violations/" class="md-nav__link">
         
   
   
@@ -995,7 +995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../b3do/overview/" class="md-nav__link">
+      <a href="../b3do/" class="md-nav__link">
         
   
   
@@ -1003,204 +1003,6 @@
     
   
     Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Unified Backend for Heterogeneous Data Sources (SAFE)
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Unified Backend for Heterogeneous Data Sources (SAFE)
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../unified-backend/overview/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../unified-backend/architecture/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Architecture
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../unified-backend/plugin-system/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Plugin System (Deep Dive)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../unified-backend/ui-schema/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Declarative UI Schema (Widget DSL)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../unified-backend/operations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Operations & DX
   
 
     
@@ -1242,17 +1044,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    IoT Data Aggregation Architecture for Digital Twin Systems
+    Unified Backend for Heterogeneous Data Sources (SAFE)
   
 
     
@@ -1263,12 +1065,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_5">
             <span class="md-nav__icon md-icon"></span>
             
   
-    IoT Data Aggregation Architecture for Digital Twin Systems
+    Unified Backend for Heterogeneous Data Sources (SAFE)
   
 
           </label>
@@ -1341,10 +1143,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#context-and-motivation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Context and Motivation
       
     </span>
   </a>
@@ -1352,10 +1154,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#context" class="md-nav__link">
+  <a href="#problem-statement" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Context
+        Problem Statement
       
     </span>
   </a>
@@ -1363,10 +1165,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problem-space" class="md-nav__link">
+  <a href="#architectural-goals" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problem Space
+        Architectural Goals
       
     </span>
   </a>
@@ -1374,10 +1176,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#architecture-overview" class="md-nav__link">
+  <a href="#high-level-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Architecture Overview
+        High-Level Architecture
       
     </span>
   </a>
@@ -1385,10 +1187,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-acquisition-layer" class="md-nav__link">
+  <a href="#plugin-based-ingestion-model" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data Acquisition Layer
+        Plugin-Based Ingestion Model
       
     </span>
   </a>
@@ -1396,10 +1198,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ingestion-and-data-aggregation" class="md-nav__link">
+  <a href="#unified-data-model" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ingestion and Data Aggregation
+        Unified Data Model
       
     </span>
   </a>
@@ -1407,10 +1209,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#api-and-application-framework" class="md-nav__link">
+  <a href="#runtime-validation-and-governance" class="md-nav__link">
     <span class="md-ellipsis">
       
-        API and Application Framework
+        Runtime Validation and Governance
       
     </span>
   </a>
@@ -1418,10 +1220,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#microfrontend-strategy" class="md-nav__link">
+  <a href="#scalability-and-fault-tolerance" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Microfrontend Strategy
+        Scalability and Fault Tolerance
       
     </span>
   </a>
@@ -1429,10 +1231,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#storage-gateway" class="md-nav__link">
+  <a href="#why-this-architecture-matters" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Storage Gateway
+        Why This Architecture Matters
       
     </span>
   </a>
@@ -1440,10 +1242,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ai-and-advanced-processing" class="md-nav__link">
+  <a href="#transferable-lessons" class="md-nav__link">
     <span class="md-ellipsis">
       
-        AI and Advanced Processing
+        Transferable Lessons
       
     </span>
   </a>
@@ -1451,32 +1253,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#design-principles" class="md-nav__link">
+  <a href="#scope-and-limitations-safe-disclosure" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Design Principles
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#my-role" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        My Role
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-this-case-study-demonstrates" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What This Case Study Demonstrates
+        Scope and Limitations (SAFE Disclosure)
       
     </span>
   </a>
@@ -1487,6 +1267,204 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="plugin-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plugin System (Deep Dive)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ui-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Declarative UI Schema (Widget DSL)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations & DX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IoT Data Aggregation Architecture for Digital Twin Systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    IoT Data Aggregation Architecture for Digital Twin Systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iot-data-aggregation-digital-twin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1557,7 +1535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fleet-tracking/overview/" class="md-nav__link">
+      <a href="../fleet-tracking/" class="md-nav__link">
         
   
   
@@ -1585,7 +1563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fleet-tracking/architecture/" class="md-nav__link">
+      <a href="../fleet-tracking/architecture/" class="md-nav__link">
         
   
   
@@ -1628,7 +1606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../profile/" class="md-nav__link">
+      <a href="../../profile/" class="md-nav__link">
         
   
   
@@ -1655,7 +1633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cv/" class="md-nav__link">
+      <a href="../../cv/" class="md-nav__link">
         
   
   
@@ -1682,7 +1660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contact/" class="md-nav__link">
+      <a href="../../contact/" class="md-nav__link">
         
   
   
@@ -1729,10 +1707,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#context-and-motivation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Context and Motivation
       
     </span>
   </a>
@@ -1740,10 +1718,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#context" class="md-nav__link">
+  <a href="#problem-statement" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Context
+        Problem Statement
       
     </span>
   </a>
@@ -1751,10 +1729,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problem-space" class="md-nav__link">
+  <a href="#architectural-goals" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problem Space
+        Architectural Goals
       
     </span>
   </a>
@@ -1762,10 +1740,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#architecture-overview" class="md-nav__link">
+  <a href="#high-level-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Architecture Overview
+        High-Level Architecture
       
     </span>
   </a>
@@ -1773,10 +1751,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-acquisition-layer" class="md-nav__link">
+  <a href="#plugin-based-ingestion-model" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data Acquisition Layer
+        Plugin-Based Ingestion Model
       
     </span>
   </a>
@@ -1784,10 +1762,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ingestion-and-data-aggregation" class="md-nav__link">
+  <a href="#unified-data-model" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ingestion and Data Aggregation
+        Unified Data Model
       
     </span>
   </a>
@@ -1795,10 +1773,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#api-and-application-framework" class="md-nav__link">
+  <a href="#runtime-validation-and-governance" class="md-nav__link">
     <span class="md-ellipsis">
       
-        API and Application Framework
+        Runtime Validation and Governance
       
     </span>
   </a>
@@ -1806,10 +1784,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#microfrontend-strategy" class="md-nav__link">
+  <a href="#scalability-and-fault-tolerance" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Microfrontend Strategy
+        Scalability and Fault Tolerance
       
     </span>
   </a>
@@ -1817,10 +1795,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#storage-gateway" class="md-nav__link">
+  <a href="#why-this-architecture-matters" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Storage Gateway
+        Why This Architecture Matters
       
     </span>
   </a>
@@ -1828,10 +1806,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ai-and-advanced-processing" class="md-nav__link">
+  <a href="#transferable-lessons" class="md-nav__link">
     <span class="md-ellipsis">
       
-        AI and Advanced Processing
+        Transferable Lessons
       
     </span>
   </a>
@@ -1839,32 +1817,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#design-principles" class="md-nav__link">
+  <a href="#scope-and-limitations-safe-disclosure" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Design Principles
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#my-role" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        My Role
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-this-case-study-demonstrates" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What This Case Study Demonstrates
+        Scope and Limitations (SAFE Disclosure)
       
     </span>
   </a>
@@ -1888,176 +1844,264 @@
 
 
 
-<h1 id="iot-data-aggregation-architecture-for-digital-twin-systems">IoT Data Aggregation Architecture for Digital Twin Systems</h1>
-<p><strong>Type:</strong> Architecture concept / design proposal<br />
-<strong>Role:</strong> Software Architect<br />
-<strong>Context:</strong> Technical discussion with CNR and Sviluppo Basilicata<br />
-<strong>Domain:</strong> IoT, Digital Twin, edge/cloud data aggregation<br />
-<strong>Status:</strong> Conceptual architecture  </p>
-<hr />
-<h2 id="overview">Overview</h2>
-<p>This case study presents a conceptual edge-to-cloud architecture for collecting, aggregating, and exposing heterogeneous IoT data in Digital Twin scenarios.</p>
-<p>The design separates data acquisition from data aggregation and introduces an application framework capable of handling multiple data-specific layers, including real-time streams, GeoJSON data, and other domain-specific formats.</p>
-<p>The goal was to reason about how heterogeneous physical-world data can be normalized, stored, queried, and visualized without coupling the acquisition layer to a single frontend, storage model, or data type.</p>
-<hr />
-<h2 id="context">Context</h2>
-<p>The architecture was developed in the context of a technical discussion involving CNR, Sviluppo Basilicata, and the Academy environment.</p>
-<p>It should be read as a <strong>conceptual architecture</strong>, not as a production deployment. Its value lies in the system design: the separation of edge acquisition, ingestion, aggregation, API exposure, visualization, and advanced processing.</p>
-<hr />
-<h2 id="problem-space">Problem Space</h2>
-<p>Digital Twin systems require data from many heterogeneous sources:</p>
+<h1 id="unified-backend-for-heterogeneous-data-sources">Unified Backend for Heterogeneous Data Sources</h1>
+<h2 id="context-and-motivation">Context and Motivation</h2>
+<p>Modern backend platforms increasingly need to ingest and normalize data<br />
+from <strong>heterogeneous sources</strong>:</p>
 <ul>
-<li>cameras</li>
-<li>sensors</li>
-<li>IoT devices</li>
-<li>gateway networks</li>
-<li>real-time telemetry</li>
-<li>geospatial data</li>
-<li>domain-specific data formats</li>
+<li>IoT devices  </li>
+<li>external APIs  </li>
+<li>event streams  </li>
+<li>legacy systems  </li>
+<li>domain-specific sensors  </li>
 </ul>
-<p>A recurring architectural risk is treating all incoming data as if it had the same lifecycle, structure, storage needs, and visualization model.</p>
-<p>The design addresses this by separating:</p>
+<p>In real-world environments, these sources differ in:</p>
 <ul>
-<li>edge acquisition</li>
-<li>ingestion</li>
-<li>data-specific processing</li>
-<li>application framework behavior</li>
-<li>API exposure</li>
-<li>storage paths</li>
-<li>visualization surfaces</li>
+<li>data formats  </li>
+<li>protocols  </li>
+<li>update frequencies  </li>
+<li>reliability  </li>
+<li>semantic meaning  </li>
+</ul>
+<p>This case study describes the architecture of a <strong>scalable, plugin-based backend</strong><br />
+designed to unify heterogeneous data sources under:</p>
+<ul>
+<li>a single backend  </li>
+<li>a unified data model  </li>
+<li>a consistent ingestion and validation pipeline  </li>
+</ul>
+<p>The goal is not to document a specific product,<br />
+but to present <strong>transferable architectural patterns</strong><br />
+for building evolvable data ingestion platforms.</p>
+<hr />
+<h2 id="problem-statement">Problem Statement</h2>
+<p>The system was designed to address the following challenges:</p>
+<ul>
+<li>integrating heterogeneous data producers  </li>
+<li>normalizing incompatible data formats  </li>
+<li>validating incoming data at runtime  </li>
+<li>isolating ingestion logic from core processing  </li>
+<li>scaling ingestion independently from consumers  </li>
+<li>evolving data schemas without breaking integrations  </li>
+</ul>
+<p>Traditional monolithic ingestion pipelines tend to:</p>
+<ul>
+<li>accumulate ad-hoc parsing logic  </li>
+<li>embed validation into business code  </li>
+<li>create tight coupling between sources and consumers  </li>
+<li>become brittle under change  </li>
+</ul>
+<p>The objective was to design a backend that:</p>
+<ul>
+<li>treats ingestion as a first-class subsystem  </li>
+<li>enforces explicit data contracts  </li>
+<li>supports dynamic extensibility  </li>
+<li>remains stable under long-term evolution  </li>
 </ul>
 <hr />
-<h2 id="architecture-overview">Architecture Overview</h2>
-<p><img alt="Edge-to-cloud IoT data aggregation architecture for Digital Twin systems with sensors, gateways, ingestion, GraphQL API, microfrontends and storage layers" src="../../../assets/images/case-studies/iot-data-aggregation-digital-twin/iot-data-aggregation-digital-twin-edge-cloud-architecture.png" /></p>
-<p>The architecture is divided into two main macro-areas:</p>
+<h2 id="architectural-goals">Architectural Goals</h2>
+<p>The architecture was driven by the following goals:</p>
+<ul>
+<li>
+<p><strong>Heterogeneity-first design</strong><br />
+  Support multiple data sources with incompatible formats and protocols.</p>
+</li>
+<li>
+<p><strong>Plugin-based extensibility</strong><br />
+  Add new ingestion modules without modifying core services.</p>
+</li>
+<li>
+<p><strong>Unified data model</strong><br />
+  Normalize all inputs into a single logical structure.</p>
+</li>
+<li>
+<p><strong>Runtime validation</strong><br />
+  Enforce data contracts and invariants during ingestion.</p>
+</li>
+<li>
+<p><strong>Scalability and clustering</strong><br />
+  Scale ingestion and processing independently.</p>
+</li>
+<li>
+<p><strong>Fault isolation</strong><br />
+  Prevent a faulty source from destabilizing the entire system.</p>
+</li>
+<li>
+<p><strong>Operational observability</strong><br />
+  Make ingestion behavior diagnosable and debuggable.</p>
+</li>
+</ul>
+<hr />
+<h2 id="high-level-architecture">High-Level Architecture</h2>
+<p>At a high level, the system is organized into four conceptual layers:</p>
 <ol>
-<li><strong>Data acquisition at the edge</strong></li>
-<li><strong>Data aggregation and application services</strong></li>
+<li>
+<p><strong>Ingestion Layer</strong><br />
+   Pluggable modules responsible for connecting to external sources,<br />
+   parsing raw inputs, and producing normalized events.</p>
+</li>
+<li>
+<p><strong>Normalization Layer</strong><br />
+   A transformation pipeline that maps heterogeneous inputs<br />
+   into a unified internal data model.</p>
+</li>
+<li>
+<p><strong>Validation Layer</strong><br />
+   A rule-based validation subsystem that enforces data contracts<br />
+   and rejects invalid or inconsistent inputs.</p>
+</li>
+<li>
+<p><strong>Service Layer</strong><br />
+   Backend services that expose normalized data<br />
+   to downstream consumers and frontend applications.</p>
+</li>
 </ol>
-<pre class="mermaid"><code>flowchart LR
-    subgraph EDGE[Edge / Data Acquisition]
-        DEV[IoT Devices&lt;br/&gt;Cameras · Sensors · Devices]
-        MESH[BLE / Zigbee Mesh]
-        GW[Gateway]
-        PIPE[Data Aggregation Pipeline]
-        DEV --&gt; MESH --&gt; GW --&gt; PIPE
-    end
-
-    subgraph CLOUD[Data Aggregation / Application Layer]
-        ING[Ingestion Layer]
-        API[GraphQL API]
-        APP[Application Framework]
-        LAYERS[Data-Specific Layers]
-        SG[Storage Gateway]
-        DBQ[DB Queue]
-        OBJQ[Object Queue]
-        DB[(DB)]
-        STORE[(Object Storage)]
-        MF[Microfrontends]
-        AI[AI Agent]
-    end
-
-    PIPE --&gt; ING
-    ING --&gt; API
-    API --&gt; APP
-    APP --&gt; LAYERS
-    APP --&gt; SG
-    SG --&gt; DBQ --&gt; DB
-    SG --&gt; OBJQ --&gt; STORE
-    MF --&gt; API
-    AI --&gt; API</code></pre>
-<hr />
-<h2 id="data-acquisition-layer">Data Acquisition Layer</h2>
-<p>The edge side of the architecture collects data from heterogeneous sources such as cameras, sensors, and generic IoT devices.</p>
-<p>A BLE/Zigbee mesh acts as the local communication fabric, while a gateway bridges edge data into the aggregation pipeline.</p>
-<p>This design keeps device-level communication concerns separated from the application framework and storage architecture.</p>
-<p>The edge layer is responsible for:</p>
+<p>Each layer is:</p>
 <ul>
-<li>collecting data from physical devices</li>
-<li>handling local connectivity constraints</li>
-<li>aggregating signals before cloud ingestion</li>
-<li>minimizing direct coupling between devices and application services</li>
+<li>independently testable  </li>
+<li>loosely coupled  </li>
+<li>replaceable  </li>
+<li>horizontally scalable  </li>
 </ul>
 <hr />
-<h2 id="ingestion-and-data-aggregation">Ingestion and Data Aggregation</h2>
-<p>The ingestion layer accepts different categories of data, including:</p>
+<h2 id="plugin-based-ingestion-model">Plugin-Based Ingestion Model</h2>
+<p>The ingestion subsystem is designed around a <strong>plugin architecture</strong>.</p>
+<p>Each plugin:</p>
 <ul>
-<li>real-time data</li>
-<li>GeoJSON data</li>
-<li>other domain-specific formats</li>
+<li>encapsulates the logic for a specific data source  </li>
+<li>handles protocol-specific parsing  </li>
+<li>performs initial validation  </li>
+<li>emits normalized events into the core pipeline  </li>
 </ul>
-<p>Instead of forcing every data type into a single generic pipeline, the architecture introduces <strong>data-specific layers</strong> under a common application framework.</p>
-<p>This makes it possible to define different processing, storage, and visualization strategies depending on the nature of the data.</p>
-<hr />
-<h2 id="api-and-application-framework">API and Application Framework</h2>
-<p>The GraphQL API acts as a query and aggregation boundary between frontend surfaces, AI agents, and backend application layers.</p>
-<p>GraphQL is useful in this context because different consumers may need different projections of the same underlying data:</p>
+<p>The core system:</p>
 <ul>
-<li>dashboards may need real-time status</li>
-<li>geospatial views may need GeoJSON data</li>
-<li>analytics services may need aggregated historical data</li>
-<li>AI agents may need contextualized data access</li>
+<li>does not depend on any specific plugin  </li>
+<li>treats all plugins as interchangeable producers  </li>
+<li>enforces uniform contracts on their outputs  </li>
 </ul>
-<p>The application framework coordinates these access patterns without exposing internal storage or ingestion details directly to clients.</p>
-<hr />
-<h2 id="microfrontend-strategy">Microfrontend Strategy</h2>
-<p>The architecture includes data-specific microfrontends:</p>
+<p>This design enables:</p>
 <ul>
-<li>real-time-specific GUI</li>
-<li>GeoJSON-specific GUI</li>
-<li>other data-specific GUI modules</li>
-</ul>
-<p>This avoids forcing a single frontend model over heterogeneous data types.</p>
-<p>Each microfrontend can evolve independently while consuming data through the shared API layer and application framework.</p>
-<p>The approach is aligned with the broader idea of modular systems: different data domains can have different interaction models without fragmenting the whole platform.</p>
-<hr />
-<h2 id="storage-gateway">Storage Gateway</h2>
-<p>The storage gateway separates application logic from persistence concerns.</p>
-<p>It routes data toward:</p>
-<ul>
-<li>DB-oriented queues for structured data</li>
-<li>object queues for files, media, payloads, or large semi-structured artifacts</li>
-<li>persistent database storage</li>
-<li>object storage</li>
-</ul>
-<p>This prevents ingestion and application logic from depending directly on concrete storage mechanisms.</p>
-<p>The storage gateway becomes the architectural boundary between data processing and persistence.</p>
-<hr />
-<h2 id="ai-and-advanced-processing">AI and Advanced Processing</h2>
-<p>The diagram includes an AI agent as an external intelligence layer interacting with the application/API layer.</p>
-<p>In this architecture, AI is not treated as a replacement for the application framework. It is modeled as an additional consumer of structured, governed, and contextualized data.</p>
-<p>This distinction matters: the AI layer should operate on data exposed through architectural boundaries rather than bypassing the system model.</p>
-<hr />
-<h2 id="design-principles">Design Principles</h2>
-<p>The architecture is based on several principles:</p>
-<ul>
-<li>separate edge acquisition from cloud aggregation</li>
-<li>avoid coupling devices directly to frontend views</li>
-<li>support heterogeneous data types through data-specific layers</li>
-<li>expose data through a governed API boundary</li>
-<li>separate application logic from storage mechanisms</li>
-<li>allow visualization layers to evolve independently</li>
-<li>keep advanced processing and AI behind explicit system boundaries</li>
+<li>zero-downtime integration of new data sources  </li>
+<li>independent development of ingestion modules  </li>
+<li>isolation of source-specific failures  </li>
+<li>long-term maintainability of the ingestion layer  </li>
 </ul>
 <hr />
-<h2 id="my-role">My Role</h2>
-<p>I designed the architecture as a conceptual model for edge-to-cloud IoT data aggregation in Digital Twin scenarios.</p>
-<p>My contribution focused on structuring the system boundaries: edge acquisition, gateway communication, ingestion, GraphQL API, application framework, data-specific layers, microfrontends, storage gateway, and AI-assisted processing.</p>
-<p>The work extends my broader architectural focus on modular systems, integration-heavy platforms, and runtime boundaries into an edge/cloud and Digital Twin context.</p>
-<hr />
-<h2 id="what-this-case-study-demonstrates">What This Case Study Demonstrates</h2>
-<p>This case study demonstrates experience in:</p>
+<h2 id="unified-data-model">Unified Data Model</h2>
+<p>All ingested data is transformed into a <strong>unified internal representation</strong><br />
+before entering the core processing pipeline.</p>
+<p>The unified model:</p>
 <ul>
-<li>edge-to-cloud architecture</li>
-<li>IoT data acquisition</li>
-<li>heterogeneous data aggregation</li>
-<li>Digital Twin system design</li>
-<li>GraphQL API positioning</li>
-<li>microfrontend architecture</li>
-<li>storage abstraction</li>
-<li>AI-enabled data access patterns</li>
-<li>conceptual architecture for complex systems</li>
+<li>abstracts away source-specific formats  </li>
+<li>normalizes units and naming conventions  </li>
+<li>enforces required fields and constraints  </li>
+<li>provides semantic consistency across sources  </li>
 </ul>
+<p>This ensures that downstream services:</p>
+<ul>
+<li>never depend on source-specific assumptions  </li>
+<li>operate on a stable data contract  </li>
+<li>remain insulated from upstream changes  </li>
+</ul>
+<p>and can evolve independently of ingestion details.</p>
+<hr />
+<h2 id="runtime-validation-and-governance">Runtime Validation and Governance</h2>
+<p>Data validation is treated as a <strong>first-class architectural concern</strong>.</p>
+<p>Incoming events are validated against:</p>
+<ul>
+<li>explicit data contracts  </li>
+<li>structural constraints  </li>
+<li>semantic invariants  </li>
+<li>versioned schemas  </li>
+</ul>
+<p>The validation layer:</p>
+<ul>
+<li>rejects malformed or inconsistent inputs  </li>
+<li>produces structured diagnostics  </li>
+<li>isolates invalid data from core services  </li>
+<li>provides observability into ingestion failures  </li>
+</ul>
+<p>This prevents:</p>
+<ul>
+<li>silent data corruption  </li>
+<li>propagation of invalid state  </li>
+<li>hidden integration failures  </li>
+</ul>
+<p>and formalizes <strong>data governance at runtime</strong>.</p>
+<hr />
+<h2 id="scalability-and-fault-tolerance">Scalability and Fault Tolerance</h2>
+<p>The system is designed to scale horizontally and tolerate partial failures.</p>
+<p>Key properties include:</p>
+<ul>
+<li>independent scaling of ingestion and processing  </li>
+<li>stateless plugin execution where possible  </li>
+<li>idempotent ingestion operations  </li>
+<li>backpressure handling under load  </li>
+<li>graceful degradation for faulty sources  </li>
+</ul>
+<p>This ensures that:</p>
+<ul>
+<li>
+<p>a spike in one data source<br />
+  does not overload the entire backend  </p>
+</li>
+<li>
+<p>a misbehaving plugin<br />
+  does not destabilize core services  </p>
+</li>
+</ul>
+<p>and that the platform remains predictable under stress.</p>
+<hr />
+<h2 id="why-this-architecture-matters">Why This Architecture Matters</h2>
+<p>This architecture demonstrates how to build backend platforms that:</p>
+<ul>
+<li>integrate heterogeneous systems safely  </li>
+<li>evolve without breaking existing integrations  </li>
+<li>enforce contracts at runtime  </li>
+<li>remain operationally reliable  </li>
+<li>scale across distributed environments  </li>
+</ul>
+<p>It reflects a design philosophy focused on:</p>
+<ul>
+<li>architectural governance  </li>
+<li>explicit system boundaries  </li>
+<li>separation of concerns  </li>
+<li>long-term evolvability  </li>
+</ul>
+<p>rather than on short-term feature delivery.</p>
+<hr />
+<h2 id="transferable-lessons">Transferable Lessons</h2>
+<p>Key architectural lessons from this case study:</p>
+<ul>
+<li>Treat ingestion as a first-class subsystem.  </li>
+<li>Normalize early, not late.  </li>
+<li>Enforce data contracts at runtime.  </li>
+<li>Isolate source-specific logic through plugins.  </li>
+<li>Design for evolution, not for snapshots.  </li>
+<li>Make failures observable and intelligible.  </li>
+<li>Optimize for operational reality.</li>
+</ul>
+<p>These patterns are broadly applicable<br />
+to modern data platforms, IoT backends,<br />
+and integration-heavy systems.</p>
+<hr />
+<h2 id="scope-and-limitations-safe-disclosure">Scope and Limitations (SAFE Disclosure)</h2>
+<p>This case study is presented in a <strong>SAFE</strong> and abstracted form.</p>
+<p>It intentionally omits:</p>
+<ul>
+<li>product names  </li>
+<li>company names  </li>
+<li>hardware brands  </li>
+<li>proprietary protocols  </li>
+<li>implementation-specific details  </li>
+</ul>
+<p>The focus is exclusively on:</p>
+<ul>
+<li>architectural patterns  </li>
+<li>system design decisions  </li>
+<li>transferable engineering principles  </li>
+</ul>
+<p>rather than on any specific commercial system.</p>
 
 
 
@@ -2096,7 +2140,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../unified-backend/operations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Operations &amp; DX">
+          <a href="../b3do/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2106,20 +2150,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Operations & DX
+                Overview
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../fleet-tracking/overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
+          <a href="architecture/" class="md-footer__link md-footer__link--next" aria-label="Next: Architecture">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Overview
+                Architecture
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2183,14 +2227,14 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "navigation.footer"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
       
-        <script src="../../../javascripts/mermaid-init.js"></script>
+        <script src="../../javascripts/mermaid-init.js"></script>
       
     
   </body>

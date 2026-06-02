@@ -1,46 +1,46 @@
 
 <!doctype html>
-<html lang="it" class="no-js">
+<html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Caso studio ImportSpy di Luca Atella: runtime contract engine open-source per Python, validazione dei plugin, confini architetturali e diagnostica deterministica.">
+        <meta name="description" content="ImportSpy case study by Luca Atella: open-source Python runtime contract engine for modular systems, plugin validation, architectural boundaries and deterministic diagnostics.">
       
       
         <meta name="author" content="Luca Atella">
       
       
-        <link rel="canonical" href="https://profile.atellaluca.com/it/case-studies/importspy/overview/">
+        <link rel="canonical" href="https://profile.atellaluca.com/case-studies/importspy/">
       
       
-        <link rel="prev" href="../../cloud-portable-fleet-platform/overview/">
+        <link rel="prev" href="../cloud-portable-fleet-platform/">
       
       
-        <link rel="next" href="../architecture/">
+        <link rel="next" href="architecture/">
       
       
         
-          <link rel="alternate" href="../../../../case-studies/importspy/overview/" hreflang="en">
+          <link rel="alternate" href="./" hreflang="en">
         
-          <link rel="alternate" href="./" hreflang="it">
+          <link rel="alternate" href="../../it/case-studies/importspy/" hreflang="it">
         
       
       
-      <link rel="icon" href="../../../../assets/favicon.ico">
+      <link rel="icon" href="../../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>ImportSpy | Runtime Contract Validation per Python Modulare - Luca Atella · Software Architect & Backend Platform Engineer</title>
+        <title>ImportSpy | Runtime Contract Validation for Modular Python Systems - Luca Atella · Software Architect & Backend Platform Engineer</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -59,13 +59,13 @@
       
     
     
-      <link rel="stylesheet" href="../../../../stylesheets/cv-pdf.css">
+      <link rel="stylesheet" href="../../stylesheets/cv-pdf.css">
     
-      <link rel="stylesheet" href="../../../../stylesheets/print.css">
+      <link rel="stylesheet" href="../../stylesheets/print.css">
     
-      <link rel="stylesheet" href="../../../../stylesheets/header.css">
+      <link rel="stylesheet" href="../../stylesheets/header.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -110,16 +110,16 @@
   
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Luca Atella · Software Architect & Backend Platform Engineer">
-  <meta property="og:title" content="ImportSpy | Runtime Contract Validation per Python Modulare">
-  <meta property="og:description" content="Caso studio ImportSpy di Luca Atella: runtime contract engine open-source per Python, validazione dei plugin, confini architetturali e diagnostica deterministica.">
-  <meta property="og:url" content="https://profile.atellaluca.com/it/case-studies/importspy/overview/">
+  <meta property="og:title" content="ImportSpy | Runtime Contract Validation for Modular Python Systems">
+  <meta property="og:description" content="ImportSpy case study by Luca Atella: open-source Python runtime contract engine for modular systems, plugin validation, architectural boundaries and deterministic diagnostics.">
+  <meta property="og:url" content="https://profile.atellaluca.com/case-studies/importspy/">
   <meta property="og:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
-    <meta property="og:image:alt" content="ImportSpy runtime contract validation per sistemi Python modulari">
+    <meta property="og:image:alt" content="ImportSpy runtime contract validation for modular Python systems by Luca Atella">
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ImportSpy | Runtime Contract Validation per Python Modulare">
-  <meta name="twitter:description" content="Caso studio ImportSpy di Luca Atella: runtime contract engine open-source per Python, validazione dei plugin, confini architetturali e diagnostica deterministica.">
+  <meta name="twitter:title" content="ImportSpy | Runtime Contract Validation for Modular Python Systems">
+  <meta name="twitter:description" content="ImportSpy case study by Luca Atella: open-source Python runtime contract engine for modular systems, plugin validation, architectural boundaries and deterministic diagnostics.">
   <meta name="twitter:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
   
@@ -128,9 +128,9 @@
   {
     "@context": "https://schema.org",
     "@type": "SoftwareSourceCode",
-    "name": "ImportSpy | Runtime Contract Validation per Python Modulare",
-    "description": "Caso studio ImportSpy di Luca Atella: runtime contract engine open-source per Python, validazione dei plugin, confini architetturali e diagnostica deterministica.",
-    "url": "https://profile.atellaluca.com/it/case-studies/importspy/overview/",
+    "name": "ImportSpy | Runtime Contract Validation for Modular Python Systems",
+    "description": "ImportSpy case study by Luca Atella: open-source Python runtime contract engine for modular systems, plugin validation, architectural boundaries and deterministic diagnostics.",
+    "url": "https://profile.atellaluca.com/case-studies/importspy/",
     "image": "https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png",
     "isPartOf": {
       "@type": "WebSite",
@@ -159,8 +159,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#importspy-runtime-import-contracts-per-sistemi-python-modulari" class="md-skip">
-          Vai al contenuto
+        <a href="#importspy-runtime-import-contracts-for-modular-python-systems" class="md-skip">
+          Skip to content
         </a>
       
     </div>
@@ -172,10 +172,10 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Intestazione">
-    <a href="../../../" title="Luca Atella · Software Architect &amp; Backend Platform Engineer" class="md-header__button md-logo" aria-label="Luca Atella · Software Architect & Backend Platform Engineer" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Luca Atella · Software Architect &amp; Backend Platform Engineer" class="md-header__button md-logo" aria-label="Luca Atella · Software Architect & Backend Platform Engineer" data-md-component="logo">
       
-  <img src="../../../../assets/luca-atella-software-architect-backend-platform-engineer.png" alt="logo">
+  <img src="../../assets/luca-atella-software-architect-backend-platform-engineer.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -192,7 +192,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ImportSpy | Runtime Contract Validation per Python Modulare
+              ImportSpy | Runtime Contract Validation for Modular Python Systems
             
           </span>
         </div>
@@ -218,20 +218,20 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="Seleziona la lingua">
+    <button class="md-header__button md-icon" aria-label="Select language">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="../../../../case-studies/importspy/overview/" hreflang="en" class="md-select__link">
+            <a href="./" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="./" hreflang="it" class="md-select__link">
+            <a href="../../it/case-studies/importspy/" hreflang="it" class="md-select__link">
               Italiano
             </a>
           </li>
@@ -252,16 +252,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Cerca">
+      <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -274,7 +274,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Inizializza la ricerca
+            Initializing search
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -305,7 +305,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../" class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -324,13 +324,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../about/" class="md-tabs__link">
+      <a href="../../about/" class="md-tabs__link">
         
   
   
     
   
-  Chi sono
+  About
 
       </a>
     </li>
@@ -343,13 +343,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../methodology/" class="md-tabs__link">
+      <a href="../../methodology/" class="md-tabs__link">
         
   
   
     
   
-  Metodo
+  Methodology
 
       </a>
     </li>
@@ -366,11 +366,11 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
   
-  Casi Studio
+  Case Studies
 
         </a>
       </li>
@@ -384,13 +384,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../profile/" class="md-tabs__link">
+      <a href="../../profile/" class="md-tabs__link">
         
   
   
     
   
-  Profilo
+  Profile
 
       </a>
     </li>
@@ -403,7 +403,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../cv/" class="md-tabs__link">
+      <a href="../../cv/" class="md-tabs__link">
         
   
   
@@ -422,13 +422,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../contact/" class="md-tabs__link">
+      <a href="../../contact/" class="md-tabs__link">
         
   
   
     
   
-  Contatti
+  Contact
 
       </a>
     </li>
@@ -455,11 +455,11 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../" title="Luca Atella · Software Architect &amp; Backend Platform Engineer" class="md-nav__button md-logo" aria-label="Luca Atella · Software Architect & Backend Platform Engineer" data-md-component="logo">
+    <a href="../.." title="Luca Atella · Software Architect &amp; Backend Platform Engineer" class="md-nav__button md-logo" aria-label="Luca Atella · Software Architect & Backend Platform Engineer" data-md-component="logo">
       
-  <img src="../../../../assets/luca-atella-software-architect-backend-platform-engineer.png" alt="logo">
+  <img src="../../assets/luca-atella-software-architect-backend-platform-engineer.png" alt="logo">
 
     </a>
     Luca Atella · Software Architect & Backend Platform Engineer
@@ -474,7 +474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../" class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -501,14 +501,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Chi sono
+    About
   
 
     
@@ -528,14 +528,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../methodology/" class="md-nav__link">
+      <a href="../../methodology/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Metodo
+    Methodology
   
 
     
@@ -581,7 +581,7 @@
   <span class="md-ellipsis">
     
   
-    Casi Studio
+    Case Studies
   
 
     
@@ -597,7 +597,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Casi Studio
+    Case Studies
   
 
           </label>
@@ -610,14 +610,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Panoramica
+    Overview
   
 
     
@@ -659,7 +659,7 @@
   <span class="md-ellipsis">
     
   
-    Piattaforma Fleet Cloud-Portable
+    Cloud-Portable Fleet Management Platform
   
 
     
@@ -675,7 +675,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Piattaforma Fleet Cloud-Portable
+    Cloud-Portable Fleet Management Platform
   
 
           </label>
@@ -688,14 +688,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cloud-portable-fleet-platform/overview/" class="md-nav__link">
+      <a href="../cloud-portable-fleet-platform/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Panoramica
+    Overview
   
 
     
@@ -792,7 +792,7 @@
   <span class="md-ellipsis">
     
   
-    Panoramica
+    Overview
   
 
     
@@ -810,7 +810,7 @@
   <span class="md-ellipsis">
     
   
-    Panoramica
+    Overview
   
 
     
@@ -822,7 +822,7 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Indice">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -831,15 +831,15 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Indice
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#panoramica" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Panoramica
+        Overview
       
     </span>
   </a>
@@ -847,10 +847,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problema" class="md-nav__link">
+  <a href="#problem-statement" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problema
+        Problem Statement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problem Statement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-solution-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem → Solution Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Goals
       
     </span>
   </a>
@@ -858,10 +886,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#obiettivi-di-design" class="md-nav__link">
+  <a href="#high-level-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Obiettivi di Design
+        High-Level Architecture
       
     </span>
   </a>
@@ -869,10 +897,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#architettura" class="md-nav__link">
+  <a href="#applications-and-use-cases" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Architettura
+        Applications and Use Cases
       
     </span>
   </a>
@@ -880,10 +908,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scenari-duso" class="md-nav__link">
+  <a href="#talks-community" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Scenari d'Uso
+        Talks &amp; Community
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Talks &amp; Community">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#importspy-quando-i-moduli-python-sanno-dire-di-no" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ImportSpy: Quando i moduli Python sanno dire di no.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My Role
       
     </span>
   </a>
@@ -891,10 +947,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#community" class="md-nav__link">
+  <a href="#read-next" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Community
+        Read Next
       
     </span>
   </a>
@@ -917,14 +973,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../architecture/" class="md-nav__link">
+      <a href="architecture/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Architettura
+    Architecture
   
 
     
@@ -945,14 +1001,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../validation/" class="md-nav__link">
+      <a href="validation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Sistema di Validazione
+    Validation System (Deep Dive)
   
 
     
@@ -973,14 +1029,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../contracts/" class="md-nav__link">
+      <a href="contracts/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Runtime Contracts
+    Runtime Contracts (Deep Dive)
   
 
     
@@ -1001,14 +1057,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../violations/" class="md-nav__link">
+      <a href="violations/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Diagnostica Contratti
+    Violation System and Contract Diagnostics (Deep Dive)
   
 
     
@@ -1087,14 +1143,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../b3do/overview/" class="md-nav__link">
+      <a href="../b3do/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Panoramica
+    Overview
   
 
     
@@ -1144,7 +1200,7 @@
   <span class="md-ellipsis">
     
   
-    Backend Unificato per Sorgenti Eterogenee
+    Unified Backend for Heterogeneous Data Sources (SAFE)
   
 
     
@@ -1160,7 +1216,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Backend Unificato per Sorgenti Eterogenee
+    Unified Backend for Heterogeneous Data Sources (SAFE)
   
 
           </label>
@@ -1173,14 +1229,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../unified-backend/overview/" class="md-nav__link">
+      <a href="../unified-backend/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Panoramica
+    Overview
   
 
     
@@ -1201,14 +1257,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../unified-backend/architecture/" class="md-nav__link">
+      <a href="../unified-backend/architecture/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Architettura
+    Architecture
   
 
     
@@ -1229,14 +1285,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../unified-backend/plugin-system/" class="md-nav__link">
+      <a href="../unified-backend/plugin-system/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Sistema Plugin
+    Plugin System (Deep Dive)
   
 
     
@@ -1257,14 +1313,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../unified-backend/ui-schema/" class="md-nav__link">
+      <a href="../unified-backend/ui-schema/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Schema UI Dichiarativo
+    Declarative UI Schema (Widget DSL)
   
 
     
@@ -1285,14 +1341,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../unified-backend/operations/" class="md-nav__link">
+      <a href="../unified-backend/operations/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Operations e Developer Experience
+    Operations & DX
   
 
     
@@ -1342,7 +1398,7 @@
   <span class="md-ellipsis">
     
   
-    Architettura IoT per Digital Twin
+    IoT Data Aggregation Architecture for Digital Twin Systems
   
 
     
@@ -1358,7 +1414,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Architettura IoT per Digital Twin
+    IoT Data Aggregation Architecture for Digital Twin Systems
   
 
           </label>
@@ -1371,14 +1427,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../iot-data-aggregation-digital-twin/overview/" class="md-nav__link">
+      <a href="../iot-data-aggregation-digital-twin/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Panoramica
+    Overview
   
 
     
@@ -1428,7 +1484,7 @@
   <span class="md-ellipsis">
     
   
-    Backend Telemetria Fleet Real-Time
+    End-to-End Real-Time Fleet Telemetry Backend (SAFE)
   
 
     
@@ -1444,7 +1500,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Backend Telemetria Fleet Real-Time
+    End-to-End Real-Time Fleet Telemetry Backend (SAFE)
   
 
           </label>
@@ -1457,14 +1513,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fleet-tracking/overview/" class="md-nav__link">
+      <a href="../fleet-tracking/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Panoramica
+    Overview
   
 
     
@@ -1485,14 +1541,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fleet-tracking/architecture/" class="md-nav__link">
+      <a href="../fleet-tracking/architecture/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Architettura
+    Architecture
   
 
     
@@ -1528,14 +1584,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../profile/" class="md-nav__link">
+      <a href="../../profile/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Profilo
+    Profile
   
 
     
@@ -1555,7 +1611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cv/" class="md-nav__link">
+      <a href="../../cv/" class="md-nav__link">
         
   
   
@@ -1582,14 +1638,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contact/" class="md-nav__link">
+      <a href="../../contact/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Contatti
+    Contact
   
 
     
@@ -1615,7 +1671,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Indice">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -1624,15 +1680,15 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Indice
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#panoramica" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Panoramica
+        Overview
       
     </span>
   </a>
@@ -1640,10 +1696,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problema" class="md-nav__link">
+  <a href="#problem-statement" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problema
+        Problem Statement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problem Statement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-solution-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem → Solution Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Goals
       
     </span>
   </a>
@@ -1651,10 +1735,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#obiettivi-di-design" class="md-nav__link">
+  <a href="#high-level-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Obiettivi di Design
+        High-Level Architecture
       
     </span>
   </a>
@@ -1662,10 +1746,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#architettura" class="md-nav__link">
+  <a href="#applications-and-use-cases" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Architettura
+        Applications and Use Cases
       
     </span>
   </a>
@@ -1673,10 +1757,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scenari-duso" class="md-nav__link">
+  <a href="#talks-community" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Scenari d'Uso
+        Talks &amp; Community
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Talks &amp; Community">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#importspy-quando-i-moduli-python-sanno-dire-di-no" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ImportSpy: Quando i moduli Python sanno dire di no.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My Role
       
     </span>
   </a>
@@ -1684,10 +1796,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#community" class="md-nav__link">
+  <a href="#read-next" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Community
+        Read Next
       
     </span>
   </a>
@@ -1711,65 +1823,136 @@
 
 
 
-<h1 id="importspy-runtime-import-contracts-per-sistemi-python-modulari">ImportSpy — Runtime Import Contracts per Sistemi Python Modulari</h1>
-<p><strong>Tipo:</strong> progetto open-source<br />
-<strong>Ruolo:</strong> Project Lead &amp; Software Architect<br />
-<strong>Periodo:</strong> 2024 - Present<br />
-<strong>Dominio:</strong> Python, sistemi modulari, runtime validation<br />
-<strong>Repository:</strong> <a href="https://github.com/atellaluca/importspy">ImportSpy su GitHub</a><br />
-<strong>Adozione:</strong> 15.000+ download su PyPI  </p>
+<h1 id="importspy-runtime-import-contracts-for-modular-python-systems">ImportSpy — Runtime Import Contracts for Modular Python Systems</h1>
+<p><strong>Type:</strong> Open-source software project<br />
+<strong>Role:</strong> Project Lead &amp; Software Architect<br />
+<strong>Period:</strong> 2024 – Present<br />
+<strong>Domain:</strong> Python, modular systems, runtime validation<br />
+<strong>Repository:</strong> <a href="https://github.com/atellaluca/importspy">ImportSpy on GitHub — runtime contract engine for Python</a><br />
+<strong>Adoption:</strong> 15,000+ downloads on PyPI  </p>
 <hr />
-<h2 id="panoramica">Panoramica</h2>
-<p>ImportSpy è una libreria Python open-source progettata per applicare runtime contracts durante l’import dei moduli.</p>
-<p>Il problema nasce nei sistemi modulari, plugin-based ed estendibili: i componenti caricati dinamicamente spesso vengono considerati validi sulla base di assunzioni implicite. ImportSpy introduce un layer di validazione contract-driven che intercetta l’import e verifica struttura, contesto e ambiente prima dell’esecuzione.</p>
-<hr />
-<h2 id="problema">Problema</h2>
-<p>Il sistema di import di Python non verifica automaticamente:</p>
+<h2 id="overview">Overview</h2>
+<p>ImportSpy is an open-source Python library designed to enforce <strong>runtime contracts at module import time</strong>.<br />
+Its goal is to prevent unsafe or incompatible modules from being loaded into a running system by validating their structural, environmental, and contextual properties before execution.</p>
+<p>The project was conceived to address a recurring problem in <strong>modular architectures, plugin-based systems, and extensible platforms</strong>:<br />
+the lack of a reliable mechanism to ensure that dynamically loaded components satisfy predefined integration requirements.</p>
+<p>ImportSpy introduces a <strong>contract-driven validation layer</strong> that operates at import time, enabling developers to:</p>
 <ul>
-<li>presenza di funzioni, classi o interfacce richieste</li>
-<li>compatibilità con versione Python, OS o environment</li>
-<li>vincoli strutturali</li>
-<li>condizioni minime di esecuzione</li>
-</ul>
-<p>Questo porta a errori tardivi, integrazioni fragili e debugging complesso.</p>
-<hr />
-<h2 id="obiettivi-di-design">Obiettivi di Design</h2>
-<ul>
-<li>fallire presto, al momento dell’import</li>
-<li>descrivere i requisiti in contratti dichiarativi</li>
-<li>mantenere basso il coupling tra contratto e implementazione</li>
-<li>impedire l’ingresso di moduli incompatibili nel sistema</li>
-<li>produrre diagnostica chiara e deterministica</li>
+<li>enforce structural constraints on modules  </li>
+<li>validate runtime environment assumptions  </li>
+<li>prevent unsafe or incompatible imports  </li>
+<li>fail fast before corrupted system states are reached  </li>
 </ul>
 <hr />
-<h2 id="architettura">Architettura</h2>
-<p>ImportSpy opera come pipeline di runtime governance:</p>
-<ol>
-<li>intercetta una richiesta di import</li>
-<li>carica il contratto associato</li>
-<li>valuta requisiti strutturali e contestuali</li>
-<li>restituisce un risultato valido o una violazione strutturata</li>
-<li>consente l’esecuzione solo se il modulo rispetta il contratto</li>
-</ol>
-<hr />
-<h2 id="scenari-duso">Scenari d'Uso</h2>
-<p>ImportSpy è utile per:</p>
+<h2 id="problem-statement">Problem Statement</h2>
+<p>In modern Python systems, dynamic imports are widely used to support:</p>
 <ul>
-<li>sistemi plugin-based</li>
-<li>backend modulari</li>
-<li>CI/CD validation</li>
-<li>piattaforme IoT ed edge</li>
-<li>ambienti runtime sicuri</li>
-<li>sistemi Python long-running</li>
+<li>plugin architectures  </li>
+<li>runtime extensibility  </li>
+<li>dependency injection  </li>
+<li>distributed and modular services  </li>
+</ul>
+<p>However, Python’s import system provides <strong>no built-in mechanism</strong> to:</p>
+<ul>
+<li>verify the structure of imported modules  </li>
+<li>validate required functions, classes, or interfaces  </li>
+<li>enforce environmental or contextual constraints  </li>
+<li>prevent incompatible runtime conditions  </li>
+</ul>
+<p>As a result, many systems rely on:</p>
+<ul>
+<li>implicit assumptions  </li>
+<li>ad-hoc runtime checks  </li>
+<li>late failures occurring deep in the execution flow  </li>
+</ul>
+<p>This leads to fragile integrations, unpredictable failures, and difficult-to-debug runtime errors.</p>
+<h3 id="problem-solution-flow">Problem → Solution Flow</h3>
+<pre class="mermaid"><code>flowchart LR
+    A[Dynamic Import in Python] --&gt; B[Implicit Assumptions]
+    B --&gt; C[Late Runtime Failures]
+    C --&gt; D[Fragile Integrations]
+    D --&gt; E[Difficult Debugging]
+
+    A --&gt; F[ImportSpy Intercepts Import]
+    F --&gt; G[Contract Validation]
+    G --&gt; H[Deterministic Failure]
+    H --&gt; I[Safe Module Execution]
+
+    style A fill:#f5f5f5,stroke:#333
+    style F fill:#e8f0fe,stroke:#333
+    style H fill:#e8f0fe,stroke:#333</code></pre>
+<hr />
+<h2 id="design-goals">Design Goals</h2>
+<p>ImportSpy was designed around the following core principles:</p>
+<ul>
+<li><strong>Fail fast:</strong> detect incompatibilities at import time  </li>
+<li><strong>Declarative contracts:</strong> express requirements as structured schemas  </li>
+<li><strong>Low coupling:</strong> keep contracts independent from implementation  </li>
+<li><strong>Runtime safety:</strong> prevent invalid modules from entering the system  </li>
+<li><strong>Extensibility:</strong> support future validation rules and constraints  </li>
+<li><strong>Minimal intrusion:</strong> avoid invasive changes to application code  </li>
 </ul>
 <hr />
-<h2 id="community">Community</h2>
-<p>I concetti architetturali di ImportSpy sono stati presentati al GDG Basilicata nel talk “Quando i moduli Python sanno dire di no”, dedicato agli import-time contracts e alla governance runtime dei sistemi modulari.</p>
-<p><strong>Risorse</strong></p>
+<h2 id="high-level-architecture">High-Level Architecture</h2>
+<p>At a conceptual level, ImportSpy is structured as a runtime governance pipeline that intercepts module imports and validates them against declarative contracts before execution.</p>
+<pre class="mermaid"><code>flowchart TB
+    U[Application Code] --&gt; I[Import Request]
+    I --&gt; H[Import Interception Layer]
+    H --&gt; C[Contract Definition Layer]
+    C --&gt; V[Validation Engine]
+    V --&gt; R[Validation Result]
+
+    R --&gt;|Valid| M[Module Execution]
+    R --&gt;|Invalid| E[Structured Failure]
+
+    V --&gt; X[Execution Context]
+    X --&gt; OS[Operating System]
+    X --&gt; PY[Python Runtime]
+    X --&gt; ENV[Environment Variables]
+    X --&gt; CFG[Configuration]
+
+    style H fill:#e8f0fe,stroke:#333
+    style V fill:#e8f0fe,stroke:#333
+    style R fill:#e8f0fe,stroke:#333</code></pre>
+<hr />
+<h2 id="applications-and-use-cases">Applications and Use Cases</h2>
+<p>ImportSpy is applicable to a wide range of scenarios, including:</p>
 <ul>
-<li><a href="../../../../assets/talks/importspy-gdg-basilicata-it.pdf">Slide italiane</a></li>
-<li><a href="../../../../assets/talks/importspy-runtime-contract-validation-en.pdf">Slide inglesi</a></li>
-<li><a href="https://gdg.community.dev/events/details/google-gdg-basilicata-presents-flash-talks-arena/">Evento GDG Basilicata</a></li>
+<li>plugin-based systems  </li>
+<li>modular backends  </li>
+<li>microservice bootstrapping  </li>
+<li>CI/CD validation pipelines  </li>
+<li>IoT and edge platforms  </li>
+<li>secure runtime environments  </li>
+</ul>
+<hr />
+<h2 id="talks-community">Talks &amp; Community</h2>
+<p>The architectural concepts behind ImportSpy have been shared publicly within technical communities as part of a broader effort to promote runtime governance patterns for modular and extensible Python systems.</p>
+<h3 id="importspy-quando-i-moduli-python-sanno-dire-di-no">ImportSpy: Quando i moduli Python sanno dire di no.</h3>
+<p><strong>GDG Basilicata · Flash Talks Arena</strong></p>
+<p>A community talk focused on <em>import-time contracts</em> and how modular systems can enforce architectural assumptions (Python version, OS, environment variables, and other runtime constraints) before executing non-conforming modules.</p>
+<p>This talk introduces ImportSpy not as a utility library, but as an architectural governance layer for plugin-based and long-running backend systems.</p>
+<p><strong>Resources</strong></p>
+<ul>
+<li>Slides (PDF, Italian): <a href="../../assets/talks/importspy-gdg-basilicata-it.pdf">ImportSpy GDG Basilicata talk — Runtime import contracts for Python</a>  </li>
+<li>Slides (PDF, English — technical translation): <a href="../../assets/talks/importspy-runtime-contract-validation-en.pdf">Runtime Contract Validation in Modular Python Systems</a>  </li>
+<li>Official GDG Basilicata event page: <a href="https://gdg.community.dev/events/details/google-gdg-basilicata-presents-flash-talks-arena/">Flash Talks Arena — ImportSpy session</a>  </li>
+<li>Community listing: <a href="https://www.pignolalug.it/iniziative/flash-talks-arena/">PignolaLUG — Flash Talks Arena (ImportSpy)</a></li>
+</ul>
+<hr />
+<h2 id="my-role">My Role</h2>
+<p>I designed and implemented ImportSpy end-to-end, starting from the conceptual architecture and evolving it into a production-ready open-source system.</p>
+<p>My work covered the definition of the contract model, the design of the validation engine, and the implementation of the runtime import interception mechanism, with a strong focus on determinism, clarity, and architectural correctness. I also curated the project documentation, packaging, and release workflow to ensure long-term maintainability and ease of adoption.</p>
+<p>Through this project, I consolidated my experience in software architecture, runtime systems, modular design, and DevSecOps-oriented tooling, while leading the full lifecycle of an open-source initiative from initial design to public release.</p>
+<hr />
+<h2 id="read-next">Read Next</h2>
+<ul>
+<li><a href="../">Back to case studies</a></li>
+<li><a href="architecture/">ImportSpy architecture deep dive</a></li>
+<li><a href="validation/">Runtime validation engine</a></li>
+<li><a href="https://github.com/atellaluca/importspy">GitHub repository</a></li>
+<li><a href="../../profile/">Technical profile</a></li>
+<li><a href="../../contact/">Contact</a></li>
 </ul>
 
 
@@ -1797,7 +1980,7 @@
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
-  Torna su
+  Back to top
 </button>
         
       </main>
@@ -1806,33 +1989,33 @@
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="Piede" >
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../cloud-portable-fleet-platform/overview/" class="md-footer__link md-footer__link--prev" aria-label="Precedente: Panoramica">
+          <a href="../cloud-portable-fleet-platform/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                Precedente
+                Previous
               </span>
               <div class="md-ellipsis">
-                Panoramica
+                Overview
               </div>
             </div>
           </a>
         
         
           
-          <a href="../architecture/" class="md-footer__link md-footer__link--next" aria-label="Successivo: Architettura">
+          <a href="architecture/" class="md-footer__link md-footer__link--next" aria-label="Next: Architecture">
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                Successivo
+                Next
               </span>
               <div class="md-ellipsis">
-                Architettura
+                Architecture
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1896,14 +2079,14 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "navigation.footer"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "navigation.footer"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
       
-        <script src="../../../../javascripts/mermaid-init.js"></script>
+        <script src="../../javascripts/mermaid-init.js"></script>
       
     
   </body>
