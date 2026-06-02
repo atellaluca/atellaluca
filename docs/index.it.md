@@ -1,6 +1,6 @@
 ---
-title: "Luca Atella | Software Architect e Backend Platform Engineer"
-description: "Portfolio di Luca Atella, Software Architect e backend platform engineer lucano focalizzato su AWS, FastAPI, architetture backend cloud-portable, runtime contract validation, IoT e Digital Twin."
+title: "Luca Atella - Software Architect"
+description: "Software architect focalizzato su backend modulari, architetture cloud-portable, runtime governance, AWS e sistemi edge/cloud."
 image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
 image_alt: "Portfolio di Luca Atella Software Architect e backend platform engineer"
 schema_type: "ProfilePage"
@@ -10,6 +10,8 @@ schema_type: "ProfilePage"
 ## Software Architect · Backend & Platform Engineering
 
 **Progetto architetture backend pensate per durare: chiare da estendere, affidabili in produzione e non legate rigidamente a un singolo cloud o runtime.**
+
+Mi occupo soprattutto di sistemi backend modulari, architetture cloud-portable, runtime governance e integrazione edge/cloud.
 
 Lavoro tra backend engineering, system design, infrastruttura cloud e developer tooling. Mi interessano i progetti in cui il sistema deve crescere nel tempo: più ambienti, utenti reali, integrazioni, vincoli operativi e decisioni architetturali che restano comprensibili anche dopo il primo rilascio.
 
@@ -77,7 +79,7 @@ Mi interessano soprattutto progetti in cui servono:
 - pipeline geospaziali o di elaborazione dati
 - direzione tecnica per prodotti software pensati per durare
 
-→ [Contattami](contact.md) · [LinkedIn](https://www.linkedin.com/in/luca-atella/)
+→ [Contattami](contact.md) · [GitHub](https://github.com/atellaluca) · [LinkedIn](https://www.linkedin.com/in/luca-atella/)
 
 ---
 
@@ -88,3 +90,4 @@ Mi interessano soprattutto progetti in cui servono:
 - [Curriculum Vitae](cv.md)
 - [Metodo](methodology.md)
 - [Contatti](contact.md)
+- [GitHub](https://github.com/atellaluca)

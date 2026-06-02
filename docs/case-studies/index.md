@@ -1,6 +1,6 @@
 ---
-title: "Case Studies | Backend Architecture, AWS, IoT and Runtime Validation"
-description: "Selected Luca Atella case studies on cloud-portable backend architecture, AWS serverless deployment, FastAPI, runtime contract validation, IoT systems and geospatial pipelines."
+title: "Technical Case Studies - Luca Atella"
+description: "Technical case studies on cloud-portable backend architecture, runtime governance, AWS, IoT, Digital Twin systems and geospatial pipelines."
 image: "assets/images/case-studies/cloud-portable-fleet-platform/cloud-portable-fleet-management-platform-aws-fastapi-architecture.png"
 image_alt: "Backend architecture and AWS case studies by Luca Atella"
 schema_type: "CollectionPage"
@@ -11,6 +11,8 @@ schema_type: "CollectionPage"
 This section collects selected projects and architecture case studies.
 
 Each one explains the problem, the system shape, the main technical decisions, and why those decisions mattered in practice.
+
+Use this hub as the evidence layer of the portfolio: each page connects a technical problem to architecture boundaries, runtime decisions, and implementation trade-offs.
 
 ---
 

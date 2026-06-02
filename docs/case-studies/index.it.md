@@ -1,6 +1,6 @@
 ---
-title: "Casi Studio | Backend Architecture, AWS, IoT e Runtime Validation"
-description: "Casi studio di Luca Atella su cloud-portable backend architecture, AWS serverless deployment, FastAPI, runtime contract validation, sistemi IoT e pipeline geospaziali."
+title: "Casi Studio Tecnici - Luca Atella"
+description: "Casi studio tecnici su architetture backend cloud-portable, runtime governance, AWS, IoT, Digital Twin e pipeline geospaziali."
 image: "assets/images/case-studies/cloud-portable-fleet-platform/cloud-portable-fleet-management-platform-aws-fastapi-architecture.png"
 image_alt: "Casi studio backend architecture e AWS di Luca Atella"
 schema_type: "CollectionPage"
@@ -11,6 +11,8 @@ schema_type: "CollectionPage"
 Questa sezione raccoglie progetti e casi studio architetturali.
 
 Ogni pagina spiega il problema, la forma del sistema, le decisioni tecniche principali e perché quelle decisioni contano nella pratica.
+
+Usala come livello di evidenza tecnica del portfolio: ogni pagina collega un problema tecnico a confini architetturali, decisioni runtime e trade-off implementativi.
 
 ---
 

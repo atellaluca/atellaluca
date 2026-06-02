@@ -1,6 +1,6 @@
 ---
-title: "Luca Atella CV | Software Architect, Backend Engineer, AWS Certified"
-description: "Curriculum vitae of Luca Atella: software architect, backend platform engineer and AWS certified professional with experience in FastAPI, DynamoDB, serverless, IoT and modular systems."
+title: "CV - Luca Atella"
+description: "CV of Luca Atella, software architect and backend platform engineer focused on AWS, modular systems, cloud-portable architecture, IoT and runtime governance."
 image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
 image_alt: "Luca Atella CV software architect backend engineer AWS certified"
 schema_type: "ProfilePage"
@@ -12,6 +12,8 @@ schema_type: "ProfilePage"
 Basilicata, Italy · Email: [info@atellaluca.com](mailto:info@atellaluca.com) · GitHub: [github.com/atellaluca](https://github.com/atellaluca) · LinkedIn: [linkedin.com/in/luca-atella](https://www.linkedin.com/in/luca-atella/)
 
 [Download PDF](assets/cv/Luca-Atella-CV.pdf){ .md-button .md-button--primary }
+
+[Portfolio Home](index.md) · [Case Studies](case-studies/index.md) · [GitHub](https://github.com/atellaluca) · [Contact](contact.md)
 
 ---
 

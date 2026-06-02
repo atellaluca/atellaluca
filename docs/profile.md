@@ -1,6 +1,6 @@
 ---
-title: "Technical Profile | Luca Atella Software Architect"
-description: "Technical profile of Luca Atella, software architect focused on backend platforms, AWS serverless systems, FastAPI, modular Python, runtime contracts, IoT and Digital Twin architectures."
+title: "Technical Profile - Luca Atella"
+description: "Technical profile of Luca Atella, software architect focused on modular backend systems, cloud-portable architecture, runtime governance, AWS and edge/cloud integration."
 image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
 image_alt: "Technical profile of Luca Atella software architect and backend engineer"
 schema_type: "ProfilePage"
@@ -9,6 +9,8 @@ schema_type: "ProfilePage"
 # Luca Atella — Software Architect
 
 I design and build backend and platform systems for products that need to be reliable, extensible, and understandable over time.
+
+My current focus is modular backend systems, cloud-portable architecture, runtime governance, and edge/cloud integration.
 
 My work focuses on modular architectures, cloud-portable deployment models, runtime validation, and integration-heavy backends. In practice, that means I spend a lot of time on boundaries: where domain logic ends, where infrastructure begins, how components communicate, and how failures are detected.
 
@@ -93,3 +95,17 @@ Concrete examples:
 - [ImportSpy](case-studies/importspy/index.md)
 - [B3DO — Basilicata 3D Open](case-studies/b3do/index.md)
 - [IoT Data Aggregation Architecture](case-studies/iot-data-aggregation-digital-twin/index.md)
+
+---
+
+## How to Read This Portfolio
+
+Start from the [home page](index.md) for the positioning, then use [case studies](case-studies/index.md) as technical evidence.
+
+The most representative examples are:
+
+- [Cloud-Portable Fleet Management Platform](case-studies/cloud-portable-fleet-platform/index.md) for AWS, FastAPI, infrastructure abstraction, and production deployment
+- [ImportSpy](case-studies/importspy/index.md) for runtime governance and modular Python systems
+- [IoT Data Aggregation Architecture](case-studies/iot-data-aggregation-digital-twin/index.md) for edge/cloud integration and Digital Twin system design
+
+For a compact professional summary, see the [CV](cv.md). For project or architecture conversations, use [Contact](contact.md).

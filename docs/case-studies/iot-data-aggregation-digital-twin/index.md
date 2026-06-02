@@ -232,3 +232,13 @@ This case study demonstrates experience in:
 - storage abstraction
 - AI-enabled data access patterns
 - conceptual architecture for complex systems
+
+---
+
+## Read Next
+
+- [Back to case studies](../index.md)
+- [Cloud-Portable Fleet Management Platform](../cloud-portable-fleet-platform/index.md)
+- [Technical profile](../../profile.md)
+- [CV](../../cv.md)
+- [Contact](../../contact.md)

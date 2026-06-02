@@ -1,6 +1,6 @@
 ---
-title: "Profilo Tecnico | Luca Atella Software Architect"
-description: "Profilo tecnico di Luca Atella, Software Architect e backend platform engineer focalizzato su AWS, FastAPI, Python modulare, runtime contracts, IoT e Digital Twin."
+title: "Profilo Tecnico - Luca Atella"
+description: "Profilo tecnico di Luca Atella, Software Architect focalizzato su backend modulari, architetture cloud-portable, runtime governance, AWS e edge/cloud integration."
 image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
 image_alt: "Profilo tecnico di Luca Atella Software Architect e backend engineer"
 schema_type: "ProfilePage"
@@ -9,6 +9,8 @@ schema_type: "ProfilePage"
 # Luca Atella — Software Architect
 
 Progetto e costruisco sistemi backend e piattaforme software per prodotti che devono essere affidabili, estendibili e comprensibili nel tempo.
+
+Il mio focus attuale è su sistemi backend modulari, architetture cloud-portable, runtime governance e integrazione edge/cloud.
 
 Il mio lavoro riguarda architetture modulari, deployment cloud-portable, runtime validation e backend con molte integrazioni. In pratica, passo molto tempo sui confini: dove finisce la logica di dominio, dove inizia l’infrastruttura, come comunicano i componenti e come vengono intercettati gli errori.
 
@@ -65,3 +67,13 @@ Esempi concreti:
 - [ImportSpy](case-studies/importspy/index.md)
 - [B3DO — Basilicata 3D Open](case-studies/b3do/index.md)
 - [IoT Data Aggregation Architecture](case-studies/iot-data-aggregation-digital-twin/index.md)
+
+---
+
+## Come Leggere il Portfolio
+
+La [home](index.md) riassume il posizionamento. I [casi studio](case-studies/index.md) raccolgono le evidenze tecniche.
+
+Gli esempi più rappresentativi sono [Cloud-Portable Fleet Management Platform](case-studies/cloud-portable-fleet-platform/index.md), [ImportSpy](case-studies/importspy/index.md) e [IoT Data Aggregation Architecture](case-studies/iot-data-aggregation-digital-twin/index.md).
+
+Per una sintesi professionale compatta, vedi il [CV](cv.md). Per una conversazione tecnica o progettuale, usa [Contatti](contact.md).

@@ -265,3 +265,13 @@ This project demonstrates experience in:
 - production-oriented observability
 - frontend/backend integration
 - operational delivery of a real business application
+
+---
+
+## Read Next
+
+- [Back to case studies](../index.md)
+- [Technical profile](../../profile.md)
+- [CV](../../cv.md)
+- [Contact](../../contact.md)
+- [IoT Data Aggregation Architecture](../iot-data-aggregation-digital-twin/index.md)

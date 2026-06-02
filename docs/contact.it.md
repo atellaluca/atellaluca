@@ -1,6 +1,6 @@
 ---
-title: "Contatti Luca Atella | Software Architect e Backend Engineer"
-description: "Contatta Luca Atella per software architecture, backend platform, architetture AWS serverless, runtime validation, IoT e progetti backend cloud-portable."
+title: "Contatti - Luca Atella"
+description: "Contatta Luca Atella per software architecture, backend platform, AWS, runtime governance, IoT e progetti backend cloud-portable."
 image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
 image_alt: "Contatti Luca Atella Software Architect e backend platform engineer"
 schema_type: "ContactPage"
@@ -24,6 +24,9 @@ Vivo in Basilicata, in Italia, e sono disponibile a collaborazioni da remoto o i
 
 **LinkedIn**  
 [linkedin.com/in/luca-atella](https://www.linkedin.com/in/luca-atella/)
+
+**Portfolio**  
+[Home](index.md) · [Casi studio](case-studies/index.md) · [CV](cv.md)
 
 ---
 

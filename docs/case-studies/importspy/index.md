@@ -160,3 +160,14 @@ I designed and implemented ImportSpy end-to-end, starting from the conceptual ar
 My work covered the definition of the contract model, the design of the validation engine, and the implementation of the runtime import interception mechanism, with a strong focus on determinism, clarity, and architectural correctness. I also curated the project documentation, packaging, and release workflow to ensure long-term maintainability and ease of adoption.
 
 Through this project, I consolidated my experience in software architecture, runtime systems, modular design, and DevSecOps-oriented tooling, while leading the full lifecycle of an open-source initiative from initial design to public release.
+
+---
+
+## Read Next
+
+- [Back to case studies](../index.md)
+- [ImportSpy architecture deep dive](architecture.md)
+- [Runtime validation engine](validation.md)
+- [GitHub repository](https://github.com/atellaluca/importspy)
+- [Technical profile](../../profile.md)
+- [Contact](../../contact.md)

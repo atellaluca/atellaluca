@@ -1,6 +1,6 @@
 ---
-title: "Contact Luca Atella | Software Architect and Backend Engineer"
-description: "Contact Luca Atella for software architecture, backend platforms, AWS serverless architecture, runtime validation, IoT systems and cloud-portable backend projects."
+title: "Contact - Luca Atella"
+description: "Contact Luca Atella for software architecture, backend platforms, AWS, runtime governance, IoT systems and cloud-portable backend projects."
 image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
 image_alt: "Contact Luca Atella software architect and backend platform engineer"
 schema_type: "ContactPage"
@@ -36,6 +36,9 @@ https://github.com/atellaluca
 
 **LinkedIn**
 [linkedin.com/in/luca-atella](https://www.linkedin.com/in/luca-atella/)
+
+**Portfolio**
+[Home](index.md) · [Case Studies](case-studies/index.md) · [CV](cv.md)
 
 ---
 
