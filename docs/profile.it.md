@@ -1,8 +1,8 @@
 ---
 title: "Profilo Tecnico - Luca Atella"
 description: "Profilo tecnico di Luca Atella, Software Architect focalizzato su backend modulari, architetture cloud-portable, runtime governance, AWS e edge/cloud integration."
-image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
-image_alt: "Profilo tecnico di Luca Atella Software Architect e backend engineer"
+image: "assets/luca-atella-portrait.jpg"
+image_alt: "Ritratto di Luca Atella, Software Architect e Backend Engineer"
 schema_type: "ProfilePage"
 ---
 

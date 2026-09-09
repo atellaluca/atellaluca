@@ -1,8 +1,8 @@
 ---
 title: "Chi è Luca Atella | Backend Architecture e Platform Engineering"
 description: "Chi è Luca Atella: Software Architect lucano e backend platform engineer che lavora su sistemi modulari, architetture cloud-portable, runtime validation, IoT e pipeline geospaziali."
-image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
-image_alt: "Profilo di Luca Atella backend architecture e platform engineering"
+image: "assets/luca-atella-portrait.jpg"
+image_alt: "Ritratto di Luca Atella, Software Architect e Backend Engineer"
 schema_type: "AboutPage"
 ---
 

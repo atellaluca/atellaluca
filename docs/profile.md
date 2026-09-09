@@ -1,8 +1,8 @@
 ---
 title: "Technical Profile - Luca Atella"
 description: "Technical profile of Luca Atella, software architect focused on modular backend systems, cloud-portable architecture, runtime governance, AWS and edge/cloud integration."
-image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
-image_alt: "Technical profile of Luca Atella software architect and backend engineer"
+image: "assets/luca-atella-portrait.jpg"
+image_alt: "Portrait of Luca Atella, Software Architect and Backend Engineer"
 schema_type: "ProfilePage"
 ---
 

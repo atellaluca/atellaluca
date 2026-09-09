@@ -4,9 +4,15 @@
   <url>
     <loc>https://profile.atellaluca.com/</loc>
     <image:image>
-      <image:loc>https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png</image:loc>
+      <image:loc>https://profile.atellaluca.com/assets/luca-atella-portrait.jpg</image:loc>
       <image:title>Luca Atella software architect and backend platform engineer</image:title>
-      <image:caption>Portfolio identity image for Luca Atella, focused on backend architecture, platform engineering, AWS and cloud-portable systems.</image:caption>
+      <image:caption>Portrait of Luca Atella, Software Architect and Backend Engineer.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://profile.atellaluca.com/it/</loc>
+    <image:image>
+      <image:loc>https://profile.atellaluca.com/assets/luca-atella-portrait.jpg</image:loc>
     </image:image>
   </url>
   <url>

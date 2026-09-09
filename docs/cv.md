@@ -1,8 +1,8 @@
 ---
 title: "CV - Luca Atella"
 description: "CV of Luca Atella, software architect and backend platform engineer focused on AWS, modular systems, cloud-portable architecture, IoT and runtime governance."
-image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
-image_alt: "Luca Atella CV software architect backend engineer AWS certified"
+image: "assets/luca-atella-portrait.jpg"
+image_alt: "Portrait of Luca Atella, Software Architect and Backend Engineer"
 schema_type: "ProfilePage"
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: "Contact - Luca Atella"
 description: "Contact Luca Atella for software architecture, backend platforms, AWS, runtime governance, IoT systems and cloud-portable backend projects."
-image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
-image_alt: "Contact Luca Atella software architect and backend platform engineer"
+image: "assets/luca-atella-portrait.jpg"
+image_alt: "Portrait of Luca Atella, Software Architect and Backend Engineer"
 schema_type: "ContactPage"
 ---
 

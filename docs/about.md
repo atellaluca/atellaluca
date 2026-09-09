@@ -1,8 +1,8 @@
 ---
 title: "About Luca Atella | Backend Architecture and Platform Engineering"
 description: "About Luca Atella: backend and platform engineer working on modular systems, cloud-portable architectures, runtime validation, IoT platforms and geospatial pipelines."
-image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
-image_alt: "Luca Atella backend architecture and platform engineering profile"
+image: "assets/luca-atella-portrait.jpg"
+image_alt: "Portrait of Luca Atella, Software Architect and Backend Engineer"
 schema_type: "AboutPage"
 ---
 

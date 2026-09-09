@@ -21,8 +21,14 @@
   <meta property="og:description" content="{{ page_description }}">
   <meta property="og:url" content="{{ page_url }}">
   <meta property="og:image" content="{{ page_image_url }}">
+  {% if page_image == 'assets/luca-atella-portrait.jpg' %}
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1032">
+    <meta property="og:image:height" content="1280">
+  {% endif %}
   {% if page.meta and page.meta.image_alt %}
     <meta property="og:image:alt" content="{{ page.meta.image_alt }}">
+    <meta name="twitter:image:alt" content="{{ page.meta.image_alt }}">
   {% endif %}
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ page_title }}">
@@ -50,6 +56,7 @@
       "@type": "Person",
       "@id": {{ (portfolio_root ~ '#person') | tojson }},
       "name": "Luca Atella",
+      "image": {{ (portfolio_root ~ 'assets/luca-atella-portrait.jpg') | tojson }},
       "url": {{ portfolio_root | tojson }},
       "jobTitle": "Software Architect",
       "description": "Software Architect with a backend and platform engineering background, focused on modular systems, cloud-portable architectures, runtime governance, and long-lived backend platforms.",
