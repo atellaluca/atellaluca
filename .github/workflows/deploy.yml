@@ -1,4 +1,4 @@
-name: Deploy MkDocs (Poetry + gh-deploy)
+name: Build, validate SEO and deploy MkDocs
 
 on:
   push:
@@ -44,8 +44,15 @@ jobs:
         run: |
           poetry install --no-interaction --no-root
 
-      - name: Deploy with mkdocs gh-deploy
+      - name: Build and validate SEO
+        run: |
+          poetry run mkdocs build --strict
+          poetry run python scripts/check_seo.py site
+
+      - name: Deploy validated site
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_COMMITTER_NAME: github-actions[bot]
+          GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
         run: |
-          poetry run mkdocs gh-deploy --force
+          poetry run ghp-import --no-jekyll --push --force site

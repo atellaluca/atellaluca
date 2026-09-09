@@ -1,7 +1,5 @@
 User-agent: *
 Allow: /
 
-Disallow: /cv-pdf/
-Disallow: /it/cv-pdf/
-
 Sitemap: https://profile.atellaluca.com/sitemap.xml
+Sitemap: https://profile.atellaluca.com/image-sitemap.xml
