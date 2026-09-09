@@ -63,8 +63,9 @@ The portfolio is bilingual:
 
 - English is served from the root path (`/`)
 - Italian is served from `/it/`
-- browser language detection redirects Italian-language visitors to the Italian version on first visit
-- Material for MkDocs language alternates keep the language switcher and SEO `hreflang` links aligned
+- language selection is explicit: browser preferences never redirect a visitor away from the requested URL
+- Material for MkDocs supplies the language switcher; the SEO hook emits absolute, reciprocal `hreflang` links and an English `x-default`
+- legacy case-study `/overview/` URLs redirect to their current landing pages using immediate HTML refresh (GitHub Pages)
 
 ---
 
