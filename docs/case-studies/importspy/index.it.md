@@ -82,3 +82,21 @@ I concetti architetturali di ImportSpy sono stati presentati al GDG Basilicata n
 - [Slide italiane](../../assets/talks/importspy-gdg-basilicata-it.pdf)
 - [Slide inglesi](../../assets/talks/importspy-runtime-contract-validation-en.pdf)
 - [Evento GDG Basilicata](https://gdg.community.dev/events/details/google-gdg-basilicata-presents-flash-talks-arena/)
+
+---
+
+## Il mio contributo
+
+Ho progettato e implementato ImportSpy, dalla definizione del modello dei contratti al motore di validazione e al meccanismo di intercettazione degli import. Ho curato anche documentazione, packaging e workflow di rilascio del progetto open-source.
+
+Il caso studio raccoglie le decisioni su confini tra moduli, requisiti di esecuzione e diagnostica delle violazioni: aspetti che applico anche nella progettazione di backend modulari e piattaforme a plugin.
+
+## Approfondisci il progetto
+
+- [Architettura di ImportSpy](architecture.md)
+- [Motore di validazione](validation.md)
+- [Modello dei contratti runtime](contracts.md)
+- [Violazioni e diagnostica](violations.md)
+- [Tutti i casi studio](../index.md)
+
+[Profilo tecnico di Luca Atella](../../profile.md) · [CV](../../cv.md) · [Contattami per un’opportunità](../../contact.md)

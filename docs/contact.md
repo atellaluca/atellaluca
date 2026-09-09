@@ -6,76 +6,28 @@ image_alt: "Contact Luca Atella software architect and backend platform engineer
 schema_type: "ContactPage"
 ---
 
-# Contact
+# Let’s discuss your next opportunity
 
-I am open to conversations around software architecture, backend systems, cloud deployment, and long-lived platforms.
+Looking for a **Software Architect, Backend Engineer or Platform Engineer**? I work on Python backends, APIs, modular systems and AWS platforms, from design through deployment.
 
-I am based in Basilicata, Italy, and I am open to remote or hybrid work conversations with Italian and international teams.
+I am based in Basilicata, Italy, and open to remote or hybrid work conversations with Italian and international teams.
 
-If you are working on:
+[Email info@atellaluca.com](mailto:info@atellaluca.com){ .md-button .md-button--primary }
+[Contact me on LinkedIn](https://www.linkedin.com/in/luca-atella/){ .md-button }
 
-- modular or plugin-based systems
-- backend or platform architecture
-- developer tooling
-- runtime governance
-- IoT or edge platforms
-- integration-heavy backends
-- cloud-native or DevOps-oriented projects
+## Start the conversation
 
-and would like to exchange ideas, explore a collaboration, or discuss a technical challenge, feel free to reach out.
+Tell me about the role or project, the team’s product and the working arrangement. If available, include the technical stack, timeline and salary range or project budget.
 
----
+## Where I can contribute
 
-## How to Reach Me
+- **Backends and APIs:** Python/FastAPI design and development, data and integrations.
+- **Cloud and platforms:** AWS, Docker, deployment and separation of domain logic from infrastructure.
+- **Modular systems and IoT:** plugins, runtime contracts, telemetry and heterogeneous sources.
 
-**Email**
-[info@atellaluca.com](mailto:info@atellaluca.com)
+## Review my work
 
-**GitHub**
-https://github.com/atellaluca
+[Read my CV](cv.md){ .md-button }
+[Download my CV as PDF](assets/cv/Luca-Atella-CV.pdf){ .md-button }
 
-**LinkedIn**
-[linkedin.com/in/luca-atella](https://www.linkedin.com/in/luca-atella/)
-
-**Portfolio**
-[Home](index.md) · [Case Studies](case-studies/index.md) · [CV](cv.md)
-
----
-
-## What I’m Most Interested In
-
-I’m particularly interested in discussions and projects involving:
-
-- system design and architecture
-- extensible platforms
-- modular backends
-- runtime validation
-- developer experience tooling
-- cloud-native systems
-- long-lived software products
-
----
-
-## Good Fit
-
-A strong fit is usually a team or project that needs help with:
-
-- turning a backend prototype into a maintainable platform
-- designing API, data, and infrastructure boundaries
-- preparing a system for AWS or cloud-portable deployment
-- integrating heterogeneous devices, services, or data sources
-- improving reliability, observability, and developer experience
-
----
-
-## Notes
-
-I may take some time to reply, but I do read all serious and thoughtful messages.
-
-If you’re reaching out about a project or idea, a short description of:
-
-- the problem space
-- the system context
-- the architectural challenges
-
-is always appreciated.
+[Case studies](case-studies/index.md) · [Technical profile](profile.md) · [GitHub](https://github.com/atellaluca) · [Home](index.md)

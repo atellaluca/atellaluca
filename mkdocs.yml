@@ -1,4 +1,4 @@
-site_name: "Luca Atella · Software Architect & Backend Platform Engineer"
+site_name: "Luca Atella"
 site_description: "Luca Atella portfolio: software architect and backend platform engineer focused on AWS, FastAPI, cloud-portable backend architecture, runtime contract validation, IoT and Digital Twin systems."
 site_author: "Luca Atella"
 site_url: "https://profile.atellaluca.com/"
@@ -41,7 +41,7 @@ plugins:
         - locale: it
           name: Italiano
           build: true
-          site_name: "Luca Atella · Software Architect & Backend Platform Engineer"
+          site_name: "Luca Atella"
           site_description: "Portfolio di Luca Atella: software architect e backend platform engineer lucano, focalizzato su AWS, FastAPI, architetture backend cloud-portable, runtime contract validation, IoT e Digital Twin."
           nav_translations:
             Home: Home

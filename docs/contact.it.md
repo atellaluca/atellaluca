@@ -6,38 +6,28 @@ image_alt: "Contatti Luca Atella Software Architect e backend platform engineer"
 schema_type: "ContactPage"
 ---
 
-# Contatti
+# Parliamo della prossima opportunità
 
-Sono disponibile a confrontarmi su software architecture, sistemi backend, deployment su cloud e piattaforme software pensate per durare.
+Cerchi un **Software Architect, Backend Engineer o Platform Engineer**? Mi occupo di backend Python, API, sistemi modulari e piattaforme AWS, dalla progettazione al deployment.
 
-Vivo in Basilicata, in Italia, e sono disponibile a collaborazioni da remoto o in modalità ibrida con team italiani e internazionali.
+Sono in Basilicata e sono disponibile a confrontarmi su opportunità da remoto o ibride con team italiani e internazionali.
 
----
+[Scrivi a info@atellaluca.com](mailto:info@atellaluca.com){ .md-button .md-button--primary }
+[Contattami su LinkedIn](https://www.linkedin.com/in/luca-atella/){ .md-button }
 
-## Come Contattarmi
+## Per iniziare
 
-**Email**  
-[info@atellaluca.com](mailto:info@atellaluca.com)
+Raccontami il ruolo o il progetto, il prodotto su cui lavora il team e la modalità di collaborazione. Se disponibili, includi stack tecnico, tempistiche e fascia retributiva o budget.
 
-**GitHub**  
-[github.com/atellaluca](https://github.com/atellaluca)
+## Dove posso contribuire
 
-**LinkedIn**  
-[linkedin.com/in/luca-atella](https://www.linkedin.com/in/luca-atella/)
+- **Backend e API:** progettazione e sviluppo Python/FastAPI, dati e integrazioni.
+- **Cloud e piattaforme:** AWS, Docker, deployment e separazione tra dominio e infrastruttura.
+- **Sistemi modulari e IoT:** plugin, contratti runtime, telemetria e sorgenti eterogenee.
 
-**Portfolio**  
-[Home](index.md) · [Casi studio](case-studies/index.md) · [CV](cv.md)
+## Valuta il mio lavoro
 
----
+[Leggi il CV](cv.md){ .md-button }
+[Scarica il CV in PDF](assets/cv/Luca-Atella-CV.pdf){ .md-button }
 
-## Contesto Ideale
-
-Il contesto ideale è un team o un progetto che ha bisogno di:
-
-- trasformare un prototipo backend in una piattaforma manutenibile
-- progettare confini tra API, dati e infrastruttura
-- preparare un sistema per AWS o per un deployment cloud-portable
-- integrare dispositivi, servizi o sorgenti dati eterogenee
-- migliorare affidabilità, osservabilità ed esperienza di sviluppo
-
-Se mi scrivi per un progetto, è utile includere una breve descrizione del contesto, del problema e dei vincoli tecnici.
+[Casi studio](case-studies/index.md) · [Profilo tecnico](profile.md) · [GitHub](https://github.com/atellaluca) · [Home](index.md)
