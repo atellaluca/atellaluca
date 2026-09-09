@@ -1,8 +1,8 @@
 ---
 title: "Luca Atella | Software Architect e Backend Engineer"
 description: "Luca Atella, Software Architect e sviluppatore backend Python in Basilicata. Progetti con FastAPI, AWS e sistemi IoT. Casi studio, competenze e CV."
-image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
-image_alt: "Identità visiva di Luca Atella"
+image: "assets/luca-atella-portrait.jpg"
+image_alt: "Ritratto di Luca Atella, Software Architect e Backend Engineer"
 schema_type: "ProfilePage"
 hide:
   - navigation
@@ -29,7 +29,7 @@ Progetto e sviluppo backend Python, API e piattaforme cloud. Aiuto i team a coll
 
 </div>
 <div class="portfolio-identity" markdown>
-![Identità visiva di Luca Atella](assets/luca-atella-software-architect-backend-platform-engineer.png){ width="320" height="320" }
+![Ritratto di Luca Atella, Software Architect e Backend Engineer](assets/luca-atella-portrait.jpg){ width="1032" height="1280" fetchpriority="high" loading="eager" decoding="async" }
 <p>Confini chiari.<br>Integrazioni affidabili.<br>Software che può evolvere.</p>
 </div>
 </div>

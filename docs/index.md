@@ -1,8 +1,8 @@
 ---
 title: "Luca Atella | Software Architect & Backend Engineer"
 description: "Luca Atella, Software Architect and Python backend engineer based in Italy. Explore FastAPI, AWS and IoT projects, architecture case studies and CV."
-image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
-image_alt: "Luca Atella visual identity"
+image: "assets/luca-atella-portrait.jpg"
+image_alt: "Portrait of Luca Atella, Software Architect and Backend Engineer"
 schema_type: "ProfilePage"
 hide:
   - navigation
@@ -29,7 +29,7 @@ I design and build Python backends, APIs and cloud platforms. I help teams conne
 
 </div>
 <div class="portfolio-identity" markdown>
-![Luca Atella visual identity](assets/luca-atella-software-architect-backend-platform-engineer.png){ width="320" height="320" }
+![Portrait of Luca Atella, Software Architect and Backend Engineer](assets/luca-atella-portrait.jpg){ width="1032" height="1280" fetchpriority="high" loading="eager" decoding="async" }
 <p>Clear boundaries.<br>Reliable integrations.<br>Software that can evolve.</p>
 </div>
 </div>
