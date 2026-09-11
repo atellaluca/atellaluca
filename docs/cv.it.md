@@ -19,9 +19,9 @@ Basilicata, Italia · Email: [info@atellaluca.com](mailto:info@atellaluca.com) �
 
 ## Profilo
 
-Software Architect con esperienza in backend e platform engineering, focalizzato su sistemi modulari, architetture cloud-portable, runtime validation e piattaforme backend pensate per durare.
+Software Architect, Tech Lead e Backend/Platform Engineer. Progetto e sviluppo direttamente backend, API e infrastrutture applicative, con attenzione a confini architetturali, integrazioni, deployment e manutenzione.
 
-Progetto sistemi in cui scelte infrastrutturali, confini runtime, affidabilità operativa e manutenibilità vengono considerate dall’inizio.
+In Vemar sono stato Tech Lead da aprile 2021 a ottobre 2024, con responsabilità continuativa di coordinamento tecnico di un team di 4 persone. Ho progettato e realizzato personalmente l’infrastruttura per 80 tracker e ho sviluppato il framework su cui si fonda delis.app.
 
 ---
 
@@ -68,15 +68,18 @@ Progetto sistemi in cui scelte infrastrutturali, confini runtime, affidabilità 
 
 ## Esperienza Professionale
 
-### Software Architect / Backend & Platform Engineer — Vemar S.A.S.
+### Tech Lead / Backend & Platform Engineer — Vemar S.A.S.
 **Aprile 2021 - Ottobre 2024**
 
-Ho progettato e sviluppato l’architettura backend principale per sistemi IoT distribuiti e integrazioni con dispositivi eterogenei.
+Ho progettato e sviluppato architetture backend per sistemi IoT distribuiti e integrazioni con dispositivi eterogenei, operando come Tech Lead.
 
 Responsabilità principali:
 
-- progettazione di un framework backend plugin-based
-- centralizzazione di logica di business, autenticazione, API e persistenza
+- coordinamento tecnico continuativo di un team di 4 persone
+- sviluppo del framework backend plugin-based su cui si fonda delis.app
+- progettazione e realizzazione personale dell’infrastruttura per 80 tracker
+- comunicazione via socket, dati CAN bus, persistenza ed esposizione tramite API REST
+- centralizzazione di logica applicativa, autenticazione, API e persistenza
 - definizione di REST API contracts e struttura backend
 - progettazione di confini di caricamento ed esecuzione plugin
 - introduzione di workflow basati su Docker
@@ -88,7 +91,15 @@ Responsabilità principali:
 
 ### Cloud-Portable Fleet Management Platform
 
-Piattaforma adottata in produzione per fleet management con FastAPI, React/TypeScript, astrazione di repository e storage, Docker Compose locale e deployment AWS con Lambda, ECR, DynamoDB, S3, CloudFront, CloudFormation e CloudWatch.
+Fleet Management System in uso presso Studio Lambda per gestire il turnover dei veicoli di 50 dipendenti. Il sistema è deployato su AWS ed è progettato con separazione fra logica applicativa, persistenza, servizi cloud e runtime web.
+
+### Backend Telemetria Fleet Real-Time
+
+Infrastruttura distinta dal progetto Studio Lambda, progettata e realizzata personalmente in Vemar per 80 tracker. Il lavoro comprendeva comunicazione via socket, dati CAN bus, persistenza ed esposizione tramite API REST.
+
+### Backend Unificato per Sorgenti Eterogenee
+
+Framework backend plugin-based sviluppato in Vemar e alla base di delis.app, con separazione delle integrazioni, contratti espliciti e modello API unificato. Non attribuisco automaticamente a delis.app tutte le generalizzazioni architetturali descritte nel caso SAFE.
 
 ### ImportSpy
 
@@ -101,6 +112,10 @@ Pipeline geospaziale Python per trasformare dataset pubblici della Basilicata in
 ### IoT Data Aggregation Architecture
 
 Architettura edge-to-cloud per acquisizione e aggregazione dati IoT in scenari Digital Twin.
+
+### Compatibilità e isolamento dei runtime per gli applicativi Agenzia delle Entrate
+
+Intervento presso uno studio commercialista su ambiente Windows con applicativi IRAP 2019-2021, ISA, Desktop Telematico / Entratel e altri strumenti con dipendenze Java differenti. Ho isolato runtime Java per applicazione, gestito avvii JNLP/LaunchAnywhere e verificato la coesistenza degli strumenti senza assumere responsabilità fiscali o di certificazione normativa.
 
 ---
 

@@ -12,13 +12,13 @@ hide:
 <div class="portfolio-home" markdown>
 <div class="portfolio-hero" markdown>
 <div class="portfolio-hero-copy" markdown>
-<p class="portfolio-eyebrow">SOFTWARE ARCHITECT · BACKEND ENGINEER</p>
+<p class="portfolio-eyebrow">TECH LEAD · BACKEND ENGINEER · PLATFORM ENGINEER</p>
 
 # Luca Atella
 
 <p class="portfolio-lead">From architecture to software<br>that works in production.</p>
 
-I design and build Python backends, APIs and cloud platforms. I help teams connect data, services and infrastructure through systems that stay understandable as the product grows.
+I design and build Python backends, APIs and cloud platforms directly. At Vemar I worked as Tech Lead, coordinating a 4-person team and building backend systems used in real operational contexts.
 
 <p class="portfolio-location">Basilicata, Italy · Open to remote and hybrid work conversations</p>
 
@@ -38,17 +38,17 @@ I design and build Python backends, APIs and cloud platforms. I help teams conne
 <div class="portfolio-proof" markdown>
 **Production experience**
 
-A fleet management platform adopted in a real business context.
+Fleet Management System used by Studio Lambda for vehicle turnover management for 50 employees.
 </div>
 <div class="portfolio-proof" markdown>
-**Design and implementation**
+**Tech Lead at Vemar**
 
-From FastAPI endpoints to AWS deployment and reproducible local environments.
+Continuous technical coordination of a 4-person team, an infrastructure for 80 trackers, and the framework behind delis.app.
 </div>
 <div class="portfolio-proof" markdown>
-**Open source and exploration**
+**Direct engineering and diagnosis**
 
-ImportSpy for runtime contracts. B3DO for geospatial processing.
+Backends, infrastructure, isolated runtimes and explicit contracts: from implementation to operational verification.
 </div>
 </div>
 
@@ -60,18 +60,31 @@ The problem, the design decisions and the resulting system. Each case study dist
 <div class="portfolio-card" markdown>
 <p class="portfolio-eyebrow">01 / PRODUCTION PLATFORM</p>
 
-### Fleet management, from local to AWS
+### Cloud-Portable Fleet Management Platform
 
-**The problem:** managing vehicles, reservations, maintenance and documents without coupling business logic to a single environment.
+**The context:** Fleet Management System used by Studio Lambda to manage vehicle turnover for 50 employees.
 
-**The work:** a FastAPI backend, React/TypeScript frontend and repository and storage abstractions. Docker Compose for development and serverless deployment on AWS.
+**The work:** FastAPI backend, React/TypeScript frontend, repository and storage abstraction, reproducible local development and actual AWS deployment.
 
 <p class="portfolio-stack">Python · FastAPI · DynamoDB · S3 · Lambda</p>
 
 [Architecture and project decisions →](case-studies/cloud-portable-fleet-platform/index.md)
 </div>
 <div class="portfolio-card" markdown>
-<p class="portfolio-eyebrow">02 / OPEN-SOURCE PROJECT</p>
+<p class="portfolio-eyebrow">02 / VEMAR EXPERIENCE</p>
+
+### Real-Time Fleet Telemetry Backend
+
+**The context:** infrastructure I personally designed and implemented at Vemar for 80 trackers.
+
+**The work:** socket communication, CAN bus data, persistence, normalization and REST APIs to make operational data available.
+
+<p class="portfolio-stack">Python · Socket · CAN bus · REST API</p>
+
+[Read the telemetry case study →](case-studies/fleet-tracking/index.md)
+</div>
+<div class="portfolio-card" markdown>
+<p class="portfolio-eyebrow">03 / OPEN-SOURCE PROJECT</p>
 
 ### ImportSpy: explicit contracts between modules
 
@@ -84,7 +97,20 @@ The problem, the design decisions and the resulting system. Each case study dist
 [Explore the validation engine →](case-studies/importspy/index.md)
 </div>
 <div class="portfolio-card" markdown>
-<p class="portfolio-eyebrow">03 / GEOSPATIAL PIPELINE · UNPUBLISHED</p>
+<p class="portfolio-eyebrow">04 / PROFESSIONAL INTERVENTION</p>
+
+### Runtime isolation for Italian tax applications
+
+**The problem:** Agenzia delle Entrate applications from different years required Java runtimes and launch modes that could not be handled by one global setup.
+
+**The work:** isolated runtimes, JNLP/LaunchAnywhere handling, separate Desktop Telematico/Entratel treatment, and coexistence checks.
+
+<p class="portfolio-stack">Windows · Java runtime · JNLP · Entratel</p>
+
+[Read the compatibility case study →](case-studies/agenzia-entrate-runtime-isolation/index.md)
+</div>
+<div class="portfolio-card" markdown>
+<p class="portfolio-eyebrow">05 / GEOSPATIAL PIPELINE · UNPUBLISHED</p>
 
 ### B3DO: Basilicata’s terrain in three dimensions
 
@@ -95,7 +121,7 @@ A pipeline that turns public terrain datasets into 3D models: raster clipping, l
 [From public data to 3D models →](case-studies/b3do/index.md)
 </div>
 <div class="portfolio-card" markdown>
-<p class="portfolio-eyebrow">04 / REFERENCE ARCHITECTURE</p>
+<p class="portfolio-eyebrow">06 / REFERENCE ARCHITECTURE</p>
 
 ### Making IoT data useful for Digital Twins
 

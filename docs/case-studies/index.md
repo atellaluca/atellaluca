@@ -23,7 +23,7 @@ Use this hub as the evidence layer of the portfolio: each page connects a techni
 ## Cloud-Portable Fleet Management Platform  
 **Full-Stack Fleet Management System with AWS Production Deployment**
 
-A fleet management platform for vehicles, reservations, trips, refueling, maintenance, documents, and reporting. It was adopted in a real business context and designed so the same application model could run locally with Docker or in production on AWS.
+A Fleet Management System used by Studio Lambda to manage vehicle turnover for 50 employees. It is deployed on AWS and designed to separate application logic from persistence, cloud services, and the web runtime.
 
 - Focus: Cloud portability, infrastructure abstraction, production deployment  
 - Topics: AWS, FastAPI, React, DynamoDB, S3, Docker Compose, CloudFormation  
@@ -67,16 +67,28 @@ It demonstrates data pipeline architecture outside traditional web backends: DTM
 <div class="portfolio-card" markdown>
 
 ## Unified Backend Architecture  
-**Plugin-Based IoT Backend Platform**
+**Plugin-Based Backend Framework Behind delis.app**
 
-A plugin-driven backend architecture for managing heterogeneous IoT devices behind a unified data model and API surface.
+The backend framework I developed at Vemar and on which delis.app is based, presented in SAFE form to show integration separation, contracts, and a unified API surface.
 
-The platform focuses on repeatability, extensibility, and maintainability across embedded, on-premise, and containerized deployments.
-
-- Focus: Platform design, plugin systems, deployment architecture  
+- Focus: Framework development, plugin systems, deployment architecture
 - Topics: Device modeling, REST APIs, WebSockets, deployment workflows  
 
 → [View case study](unified-backend/index.md)
+
+</div>
+
+<div class="portfolio-card" markdown>
+
+## Runtime Isolation for Italian Tax Applications
+**Compatibility Work for Agenzia delle Entrate Desktop Tools**
+
+A professional intervention in an accounting firm to keep tax applications from different years usable in the same Windows environment by isolating Java runtimes, JNLP/LaunchAnywhere startup modes, and Desktop Telematico/Entratel requirements.
+
+- Focus: Legacy diagnosis, dependency isolation, operational continuity
+- Topics: Windows, Java runtime, JNLP, LaunchAnywhere, Entratel, truststore
+
+→ [View case study](agenzia-entrate-runtime-isolation/index.md)
 
 </div>
 
@@ -99,9 +111,7 @@ An edge-to-cloud architecture for collecting heterogeneous IoT data and making i
 ## Fleet Tracking Platform  
 **Real-Time Telemetry and Vehicle Management System**
 
-A backend system for ingesting real-time telemetry from GPS and CAN bus-enabled tracking devices, with fleet monitoring, driver analytics, and operational workflows.
-
-The architecture emphasizes reliability, scalability, and secure communication in mixed embedded and cloud environments.
+A real-time telemetry backend distinct from the Studio Lambda fleet management platform: the infrastructure I personally designed and implemented at Vemar for 80 trackers, including socket communication, CAN bus data, persistence, and REST APIs.
 
 - Focus: Real-time data pipelines, networking, API design  
 - Topics: telemetry ingestion, socket communication, containerized deployment  

@@ -18,7 +18,7 @@ Usala come livello di evidenza tecnica del portfolio: ogni pagina collega un pro
 
 ## Cloud-Portable Fleet Management Platform
 
-Piattaforma per gestione veicoli, prenotazioni, viaggi, rifornimenti, manutenzioni, documenti e report. È stata adottata in un contesto reale ed è stata progettata per girare localmente con Docker o in produzione su AWS.
+Fleet Management System in uso presso Studio Lambda per gestire il turnover dei veicoli di 50 dipendenti. È deployato su AWS e progettato per separare logica applicativa, persistenza, servizi cloud e runtime web.
 
 - Focus: cloud portability, astrazione infrastrutturale, deployment in produzione
 - Topics: AWS, FastAPI, React, DynamoDB, S3, Docker Compose, CloudFormation
@@ -45,9 +45,18 @@ Pipeline geospaziale per trasformare dataset pubblici di Basilicata in modelli 3
 
 ## Unified Backend Architecture
 
-Architettura backend plugin-driven per gestire dispositivi IoT eterogenei dietro un modello dati e una superficie API unificata.
+Framework backend plugin-driven che ho sviluppato in Vemar e su cui si fonda delis.app, presentato in forma SAFE per evidenziare separazione delle integrazioni, contratti e superficie API unificata.
 
 → [Leggi il caso studio](unified-backend/index.md)
+
+## Compatibilità e isolamento dei runtime per gli applicativi Agenzia delle Entrate
+
+Intervento presso uno studio commercialista per mantenere utilizzabili applicativi fiscali di annualità diverse, isolando runtime Java, modalità JNLP/LaunchAnywhere e requisiti Desktop Telematico/Entratel.
+
+- Focus: diagnosi legacy, isolamento dipendenze, continuità operativa
+- Topics: Windows, Java runtime, JNLP, LaunchAnywhere, Entratel, truststore
+
+→ [Leggi il caso studio](agenzia-entrate-runtime-isolation/index.md)
 
 ## IoT Data Aggregation Architecture
 
@@ -57,6 +66,6 @@ Architettura edge-to-cloud per raccogliere dati IoT eterogenei e renderli utiliz
 
 ## Fleet Tracking Platform
 
-Backend per ingestione real-time di telemetria GPS e CAN bus, con monitoraggio fleet, analytics e workflow operativi.
+Backend di telemetria real-time distinto dal progetto Studio Lambda: infrastruttura per 80 tracker progettata e realizzata personalmente in Vemar, con socket, dati CAN bus, persistenza e API REST.
 
 → [Leggi il caso studio](fleet-tracking/index.md)

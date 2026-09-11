@@ -27,9 +27,9 @@ robots: noindex, nofollow
 
 ## Summary
 
-Software architect with a backend and platform engineering background, focused on **modular systems**, **cloud-portable architectures**, **runtime governance**, and **long-lived backend platforms**.
+Software Architect, Tech Lead, and Backend/Platform Engineer focused on **modular systems**, **cloud-portable architectures**, **runtime governance**, and **long-lived backend platforms**.
 
-I design systems where infrastructure abstraction, explicit runtime boundaries, operational reliability, and maintainability are part of the architecture from the beginning.
+I design and directly build backends, APIs, and application infrastructure. At Vemar, from April 2021 to October 2024, I worked as Tech Lead with continuous technical coordination responsibility for a 4-person team, personally designed and implemented the infrastructure for 80 trackers, and developed the framework on which delis.app is based.
 
 ---
 
@@ -56,15 +56,17 @@ I design systems where infrastructure abstraction, explicit runtime boundaries, 
 
 ## Professional Experience
 
-### Software Architect / Backend & Platform Engineer — Vemar S.A.S.
+### Tech Lead / Backend & Platform Engineer — Vemar S.A.S.
 **April 2021 - October 2024**
 
-- Designed a plugin-based backend framework for heterogeneous IoT device integrations
-- Centralized business logic, authentication, API exposure, and persistence concerns
+- Continuously coordinated a 4-person technical team
+- Developed the plugin-based backend framework on which delis.app is based
+- Personally designed and implemented the infrastructure for 80 trackers
+- Worked on socket communication, CAN bus data, persistence, and REST API exposure
+- Centralized application logic, authentication, API exposure, and persistence concerns
 - Defined REST API contracts and backend structure
 - Designed plugin loading and execution boundaries
 - Introduced Docker-based development and deployment workflows
-- Coordinated backend/frontend architectural decisions in a small full-stack team
 
 ---
 
@@ -72,11 +74,23 @@ I design systems where infrastructure abstraction, explicit runtime boundaries, 
 
 ### Cloud-Portable Fleet Management Platform
 
-- Designed and developed a production-adopted fleet management platform with a cloud-portable architecture
-- Built a FastAPI backend and contributed to React/TypeScript frontend integration
+- Fleet Management System used by Studio Lambda to manage vehicle turnover for 50 employees
+- Built a FastAPI backend and worked on React/TypeScript frontend integration
 - Abstracted persistence and object storage through repository and storage contracts
 - Used Docker Compose, DynamoDB Local, and MinIO for local development
 - Deployed to AWS using Lambda, ECR, DynamoDB, S3, CloudFront, CloudFormation, and CloudWatch
+
+### Real-Time Fleet Telemetry Backend
+
+- Infrastructure distinct from the Studio Lambda platform
+- Personally designed and implemented at Vemar for 80 trackers
+- Included socket communication, CAN bus data, persistence, and REST API exposure
+
+### Unified Backend for Heterogeneous Data Sources
+
+- Plugin-based backend framework I developed at Vemar and on which delis.app is based
+- Integration separation, explicit contracts, and unified API model presented in SAFE form
+- Does not attribute every architectural generalization to delis.app itself
 
 ### ImportSpy (Open Source)
 
@@ -96,6 +110,13 @@ I design systems where infrastructure abstraction, explicit runtime boundaries, 
 
 - Conceptual edge-to-cloud architecture for heterogeneous IoT data acquisition and aggregation
 - Includes BLE/Zigbee mesh, gateway ingestion, GraphQL API, data-specific layers, microfrontends, storage gateway, and AI-assisted processing
+
+### Runtime Compatibility for Agenzia delle Entrate Applications
+
+- Professional intervention in an accounting firm Windows environment
+- Isolated Java runtimes for IRAP 2019-2021, ISA, Desktop Telematico / Entratel, and other tools
+- Handled JNLP/LaunchAnywhere startup modes and Entratel TLS/truststore requirements
+- Infrastructure and compatibility work, not tax consulting or regulatory certification
 
 ---
 

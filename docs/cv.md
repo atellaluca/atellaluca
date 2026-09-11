@@ -19,11 +19,9 @@ Basilicata, Italy · Email: [info@atellaluca.com](mailto:info@atellaluca.com) ·
 
 ## Profile
 
-Software architect with a backend and platform engineering background, focused on modular systems, cloud-portable architectures, runtime validation, and long-lived backend platforms.
+Software Architect, Tech Lead, and Backend/Platform Engineer. I design and directly build backends, APIs, and application infrastructure, with attention to architectural boundaries, integrations, deployment, and maintainability.
 
-I design systems where infrastructure choices, runtime boundaries, operational reliability, and maintainability are considered from the beginning instead of added late in the project.
-
-My experience spans plugin-based backend frameworks, IoT and edge platforms, cloud deployment pipelines, AWS serverless architectures, runtime contract validation, and integration-heavy systems.
+At Vemar, from April 2021 to October 2024, I worked as Tech Lead with continuous technical coordination responsibility for a 4-person team. I personally designed and implemented the infrastructure for 80 trackers and developed the framework on which delis.app is based.
 
 I also work on geospatial processing and model-generation pipelines, applying the same architectural discipline to data transformation workflows outside traditional backend systems.
 
@@ -79,20 +77,23 @@ I also work on geospatial processing and model-generation pipelines, applying th
 
 ## Professional Experience
 
-### Software Architect / Backend & Platform Engineer — Vemar S.A.S.  
+### Tech Lead / Backend & Platform Engineer — Vemar S.A.S.
 **April 2021 - October 2024**
 
-Designed and developed the core backend architecture for distributed IoT systems and heterogeneous device integrations.
+Designed and developed backend architectures for distributed IoT systems and heterogeneous device integrations, working as Tech Lead.
 
 Main responsibilities:
 
-- designed a plugin-based backend framework for integrating multiple device families
-- centralized business logic, authentication, API exposure, and persistence concerns
+- continuously coordinated a 4-person technical team
+- developed the plugin-based backend framework on which delis.app is based
+- personally designed and implemented the infrastructure for 80 trackers
+- worked on socket communication, CAN bus data, persistence, and REST API exposure
+- centralized application logic, authentication, API exposure, and persistence concerns
 - defined REST API contracts and backend structure
 - designed plugin loading and execution boundaries
 - introduced Docker-based development and deployment workflows
 - coordinated backend/frontend architectural decisions in a small full-stack team
-- contributed to infrastructure, provisioning, and deployment operations
+- supported infrastructure, provisioning, and deployment operations
 
 The platform remained operational and structurally stable after delivery, demonstrating the long-term maintainability of the architecture.
 
@@ -103,7 +104,7 @@ The platform remained operational and structurally stable after delivery, demons
 ### Cloud-Portable Fleet Management Platform  
 **Full-stack AWS production deployment · 2026**
 
-Designed and developed a production-adopted fleet management platform with a cloud-portable architecture.
+Fleet Management System used by Studio Lambda to manage vehicle turnover for 50 employees. The system is deployed on AWS and designed with separation between application logic, persistence, cloud services, and web runtime.
 
 The system includes a FastAPI backend, React/TypeScript frontend, abstracted persistence and storage layers, local Docker Compose environment, and AWS deployment using Lambda, ECR, DynamoDB, S3, CloudFront, CloudFormation, and CloudWatch.
 
@@ -114,7 +115,17 @@ Key contributions:
 - built backend APIs for users, vehicles, trips, reservations, refueling, maintenance, reporting, and statistics
 - configured local development with Docker Compose, DynamoDB Local, and MinIO
 - implemented AWS deployment automation with CloudFormation and Bash scripts
-- contributed to frontend integration and production observability
+- worked on frontend integration and production observability
+
+### Real-Time Fleet Telemetry Backend
+**Vemar · 80-tracker infrastructure**
+
+Infrastructure distinct from the Studio Lambda platform, personally designed and implemented at Vemar for 80 trackers. The work included socket communication, CAN bus data, persistence, and REST API exposure.
+
+### Unified Backend for Heterogeneous Data Sources
+**Vemar · framework behind delis.app**
+
+Plugin-based backend framework I developed at Vemar and on which delis.app is based. The case study presents integration separation, explicit contracts, and a unified API model in SAFE form; it does not attribute every architectural generalization to the product itself.
 
 ### ImportSpy — Runtime Contract Validation Engine  
 **Open-source Python project**
@@ -153,10 +164,10 @@ Designed a conceptual edge-to-cloud architecture for heterogeneous IoT data acqu
 
 The architecture includes edge acquisition from devices and sensors, BLE/Zigbee mesh communication, gateways, ingestion layers, GraphQL API, data-specific application layers, microfrontends, storage gateway, object/database queues, and AI-assisted processing.
 
-### Real-Time Fleet Tracking Backend  
-**Telemetry and logistics systems**
+### Runtime Compatibility for Agenzia delle Entrate Applications
+**Professional intervention · accounting firm**
 
-Worked on backend systems for fleet tracking and logistics, including socket-based communication with tracking devices, telemetry ingestion, CAN bus data normalization, REST API exposure, and real-time operational workflows.
+Intervention in a Windows environment with IRAP 2019-2021, ISA, Desktop Telematico / Entratel, and other applications with different Java dependencies. I isolated Java runtimes per application, handled JNLP/LaunchAnywhere startup modes, treated Entratel TLS/truststore requirements separately, and verified coexistence without assuming tax consulting or regulatory certification responsibilities.
 
 ---
 

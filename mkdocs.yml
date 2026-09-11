@@ -60,6 +60,7 @@ plugins:
             Operations & DX: Operations e Developer Experience
             IoT Data Aggregation Architecture for Digital Twin Systems: Architettura IoT per Digital Twin
             End-to-End Real-Time Fleet Telemetry Backend (SAFE): Backend Telemetria Fleet Real-Time
+            Runtime Compatibility and Isolation for Agenzia delle Entrate Applications: Compatibilità runtime Agenzia delle Entrate
             Profile: Profilo
             CV: CV
             Contact: Contatti
@@ -118,6 +119,9 @@ nav:
       - End-to-End Real-Time Fleet Telemetry Backend (SAFE):
           - Overview: case-studies/fleet-tracking/index.md
           - Architecture: case-studies/fleet-tracking/architecture.md
+
+      - Runtime Compatibility and Isolation for Agenzia delle Entrate Applications:
+          - Overview: case-studies/agenzia-entrate-runtime-isolation/index.md
 
   - Profile: profile.md
   - CV: cv.md

@@ -1,6 +1,6 @@
 ---
 title: "Chi è Luca Atella | Backend Architecture e Platform Engineering"
-description: "Chi è Luca Atella: Software Architect lucano e backend platform engineer che lavora su sistemi modulari, architetture cloud-portable, runtime validation, IoT e pipeline geospaziali."
+description: "Chi è Luca Atella: Tech Lead, Software Architect e Backend/Platform Engineer lucano che progetta backend, integrazioni, infrastrutture AWS e sistemi mantenibili."
 image: "assets/luca-atella-portrait.jpg"
 image_alt: "Ritratto di Luca Atella, Software Architect e Backend Engineer"
 schema_type: "AboutPage"
@@ -8,57 +8,47 @@ schema_type: "AboutPage"
 
 # Chi Sono
 
-Sono un backend e platform engineer focalizzato su sistemi che devono restare manutenibili dopo la fase di prototipo.
+Sono un Tech Lead e Backend/Platform Engineer. Progetto e sviluppo software per sistemi che devono funzionare in contesti operativi reali, non solo dimostrare un’idea.
 
-Lavoro sulle parti che determinano come un prodotto crescerà nel tempo: struttura backend, confini API, comportamento runtime, modello di deployment, flussi dati e visibilità operativa.
+In Vemar ho coordinato tecnicamente un team di 4 persone, ho progettato e realizzato l’infrastruttura per 80 tracker e ho sviluppato il framework su cui si fonda delis.app. In altri contesti ho lavorato su una piattaforma fleet management in uso presso Studio Lambda, su runtime isolati per applicativi Agenzia delle Entrate e su strumenti open source come ImportSpy.
 
-Sono lucano, della Basilicata. Questo per me non è solo un dato geografico: significa essere legato a un territorio dove spesso la tecnologia va costruita con risorse limitate, vincoli reali e bisogno di soluzioni solide. Porto questo approccio anche nel lavoro tecnico: strutture chiare, trade-off consapevoli e sistemi che continuano a funzionare quando l’entusiasmo iniziale è passato.
-
----
-
-## Cosa Mi Interessa
-
-- software architecture
-- sistemi runtime
-- modular design
-- piattaforme di integrazione
-- developer tooling
-- infrastrutture cloud-native
-- pipeline geospaziali e di elaborazione dati
-
-Mi interessano soprattutto problemi in cui:
-
-- i sistemi evolvono nel tempo
-- i componenti vengono caricati dinamicamente
-- gli ambienti sono eterogenei
-- gli errori devono essere intercettati e compresi presto
-- le integrazioni devono restare prevedibili
+Mi interessa il punto in cui il codice incontra l’ambiente: dati, servizi, protocolli, runtime, deployment, dipendenze e persone che dovranno mantenere il sistema dopo il rilascio.
 
 ---
 
-## Esperienza
+## Come Affronto i Problemi
 
-Ho lavorato su backend modulari, sistemi IoT ed edge, infrastrutture containerizzate, API real-time, plugin architecture, runtime validation engine e pipeline di generazione di modelli 3D del terreno.
+Parto dal contesto: quale processo deve essere supportato, quali vincoli esistono, quali parti non possono rompersi e quali informazioni sono confermate.
 
-Non mi definisco attraverso un singolo framework. Mi interessano pattern trasferibili: confini espliciti, contratti chiari, errori leggibili e modelli di deployment che i team possano eseguire e comprendere.
+Poi lavoro per diagnosi e confini:
 
----
+- separo logica applicativa, persistenza e infrastruttura quando il sistema deve durare;
+- rendo espliciti contratti e aspettative tra moduli;
+- isolo dipendenze quando più runtime devono convivere;
+- progetto API e adapter pensando alla manutenzione;
+- verifico gli effetti delle modifiche sull’intero ambiente, non solo sul punto modificato.
 
-## Come Lavoro
-
-Tendo a lavorare in modo iterativo ma consapevole, con attenzione alle conseguenze architetturali, alla manutenibilità e agli aspetti operativi.
-
-Mi trovo bene in contesti dove:
-
-- l’architettura viene presa sul serio
-- il debito tecnico viene gestito intenzionalmente
-- affidabilità e correttezza contano
-- il system design non è un’aggiunta finale
+Questo approccio si vede in progetti diversi: dal backend telemetria per 80 tracker, al framework alla base di delis.app, alla piattaforma Studio Lambda deployata su AWS, fino agli interventi su ambienti Windows con applicativi legacy.
 
 ---
 
-## Fuori dal Codice
+## Cosa Cerco
 
-Mi interessano i sistemi complessi, il problem solving, il pensiero di lungo periodo, la filosofia del design e il potenziale tecnico e culturale della Basilicata e del Sud Italia.
+Mi interessano opportunità in cui servono sviluppo diretto, progettazione architetturale e responsabilità tecnica:
 
-Questo portfolio esiste per raccontare non solo le tecnologie usate, ma il modo in cui ragiono sui sistemi e sulle decisioni che li rendono sostenibili.
+- backend Python e API;
+- sistemi modulari e plugin-based;
+- piattaforme cloud e AWS;
+- integrazioni con dispositivi, protocolli o software di terze parti;
+- runtime governance e contract validation;
+- diagnosi di incompatibilità e manutenzione evolutiva.
+
+Sono lucano, vivo in Basilicata e sono aperto a collaborazioni da remoto o ibride.
+
+---
+
+## Perché Questo Portfolio
+
+Questo portfolio non è una lista di tecnologie. Serve a mostrare cosa ho costruito, quali responsabilità avevo, quali decisioni tecniche ho preso e quali limiti sono dichiarati.
+
+Ogni caso studio cerca di distinguere fatti osservati, contributo personale, obiettivi progettuali e generalizzazioni architetturali.

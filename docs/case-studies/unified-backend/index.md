@@ -1,12 +1,22 @@
 ---
-title: "Unified Backend Architecture | Plugin-Based IoT Data Platform"
-description: "Unified backend case study by Luca Atella for heterogeneous IoT data sources, plugin-based architecture, REST APIs, WebSockets, deployment workflows and maintainable platforms."
+title: "Unified Backend for Heterogeneous Data Sources | delis.app Framework"
+description: "SAFE case study on the backend framework developed by Luca Atella at Vemar and used as the foundation for delis.app, with heterogeneous integrations, plugin architecture, REST APIs and WebSockets."
 image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
 image_alt: "Unified backend architecture for heterogeneous IoT data sources by Luca Atella"
 schema_type: "TechArticle"
 ---
 
-# Unified Backend for Heterogeneous Data Sources
+# Unified Backend for Heterogeneous Data Sources (SAFE)
+
+## Summary
+
+- **Context:** at Vemar, the product needed a backend framework able to connect heterogeneous data sources and device families behind coherent APIs and models.
+- **My role:** as Tech Lead, I developed the framework on which delis.app is based and continuously coordinated a 4-person technical team.
+- **Problem:** different integrations and protocols risked duplicating logic, hiding coupling, and making failures hard to diagnose.
+- **Intervention:** I designed plugin-based boundaries, integration contracts, REST/WebSocket APIs, and separation between the core and adapters.
+- **Observed result:** the framework became the technical foundation for delis.app.
+
+This case study is presented in SAFE form: it describes the framework and transferable architectural choices without automatically attributing every abstracted property or generalization on this page to delis.app itself.
 
 ## Context and Motivation
 
@@ -27,7 +37,9 @@ In real-world environments, these sources differ in:
 - reliability  
 - semantic meaning  
 
-This case study describes the architecture of a **scalable, plugin-based backend**  
+This case study starts from the framework I developed at Vemar and on which delis.app is based. It abstracts names, proprietary details, and sensitive implementation specifics while keeping the concrete work visible: framework development, technical responsibility, and integration separation.
+
+The architecture describes a **scalable, plugin-based backend**
 designed to unify heterogeneous data sources under:
 
 - a single backend  

@@ -8,6 +8,16 @@ schema_type: "TechArticle"
 
 # End-to-End Real-Time Fleet Telemetry Backend (SAFE)
 
+## Summary
+
+- **Context:** Vemar experience on real-time fleet telemetry infrastructure.
+- **My role:** I personally designed and implemented the full infrastructure for 80 trackers.
+- **Problem:** ingest, normalize, persist, and expose tracker and CAN bus data so it could support operational workflows.
+- **Intervention:** socket communication with devices, CAN bus data handling, persistence, and REST APIs.
+- **Observed result:** infrastructure implemented to make telemetry data available downstream from the trackers.
+
+This project is distinct from the [Cloud-Portable Fleet Management Platform](../cloud-portable-fleet-platform/index.md), used by Studio Lambda for vehicle turnover management for 50 employees.
+
 ## Context and Motivation
 
 Modern logistics and mobility systems rely on continuous telemetry
@@ -29,8 +39,7 @@ In practice, these systems must integrate:
 - structured and unstructured telemetry  
 - multiple downstream consumers  
 
-This case study presents a **real-time telemetry backend architecture**
-designed to unify fleet data under a scalable, event-driven platform.
+This case study presents the **real-time telemetry backend architecture** I built to make fleet data available through a backend service layer.
 
 The system is described in a SAFE and abstracted form,
 focusing on transferable architectural patterns
