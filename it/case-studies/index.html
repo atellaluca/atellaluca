@@ -690,6 +690,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#compatibilita-e-isolamento-dei-runtime-per-gli-applicativi-agenzia-delle-entrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compatibilità e isolamento dei runtime per gli applicativi Agenzia delle Entrate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#iot-data-aggregation-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1488,6 +1499,92 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compatibilità runtime Agenzia delle Entrate
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Compatibilità runtime Agenzia delle Entrate
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="agenzia-entrate-runtime-isolation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Panoramica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1647,6 +1744,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#compatibilita-e-isolamento-dei-runtime-per-gli-applicativi-agenzia-delle-entrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compatibilità e isolamento dei runtime per gli applicativi Agenzia delle Entrate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#iot-data-aggregation-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1691,7 +1799,7 @@
 <p>Usala come livello di evidenza tecnica del portfolio: ogni pagina collega un problema tecnico a confini architetturali, decisioni runtime e trade-off implementativi.</p>
 <hr />
 <h2 id="cloud-portable-fleet-management-platform">Cloud-Portable Fleet Management Platform</h2>
-<p>Piattaforma per gestione veicoli, prenotazioni, viaggi, rifornimenti, manutenzioni, documenti e report. È stata adottata in un contesto reale ed è stata progettata per girare localmente con Docker o in produzione su AWS.</p>
+<p>Fleet Management System in uso presso Studio Lambda per gestire il turnover dei veicoli di 50 dipendenti. È deployato su AWS e progettato per separare logica applicativa, persistenza, servizi cloud e runtime web.</p>
 <ul>
 <li>Focus: cloud portability, astrazione infrastrutturale, deployment in produzione</li>
 <li>Topics: AWS, FastAPI, React, DynamoDB, S3, Docker Compose, CloudFormation</li>
@@ -1712,13 +1820,20 @@
 </ul>
 <p>→ <a href="b3do/">Leggi il caso studio</a></p>
 <h2 id="unified-backend-architecture">Unified Backend Architecture</h2>
-<p>Architettura backend plugin-driven per gestire dispositivi IoT eterogenei dietro un modello dati e una superficie API unificata.</p>
+<p>Framework backend plugin-driven che ho sviluppato in Vemar e su cui si fonda delis.app, presentato in forma SAFE per evidenziare separazione delle integrazioni, contratti e superficie API unificata.</p>
 <p>→ <a href="unified-backend/">Leggi il caso studio</a></p>
+<h2 id="compatibilita-e-isolamento-dei-runtime-per-gli-applicativi-agenzia-delle-entrate">Compatibilità e isolamento dei runtime per gli applicativi Agenzia delle Entrate</h2>
+<p>Intervento presso uno studio commercialista per mantenere utilizzabili applicativi fiscali di annualità diverse, isolando runtime Java, modalità JNLP/LaunchAnywhere e requisiti Desktop Telematico/Entratel.</p>
+<ul>
+<li>Focus: diagnosi legacy, isolamento dipendenze, continuità operativa</li>
+<li>Topics: Windows, Java runtime, JNLP, LaunchAnywhere, Entratel, truststore</li>
+</ul>
+<p>→ <a href="agenzia-entrate-runtime-isolation/">Leggi il caso studio</a></p>
 <h2 id="iot-data-aggregation-architecture">IoT Data Aggregation Architecture</h2>
 <p>Architettura edge-to-cloud per raccogliere dati IoT eterogenei e renderli utilizzabili in sistemi Digital Twin.</p>
 <p>→ <a href="iot-data-aggregation-digital-twin/">Leggi il caso studio</a></p>
 <h2 id="fleet-tracking-platform">Fleet Tracking Platform</h2>
-<p>Backend per ingestione real-time di telemetria GPS e CAN bus, con monitoraggio fleet, analytics e workflow operativi.</p>
+<p>Backend di telemetria real-time distinto dal progetto Studio Lambda: infrastruttura per 80 tracker progettata e realizzata personalmente in Vemar, con socket, dati CAN bus, persistenza e API REST.</p>
 <p>→ <a href="fleet-tracking/">Leggi il caso studio</a></p>
 
 

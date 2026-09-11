@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Production-adopted fleet management platform by Luca Atella built with FastAPI, React, AWS Lambda, DynamoDB, S3, CloudFront and cloud-portable backend architecture.">
+        <meta name="description" content="Fleet Management System used by Studio Lambda to manage vehicle turnover for 50 employees, deployed on AWS and designed with database, cloud and web-server separation.">
       
       
         <meta name="author" content="Luca Atella">
@@ -82,7 +82,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Luca Atella">
   <meta property="og:title" content="Cloud-Portable Fleet Management Platform | AWS FastAPI Case Study">
-  <meta property="og:description" content="Production-adopted fleet management platform by Luca Atella built with FastAPI, React, AWS Lambda, DynamoDB, S3, CloudFront and cloud-portable backend architecture.">
+  <meta property="og:description" content="Fleet Management System used by Studio Lambda to manage vehicle turnover for 50 employees, deployed on AWS and designed with database, cloud and web-server separation.">
   <meta property="og:url" content="https://profile.atellaluca.com/case-studies/cloud-portable-fleet-platform/">
   <meta property="og:image" content="https://profile.atellaluca.com/assets/images/case-studies/cloud-portable-fleet-platform/cloud-portable-fleet-management-platform-aws-fastapi-architecture.png">
   
@@ -92,7 +92,7 @@
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Cloud-Portable Fleet Management Platform | AWS FastAPI Case Study">
-  <meta name="twitter:description" content="Production-adopted fleet management platform by Luca Atella built with FastAPI, React, AWS Lambda, DynamoDB, S3, CloudFront and cloud-portable backend architecture.">
+  <meta name="twitter:description" content="Fleet Management System used by Studio Lambda to manage vehicle turnover for 50 employees, deployed on AWS and designed with database, cloud and web-server separation.">
   <meta name="twitter:image" content="https://profile.atellaluca.com/assets/images/case-studies/cloud-portable-fleet-platform/cloud-portable-fleet-management-platform-aws-fastapi-architecture.png">
   
   
@@ -103,7 +103,7 @@
     "@type": "TechArticle",
     "inLanguage": "en",
     "name": "Cloud-Portable Fleet Management Platform | AWS FastAPI Case Study",
-    "description": "Production-adopted fleet management platform by Luca Atella built with FastAPI, React, AWS Lambda, DynamoDB, S3, CloudFront and cloud-portable backend architecture.",
+    "description": "Fleet Management System used by Studio Lambda to manage vehicle turnover for 50 employees, deployed on AWS and designed with database, cloud and web-server separation.",
     "url": "https://profile.atellaluca.com/case-studies/cloud-portable-fleet-platform/",
     "image": "https://profile.atellaluca.com/assets/images/case-studies/cloud-portable-fleet-platform/cloud-portable-fleet-management-platform-aws-fastapi-architecture.png",
     "isPartOf": {
@@ -750,10 +750,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Summary
       
     </span>
   </a>
@@ -761,10 +761,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problem-space" class="md-nav__link">
+  <a href="#production-use" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problem Space
+        Production Use
       
     </span>
   </a>
@@ -772,10 +772,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#architecture-overview" class="md-nav__link">
+  <a href="#architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Architecture Overview
+        Architecture
       
     </span>
   </a>
@@ -783,10 +783,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-model" class="md-nav__link">
+  <a href="#my-role-and-contributions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data Model
+        My Role and Contributions
       
     </span>
   </a>
@@ -794,35 +794,52 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cloud-portability-by-design" class="md-nav__link">
+  <a href="#infrastructure-independence" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cloud Portability by Design
+        Infrastructure Independence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Infrastructure Independence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#backend-design" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#cloud" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Backend Design
+        Cloud
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#infrastructure-abstraction" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#web-server" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Infrastructure Abstraction
+        Web Server
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -838,65 +855,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#observability-operations" class="md-nav__link">
+  <a href="#what-it-demonstrates" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Observability &amp; Operations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security-and-runtime-controls" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Security and Runtime Controls
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#production-adoption" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Production Adoption
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#my-role" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        My Role
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-this-case-study-demonstrates" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What This Case Study Demonstrates
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#read-next" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Read Next
+        What It Demonstrates
       
     </span>
   </a>
@@ -1602,6 +1564,92 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runtime Compatibility and Isolation for Agenzia delle Entrate Applications
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Runtime Compatibility and Isolation for Agenzia delle Entrate Applications
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agenzia-entrate-runtime-isolation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1717,10 +1765,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Summary
       
     </span>
   </a>
@@ -1728,10 +1776,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problem-space" class="md-nav__link">
+  <a href="#production-use" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problem Space
+        Production Use
       
     </span>
   </a>
@@ -1739,10 +1787,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#architecture-overview" class="md-nav__link">
+  <a href="#architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Architecture Overview
+        Architecture
       
     </span>
   </a>
@@ -1750,10 +1798,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-model" class="md-nav__link">
+  <a href="#my-role-and-contributions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data Model
+        My Role and Contributions
       
     </span>
   </a>
@@ -1761,35 +1809,52 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cloud-portability-by-design" class="md-nav__link">
+  <a href="#infrastructure-independence" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cloud Portability by Design
+        Infrastructure Independence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Infrastructure Independence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#backend-design" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#cloud" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Backend Design
+        Cloud
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#infrastructure-abstraction" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#web-server" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Infrastructure Abstraction
+        Web Server
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1805,65 +1870,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#observability-operations" class="md-nav__link">
+  <a href="#what-it-demonstrates" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Observability &amp; Operations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security-and-runtime-controls" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Security and Runtime Controls
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#production-adoption" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Production Adoption
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#my-role" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        My Role
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-this-case-study-demonstrates" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What This Case Study Demonstrates
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#read-next" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Read Next
+        What It Demonstrates
       
     </span>
   </a>
@@ -1888,208 +1898,99 @@
 
 
 <h1 id="cloud-portable-fleet-management-platform">Cloud-Portable Fleet Management Platform</h1>
-<p><strong>Type:</strong> Production-adopted cloud application
-<strong>Role:</strong> Software Architect · Backend Engineer · Cloud Deployment
-<strong>Period:</strong> 2026
-<strong>Domain:</strong> Fleet management, backend systems, AWS, cloud-portable architecture
-<strong>Status:</strong> Adopted in production in a real business context</p>
-<hr />
-<h2 id="overview">Overview</h2>
-<p>This case study describes a full-stack fleet management platform for company vehicle operations.</p>
-<p>The platform supports users, vehicles, reservations, trips, refueling, maintenance, documents, statistics, and reports. It was developed as a complete application and later adopted in production in a real business context, serving an internal user base of approximately 50 employees.</p>
-<p>The most important architectural choice was to keep the business logic separate from the cloud services used in production. AWS is the production target, but the application is not designed as a set of AWS-specific workflows.</p>
-<p>Instead, the backend uses explicit repository, storage, runtime, and deployment boundaries. That makes the same system easier to run locally, deploy on AWS, and adapt later if the infrastructure changes.</p>
-<hr />
-<h2 id="problem-space">Problem Space</h2>
-<p>Fleet management systems often grow from immediate operational needs: a reservation feature here, a maintenance workflow there, then refueling, documents, reporting, and user management.</p>
-<p>If those pieces are added without a clear structure, the system can become difficult to change:</p>
 <ul>
-<li>business logic becomes tightly coupled to storage choices</li>
-<li>deployment environments drift between local development and production</li>
-<li>cloud services leak into the domain model</li>
-<li>operational visibility is added only after deployment</li>
-<li>changes to infrastructure require changes to application logic</li>
+<li><strong>Type:</strong> production fleet management application</li>
+<li><strong>Real use:</strong> used by Studio Lambda</li>
+<li><strong>Supported process:</strong> vehicle turnover management for 50 employees</li>
+<li><strong>Role:</strong> Software Architect · Backend Engineer · Cloud Deployment</li>
+<li><strong>Period:</strong> 2026</li>
+<li><strong>Actual deployment:</strong> AWS</li>
 </ul>
-<p>The goal was to build a real operational tool while keeping the architecture understandable and maintainable.</p>
 <hr />
-<h2 id="architecture-overview">Architecture Overview</h2>
-<p>The platform is structured around a React frontend, a FastAPI backend, abstracted persistence and storage layers, and an AWS deployment model based on serverless and managed services.</p>
+<h2 id="summary">Summary</h2>
+<ul>
+<li><strong>Context:</strong> Studio Lambda needed an operational tool to manage vehicle turnover for 50 employees.</li>
+<li><strong>My role:</strong> I designed and implemented the application platform, including the FastAPI backend, React/TypeScript frontend integration, and AWS deployment.</li>
+<li><strong>Problem:</strong> the system had to support vehicles, reservations, trips, refueling, maintenance, documents, statistics, and reports without binding application logic to one infrastructure technology.</li>
+<li><strong>Intervention:</strong> I separated application logic, persistence, storage, runtime configuration, and HTTP exposure through explicit interfaces, adapters, and configuration.</li>
+<li><strong>Observed result:</strong> the Fleet Management System is used by Studio Lambda for vehicle turnover management for 50 employees and is deployed on AWS.</li>
+</ul>
+<p>This does not mean 50 active users, 50 concurrent users, or 50 vehicles. It describes the supported operational process: vehicle turnover for 50 employees.</p>
+<hr />
+<h2 id="production-use">Production Use</h2>
+<p>The system is used by Studio Lambda as an internal fleet management platform.</p>
+<p>The supported process is vehicle turnover management for 50 employees: assignments, availability, reservations, trips, refueling, maintenance, documents, and operational reporting.</p>
+<p>The actual deployment environment is AWS. I do not claim deployment on other cloud providers, validated migrations, or universal compatibility. The infrastructure independence described below is a design property of the code and architecture.</p>
+<hr />
+<h2 id="architecture">Architecture</h2>
+<p>The platform combines a React/TypeScript frontend, a FastAPI backend, persistence and storage layers separated from application logic, and an AWS deployment model based on managed services.</p>
 <p><img alt="AWS FastAPI architecture diagram for Luca Atella cloud-portable fleet management platform with Lambda, DynamoDB, S3, CloudFront and Docker local development" src="../../assets/images/case-studies/cloud-portable-fleet-platform/cloud-portable-fleet-management-platform-aws-fastapi-architecture.png" /></p>
-<p>At a high level:</p>
 <pre class="mermaid"><code>flowchart TB
-    U[Users] --&gt; CF[CloudFront]
+    U[Studio Lambda] --&gt; CF[CloudFront]
     CF --&gt; FE[S3 Static Frontend]
     FE --&gt; API[FastAPI Backend]
 
-    API --&gt; AUTH[JWT Authentication]
-    API --&gt; DOMAIN[Application / Domain Layer]
-    DOMAIN --&gt; REPO[Repository Contracts]
-    DOMAIN --&gt; STORE[Storage Contracts]
+    API --&gt; DOMAIN[Application Logic]
+    DOMAIN --&gt; REPO[Repository Protocols]
+    DOMAIN --&gt; STORAGE[Storage Protocol]
 
-    REPO --&gt; DDB[DynamoDB Adapter]
-    STORE --&gt; S3[S3 Storage Adapter]
+    REPO --&gt; DDB[DynamoDB Adapters]
+    STORAGE --&gt; S3[S3 Adapter]
 
     API --&gt; LOGS[CloudWatch Logs]
-
-    DEV[Local Docker Compose] --&gt; API
-    DEV --&gt; DDBL[DynamoDB Local]
-    DEV --&gt; MINIO[MinIO]
-
-    REPO -. local equivalent .-&gt; DDBL
-    STORE -. local equivalent .-&gt; MINIO</code></pre>
+    LAMBDA[AWS Lambda via Mangum] --&gt; API
+    LOCAL[Docker / Uvicorn] --&gt; API</code></pre>
 <hr />
-<h2 id="data-model">Data Model</h2>
-<p>The application model covers the main operational entities of a fleet management system: users, vehicles, reservations, trips, refueling events, maintenance records, commits, files, and reporting-related data.</p>
-<p>The important design choice is that these entities are modeled at the application level first. Persistence is handled behind repository interfaces, so the domain model is not forced to look like DynamoDB tables or S3 objects.</p>
-<p><img alt="Domain data model for Luca Atella fleet management platform showing users, vehicles, reservations, trips, refueling, maintenance, documents and reporting entities" src="../../assets/images/case-studies/cloud-portable-fleet-platform/cloud-portable-fleet-management-platform-domain-data-model.png" /></p>
-<p>This model was imported from the backend project diagrams and added here to make the case study easier to understand from the domain side, not only from the infrastructure side.</p>
-<hr />
-<h2 id="cloud-portability-by-design">Cloud Portability by Design</h2>
-<p>The platform was designed to avoid coupling business logic directly to a specific cloud provider.</p>
-<p>The backend exposes application-level repository and storage contracts. Infrastructure-specific implementations handle DynamoDB and S3 in production, while local development uses DynamoDB Local and MinIO.</p>
-<p>This allowed the same application architecture to run across:</p>
+<h2 id="my-role-and-contributions">My Role and Contributions</h2>
+<p>My work covered design, implementation, and deployment:</p>
 <ul>
-<li>local development environments using Docker Compose</li>
-<li>AWS production deployment using Lambda, ECR, DynamoDB, S3, CloudFront, CloudFormation, and CloudWatch</li>
-<li>future alternative deployment targets with limited infrastructure adapter changes</li>
+<li>modeled the main operational entities: users, vehicles, reservations, trips, refueling, maintenance, documents, statistics, and reports;</li>
+<li>built the FastAPI backend with routers, application services, Pydantic schemas, and JWT authentication;</li>
+<li>separated persistence behind repository contracts based on Python <code>Protocol</code>;</li>
+<li>implemented DynamoDB adapters for users, vehicles, trips, reservations, refueling, maintenance, and commits;</li>
+<li>implemented receipt/document storage through a dedicated storage interface and S3 adapter;</li>
+<li>configured local development with Docker Compose, DynamoDB Local, and MinIO;</li>
+<li>deployed the system on AWS with Lambda, ECR, DynamoDB, S3, CloudFront, CloudFormation, and CloudWatch;</li>
+<li>created Bash automation for deployment, admin seeding, and log inspection.</li>
 </ul>
-<p>The result is a cloud-portable system with AWS as the production target.</p>
-<pre class="mermaid"><code>flowchart LR
-    D[Domain Logic] --&gt; C[Application Contracts]
-
-    C --&gt; R[Repository Interface]
-    C --&gt; S[Storage Interface]
-
-    R --&gt; AWSDB[DynamoDB Adapter]
-    R --&gt; LOCALDB[DynamoDB Local Adapter]
-
-    S --&gt; AWSS3[S3 Adapter]
-    S --&gt; LOCALMINIO[MinIO Adapter]
-
-    AWSDB --&gt; AWS[AWS Production]
-    AWSS3 --&gt; AWS
-
-    LOCALDB --&gt; DEV[Local Development]
-    LOCALMINIO --&gt; DEV</code></pre>
 <hr />
-<h2 id="backend-design">Backend Design</h2>
-<p>The backend was implemented with FastAPI and organized around explicit application boundaries.</p>
-<p>Key backend characteristics include:</p>
-<ul>
-<li>domain models for users, cars, trips, reservations, refueling, maintenance, and commits</li>
-<li>Pydantic schemas for validation and API contracts</li>
-<li>JWT-based authentication</li>
-<li>password hashing with Argon2</li>
-<li>repository interfaces based on Python <code>Protocol</code></li>
-<li>application transaction abstractions</li>
-<li>structured routers for user, car, trip, reservation, maintenance, refueling, statistics, and reports</li>
-<li>export workflows for Excel reports</li>
-<li>PDF report generation for trip-related documents</li>
-<li>structured HTTP request logging</li>
-</ul>
-<p>This design kept the domain and application layers independent from the AWS runtime and from the specific persistence implementation.</p>
-<hr />
-<h2 id="infrastructure-abstraction">Infrastructure Abstraction</h2>
-<p>The persistence and storage layers were deliberately abstracted.</p>
-<p>DynamoDB is treated as an infrastructure adapter, not as the domain model.
-S3 is treated as an object storage implementation, not as an application dependency.</p>
-<p>Local development uses cloud-compatible substitutes:</p>
-<ul>
-<li>DynamoDB Local for table-oriented persistence</li>
-<li>MinIO for S3-compatible object storage</li>
-<li>Docker Compose to reproduce the production topology without requiring live AWS resources</li>
-</ul>
-<p>This made the development environment faster to use, safer to experiment with, and closer to production behavior.</p>
+<h2 id="infrastructure-independence">Infrastructure Independence</h2>
+<p>The design portability concerns three distinct dimensions.</p>
+<h3 id="database">Database</h3>
+<p>Application logic depends on repository contracts, not directly on DynamoDB. In the codebase, these contracts are expressed with Python <code>Protocol</code> types for users, vehicles, trips, reservations, refueling, maintenance, commits, and application transactions.</p>
+<p>The <code>DynamoDb...Repository</code> classes implement those contracts as infrastructure adapters. Table configuration is separated into <code>DynamoDbConfig</code> and loaded from environment variables such as <code>USERS_TABLE_NAME</code>, <code>TRIPS_TABLE_NAME</code>, <code>CARS_TABLE_NAME</code>, <code>DYNAMODB_ENDPOINT_URL</code>, and <code>AWS_REGION</code>.</p>
+<p>This concentrates DynamoDB-specific code in adapters. It does not mean that changing database requires no work: new adapters, mappings, data migrations, and verification would still be needed.</p>
+<h3 id="cloud">Cloud</h3>
+<p>AWS is the real deployment environment. Cloud separation means keeping provider-specific services outside the domain and application logic.</p>
+<p>The backend uses configurable DynamoDB and S3 clients, while local development uses DynamoDB Local and MinIO through configurable endpoints. Receipt storage is accessed through a <code>ReceiptPhotoStorage</code> contract and implemented by <code>S3ReceiptPhotoStorage</code>.</p>
+<p>This reduces application-level lock-in, but it is not a claim that other cloud providers have already been deployed or validated. A cloud change would require adapters, configuration, equivalent infrastructure, tests, and migrations.</p>
+<h3 id="web-server">Web Server</h3>
+<p>The application logic is exposed as a FastAPI/ASGI application. Locally or in a container it can run through Uvicorn; on AWS it is adapted to Lambda through Mangum.</p>
+<p>This keeps the application code separate from the runtime or web server that exposes it. It is not a promise of zero-effort replacement: each runtime needs its own configuration, packaging, observability, and verification.</p>
 <hr />
 <h2 id="aws-deployment">AWS Deployment</h2>
-<p>The production deployment was implemented using AWS managed services and Infrastructure as Code.</p>
-<p>Backend deployment:</p>
+<p>The actual deployment uses:</p>
 <ul>
-<li>FastAPI application packaged as a container image</li>
-<li>image published to Amazon ECR</li>
-<li>AWS Lambda running the backend through Mangum</li>
-<li>Lambda Function URL as the HTTPS entry point</li>
-<li>DynamoDB tables for application persistence</li>
-<li>S3 bucket for document and receipt storage</li>
-<li>IAM role with scoped access to the required tables and bucket</li>
-<li>CloudWatch Logs for backend observability</li>
-</ul>
-<p>Frontend deployment:</p>
-<ul>
-<li>React / TypeScript / Vite static build</li>
-<li>private S3 bucket for frontend assets</li>
-<li>CloudFront distribution with Origin Access Control</li>
-<li>HTTPS delivery using the default CloudFront domain</li>
-<li>CloudFront access logs stored in a dedicated S3 bucket</li>
-<li>SPA fallback handling for client-side routing</li>
-</ul>
-<p>Deployment automation:</p>
-<ul>
-<li>CloudFormation templates for backend and frontend resources</li>
-<li>Bash scripts for backend deployment, frontend deployment, full deployment, admin seeding, and log inspection</li>
-<li>configurable environment variables for region, profile, JWT secret, CORS origins, logging, and retention</li>
+<li>FastAPI backend packaged as a container image;</li>
+<li>image published to Amazon ECR;</li>
+<li>AWS Lambda backend runtime through Mangum;</li>
+<li>DynamoDB for application persistence;</li>
+<li>S3 for static frontend, documents, and receipts;</li>
+<li>CloudFront for frontend delivery;</li>
+<li>CloudFormation for Infrastructure as Code;</li>
+<li>CloudWatch for application logs and observability.</li>
 </ul>
 <hr />
-<h2 id="observability-operations">Observability &amp; Operations</h2>
-<p>The platform includes operational visibility at multiple levels.</p>
-<p>Backend logs are collected in CloudWatch.
-Frontend browser-side errors can be sent to a hidden backend endpoint and written to the same CloudWatch log group.
-CloudFront access logs are stored in S3 with retention management.</p>
-<p>This produced three complementary observability layers:</p>
-<ol>
-<li>backend application logs</li>
-<li>browser-side frontend error logs</li>
-<li>HTTP access logs from the static frontend distribution</li>
-</ol>
-<p>The design made production troubleshooting part of the deployment model rather than a later addition.</p>
-<hr />
-<h2 id="security-and-runtime-controls">Security and Runtime Controls</h2>
-<p>The platform includes several security-oriented decisions:</p>
+<h2 id="what-it-demonstrates">What It Demonstrates</h2>
+<p>This project shows the ability to turn a real operational need into a production application:</p>
 <ul>
-<li>JWT-based authentication</li>
-<li>Argon2 password hashing</li>
-<li>production API documentation disabled</li>
-<li>CORS configured through deployment variables</li>
-<li>private S3 bucket for frontend hosting behind CloudFront</li>
-<li>private S3 bucket for receipts/documents</li>
-<li>IAM permissions scoped to the required DynamoDB tables and S3 resources</li>
-<li>hidden frontend client-log endpoint excluded from public API documentation</li>
-<li>HTTPS delivery through AWS managed endpoints</li>
+<li>understanding the process supported at Studio Lambda;</li>
+<li>direct design and implementation of backend, APIs, and deployment;</li>
+<li>separation between application logic and infrastructure choices;</li>
+<li>use of AWS as the production environment without letting cloud services shape the domain model;</li>
+<li>attention to configuration, local development, deployment, and maintenance.</li>
 </ul>
-<p>The focus was not only to deploy the application, but to deploy it with explicit runtime and operational boundaries.</p>
-<hr />
-<h2 id="production-adoption">Production Adoption</h2>
-<p>The platform moved beyond a training exercise and was adopted in production in a real business context.</p>
-<p>This is the most relevant outcome of the project: the system was considered useful and stable enough to support internal operational workflows, with an estimated user base of approximately 50 employees.</p>
-<p>For portfolio purposes, the business context is intentionally described without exposing company-specific implementation details, internal URLs, or proprietary operational data.</p>
-<hr />
-<h2 id="my-role">My Role</h2>
-<p>I designed and implemented the system end-to-end, covering application architecture, backend development, cloud deployment, infrastructure automation, and part of the frontend integration.</p>
-<p>My work included defining the backend domain structure, the data model, repository and storage abstractions, AWS deployment model, local Docker Compose environment, CloudFormation templates, deployment scripts, logging strategy, and production-oriented runtime configuration.</p>
-<p>This project strengthened the connection between my previous work on modular backend systems and my current focus on cloud-portable architectures: systems where infrastructure abstraction, containerized runtime boundaries, and operational reliability are part of the architecture from the beginning.</p>
-<hr />
-<h2 id="what-this-case-study-demonstrates">What This Case Study Demonstrates</h2>
-<p>This project demonstrates experience in:</p>
-<ul>
-<li>cloud-portable application architecture</li>
-<li>AWS serverless deployment</li>
-<li>backend architecture with FastAPI</li>
-<li>infrastructure abstraction</li>
-<li>Docker Compose-based local environments</li>
-<li>CloudFormation-based Infrastructure as Code</li>
-<li>production-oriented observability</li>
-<li>frontend/backend integration</li>
-<li>operational delivery of a real business application</li>
-</ul>
-<hr />
-<h2 id="read-next">Read Next</h2>
-<ul>
-<li><a href="../">Back to case studies</a></li>
-<li><a href="../../profile/">Technical profile</a></li>
-<li><a href="../../cv/">CV</a></li>
-<li><a href="../../contact/">Contact</a></li>
-<li><a href="../iot-data-aggregation-digital-twin/">IoT Data Aggregation Architecture</a></li>
-</ul>
+<p>This project is distinct from the <a href="../fleet-tracking/">End-to-End Real-Time Fleet Telemetry Backend</a>, which describes the 80-tracker infrastructure I built at Vemar.</p>
 
 
 

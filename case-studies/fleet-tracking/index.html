@@ -1404,6 +1404,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#context-and-motivation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1602,6 +1613,92 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runtime Compatibility and Isolation for Agenzia delle Entrate Applications
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Runtime Compatibility and Isolation for Agenzia delle Entrate Applications
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agenzia-entrate-runtime-isolation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1715,6 +1812,17 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#context-and-motivation" class="md-nav__link">
@@ -1888,6 +1996,15 @@
 
 
 <h1 id="end-to-end-real-time-fleet-telemetry-backend-safe">End-to-End Real-Time Fleet Telemetry Backend (SAFE)</h1>
+<h2 id="summary">Summary</h2>
+<ul>
+<li><strong>Context:</strong> Vemar experience on real-time fleet telemetry infrastructure.</li>
+<li><strong>My role:</strong> I personally designed and implemented the full infrastructure for 80 trackers.</li>
+<li><strong>Problem:</strong> ingest, normalize, persist, and expose tracker and CAN bus data so it could support operational workflows.</li>
+<li><strong>Intervention:</strong> socket communication with devices, CAN bus data handling, persistence, and REST APIs.</li>
+<li><strong>Observed result:</strong> infrastructure implemented to make telemetry data available downstream from the trackers.</li>
+</ul>
+<p>This project is distinct from the <a href="../cloud-portable-fleet-platform/">Cloud-Portable Fleet Management Platform</a>, used by Studio Lambda for vehicle turnover management for 50 employees.</p>
 <h2 id="context-and-motivation">Context and Motivation</h2>
 <p>Modern logistics and mobility systems rely on continuous telemetry
 to monitor fleets of heterogeneous vehicles and assets in real time.</p>
@@ -1907,8 +2024,7 @@ to monitor fleets of heterogeneous vehicles and assets in real time.</p>
 <li>structured and unstructured telemetry  </li>
 <li>multiple downstream consumers  </li>
 </ul>
-<p>This case study presents a <strong>real-time telemetry backend architecture</strong>
-designed to unify fleet data under a scalable, event-driven platform.</p>
+<p>This case study presents the <strong>real-time telemetry backend architecture</strong> I built to make fleet data available through a backend service layer.</p>
 <p>The system is described in a SAFE and abstracted form,
 focusing on transferable architectural patterns
 rather than on any specific commercial product.</p>

@@ -1404,6 +1404,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#sintesi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sintesi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#contesto" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1460,6 +1471,92 @@
     
   
     Architettura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compatibilità runtime Agenzia delle Entrate
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Compatibilità runtime Agenzia delle Entrate
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agenzia-entrate-runtime-isolation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Panoramica
   
 
     
@@ -1596,6 +1693,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#sintesi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sintesi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#contesto" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1646,9 +1754,18 @@
 
 
 <h1 id="end-to-end-real-time-fleet-telemetry-backend">End-to-End Real-Time Fleet Telemetry Backend</h1>
+<h2 id="sintesi">Sintesi</h2>
+<ul>
+<li><strong>Contesto:</strong> esperienza in Vemar su infrastruttura di telemetria fleet real-time.</li>
+<li><strong>Mio ruolo:</strong> ho progettato e realizzato personalmente l’intera infrastruttura per 80 tracker.</li>
+<li><strong>Problema:</strong> acquisire, normalizzare, persistere ed esporre dati da tracker e CAN bus in modo utilizzabile dai flussi operativi.</li>
+<li><strong>Intervento:</strong> comunicazione via socket con i dispositivi, gestione dati CAN bus, persistenza e API REST.</li>
+<li><strong>Risultato osservato:</strong> infrastruttura realizzata per rendere disponibili dati di telemetria a valle dei tracker.</li>
+</ul>
+<p>Questo progetto è distinto dalla <a href="../cloud-portable-fleet-platform/">Piattaforma Fleet Cloud-Portable</a>, in uso presso Studio Lambda per il turnover dei veicoli di 50 dipendenti.</p>
 <h2 id="contesto">Contesto</h2>
 <p>I sistemi logistici e mobility dipendono da telemetria continua per monitorare veicoli, asset, percorsi e stato operativo in tempo reale.</p>
-<p>Questo caso studio descrive un backend per ingestione, normalizzazione e esposizione di dati provenienti da dispositivi GPS e CAN bus.</p>
+<p>Questo caso studio descrive il backend che ho realizzato per l’ingestione, la normalizzazione, la persistenza e l’esposizione di dati provenienti da dispositivi GPS e CAN bus.</p>
 <hr />
 <h2 id="obiettivi">Obiettivi</h2>
 <ul>

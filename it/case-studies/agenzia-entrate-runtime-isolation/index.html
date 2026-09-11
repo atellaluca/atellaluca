@@ -1,45 +1,45 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="it" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Technical case studies on cloud-portable backend architecture, runtime governance, AWS, IoT, Digital Twin systems and geospatial pipelines.">
+        <meta name="description" content="Intervento di Luca Atella su compatibilità e isolamento dei runtime Java per applicativi Agenzia delle Entrate in uno studio commercialista.">
       
       
         <meta name="author" content="Luca Atella">
       
       
-        <link rel="canonical" href="https://profile.atellaluca.com/case-studies/">
+        <link rel="canonical" href="https://profile.atellaluca.com/it/case-studies/agenzia-entrate-runtime-isolation/">
       
       
-        <link rel="prev" href="../methodology/">
+        <link rel="prev" href="../fleet-tracking/architecture/">
       
       
-        <link rel="next" href="cloud-portable-fleet-platform/">
+        <link rel="next" href="../../profile/">
       
       
         
-          <link rel="alternate" href="https://profile.atellaluca.com/case-studies/" hreflang="en">
+          <link rel="alternate" href="https://profile.atellaluca.com/case-studies/agenzia-entrate-runtime-isolation/" hreflang="en">
         
-          <link rel="alternate" href="https://profile.atellaluca.com/it/case-studies/" hreflang="it">
+          <link rel="alternate" href="https://profile.atellaluca.com/it/case-studies/agenzia-entrate-runtime-isolation/" hreflang="it">
         
       
       
-      <link rel="icon" href="../assets/favicon.ico">
+      <link rel="icon" href="../../../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
   
-  <title>Technical Case Studies - Luca Atella</title>
+  <title>Compatibilità runtime Agenzia delle Entrate | Caso Studio · Luca Atella</title>
 
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -58,13 +58,13 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/cv-pdf.css">
+      <link rel="stylesheet" href="../../../stylesheets/cv-pdf.css">
     
-      <link rel="stylesheet" href="../stylesheets/print.css">
+      <link rel="stylesheet" href="../../../stylesheets/print.css">
     
-      <link rel="stylesheet" href="../stylesheets/header.css">
+      <link rel="stylesheet" href="../../../stylesheets/header.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -77,45 +77,69 @@
   
   
   <meta name="robots" content="index,follow,max-image-preview:large">
-  <meta property="og:locale" content="en_US">
+  <meta property="og:locale" content="it_IT">
   
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
   <meta property="og:site_name" content="Luca Atella">
-  <meta property="og:title" content="Technical Case Studies - Luca Atella">
-  <meta property="og:description" content="Technical case studies on cloud-portable backend architecture, runtime governance, AWS, IoT, Digital Twin systems and geospatial pipelines.">
-  <meta property="og:url" content="https://profile.atellaluca.com/case-studies/">
-  <meta property="og:image" content="https://profile.atellaluca.com/assets/images/case-studies/cloud-portable-fleet-platform/cloud-portable-fleet-management-platform-aws-fastapi-architecture.png">
+  <meta property="og:title" content="Compatibilità runtime Agenzia delle Entrate | Caso Studio">
+  <meta property="og:description" content="Intervento di Luca Atella su compatibilità e isolamento dei runtime Java per applicativi Agenzia delle Entrate in uno studio commercialista.">
+  <meta property="og:url" content="https://profile.atellaluca.com/it/case-studies/agenzia-entrate-runtime-isolation/">
+  <meta property="og:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
   
-    <meta property="og:image:alt" content="Backend architecture and AWS case studies by Luca Atella">
-    <meta name="twitter:image:alt" content="Backend architecture and AWS case studies by Luca Atella">
+    <meta property="og:image:alt" content="Caso studio su isolamento runtime e compatibilità applicativi legacy">
+    <meta name="twitter:image:alt" content="Caso studio su isolamento runtime e compatibilità applicativi legacy">
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Technical Case Studies - Luca Atella">
-  <meta name="twitter:description" content="Technical case studies on cloud-portable backend architecture, runtime governance, AWS, IoT, Digital Twin systems and geospatial pipelines.">
-  <meta name="twitter:image" content="https://profile.atellaluca.com/assets/images/case-studies/cloud-portable-fleet-platform/cloud-portable-fleet-management-platform-aws-fastapi-architecture.png">
+  <meta name="twitter:title" content="Compatibilità runtime Agenzia delle Entrate | Caso Studio">
+  <meta name="twitter:description" content="Intervento di Luca Atella su compatibilità e isolamento dei runtime Java per applicativi Agenzia delle Entrate in uno studio commercialista.">
+  <meta name="twitter:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
   
   
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "inLanguage": "en",
-    "name": "Technical Case Studies - Luca Atella",
-    "description": "Technical case studies on cloud-portable backend architecture, runtime governance, AWS, IoT, Digital Twin systems and geospatial pipelines.",
-    "url": "https://profile.atellaluca.com/case-studies/",
-    "image": "https://profile.atellaluca.com/assets/images/case-studies/cloud-portable-fleet-platform/cloud-portable-fleet-management-platform-aws-fastapi-architecture.png",
+    "@type": "TechArticle",
+    "inLanguage": "it",
+    "name": "Compatibilit\u00e0 runtime Agenzia delle Entrate | Caso Studio",
+    "description": "Intervento di Luca Atella su compatibilit\u00e0 e isolamento dei runtime Java per applicativi Agenzia delle Entrate in uno studio commercialista.",
+    "url": "https://profile.atellaluca.com/it/case-studies/agenzia-entrate-runtime-isolation/",
+    "image": "https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png",
     "isPartOf": {
       "@type": "WebSite",
       "name": "Luca Atella",
       "@id": "https://profile.atellaluca.com/#website",
       "url": "https://profile.atellaluca.com/"
+    },
+    "author": {
+      "@type": "Person",
+      "@id": "https://profile.atellaluca.com/#person",
+      "name": "Luca Atella",
+      "url": "https://profile.atellaluca.com/",
+      "sameAs": [
+        "https://github.com/atellaluca",
+        "https://www.linkedin.com/in/luca-atella/"
+      ],
+      "jobTitle": "Software Architect and Backend Platform Engineer",
+      "knowsAbout": [
+        "Backend architecture",
+        "Platform engineering",
+        "AWS serverless architecture",
+        "Cloud-portable backend systems",
+        "FastAPI",
+        "DynamoDB",
+        "Runtime contract validation",
+        "Modular Python systems",
+        "IoT backend architecture",
+        "Digital Twin architecture",
+        "Geospatial data pipelines"
+      ]
     }
   }
   </script>
 
-  <link rel="alternate" hreflang="x-default" href="https://profile.atellaluca.com/case-studies/">
+  <link rel="alternate" hreflang="x-default" href="https://profile.atellaluca.com/case-studies/agenzia-entrate-runtime-isolation/">
 </head>
   
   
@@ -135,8 +159,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#case-studies" class="md-skip">
-          Skip to content
+        <a href="#compatibilita-e-isolamento-dei-runtime-per-gli-applicativi-agenzia-delle-entrate" class="md-skip">
+          Vai al contenuto
         </a>
       
     </div>
@@ -148,10 +172,10 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Luca Atella" class="md-header__button md-logo" aria-label="Luca Atella" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../../" title="Luca Atella" class="md-header__button md-logo" aria-label="Luca Atella" data-md-component="logo">
       
-  <img src="../assets/luca-atella-software-architect-backend-platform-engineer.png" alt="logo">
+  <img src="../../../assets/luca-atella-software-architect-backend-platform-engineer.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -168,7 +192,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Technical Case Studies - Luca Atella
+              Compatibilità runtime Agenzia delle Entrate | Caso Studio
             
           </span>
         </div>
@@ -194,20 +218,20 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="Select language">
+    <button class="md-header__button md-icon" aria-label="Seleziona la lingua">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="./" hreflang="en" class="md-select__link">
+            <a href="../../../case-studies/agenzia-entrate-runtime-isolation/" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="../it/case-studies/" hreflang="it" class="md-select__link">
+            <a href="./" hreflang="it" class="md-select__link">
               Italiano
             </a>
           </li>
@@ -228,16 +252,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="Cerca">
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -250,7 +274,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            Inizializza la ricerca
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -281,7 +305,7 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../../" class="md-tabs__link">
         
   
   
@@ -300,13 +324,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../about/" class="md-tabs__link">
+      <a href="../../about/" class="md-tabs__link">
         
   
   
     
   
-  About
+  Chi sono
 
       </a>
     </li>
@@ -319,13 +343,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../methodology/" class="md-tabs__link">
+      <a href="../../methodology/" class="md-tabs__link">
         
   
   
     
   
-  Methodology
+  Metodo
 
       </a>
     </li>
@@ -342,11 +366,11 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
   
-  Case Studies
+  Casi Studio
 
         </a>
       </li>
@@ -360,13 +384,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../profile/" class="md-tabs__link">
+      <a href="../../profile/" class="md-tabs__link">
         
   
   
     
   
-  Profile
+  Profilo
 
       </a>
     </li>
@@ -379,7 +403,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../cv/" class="md-tabs__link">
+      <a href="../../cv/" class="md-tabs__link">
         
   
   
@@ -398,13 +422,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../contact/" class="md-tabs__link">
+      <a href="../../contact/" class="md-tabs__link">
         
   
   
     
   
-  Contact
+  Contatti
 
       </a>
     </li>
@@ -431,11 +455,11 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Luca Atella" class="md-nav__button md-logo" aria-label="Luca Atella" data-md-component="logo">
+    <a href="../../" title="Luca Atella" class="md-nav__button md-logo" aria-label="Luca Atella" data-md-component="logo">
       
-  <img src="../assets/luca-atella-software-architect-backend-platform-engineer.png" alt="logo">
+  <img src="../../../assets/luca-atella-software-architect-backend-platform-engineer.png" alt="logo">
 
     </a>
     Luca Atella
@@ -450,7 +474,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -477,14 +501,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    About
+    Chi sono
   
 
     
@@ -504,14 +528,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../methodology/" class="md-nav__link">
+      <a href="../../methodology/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Methodology
+    Metodo
   
 
     
@@ -557,7 +581,7 @@
   <span class="md-ellipsis">
     
   
-    Case Studies
+    Casi Studio
   
 
     
@@ -573,7 +597,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Case Studies
+    Casi Studio
   
 
           </label>
@@ -583,44 +607,17 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Overview
+    Panoramica
   
 
     
@@ -629,103 +626,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#cloud-portable-fleet-management-platform" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cloud-Portable Fleet Management Platform
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#importspy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ImportSpy
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#b3do" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        B3DO
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unified-backend-architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Unified Backend Architecture
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#runtime-isolation-for-italian-tax-applications" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Runtime Isolation for Italian Tax Applications
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#iot-data-aggregation-architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        IoT Data Aggregation Architecture
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fleet-tracking-platform" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fleet Tracking Platform
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -759,7 +659,7 @@
   <span class="md-ellipsis">
     
   
-    Cloud-Portable Fleet Management Platform
+    Piattaforma Fleet Cloud-Portable
   
 
     
@@ -775,7 +675,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Cloud-Portable Fleet Management Platform
+    Piattaforma Fleet Cloud-Portable
   
 
           </label>
@@ -788,14 +688,14 @@
   
   
     <li class="md-nav__item">
-      <a href="cloud-portable-fleet-platform/" class="md-nav__link">
+      <a href="../cloud-portable-fleet-platform/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Overview
+    Panoramica
   
 
     
@@ -874,14 +774,14 @@
   
   
     <li class="md-nav__item">
-      <a href="importspy/" class="md-nav__link">
+      <a href="../importspy/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Overview
+    Panoramica
   
 
     
@@ -902,14 +802,14 @@
   
   
     <li class="md-nav__item">
-      <a href="importspy/architecture/" class="md-nav__link">
+      <a href="../importspy/architecture/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Architecture
+    Architettura
   
 
     
@@ -930,14 +830,14 @@
   
   
     <li class="md-nav__item">
-      <a href="importspy/validation/" class="md-nav__link">
+      <a href="../importspy/validation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Validation System (Deep Dive)
+    Sistema di Validazione
   
 
     
@@ -958,14 +858,14 @@
   
   
     <li class="md-nav__item">
-      <a href="importspy/contracts/" class="md-nav__link">
+      <a href="../importspy/contracts/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Runtime Contracts (Deep Dive)
+    Runtime Contracts
   
 
     
@@ -986,14 +886,14 @@
   
   
     <li class="md-nav__item">
-      <a href="importspy/violations/" class="md-nav__link">
+      <a href="../importspy/violations/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Violation System and Contract Diagnostics (Deep Dive)
+    Diagnostica Contratti
   
 
     
@@ -1072,14 +972,14 @@
   
   
     <li class="md-nav__item">
-      <a href="b3do/" class="md-nav__link">
+      <a href="../b3do/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Overview
+    Panoramica
   
 
     
@@ -1129,7 +1029,7 @@
   <span class="md-ellipsis">
     
   
-    Unified Backend for Heterogeneous Data Sources (SAFE)
+    Backend Unificato per Sorgenti Eterogenee
   
 
     
@@ -1145,7 +1045,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Unified Backend for Heterogeneous Data Sources (SAFE)
+    Backend Unificato per Sorgenti Eterogenee
   
 
           </label>
@@ -1158,14 +1058,14 @@
   
   
     <li class="md-nav__item">
-      <a href="unified-backend/" class="md-nav__link">
+      <a href="../unified-backend/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Overview
+    Panoramica
   
 
     
@@ -1186,14 +1086,14 @@
   
   
     <li class="md-nav__item">
-      <a href="unified-backend/architecture/" class="md-nav__link">
+      <a href="../unified-backend/architecture/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Architecture
+    Architettura
   
 
     
@@ -1214,14 +1114,14 @@
   
   
     <li class="md-nav__item">
-      <a href="unified-backend/plugin-system/" class="md-nav__link">
+      <a href="../unified-backend/plugin-system/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Plugin System (Deep Dive)
+    Sistema Plugin
   
 
     
@@ -1242,14 +1142,14 @@
   
   
     <li class="md-nav__item">
-      <a href="unified-backend/ui-schema/" class="md-nav__link">
+      <a href="../unified-backend/ui-schema/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Declarative UI Schema (Widget DSL)
+    Schema UI Dichiarativo
   
 
     
@@ -1270,14 +1170,14 @@
   
   
     <li class="md-nav__item">
-      <a href="unified-backend/operations/" class="md-nav__link">
+      <a href="../unified-backend/operations/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Operations & DX
+    Operations e Developer Experience
   
 
     
@@ -1327,7 +1227,7 @@
   <span class="md-ellipsis">
     
   
-    IoT Data Aggregation Architecture for Digital Twin Systems
+    Architettura IoT per Digital Twin
   
 
     
@@ -1343,7 +1243,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    IoT Data Aggregation Architecture for Digital Twin Systems
+    Architettura IoT per Digital Twin
   
 
           </label>
@@ -1356,14 +1256,14 @@
   
   
     <li class="md-nav__item">
-      <a href="iot-data-aggregation-digital-twin/" class="md-nav__link">
+      <a href="../iot-data-aggregation-digital-twin/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Overview
+    Panoramica
   
 
     
@@ -1413,7 +1313,7 @@
   <span class="md-ellipsis">
     
   
-    End-to-End Real-Time Fleet Telemetry Backend (SAFE)
+    Backend Telemetria Fleet Real-Time
   
 
     
@@ -1429,7 +1329,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    End-to-End Real-Time Fleet Telemetry Backend (SAFE)
+    Backend Telemetria Fleet Real-Time
   
 
           </label>
@@ -1442,14 +1342,14 @@
   
   
     <li class="md-nav__item">
-      <a href="fleet-tracking/" class="md-nav__link">
+      <a href="../fleet-tracking/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Overview
+    Panoramica
   
 
     
@@ -1470,14 +1370,14 @@
   
   
     <li class="md-nav__item">
-      <a href="fleet-tracking/architecture/" class="md-nav__link">
+      <a href="../fleet-tracking/architecture/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Architecture
+    Architettura
   
 
     
@@ -1503,6 +1403,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1513,11 +1415,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" checked>
         
           
           <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
@@ -1527,7 +1429,7 @@
   <span class="md-ellipsis">
     
   
-    Runtime Compatibility and Isolation for Agenzia delle Entrate Applications
+    Compatibilità runtime Agenzia delle Entrate
   
 
     
@@ -1538,12 +1440,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_8">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Runtime Compatibility and Isolation for Agenzia delle Entrate Applications
+    Compatibilità runtime Agenzia delle Entrate
   
 
           </label>
@@ -1553,17 +1455,44 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="agenzia-entrate-runtime-isolation/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Panoramica
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    Overview
+    Panoramica
   
 
     
@@ -1572,6 +1501,103 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sintesi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sintesi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contesto-operativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contesto Operativo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problema
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intervento-personale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intervento Personale
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#competenze-dimostrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Competenze Dimostrate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perimetro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Perimetro
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collegamento-al-metodo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Collegamento al Metodo
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1599,14 +1625,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../profile/" class="md-nav__link">
+      <a href="../../profile/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Profile
+    Profilo
   
 
     
@@ -1626,7 +1652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cv/" class="md-nav__link">
+      <a href="../../cv/" class="md-nav__link">
         
   
   
@@ -1653,14 +1679,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../contact/" class="md-nav__link">
+      <a href="../../contact/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Contact
+    Contatti
   
 
     
@@ -1686,7 +1712,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
   
   
   
@@ -1695,15 +1721,15 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Indice
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#cloud-portable-fleet-management-platform" class="md-nav__link">
+  <a href="#sintesi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cloud-Portable Fleet Management Platform
+        Sintesi
       
     </span>
   </a>
@@ -1711,10 +1737,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#importspy" class="md-nav__link">
+  <a href="#contesto-operativo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ImportSpy
+        Contesto Operativo
       
     </span>
   </a>
@@ -1722,10 +1748,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#b3do" class="md-nav__link">
+  <a href="#problema" class="md-nav__link">
     <span class="md-ellipsis">
       
-        B3DO
+        Problema
       
     </span>
   </a>
@@ -1733,10 +1759,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#unified-backend-architecture" class="md-nav__link">
+  <a href="#intervento-personale" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Unified Backend Architecture
+        Intervento Personale
       
     </span>
   </a>
@@ -1744,10 +1770,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#runtime-isolation-for-italian-tax-applications" class="md-nav__link">
+  <a href="#competenze-dimostrate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Runtime Isolation for Italian Tax Applications
+        Competenze Dimostrate
       
     </span>
   </a>
@@ -1755,10 +1781,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iot-data-aggregation-architecture" class="md-nav__link">
+  <a href="#perimetro" class="md-nav__link">
     <span class="md-ellipsis">
       
-        IoT Data Aggregation Architecture
+        Perimetro
       
     </span>
   </a>
@@ -1766,10 +1792,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fleet-tracking-platform" class="md-nav__link">
+  <a href="#collegamento-al-metodo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Fleet Tracking Platform
+        Collegamento al Metodo
       
     </span>
   </a>
@@ -1793,85 +1819,72 @@
 
 
 
-<h1 id="case-studies">Case Studies</h1>
-<p>This section collects selected projects and architecture case studies.</p>
-<p>Each one explains the problem, the system shape, the main technical decisions, and why those decisions mattered in practice.</p>
-<p>Use this hub as the evidence layer of the portfolio: each page connects a technical problem to architecture boundaries, runtime decisions, and implementation trade-offs.</p>
+<h1 id="compatibilita-e-isolamento-dei-runtime-per-gli-applicativi-agenzia-delle-entrate">Compatibilità e isolamento dei runtime per gli applicativi Agenzia delle Entrate</h1>
+<ul>
+<li><strong>Tipo:</strong> intervento professionale su ambiente operativo legacy</li>
+<li><strong>Contesto:</strong> studio commercialista, adempimenti fiscali e strumenti di compliance</li>
+<li><strong>Ruolo:</strong> diagnosi tecnica, isolamento runtime, verifica di coesistenza</li>
+<li><strong>Tecnologie:</strong> Windows · Java runtime · JNLP · LaunchAnywhere · Desktop Telematico / Entratel</li>
+</ul>
 <hr />
-<div class="portfolio-card-grid">
-<div class="portfolio-card">
-<h2 id="cloud-portable-fleet-management-platform">Cloud-Portable Fleet Management Platform</h2>
-<p><strong>Full-Stack Fleet Management System with AWS Production Deployment</strong></p>
-<p>A Fleet Management System used by Studio Lambda to manage vehicle turnover for 50 employees. It is deployed on AWS and designed to separate application logic from persistence, cloud services, and the web runtime.</p>
+<h2 id="sintesi">Sintesi</h2>
 <ul>
-<li>Focus: Cloud portability, infrastructure abstraction, production deployment  </li>
-<li>Topics: AWS, FastAPI, React, DynamoDB, S3, Docker Compose, CloudFormation  </li>
+<li><strong>Contesto:</strong> uno studio commercialista doveva mantenere utilizzabili applicativi Agenzia delle Entrate di diverse annualità nello stesso ambiente Windows.</li>
+<li><strong>Mio ruolo:</strong> ho analizzato le incompatibilità, isolato i runtime Java per applicazione e verificato la coesistenza degli strumenti.</li>
+<li><strong>Problema:</strong> una configurazione Java globale non soddisfaceva tutti gli applicativi; sistemare un programma poteva compromettere gli altri.</li>
+<li><strong>Intervento:</strong> ho separato runtime, modalità di avvio e requisiti specifici di Desktop Telematico / Entratel, incluse esigenze TLS e truststore.</li>
+<li><strong>Risultato osservato:</strong> gli applicativi nuovi e storici hanno potuto coesistere nello stesso ambiente di lavoro senza dipendere da una singola configurazione Java globale.</li>
 </ul>
-<p>→ <a href="cloud-portable-fleet-platform/">View case study</a></p>
-</div>
-<div class="portfolio-card">
-<h2 id="importspy">ImportSpy</h2>
-<p><strong>Runtime Contract Enforcement for Modular Python Systems</strong></p>
-<p>ImportSpy is an open-source Python project that checks runtime contracts for modules.</p>
-<p>It helps plugin-based and modular systems detect incompatible modules early, with structured diagnostics instead of hidden assumptions.</p>
+<hr />
+<h2 id="contesto-operativo">Contesto Operativo</h2>
+<p>L’ambiente era Windows e includeva applicativi di annualità e famiglie diverse, fra cui:</p>
 <ul>
-<li>Focus: Runtime contracts, modular safety, architectural invariants  </li>
-<li>Topics: Plugin governance, deterministic failure modes, validation models  </li>
+<li>IRAP 2019-2021;</li>
+<li>ISA;</li>
+<li>Desktop Telematico / Entratel;</li>
+<li>altri applicativi con dipendenze Java differenti.</li>
 </ul>
-<p>→ <a href="importspy/">View case study</a></p>
-</div>
-<div class="portfolio-card">
-<h2 id="b3do">B3DO</h2>
-<p><strong>Geospatial Pipeline for 3D Terrain Model Generation</strong></p>
-<p>B3DO is a geospatial processing pipeline for transforming public terrain and hydrographic datasets of Basilicata into textured 3D terrain models.</p>
-<p>It demonstrates data pipeline architecture outside traditional web backends: DTM merging, boundary extraction, clipping, resampling, LOD mesh generation, hillshade/color relief textures, river overlays, and CLI-driven workflows.</p>
+<p>La necessità non era progettare un nuovo sistema, ma garantire continuità operativa a strumenti già usati nello studio.</p>
+<hr />
+<h2 id="problema">Problema</h2>
+<p>Gli applicativi non condividevano gli stessi requisiti di runtime. Una configurazione Java globale poteva far funzionare un programma e bloccarne un altro.</p>
+<p>Il problema coinvolgeva:</p>
 <ul>
-<li>Focus: Geospatial data processing, 3D model generation, reproducible pipelines  </li>
-<li>Topics: GDAL, Rasterio, NumPy, PyVista, Fiona, Typer, terrain meshes  </li>
+<li>versioni Java diverse;</li>
+<li>modalità di avvio differenti;</li>
+<li>applicazioni avviate via JNLP;</li>
+<li>applicazioni impacchettate con LaunchAnywhere;</li>
+<li>requisiti specifici di comunicazione, TLS e truststore per Desktop Telematico / Entratel.</li>
 </ul>
-<p>→ <a href="b3do/">View case study</a></p>
-</div>
-<div class="portfolio-card">
-<h2 id="unified-backend-architecture">Unified Backend Architecture</h2>
-<p><strong>Plugin-Based Backend Framework Behind delis.app</strong></p>
-<p>The backend framework I developed at Vemar and on which delis.app is based, presented in SAFE form to show integration separation, contracts, and a unified API surface.</p>
+<hr />
+<h2 id="intervento-personale">Intervento Personale</h2>
+<p>Ho lavorato su diagnosi, isolamento e verifica:</p>
 <ul>
-<li>Focus: Framework development, plugin systems, deployment architecture</li>
-<li>Topics: Device modeling, REST APIs, WebSockets, deployment workflows  </li>
+<li>isolamento dei runtime Java per applicazione;</li>
+<li>gestione delle specificità di avvio legate a JNLP e LaunchAnywhere;</li>
+<li>trattamento separato delle esigenze di Desktop Telematico / Entratel;</li>
+<li>rimozione della dipendenza da un’unica configurazione Java globale;</li>
+<li>verifiche incrociate di funzionamento e coesistenza degli applicativi.</li>
 </ul>
-<p>→ <a href="unified-backend/">View case study</a></p>
-</div>
-<div class="portfolio-card">
-<h2 id="runtime-isolation-for-italian-tax-applications">Runtime Isolation for Italian Tax Applications</h2>
-<p><strong>Compatibility Work for Agenzia delle Entrate Desktop Tools</strong></p>
-<p>A professional intervention in an accounting firm to keep tax applications from different years usable in the same Windows environment by isolating Java runtimes, JNLP/LaunchAnywhere startup modes, and Desktop Telematico/Entratel requirements.</p>
+<hr />
+<h2 id="competenze-dimostrate">Competenze Dimostrate</h2>
+<p>Questo intervento mostra un metodo applicabile anche a sistemi software più ampi:</p>
 <ul>
-<li>Focus: Legacy diagnosis, dependency isolation, operational continuity</li>
-<li>Topics: Windows, Java runtime, JNLP, LaunchAnywhere, Entratel, truststore</li>
+<li>diagnosi delle incompatibilità in ambienti legacy;</li>
+<li>gestione e isolamento delle dipendenze;</li>
+<li>integrazione di software di terze parti;</li>
+<li>attenzione alle regressioni;</li>
+<li>supporto alla continuità operativa;</li>
+<li>scelta di interventi proporzionati alle necessità del cliente.</li>
 </ul>
-<p>→ <a href="agenzia-entrate-runtime-isolation/">View case study</a></p>
-</div>
-<div class="portfolio-card">
-<h2 id="iot-data-aggregation-architecture">IoT Data Aggregation Architecture</h2>
-<p><strong>Edge-to-Cloud Architecture for Digital Twin Systems</strong></p>
-<p>An edge-to-cloud architecture for collecting heterogeneous IoT data and making it usable in Digital Twin systems. It covers edge acquisition, ingestion layers, GraphQL APIs, data-specific application layers, microfrontends, storage gateways, and AI-assisted processing.</p>
-<ul>
-<li>Focus: Edge/cloud architecture, data aggregation, Digital Twin systems  </li>
-<li>Topics: IoT, BLE/Zigbee mesh, GraphQL, microfrontends, AI agents, storage gateways  </li>
-</ul>
-<p>→ <a href="iot-data-aggregation-digital-twin/">View case study</a></p>
-</div>
-<div class="portfolio-card">
-<h2 id="fleet-tracking-platform">Fleet Tracking Platform</h2>
-<p><strong>Real-Time Telemetry and Vehicle Management System</strong></p>
-<p>A real-time telemetry backend distinct from the Studio Lambda fleet management platform: the infrastructure I personally designed and implemented at Vemar for 80 trackers, including socket communication, CAN bus data, persistence, and REST APIs.</p>
-<ul>
-<li>Focus: Real-time data pipelines, networking, API design  </li>
-<li>Topics: telemetry ingestion, socket communication, containerized deployment  </li>
-</ul>
-<p>→ <a href="fleet-tracking/">View case study</a></p>
-</div>
-</div>
+<hr />
+<h2 id="perimetro">Perimetro</h2>
+<p>Il lavoro riguarda infrastruttura, compatibilità e coesistenza degli strumenti utilizzati per gli adempimenti fiscali.</p>
+<p>Non riguarda consulenza fiscale, certificazione di conformità normativa, attività da auditor o responsabilità da compliance officer. L’isolamento dei runtime non è presentato come garanzia di sicurezza, conformità normativa o supporto ufficiale degli applicativi legacy.</p>
+<hr />
+<h2 id="collegamento-al-metodo">Collegamento al Metodo</h2>
+<p>Questo caso è diverso dai progetti backend, ma segue lo stesso principio: governare le relazioni fra componenti, dipendenze e ambiente di esecuzione considerando gli effetti delle modifiche sull’intero sistema.</p>
+<p>Lo stesso filo conduttore appare in <a href="../importspy/">ImportSpy</a>, dove i contratti rendono esplicite le incompatibilità fra moduli, e nella <a href="../cloud-portable-fleet-platform/">Piattaforma Fleet Cloud-Portable</a>, dove la logica applicativa è separata dai servizi infrastrutturali.</p>
 
 
 
@@ -1898,7 +1911,7 @@
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
-  Back to top
+  Torna su
 </button>
         
       </main>
@@ -1907,33 +1920,33 @@
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      <nav class="md-footer__inner md-grid" aria-label="Piede" >
         
           
-          <a href="../methodology/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Methodology">
+          <a href="../fleet-tracking/architecture/" class="md-footer__link md-footer__link--prev" aria-label="Precedente: Architettura">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                Previous
+                Precedente
               </span>
               <div class="md-ellipsis">
-                Methodology
+                Architettura
               </div>
             </div>
           </a>
         
         
           
-          <a href="cloud-portable-fleet-platform/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
+          <a href="../../profile/" class="md-footer__link md-footer__link--next" aria-label="Successivo: Profilo">
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                Next
+                Successivo
               </span>
               <div class="md-ellipsis">
-                Overview
+                Profilo
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1997,14 +2010,14 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "navigation.footer"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
       
-        <script src="../javascripts/mermaid-init.js"></script>
+        <script src="../../../javascripts/mermaid-init.js"></script>
       
     
   </body>
