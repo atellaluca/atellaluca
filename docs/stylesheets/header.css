@@ -47,6 +47,10 @@
 .portfolio-card p:last-child { margin-top: auto; padding-top: .7rem; margin-bottom: 0; font-weight: 650; }
 .portfolio-contact { padding: 1.8rem 2rem; margin-top: 2.5rem; background: #e9efeb; border-radius: .6rem; border-left: 4px solid #11685e; }
 .md-typeset .portfolio-contact h2 { margin-top: .5rem; line-height: 1.3; }
+/* Technical figures retain readable labels without widening the article. */
+.md-typeset .case-study-visual { width: 100%; max-width: 28rem; margin: 1.5rem auto; }
+.md-typeset .case-study-visual img { display: block; width: 100%; height: auto; }
+.md-typeset .case-study-digest { white-space: normal; overflow-wrap: anywhere; }
 @media screen and (max-width: 76.234375em) {
   .portfolio-home { padding: 0 .3rem; }
 }

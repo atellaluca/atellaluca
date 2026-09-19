@@ -46,6 +46,9 @@
     "description": {{ page_description | tojson }},
     "url": {{ page_url | tojson }},
     "image": {{ page_image_url | tojson }},
+    {% if page.meta and page.meta.date %}
+    "datePublished": {{ page.meta.date | string | tojson }},
+    {% endif %}
     "isPartOf": {
       "@type": "WebSite",
       "name": {{ config.site_name | tojson }},

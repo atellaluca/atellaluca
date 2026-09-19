@@ -69,3 +69,12 @@ Architettura edge-to-cloud per raccogliere dati IoT eterogenei e renderli utiliz
 Backend di telemetria real-time distinto dal progetto Studio Lambda: infrastruttura per 80 tracker progettata e realizzata personalmente in Vemar, con socket, dati CAN bus, persistenza e API REST.
 
 → [Leggi il caso studio](fleet-tracking/index.md)
+
+## HumaxGuardian
+
+Un'indagine di reverse engineering embedded del 2026: policy dei comandi su ESP32, interazione controllata con MBoot, acquisizione verificata di 8 MiB di SPI e analisi offline della flash.
+
+- Focus: interazione sicura con il dispositivo, integrità dell'acquisizione, analisi basata su evidenze
+- Topics: ESP32, UART, MStar MBoot, strumenti Python, SPI NOR, LZMA
+
+→ [Leggi il caso studio HumaxGuardian](humax-guardian/index.md)

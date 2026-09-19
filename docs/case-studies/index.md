@@ -120,4 +120,18 @@ A real-time telemetry backend distinct from the Studio Lambda fleet management p
 
 </div>
 
+<div class="portfolio-card" markdown>
+
+## HumaxGuardian
+**From an Undocumented UART to a Verified Firmware Image**
+
+A 2026 embedded reverse-engineering investigation: an ESP32 command-policy boundary, controlled MBoot interaction, verified 8 MiB SPI acquisition and offline flash analysis.
+
+- Focus: Safe target interaction, acquisition integrity, evidence-led analysis
+- Topics: ESP32, UART, MStar MBoot, Python tooling, SPI NOR, LZMA
+
+→ [Read the HumaxGuardian case study](humax-guardian/index.md)
+
+</div>
+
 </div>
