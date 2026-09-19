@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 900" role="img" aria-labelledby="fmTitle fmDesc">
+  <title id="fmTitle">HumaxGuardian flash map (approximate)</title>
+  <desc id="fmDesc">Vertical flash map of the 8 MiB SPI with annotated regions and A/B redundancy highlighted; regions are approximate where indicated.</desc>
+  <style>
+    .bg { fill: #faf9f6; }
+    .bar { fill: #ffffff; stroke:#152c32; stroke-width:1.2; }
+    .region { stroke:#cfdcd6; stroke-width:1; }
+    .label { font-family: Inter, Arial, sans-serif; font-size:12px; fill:#152c32; }
+    .muted { fill:#53656a; font-size:11px; }
+    .ab { fill:#e9efeb; }
+    .approx { opacity:0.75; font-style:italic; }
+  </style>
+
+  <rect width="100%" height="100%" class="bg" />
+
+  <!-- Outer frame -->
+  <g transform="translate(40,30)">
+    <rect class="bar" width="80" height="800" rx="6" />
+
+    <!-- scale and regions (positions approximate) -->
+    <!-- Each line maps to an offset; computed visually -->
+    <g id="regions">
+      <rect x="0" y="0" width="80" height="80" class="region" />
+      <text x="96" y="18" class="label">0x000000 — Bootloader / MBoot</text>
+
+      <rect x="0" y="88" width="80" height="48" class="region ab" />
+      <text x="96" y="108" class="label">0x100000 — Loader Info A</text>
+
+      <rect x="0" y="144" width="80" height="48" class="region ab" />
+      <text x="96" y="164" class="label">0x110000 — Loader Info B</text>
+
+      <rect x="0" y="208" width="80" height="120" class="region" />
+      <text x="96" y="260" class="label">0x120000 — Compressed application (LZMA)</text>
+      <text x="96" y="278" class="muted approx">(observed / verified by decompression)</text>
+
+      <rect x="0" y="340" width="80" height="120" class="region" />
+      <text x="96" y="380" class="label">0x600000 — OSD / resources</text>
+
+      <rect x="0" y="468" width="80" height="60" class="region" />
+      <text x="96" y="488" class="label">0x700000 — persistent / config</text>
+
+      <rect x="0" y="540" width="80" height="72" class="region ab" />
+      <text x="96" y="580" class="label">0x710000–0x75FFFF — Database A</text>
+
+      <rect x="0" y="620" width="80" height="72" class="region ab" />
+      <text x="96" y="660" class="label">0x760000–0x7AFFFF — Database B</text>
+
+      <rect x="0" y="700" width="80" height="28" class="region" />
+      <text x="96" y="712" class="label">0x7B0000 — mostly erased</text>
+
+      <rect x="0" y="736" width="80" height="24" class="region ab" />
+      <text x="96" y="750" class="label">0x7C0000 — System Info A</text>
+
+      <rect x="0" y="764" width="80" height="24" class="region ab" />
+      <text x="96" y="778" class="label">0x7D0000 — System Info B</text>
+
+      <rect x="0" y="792" width="80" height="24" class="region ab" />
+      <text x="96" y="806" class="label">0x7E0000 — Environment A</text>
+
+      <rect x="0" y="820" width="80" height="24" class="region ab" />
+      <text x="96" y="834" class="label">0x7F0000 — Environment B</text>
+
+      <rect x="0" y="848" width="80" height="8" class="region" />
+      <text x="96" y="858" class="label">0x800000 — end</text>
+    </g>
+
+    <text x="0" y="875" class="muted approx">Regions are reconstructed from acquired image and are approximate where annotated.</text>
+  </g>
+
+</svg>

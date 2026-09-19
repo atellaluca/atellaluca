@@ -1,45 +1,45 @@
 
 <!doctype html>
-<html lang="it" class="no-js">
+<html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Caso studio declarative UI schema per interfacce guidate dal backend, widget DSL, dispositivi eterogenei e contratti frontend-backend manutenibili.">
+        <meta name="description" content="Case study: investigation of an undocumented DVB‑T set‑top box, the experimental method and the design of HumaxGuardian — an ESP32-based guardian used to safely observe and acquire SPI firmware images.">
       
       
         <meta name="author" content="Luca Atella">
       
       
-        <link rel="canonical" href="https://profile.atellaluca.com/it/case-studies/unified-backend/ui-schema/">
+        <link rel="canonical" href="https://profile.atellaluca.com/case-studies/humax-guardian/">
       
       
-        <link rel="prev" href="../plugin-system/">
+        <link rel="prev" href="../fleet-tracking/architecture/">
       
       
-        <link rel="next" href="../operations/">
+        <link rel="next" href="../agenzia-entrate-runtime-isolation/">
       
       
         
-          <link rel="alternate" href="https://profile.atellaluca.com/case-studies/unified-backend/ui-schema/" hreflang="en">
+          <link rel="alternate" href="https://profile.atellaluca.com/case-studies/humax-guardian/" hreflang="en">
         
-          <link rel="alternate" href="https://profile.atellaluca.com/it/case-studies/unified-backend/ui-schema/" hreflang="it">
+          <link rel="alternate" href="https://profile.atellaluca.com/it/case-studies/humax-guardian/" hreflang="it">
         
       
       
-      <link rel="icon" href="../../../../assets/favicon.ico">
+      <link rel="icon" href="../../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
   
-  <title>Declarative UI Schema | Widget DSL per Backend Eterogenei · Luca Atella</title>
+  <title>HumaxGuardian — Guarded firmware acquisition and boot investigation · Luca Atella</title>
 
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -58,13 +58,13 @@
       
     
     
-      <link rel="stylesheet" href="../../../../stylesheets/cv-pdf.css">
+      <link rel="stylesheet" href="../../stylesheets/cv-pdf.css">
     
-      <link rel="stylesheet" href="../../../../stylesheets/print.css">
+      <link rel="stylesheet" href="../../stylesheets/print.css">
     
-      <link rel="stylesheet" href="../../../../stylesheets/header.css">
+      <link rel="stylesheet" href="../../stylesheets/header.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -77,22 +77,22 @@
   
   
   <meta name="robots" content="index,follow,max-image-preview:large">
-  <meta property="og:locale" content="it_IT">
+  <meta property="og:locale" content="en_US">
   
-  <meta property="og:type" content="article">
+  <meta property="og:type" content="website">
   <meta property="og:site_name" content="Luca Atella">
-  <meta property="og:title" content="Declarative UI Schema | Widget DSL per Backend Eterogenei">
-  <meta property="og:description" content="Caso studio declarative UI schema per interfacce guidate dal backend, widget DSL, dispositivi eterogenei e contratti frontend-backend manutenibili.">
-  <meta property="og:url" content="https://profile.atellaluca.com/it/case-studies/unified-backend/ui-schema/">
+  <meta property="og:title" content="HumaxGuardian — Guarded firmware acquisition and boot investigation">
+  <meta property="og:description" content="Case study: investigation of an undocumented DVB‑T set‑top box, the experimental method and the design of HumaxGuardian — an ESP32-based guardian used to safely observe and acquire SPI firmware images.">
+  <meta property="og:url" content="https://profile.atellaluca.com/case-studies/humax-guardian/">
   <meta property="og:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
   
-    <meta property="og:image:alt" content="Declarative UI schema e widget DSL per backend eterogenei">
-    <meta name="twitter:image:alt" content="Declarative UI schema e widget DSL per backend eterogenei">
+    <meta property="og:image:alt" content="HumaxGuardian architecture">
+    <meta name="twitter:image:alt" content="HumaxGuardian architecture">
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Declarative UI Schema | Widget DSL per Backend Eterogenei">
-  <meta name="twitter:description" content="Caso studio declarative UI schema per interfacce guidate dal backend, widget DSL, dispositivi eterogenei e contratti frontend-backend manutenibili.">
+  <meta name="twitter:title" content="HumaxGuardian — Guarded firmware acquisition and boot investigation">
+  <meta name="twitter:description" content="Case study: investigation of an undocumented DVB‑T set‑top box, the experimental method and the design of HumaxGuardian — an ESP32-based guardian used to safely observe and acquire SPI firmware images.">
   <meta name="twitter:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
   
@@ -100,46 +100,22 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "TechArticle",
-    "inLanguage": "it",
-    "name": "Declarative UI Schema | Widget DSL per Backend Eterogenei",
-    "description": "Caso studio declarative UI schema per interfacce guidate dal backend, widget DSL, dispositivi eterogenei e contratti frontend-backend manutenibili.",
-    "url": "https://profile.atellaluca.com/it/case-studies/unified-backend/ui-schema/",
+    "@type": "SoftwareSourceCode",
+    "inLanguage": "en",
+    "name": "HumaxGuardian \u2014 Guarded firmware acquisition and boot investigation",
+    "description": "Case study: investigation of an undocumented DVB\u2011T set\u2011top box, the experimental method and the design of HumaxGuardian \u2014 an ESP32-based guardian used to safely observe and acquire SPI firmware images.",
+    "url": "https://profile.atellaluca.com/case-studies/humax-guardian/",
     "image": "https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png",
     "isPartOf": {
       "@type": "WebSite",
       "name": "Luca Atella",
       "@id": "https://profile.atellaluca.com/#website",
       "url": "https://profile.atellaluca.com/"
-    },
-    "author": {
-      "@type": "Person",
-      "@id": "https://profile.atellaluca.com/#person",
-      "name": "Luca Atella",
-      "url": "https://profile.atellaluca.com/",
-      "sameAs": [
-        "https://github.com/atellaluca",
-        "https://www.linkedin.com/in/luca-atella/"
-      ],
-      "jobTitle": "Software Architect and Backend Platform Engineer",
-      "knowsAbout": [
-        "Backend architecture",
-        "Platform engineering",
-        "AWS serverless architecture",
-        "Cloud-portable backend systems",
-        "FastAPI",
-        "DynamoDB",
-        "Runtime contract validation",
-        "Modular Python systems",
-        "IoT backend architecture",
-        "Digital Twin architecture",
-        "Geospatial data pipelines"
-      ]
     }
   }
   </script>
 
-  <link rel="alternate" hreflang="x-default" href="https://profile.atellaluca.com/case-studies/unified-backend/ui-schema/">
+  <link rel="alternate" hreflang="x-default" href="https://profile.atellaluca.com/case-studies/humax-guardian/">
 </head>
   
   
@@ -159,8 +135,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#declarative-ui-schema" class="md-skip">
-          Vai al contenuto
+        <a href="#humaxguardian-guarded-firmware-acquisition-and-boot-investigation" class="md-skip">
+          Skip to content
         </a>
       
     </div>
@@ -172,10 +148,10 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Intestazione">
-    <a href="../../../" title="Luca Atella" class="md-header__button md-logo" aria-label="Luca Atella" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Luca Atella" class="md-header__button md-logo" aria-label="Luca Atella" data-md-component="logo">
       
-  <img src="../../../../assets/luca-atella-software-architect-backend-platform-engineer.png" alt="logo">
+  <img src="../../assets/luca-atella-software-architect-backend-platform-engineer.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -192,7 +168,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Declarative UI Schema | Widget DSL per Backend Eterogenei
+              HumaxGuardian — Guarded firmware acquisition and boot investigation
             
           </span>
         </div>
@@ -218,20 +194,20 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="Seleziona la lingua">
+    <button class="md-header__button md-icon" aria-label="Select language">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="../../../../case-studies/unified-backend/ui-schema/" hreflang="en" class="md-select__link">
+            <a href="./" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="./" hreflang="it" class="md-select__link">
+            <a href="../../it/case-studies/humax-guardian/" hreflang="it" class="md-select__link">
               Italiano
             </a>
           </li>
@@ -252,16 +228,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Cerca">
+      <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -274,7 +250,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Inizializza la ricerca
+            Initializing search
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -305,7 +281,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../" class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -324,13 +300,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../about/" class="md-tabs__link">
+      <a href="../../about/" class="md-tabs__link">
         
   
   
     
   
-  Chi sono
+  About
 
       </a>
     </li>
@@ -343,13 +319,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../methodology/" class="md-tabs__link">
+      <a href="../../methodology/" class="md-tabs__link">
         
   
   
     
   
-  Metodo
+  Methodology
 
       </a>
     </li>
@@ -366,11 +342,11 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
   
-  Casi Studio
+  Case Studies
 
         </a>
       </li>
@@ -384,13 +360,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../profile/" class="md-tabs__link">
+      <a href="../../profile/" class="md-tabs__link">
         
   
   
     
   
-  Profilo
+  Profile
 
       </a>
     </li>
@@ -403,7 +379,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../cv/" class="md-tabs__link">
+      <a href="../../cv/" class="md-tabs__link">
         
   
   
@@ -422,13 +398,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../contact/" class="md-tabs__link">
+      <a href="../../contact/" class="md-tabs__link">
         
   
   
     
   
-  Contatti
+  Contact
 
       </a>
     </li>
@@ -455,11 +431,11 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../" title="Luca Atella" class="md-nav__button md-logo" aria-label="Luca Atella" data-md-component="logo">
+    <a href="../.." title="Luca Atella" class="md-nav__button md-logo" aria-label="Luca Atella" data-md-component="logo">
       
-  <img src="../../../../assets/luca-atella-software-architect-backend-platform-engineer.png" alt="logo">
+  <img src="../../assets/luca-atella-software-architect-backend-platform-engineer.png" alt="logo">
 
     </a>
     Luca Atella
@@ -474,7 +450,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../" class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -501,14 +477,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Chi sono
+    About
   
 
     
@@ -528,14 +504,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../methodology/" class="md-nav__link">
+      <a href="../../methodology/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Metodo
+    Methodology
   
 
     
@@ -581,7 +557,7 @@
   <span class="md-ellipsis">
     
   
-    Casi Studio
+    Case Studies
   
 
     
@@ -597,7 +573,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Casi Studio
+    Case Studies
   
 
           </label>
@@ -610,14 +586,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Panoramica
+    Overview
   
 
     
@@ -659,7 +635,7 @@
   <span class="md-ellipsis">
     
   
-    Piattaforma Fleet Cloud-Portable
+    Cloud-Portable Fleet Management Platform
   
 
     
@@ -675,7 +651,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Piattaforma Fleet Cloud-Portable
+    Cloud-Portable Fleet Management Platform
   
 
           </label>
@@ -688,14 +664,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cloud-portable-fleet-platform/" class="md-nav__link">
+      <a href="../cloud-portable-fleet-platform/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Panoramica
+    Overview
   
 
     
@@ -774,14 +750,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../importspy/" class="md-nav__link">
+      <a href="../importspy/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Panoramica
+    Overview
   
 
     
@@ -802,14 +778,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../importspy/architecture/" class="md-nav__link">
+      <a href="../importspy/architecture/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Architettura
+    Architecture
   
 
     
@@ -830,14 +806,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../importspy/validation/" class="md-nav__link">
+      <a href="../importspy/validation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Sistema di Validazione
+    Validation System (Deep Dive)
   
 
     
@@ -858,14 +834,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../importspy/contracts/" class="md-nav__link">
+      <a href="../importspy/contracts/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Runtime Contracts
+    Runtime Contracts (Deep Dive)
   
 
     
@@ -886,14 +862,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../importspy/violations/" class="md-nav__link">
+      <a href="../importspy/violations/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Diagnostica Contratti
+    Violation System and Contract Diagnostics (Deep Dive)
   
 
     
@@ -972,14 +948,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../b3do/" class="md-nav__link">
+      <a href="../b3do/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Panoramica
+    Overview
   
 
     
@@ -1005,8 +981,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1017,11 +991,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
         
           
           <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
@@ -1031,7 +1005,7 @@
   <span class="md-ellipsis">
     
   
-    Backend Unificato per Sorgenti Eterogenee
+    Unified Backend for Heterogeneous Data Sources (SAFE)
   
 
     
@@ -1042,12 +1016,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Backend Unificato per Sorgenti Eterogenee
+    Unified Backend for Heterogeneous Data Sources (SAFE)
   
 
           </label>
@@ -1060,14 +1034,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../unified-backend/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Panoramica
+    Overview
   
 
     
@@ -1088,14 +1062,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../architecture/" class="md-nav__link">
+      <a href="../unified-backend/architecture/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Architettura
+    Architecture
   
 
     
@@ -1116,14 +1090,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../plugin-system/" class="md-nav__link">
+      <a href="../unified-backend/plugin-system/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Sistema Plugin
+    Plugin System (Deep Dive)
   
 
     
@@ -1132,103 +1106,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Schema UI Dichiarativo
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Schema UI Dichiarativo
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Indice">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Indice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#obiettivi" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Obiettivi
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#valore" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Valore
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1241,14 +1118,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/" class="md-nav__link">
+      <a href="../unified-backend/ui-schema/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Operations e Developer Experience
+    Declarative UI Schema (Widget DSL)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unified-backend/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations & DX
   
 
     
@@ -1298,7 +1203,7 @@
   <span class="md-ellipsis">
     
   
-    Architettura IoT per Digital Twin
+    IoT Data Aggregation Architecture for Digital Twin Systems
   
 
     
@@ -1314,7 +1219,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Architettura IoT per Digital Twin
+    IoT Data Aggregation Architecture for Digital Twin Systems
   
 
           </label>
@@ -1327,14 +1232,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../iot-data-aggregation-digital-twin/" class="md-nav__link">
+      <a href="../iot-data-aggregation-digital-twin/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Panoramica
+    Overview
   
 
     
@@ -1384,7 +1289,7 @@
   <span class="md-ellipsis">
     
   
-    Backend Telemetria Fleet Real-Time
+    End-to-End Real-Time Fleet Telemetry Backend (SAFE)
   
 
     
@@ -1400,7 +1305,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Backend Telemetria Fleet Real-Time
+    End-to-End Real-Time Fleet Telemetry Backend (SAFE)
   
 
           </label>
@@ -1413,14 +1318,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fleet-tracking/" class="md-nav__link">
+      <a href="../fleet-tracking/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Panoramica
+    Overview
   
 
     
@@ -1441,14 +1346,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fleet-tracking/architecture/" class="md-nav__link">
+      <a href="../fleet-tracking/architecture/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Architettura
+    Architecture
   
 
     
@@ -1474,6 +1379,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1484,11 +1391,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" checked>
         
           
           <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
@@ -1509,7 +1416,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_8">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1524,17 +1431,44 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../humax-guardian/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    Panoramica
+    Overview
   
 
     
@@ -1543,6 +1477,147 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The challenge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-finding-a-way-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Finding a way in
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-a-zerodelay-bootloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. A zero‑delay bootloader
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-building-a-guardian-instead-of-a-bridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Building a guardian instead of a bridge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-from-spi-to-a-verified-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. From SPI to a verified image
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-moving-the-investigation-offline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Moving the investigation offline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-reconstructing-the-flash" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Reconstructing the flash
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-what-this-project-demonstrates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. What this project demonstrates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-the-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explore the code
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read next
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1584,7 +1659,7 @@
   <span class="md-ellipsis">
     
   
-    Compatibilità runtime Agenzia delle Entrate
+    Runtime Compatibility and Isolation for Agenzia delle Entrate Applications
   
 
     
@@ -1600,7 +1675,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Compatibilità runtime Agenzia delle Entrate
+    Runtime Compatibility and Isolation for Agenzia delle Entrate Applications
   
 
           </label>
@@ -1613,14 +1688,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agenzia-entrate-runtime-isolation/" class="md-nav__link">
+      <a href="../agenzia-entrate-runtime-isolation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Panoramica
+    Overview
   
 
     
@@ -1656,14 +1731,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../profile/" class="md-nav__link">
+      <a href="../../profile/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Profilo
+    Profile
   
 
     
@@ -1683,7 +1758,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cv/" class="md-nav__link">
+      <a href="../../cv/" class="md-nav__link">
         
   
   
@@ -1710,14 +1785,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contact/" class="md-nav__link">
+      <a href="../../contact/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Contatti
+    Contact
   
 
     
@@ -1743,7 +1818,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Indice">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -1752,15 +1827,15 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Indice
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#obiettivi" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Obiettivi
+        Overview
       
     </span>
   </a>
@@ -1768,10 +1843,109 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#valore" class="md-nav__link">
+  <a href="#1-the-challenge" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Valore
+        1. The challenge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-finding-a-way-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Finding a way in
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-a-zerodelay-bootloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. A zero‑delay bootloader
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-building-a-guardian-instead-of-a-bridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Building a guardian instead of a bridge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-from-spi-to-a-verified-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. From SPI to a verified image
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-moving-the-investigation-offline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Moving the investigation offline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-reconstructing-the-flash" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Reconstructing the flash
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-what-this-project-demonstrates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. What this project demonstrates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-the-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explore the code
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read next
       
     </span>
   </a>
@@ -1795,21 +1969,118 @@
 
 
 
-<h1 id="declarative-ui-schema">Declarative UI Schema</h1>
-<p>Nei sistemi con dispositivi eterogenei, la complessità frontend cresce rapidamente: ogni famiglia di dispositivi può richiedere viste, controlli e dati diversi.</p>
-<p>Un declarative UI schema permette al backend di descrivere la struttura dell’interfaccia tramite un contratto leggibile e versionabile.</p>
+<h1 id="humaxguardian-guarded-firmware-acquisition-and-boot-investigation">HumaxGuardian — guarded firmware acquisition and boot investigation</h1>
+<p><strong>Type:</strong> Open-source toolchain &amp; case study<br />
+<strong>Role:</strong> Investigator, designer, implementer<br />
+<strong>Period:</strong> 2022<br />
+<strong>Domain:</strong> Embedded systems, firmware acquisition, reverse engineering, automation<br />
+<strong>Repository:</strong> <a href="https://github.com/atellaluca/humax-mstar-guardian">HumaxGuardian on GitHub — guardian firmware and host tooling</a></p>
 <hr />
-<h2 id="obiettivi">Obiettivi</h2>
+<h2 id="overview">Overview</h2>
+<p>This case study explains how an engineering-first, evidence-driven approach was used to investigate an undocumented DVB‑T set‑top box, control its boot process and produce a verified firmware image for offline analysis. The resulting tooling — HumaxGuardian — was created as a consequence of the constraints discovered during the investigation and is published as an open-source companion to this case study.</p>
+<p>The emphasis here is on the method: observe → hypothesize → test → verify → automate → analyze offline. The narrative highlights what was observed on the hardware, how experiments were constrained to reduce risk, and how a small embedded guardian was designed to enforce safety policies during live interaction.</p>
+<h2 id="1-the-challenge">1. The challenge</h2>
+<p>Observed: a consumer DVB‑T decoder (Humax/Changhong, MStar platform) with little or no public documentation. The goal was to obtain a verified copy of the SPI flash and to reason about the boot process without risking irreversible changes to the device.</p>
+<p>Key constraints that shaped the work:</p>
 <ul>
-<li>ridurre logica hardcoded nel frontend</li>
-<li>descrivere widget e dati in modo dichiarativo</li>
-<li>mantenere coerenza tra device model e UI</li>
-<li>supportare nuove tipologie di dispositivi</li>
-<li>rendere esplicito il contratto frontend-backend</li>
+<li>limited visibility into the platform and bootloader  </li>
+<li>need for repeatable, low‑risk experiments  </li>
+<li>requirement to stop live manipulation once an offline image was available</li>
 </ul>
+<h2 id="2-finding-a-way-in">2. Finding a way in</h2>
+<p>Observed: a UART header exposed on the motherboard. The interface ran at <code>115200 8N1</code>.</p>
+<p>Initial bridge wiring (observed):</p>
+<ul>
+<li>Target TX → ESP32 GPIO16  </li>
+<li>Target RX ← ESP32 GPIO17  </li>
+<li>common GND  </li>
+</ul>
+<p>An ESP32‑WROOM‑32 module was used as a USB‑serial bridge to the host computer; a relay controlled by the ESP32 allowed deterministic power cycles and cold boots.</p>
+<h2 id="3-a-zerodelay-bootloader">3. A zero‑delay bootloader</h2>
+<p>Observed: the bootloader (a MStar-derived MBoot/U‑Boot build) prints boot messages with <code>bootdelay=0</code> configured.</p>
+<p>Observed (UART excerpt):</p>
+<div class="highlight"><pre><span></span><code>bootdelay=0
+</code></pre></div>
+<p>Observed: a <code>Changelist</code> marker in the bootlog correlated with a narrow timing window. Experimentally, sending a single carriage return (<code>0x0D</code>) at that moment produced an interactive prompt on the observed build.</p>
+<p>Verified: prompt received in that specific build — <code>k5tn#</code> — allowed interaction with MBoot.</p>
+<p>Note: this is an experimental observation on the analysed build. It is not presented as a general exploit; it was discovered and used under controlled conditions.</p>
+<h2 id="4-building-a-guardian-instead-of-a-bridge">4. Building a guardian instead of a bridge</h2>
+<p>As interaction with MBoot grew more powerful, the risk of accidental destructive commands (for example SPI erase/write) increased.</p>
+<p>Design decision: transform the ESP32 from a passive bridge into an active guardian enforcing policy at the hardware boundary. This architectural choice baked safety into the system rather than treating it as an afterthought.</p>
+<p>Architecture (conceptual):</p>
+<p><img alt="HumaxGuardian pipeline" src="../../assets/visuals/humax-guardian-pipeline.svg" /></p>
+<p>Trust boundary summary (Verified by design):</p>
+<ul>
+<li><code>Host Python</code> ↔ <code>ESP32 policy boundary</code> ↔ <code>Target UART</code>  </li>
+<li>The ESP32 enforces <code>deny-by-default</code>, a command allowlist, timed injection of the interrupting CR, local boot event detection, relay-based power control and logging.  </li>
+<li>The host cannot convert the guardian into a transparent MBoot console merely by changing the client — the policy is enforced on the ESP32.</li>
+</ul>
+<p>Security properties enforced by architecture (Observed / Verified):</p>
+<ul>
+<li>Deny‑by‑default command handling (Verified).  </li>
+<li>No SPI erase/write operations performed by public tooling (Verified).  </li>
+<li>The pipeline writes to external USB storage (<code>fatwrite</code>) — this writes the acquired image to USB, not to the target SPI (Observed &amp; Verified).  </li>
+<li>Important property: the target SPI remained unmodified during acquisition (Verified).</li>
+</ul>
+<h2 id="5-from-spi-to-a-verified-image">5. From SPI to a verified image</h2>
+<p>Observed in bootlog: boot command reading SPI into DRAM and invoking LZMA decompression:</p>
+<div class="highlight"><pre><span></span><code>spi_rdc 0x82B00000 0x00120000 0x4e0000;
+LzmaDec 0x82B00000 0x4e0000 0x80000180 0x82500000;
+go 0x80000224;
+</code></pre></div>
+<p>Interpretation: the application is read from SPI at offset <code>0x120000</code> (observed). In the dumped image an LZMA stream was present at the same offset and decompresses to the embedded application (Verified by offline decompression).</p>
+<p>Acquisition pipeline (Observed → Verified):</p>
+<p>SPI NOR → DRAM (via MBoot primitive) → CRC32 check → USB/FAT write → <code>firmware.bin</code> → re‑read into RAM → CRC32 check → offline analysis</p>
+<p>Image integrity checks performed (Verified):</p>
+<ul>
+<li>CRC32 of the SPI-loaded RAM image: <code>89BFAD81</code>  </li>
+<li>SHA‑256 of the final master image: <code>de7b98ffea94c77f15e12c8e644d52586ba6dff24c5ae3f08108f9f1ed252e64</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code>CRC32 ... ==&gt; 89BFAD81
+SHA256 ... ==&gt; de7b98ffea94c77f15e12c8e644d52586ba6dff24c5ae3f08108f9f1ed252e64
+</code></pre></div>
+<p>Guiding rule: once a verified master image existed, live experimentation was stopped and the rest of the work moved offline.</p>
+<h2 id="6-moving-the-investigation-offline">6. Moving the investigation offline</h2>
+<p>Principle: minimise live interaction once an offline artifact is available. Offline analysis reduces risk and enables deeper, repeatable investigation without placing the target at risk.</p>
+<h2 id="7-reconstructing-the-flash">7. Reconstructing the flash</h2>
+<p>Offline analysis identified a plausible flash map inside the 8 MiB SPI image. The offsets below are reconstructed from observed evidence and offline interpretation; where appropriate the writeup marks interpretations that are not fully proven.</p>
+<p><img alt="Flash map" src="../../assets/visuals/humax-guardian-flashmap.svg" /></p>
+<p>Key regions (approximate/observed):</p>
+<ul>
+<li><code>0x000000</code> — Bootloader / MBoot (Observed)  </li>
+<li><code>0x100000</code> — Loader Info A (Observed)  </li>
+<li><code>0x110000</code> — Loader Info B (Observed)  </li>
+<li><code>0x120000</code> — Compressed application (LZMA) (Observed &amp; Verified by decompression)  </li>
+<li><code>0x600000</code> — OSD / graphical resources (Observed)  </li>
+<li><code>0x700000</code> — persistent / configuration area (Observed, partially classified)  </li>
+<li><code>0x710000–0x75FFFF</code> — Database A (Observed)  </li>
+<li><code>0x760000–0x7AFFFF</code> — Database B (Observed)  </li>
+<li><code>0x7B0000</code> — mostly erased (Observed)  </li>
+<li><code>0x7C0000</code> — System Info A (Observed)  </li>
+<li><code>0x7D0000</code> — System Info B (Observed)  </li>
+<li><code>0x7E0000</code> — Environment A (Observed)  </li>
+<li><code>0x7F0000</code> — Environment B (Observed)  </li>
+<li><code>0x800000</code> — end (Observed)</li>
+</ul>
+<p>Duplication and redundancy (Inferred / Observed): pairs such as Loader Info A/B, Database A/B, System Info A/B and Environment A/B are present and were identical in the acquired image. This suggests redundancy by design; the interpretation of internal formats remains partial and is presented as an evidence‑led inference, not a full decode.</p>
+<h2 id="8-what-this-project-demonstrates">8. What this project demonstrates</h2>
+<p>This investigation highlights a methodical engineering approach to hardware‑adjacent reverse engineering where the primary artefact of value is the engineering method rather than a single technical trick.</p>
+<p>Storyline captured by the workflow:</p>
+<ul>
+<li>board inspection → UART discovery  </li>
+<li>observation of boot behaviour → narrow injection window  </li>
+<li>design of an embedded guardian enforcing policy at the hardware boundary  </li>
+<li>verified readout of SPI → offline verification and analysis  </li>
+</ul>
+<p>Skills and domains that naturally emerge from the narrative: embedded systems, serial communication, ESP32 firmware, automation, binary acquisition, offline decompression and analysis, and careful safety‑first engineering. These are shown through the sequence of decisions and verifications rather than as a checklist.</p>
+<h2 id="explore-the-code">Explore the code</h2>
+<p>Explore HumaxGuardian on GitHub — the repository contains the ESP32 guardian firmware, Python host tooling and architecture/protocol documentation. The repository does not contain proprietary device firmware.</p>
+<p><a href="https://github.com/atellaluca/humax-mstar-guardian">Explore HumaxGuardian on GitHub</a></p>
 <hr />
-<h2 id="valore">Valore</h2>
-<p>Il widget DSL sposta parte della complessità in uno schema controllato, rendendo l’interfaccia più adattabile senza perdere governance.</p>
+<h2 id="read-next">Read next</h2>
+<ul>
+<li><a href="../">Back to case studies</a></li>
+</ul>
 
 
 
@@ -1836,7 +2107,7 @@
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
-  Torna su
+  Back to top
 </button>
         
       </main>
@@ -1845,33 +2116,33 @@
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="Piede" >
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../plugin-system/" class="md-footer__link md-footer__link--prev" aria-label="Precedente: Sistema Plugin">
+          <a href="../fleet-tracking/architecture/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Architecture">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                Precedente
+                Previous
               </span>
               <div class="md-ellipsis">
-                Sistema Plugin
+                Architecture
               </div>
             </div>
           </a>
         
         
           
-          <a href="../operations/" class="md-footer__link md-footer__link--next" aria-label="Successivo: Operations e Developer Experience">
+          <a href="../agenzia-entrate-runtime-isolation/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                Successivo
+                Next
               </span>
               <div class="md-ellipsis">
-                Operations e Developer Experience
+                Overview
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1935,14 +2206,14 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "navigation.footer"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "navigation.footer"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
       
-        <script src="../../../../javascripts/mermaid-init.js"></script>
+        <script src="../../javascripts/mermaid-init.js"></script>
       
     
   </body>
