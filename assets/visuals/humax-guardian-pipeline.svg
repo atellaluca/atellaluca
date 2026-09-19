@@ -1,68 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" role="img" aria-labelledby="title desc">
-  <title id="title">HumaxGuardian architecture pipeline</title>
-  <desc id="desc">Diagram showing target SPI and MBoot, UART trust boundary enforced by ESP32 Guardian, and host/offline analysis flow.</desc>
-  <style>
-    .bg { fill: none; }
-    .box { fill: #ffffff; stroke: #152c32; stroke-width:1.8; rx:8; }
-    .sub { fill:#f6f8f7; stroke:#cfdcd6; }
-    .text { font-family: Inter, Arial, sans-serif; font-size:14px; fill:#152c32; }
-    .muted { fill:#53656a; font-size:12px; }
-    .boundary { stroke:#11685e; stroke-dasharray:6 6; stroke-width:2; fill:none; }
-    .arrow { stroke:#152c32; stroke-width:2; fill:none; marker-end:url(#arrowhead); }
-  </style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 844" role="img" aria-labelledby="pipeline-title pipeline-desc">
+  <title id="pipeline-title">HumaxGuardian: the ESP32 is the command-policy boundary</title>
+  <desc id="pipeline-desc">The target's 8 MiB SPI NOR is read by MBoot into target RAM and exported directly to external USB FAT storage with fatwrite. That firmware data does not pass through the guardian. Target UART at 115200 baud, 8N1 connects to the ESP32 guardian, which enforces boot timing, exact command allowlisting, power control and fail-safe behavior with deny-by-default policy. The Python host connects at 921600 baud for operator controls, lifecycle management and logging. The exported and verified image is then analyzed offline.</desc>
   <defs>
-    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="#152c32" />
+    <marker id="pipeline-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M1 1 7 4 1 7" fill="none" stroke="#53656a" stroke-width="1.5" stroke-linejoin="round" />
     </marker>
   </defs>
+  <style>
+    text { font-family: Inter, Arial, sans-serif; fill: #152c32; font-size: 16px; }
+    .heading { font-size: 20px; font-weight: 650; letter-spacing: -.35px; }
+    .eyebrow { font-size: 14px; font-weight: 700; letter-spacing: 1px; }
+    .detail { font-size: 15px; fill: #53656a; }
+    .mono { font-family: "Roboto Mono", Menlo, Consolas, monospace; font-size: 15px; }
+    .panel { fill: #faf9f6; stroke: #53656a; stroke-width: 1; }
+    .connector { fill: none; stroke: #53656a; stroke-width: 1.6; marker-end: url(#pipeline-arrow); }
+    .duplex { marker-start: url(#pipeline-arrow); }
+  </style>
 
-  <!-- Target side -->
-  <g transform="translate(40,30)">
-    <rect class="box" width="220" height="120" />
-    <text x="14" y="26" class="text" font-weight="700">Target</text>
-    <text x="14" y="50" class="text">SPI NOR (8 MiB)</text>
-    <text x="14" y="70" class="muted">MBoot / Bootloader</text>
-    <text x="14" y="92" class="muted">DRAM primitives</text>
-  </g>
+  <text x="16" y="24" class="eyebrow">CONTROL AND ACQUISITION</text>
 
-  <!-- UART connection -->
-  <path class="arrow" d="M260 90 L360 90" />
-  <text x="300" y="80" class="muted">UART</text>
+  <rect x="16" y="42" width="210" height="168" rx="6" class="panel" />
+  <text x="32" y="68" class="eyebrow">TARGET</text>
+  <text x="32" y="97" class="heading">SPI NOR · 8 MiB</text>
+  <text x="32" y="120" class="detail">W25Q64FV</text>
+  <path d="M116 128 V150" class="connector" />
+  <text x="32" y="177" class="heading">MBoot</text>
+  <text x="32" y="198" class="detail">Read SPI into target RAM</text>
 
-  <!-- Boundary and ESP32 guardian -->
-  <g transform="translate(360,10)">
-    <rect x="0" y="20" width="320" height="160" class="sub" />
-    <rect x="6" y="26" width="308" height="64" class="box" />
-    <text x="16" y="48" class="text" font-weight="700">ESP32 Guardian</text>
-    <text x="16" y="68" class="muted">timing · allowlist · power control · logging</text>
+  <text x="246" y="103" class="mono">fatwrite</text>
+  <rect x="246" y="114" width="118" height="96" rx="6" class="panel" />
+  <text x="258" y="141" font-weight="650">USB FAT</text>
+  <text x="258" y="166" class="detail">External</text>
+  <text x="258" y="189" class="detail">image file</text>
+  <path d="M112 170 H245" class="connector" />
 
-    <rect x="6" y="100" width="308" height="56" class="box" />
-    <text x="16" y="124" class="text" font-weight="700">Policy Boundary</text>
-    <text x="16" y="144" class="muted">deny-by-default · local fail-safe</text>
-  </g>
+  <path d="M116 216 V263" class="connector duplex" />
+  <text x="137" y="240" class="detail">UART · 115200 · 8N1</text>
 
-  <rect x="352" y="6" width="336" height="192" class="boundary" />
+  <rect x="16" y="270" width="348" height="192" rx="6" fill="#e9efeb" stroke="#11685e" stroke-width="2.5" />
+  <text x="32" y="297" class="eyebrow" style="fill:#11685e">POLICY / TRUST BOUNDARY</text>
+  <text x="32" y="330" class="heading">ESP32 Guardian</text>
+  <text x="32" y="354" class="detail">Command-policy authority</text>
+  <path d="M32 369 H348" stroke="#11685e" stroke-opacity=".3" />
+  <text x="32" y="393">Boot timing</text>
+  <text x="203" y="393">Exact allowlist</text>
+  <text x="32" y="419">Power control</text>
+  <text x="203" y="419">Fail-safe</text>
+  <text x="32" y="445" class="mono" style="fill:#11685e;font-weight:700">default: deny</text>
 
-  <!-- Host side -->
-  <path class="arrow" d="M700 90 L820 90" />
-  <g transform="translate(820,30)">
-    <rect class="box" width="160" height="120" />
-    <text x="12" y="36" class="text" font-weight="700">Host</text>
-    <text x="12" y="60" class="muted">Python client · logging</text>
-    <text x="12" y="84" class="muted">USB storage (fatwrite)</text>
-  </g>
+  <path d="M116 470 V512" class="connector duplex" />
+  <text x="137" y="496" class="detail">USB serial · 921600</text>
 
-  <!-- Offline analysis -->
-  <path class="arrow" d="M900 160 L900 220" />
-  <g transform="translate(760,230)">
-    <rect class="box" width="260" height="120" />
-    <text x="16" y="42" class="text" font-weight="700">Offline analysis</text>
-    <text x="16" y="68" class="muted">CRC32 · SHA‑256 · LZMA decompression · binary analysis</text>
-  </g>
+  <rect x="16" y="520" width="348" height="90" rx="6" class="panel" />
+  <text x="32" y="550" class="heading">Host · Python tooling</text>
+  <text x="32" y="575">Operator UI · lifecycle · logging</text>
+  <text x="32" y="596" class="detail">USB image moved to host separately</text>
 
-  <!-- Legend / trust annotations -->
-  <text x="30" y="380" class="muted">Trust boundary: ESP32 enforces policy between host and target.</text>
-  <text x="30" y="400" class="muted">Important: target SPI remained unmodified during acquisition (Verified).</text>
+  <path d="M116 617 V650" class="connector" />
+  <text x="137" y="640" class="detail">Verified image</text>
 
+  <rect x="16" y="658" width="348" height="80" rx="6" fill="#e9efeb" />
+  <text x="32" y="688" class="heading">Offline analysis</text>
+  <text x="32" y="714">Integrity · LZMA · flash structure</text>
+
+  <path d="M16 764 H364" stroke="#53656a" stroke-opacity=".3" />
+  <text x="16" y="789" font-weight="650">Image path: SPI → target RAM → USB</text>
+  <text x="16" y="814" class="detail">The target SPI remains unmodified.</text>
 </svg>

@@ -1,71 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 900" role="img" aria-labelledby="fmTitle fmDesc">
-  <title id="fmTitle">HumaxGuardian flash map (approximate)</title>
-  <desc id="fmDesc">Vertical flash map of the 8 MiB SPI with annotated regions and A/B redundancy highlighted; regions are approximate where indicated.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 1010" role="img" aria-labelledby="flashmap-title flashmap-desc">
+  <title id="flashmap-title">Reconstructed 8 MiB flash map with four identical A/B pairs</title>
+  <desc id="flashmap-desc">Vertical map from 0x000000 to 0x800000, not to scale. Boot: MBoot at 0x000000, a mostly erased region around 0x09xxxx, Loader Info A at 0x100000 and B at 0x110000. The CHANGHONG LZMA application starts at 0x120000. Graphical and OSD resources, including .gam assets, begin around 0x600000. Persistent data begins at 0x700000 with an incompletely classified region. Database A occupies 0x710000 through 0x75FFFF, and B occupies 0x760000 through 0x7AFFFF. 0x7B0000 is mostly erased. System Info A is at 0x7C0000 and B at 0x7D0000. Environment A is at 0x7E0000 and B at 0x7F0000. End of SPI is 0x800000. Corresponding examined Loader Info, Database, System Info and Environment A/B pairs were identical in this acquired image. Hatched regions mark erased or incompletely classified areas; reconstructed region labels do not imply every structure was decoded.</desc>
+  <defs>
+    <pattern id="flashmap-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="8" height="8" fill="#faf9f6" />
+      <path d="M0 0 V8" stroke="#53656a" stroke-width="1" stroke-opacity=".13" />
+    </pattern>
+  </defs>
   <style>
-    .bg { fill: #faf9f6; }
-    .bar { fill: #ffffff; stroke:#152c32; stroke-width:1.2; }
-    .region { stroke:#cfdcd6; stroke-width:1; }
-    .label { font-family: Inter, Arial, sans-serif; font-size:12px; fill:#152c32; }
-    .muted { fill:#53656a; font-size:11px; }
-    .ab { fill:#e9efeb; }
-    .approx { opacity:0.75; font-style:italic; }
+    text { font-family: Inter, Arial, sans-serif; fill: #152c32; font-size: 16px; }
+    .title { font-size: 22px; font-weight: 650; letter-spacing: -.5px; }
+    .group { font-size: 14px; font-weight: 700; letter-spacing: 1px; }
+    .detail { font-size: 15px; fill: #53656a; }
+    .mono { font-family: "Roboto Mono", Menlo, Consolas, monospace; font-size: 15px; }
+    .divider { stroke: #53656a; stroke-opacity: .25; }
+    .pair { fill: #e9efeb; }
+    .badge { fill: #11685e; }
+    .badge-text { fill: #faf9f6; font-size: 15px; font-weight: 700; text-anchor: middle; }
   </style>
 
-  <rect width="100%" height="100%" class="bg" />
+  <text x="16" y="28" class="title">8 MiB SPI NOR</text>
+  <text x="16" y="53" class="detail">W25Q64FV · 128 × 64 KiB sectors</text>
+  <text x="16" y="78" class="detail">Reconstructed map · not to scale</text>
 
-  <!-- Outer frame -->
-  <g transform="translate(40,30)">
-    <rect class="bar" width="80" height="800" rx="6" />
+  <text x="16" y="111" class="group">BOOT</text>
+  <path d="M76 106 H364" class="divider" />
+  <rect x="16" y="124" width="348" height="176" fill="#faf9f6" />
+  <rect x="16" y="124" width="8" height="54" fill="#152c32" />
+  <text x="40" y="147" class="mono">0x000000</text>
+  <text x="40" y="170">Bootloader / MBoot</text>
 
-    <!-- scale and regions (positions approximate) -->
-    <!-- Each line maps to an offset; computed visually -->
-    <g id="regions">
-      <rect x="0" y="0" width="80" height="80" class="region" />
-      <text x="96" y="18" class="label">0x000000 — Bootloader / MBoot</text>
+  <rect x="16" y="178" width="348" height="46" fill="url(#flashmap-hatch)" />
+  <rect x="16" y="178" width="8" height="46" fill="#53656a" fill-opacity=".4" />
+  <text x="40" y="198" class="mono">~0x09xxxx</text>
+  <text x="40" y="218" class="detail">Mostly erased · approximate start</text>
 
-      <rect x="0" y="88" width="80" height="48" class="region ab" />
-      <text x="96" y="108" class="label">0x100000 — Loader Info A</text>
+  <rect x="16" y="224" width="348" height="76" class="pair" />
+  <rect x="16" y="224" width="8" height="76" fill="#11685e" />
+  <path d="M40 262 H348" class="divider" />
+  <text x="40" y="248" class="mono">0x100000</text>
+  <text x="142" y="248">Loader Info</text>
+  <rect x="330" y="231" width="24" height="24" rx="4" class="badge" />
+  <text x="342" y="248" class="badge-text">A</text>
+  <text x="40" y="286" class="mono">0x110000</text>
+  <text x="142" y="286">Loader Info</text>
+  <rect x="330" y="269" width="24" height="24" rx="4" class="badge" />
+  <text x="342" y="286" class="badge-text">B</text>
 
-      <rect x="0" y="144" width="80" height="48" class="region ab" />
-      <text x="96" y="164" class="label">0x110000 — Loader Info B</text>
+  <text x="16" y="319" class="group">APPLICATION</text>
+  <path d="M145 314 H364" class="divider" />
+  <rect x="16" y="328" width="348" height="72" fill="#faf9f6" />
+  <rect x="16" y="328" width="8" height="72" fill="#152c32" />
+  <text x="40" y="350" class="mono">0x120000</text>
+  <text x="40" y="372">CHANGHONG application</text>
+  <text x="40" y="394" class="detail">Compressed LZMA stream</text>
 
-      <rect x="0" y="208" width="80" height="120" class="region" />
-      <text x="96" y="260" class="label">0x120000 — Compressed application (LZMA)</text>
-      <text x="96" y="278" class="muted approx">(observed / verified by decompression)</text>
+  <text x="16" y="419" class="group">RESOURCES</text>
+  <path d="M135 414 H364" class="divider" />
+  <rect x="16" y="428" width="348" height="60" fill="#faf9f6" />
+  <rect x="16" y="428" width="8" height="60" fill="#53656a" />
+  <text x="40" y="452" class="mono">~0x600000</text>
+  <text x="40" y="477">Graphical / OSD resources · .gam</text>
 
-      <rect x="0" y="340" width="80" height="120" class="region" />
-      <text x="96" y="380" class="label">0x600000 — OSD / resources</text>
+  <text x="16" y="507" class="group">PERSISTENT DATA</text>
+  <path d="M184 502 H364" class="divider" />
+  <rect x="16" y="516" width="348" height="56" fill="url(#flashmap-hatch)" />
+  <rect x="16" y="516" width="8" height="56" fill="#53656a" fill-opacity=".4" />
+  <text x="40" y="539" class="mono">~0x700000</text>
+  <text x="40" y="563" class="detail">Configuration · partly unclassified</text>
 
-      <rect x="0" y="468" width="80" height="60" class="region" />
-      <text x="96" y="488" class="label">0x700000 — persistent / config</text>
+  <rect x="16" y="572" width="348" height="116" class="pair" />
+  <rect x="16" y="572" width="8" height="116" fill="#11685e" />
+  <path d="M40 630 H348" class="divider" />
+  <text x="40" y="596" class="mono">0x710000–0x75FFFF</text>
+  <text x="40" y="619">Database</text>
+  <rect x="330" y="589" width="24" height="24" rx="4" class="badge" />
+  <text x="342" y="606" class="badge-text">A</text>
+  <text x="40" y="654" class="mono">0x760000–0x7AFFFF</text>
+  <text x="40" y="677">Database</text>
+  <rect x="330" y="647" width="24" height="24" rx="4" class="badge" />
+  <text x="342" y="664" class="badge-text">B</text>
 
-      <rect x="0" y="540" width="80" height="72" class="region ab" />
-      <text x="96" y="580" class="label">0x710000–0x75FFFF — Database A</text>
+  <rect x="16" y="688" width="348" height="46" fill="url(#flashmap-hatch)" />
+  <rect x="16" y="688" width="8" height="46" fill="#53656a" fill-opacity=".4" />
+  <text x="40" y="717" class="mono">0x7B0000</text>
+  <text x="142" y="717" class="detail">Mostly erased</text>
 
-      <rect x="0" y="620" width="80" height="72" class="region ab" />
-      <text x="96" y="660" class="label">0x760000–0x7AFFFF — Database B</text>
+  <rect x="16" y="734" width="348" height="152" class="pair" />
+  <rect x="16" y="734" width="8" height="152" fill="#11685e" />
+  <path d="M40 772 H348 M16 810 H364 M40 848 H348" class="divider" />
+  <text x="40" y="758" class="mono">0x7C0000</text>
+  <text x="142" y="758">System Info</text>
+  <rect x="330" y="741" width="24" height="24" rx="4" class="badge" />
+  <text x="342" y="758" class="badge-text">A</text>
+  <text x="40" y="796" class="mono">0x7D0000</text>
+  <text x="142" y="796">System Info</text>
+  <rect x="330" y="779" width="24" height="24" rx="4" class="badge" />
+  <text x="342" y="796" class="badge-text">B</text>
+  <text x="40" y="834" class="mono">0x7E0000</text>
+  <text x="142" y="834">Environment</text>
+  <rect x="330" y="817" width="24" height="24" rx="4" class="badge" />
+  <text x="342" y="834" class="badge-text">A</text>
+  <text x="40" y="872" class="mono">0x7F0000</text>
+  <text x="142" y="872">Environment</text>
+  <rect x="330" y="855" width="24" height="24" rx="4" class="badge" />
+  <text x="342" y="872" class="badge-text">B</text>
 
-      <rect x="0" y="700" width="80" height="28" class="region" />
-      <text x="96" y="712" class="label">0x7B0000 — mostly erased</text>
+  <path d="M16 886 H364" stroke="#152c32" />
+  <text x="40" y="910" class="mono">0x800000</text>
+  <text x="142" y="910">End of SPI</text>
 
-      <rect x="0" y="736" width="80" height="24" class="region ab" />
-      <text x="96" y="750" class="label">0x7C0000 — System Info A</text>
-
-      <rect x="0" y="764" width="80" height="24" class="region ab" />
-      <text x="96" y="778" class="label">0x7D0000 — System Info B</text>
-
-      <rect x="0" y="792" width="80" height="24" class="region ab" />
-      <text x="96" y="806" class="label">0x7E0000 — Environment A</text>
-
-      <rect x="0" y="820" width="80" height="24" class="region ab" />
-      <text x="96" y="834" class="label">0x7F0000 — Environment B</text>
-
-      <rect x="0" y="848" width="80" height="8" class="region" />
-      <text x="96" y="858" class="label">0x800000 — end</text>
-    </g>
-
-    <text x="0" y="875" class="muted approx">Regions are reconstructed from acquired image and are approximate where annotated.</text>
-  </g>
-
+  <rect x="16" y="936" width="8" height="24" fill="#11685e" />
+  <text x="40" y="953" class="detail">Examined A/B pairs: identical in this dump.</text>
+  <rect x="16" y="973" width="16" height="20" fill="url(#flashmap-hatch)" stroke="#53656a" stroke-opacity=".4" />
+  <text x="40" y="988" class="detail">Hatched: erased or unclassified areas.</text>
 </svg>

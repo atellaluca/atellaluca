@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Case study: investigation of an undocumented DVB‑T set‑top box, the experimental method and the design of HumaxGuardian — an ESP32-based guardian used to safely observe and acquire SPI firmware images.">
+        <meta name="description" content="Un caso studio del 2026 di Luca Atella: da una UART MStar non documentata alla policy ESP32, all'acquisizione verificata della SPI e all'analisi offline.">
       
       
         <meta name="author" content="Luca Atella">
@@ -33,7 +33,7 @@
     
     
   
-  <title>HumaxGuardian — Guarded firmware acquisition and boot investigation · Luca Atella</title>
+  <title>HumaxGuardian | Reverse Engineering Embedded e Analisi Firmware · Luca Atella</title>
 
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
@@ -79,20 +79,20 @@
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta property="og:locale" content="it_IT">
   
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
   <meta property="og:site_name" content="Luca Atella">
-  <meta property="og:title" content="HumaxGuardian — Guarded firmware acquisition and boot investigation">
-  <meta property="og:description" content="Case study: investigation of an undocumented DVB‑T set‑top box, the experimental method and the design of HumaxGuardian — an ESP32-based guardian used to safely observe and acquire SPI firmware images.">
+  <meta property="og:title" content="HumaxGuardian | Reverse Engineering Embedded e Analisi Firmware">
+  <meta property="og:description" content="Un caso studio del 2026 di Luca Atella: da una UART MStar non documentata alla policy ESP32, all'acquisizione verificata della SPI e all'analisi offline.">
   <meta property="og:url" content="https://profile.atellaluca.com/it/case-studies/humax-guardian/">
   <meta property="og:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
   
-    <meta property="og:image:alt" content="HumaxGuardian architecture">
-    <meta name="twitter:image:alt" content="HumaxGuardian architecture">
+    <meta property="og:image:alt" content="Luca Atella — reverse engineering embedded e analisi firmware">
+    <meta name="twitter:image:alt" content="Luca Atella — reverse engineering embedded e analisi firmware">
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="HumaxGuardian — Guarded firmware acquisition and boot investigation">
-  <meta name="twitter:description" content="Case study: investigation of an undocumented DVB‑T set‑top box, the experimental method and the design of HumaxGuardian — an ESP32-based guardian used to safely observe and acquire SPI firmware images.">
+  <meta name="twitter:title" content="HumaxGuardian | Reverse Engineering Embedded e Analisi Firmware">
+  <meta name="twitter:description" content="Un caso studio del 2026 di Luca Atella: da una UART MStar non documentata alla policy ESP32, all'acquisizione verificata della SPI e all'analisi offline.">
   <meta name="twitter:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
   
@@ -100,17 +100,44 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareSourceCode",
+    "@type": "TechArticle",
     "inLanguage": "it",
-    "name": "HumaxGuardian \u2014 Guarded firmware acquisition and boot investigation",
-    "description": "Case study: investigation of an undocumented DVB\u2011T set\u2011top box, the experimental method and the design of HumaxGuardian \u2014 an ESP32-based guardian used to safely observe and acquire SPI firmware images.",
+    "name": "HumaxGuardian | Reverse Engineering Embedded e Analisi Firmware",
+    "description": "Un caso studio del 2026 di Luca Atella: da una UART MStar non documentata alla policy ESP32, all\u0027acquisizione verificata della SPI e all\u0027analisi offline.",
     "url": "https://profile.atellaluca.com/it/case-studies/humax-guardian/",
     "image": "https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png",
+    
+    "datePublished": "2026-09-19",
+    
     "isPartOf": {
       "@type": "WebSite",
       "name": "Luca Atella",
       "@id": "https://profile.atellaluca.com/#website",
       "url": "https://profile.atellaluca.com/"
+    },
+    "author": {
+      "@type": "Person",
+      "@id": "https://profile.atellaluca.com/#person",
+      "name": "Luca Atella",
+      "url": "https://profile.atellaluca.com/",
+      "sameAs": [
+        "https://github.com/atellaluca",
+        "https://www.linkedin.com/in/luca-atella/"
+      ],
+      "jobTitle": "Software Architect and Backend Platform Engineer",
+      "knowsAbout": [
+        "Backend architecture",
+        "Platform engineering",
+        "AWS serverless architecture",
+        "Cloud-portable backend systems",
+        "FastAPI",
+        "DynamoDB",
+        "Runtime contract validation",
+        "Modular Python systems",
+        "IoT backend architecture",
+        "Digital Twin architecture",
+        "Geospatial data pipelines"
+      ]
     }
   }
   </script>
@@ -135,7 +162,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#humaxguardian-guarded-firmware-acquisition-and-boot-investigation" class="md-skip">
+        <a href="#humaxguardian" class="md-skip">
           Vai al contenuto
         </a>
       
@@ -168,7 +195,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              HumaxGuardian — Guarded firmware acquisition and boot investigation
+              HumaxGuardian | Reverse Engineering Embedded e Analisi Firmware
             
           </span>
         </div>
@@ -1494,10 +1521,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#la-sfida" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        La sfida
       
     </span>
   </a>
@@ -1505,10 +1532,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-the-challenge" class="md-nav__link">
+  <a href="#trovare-un-punto-di-accesso" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. The challenge
+        Trovare un punto di accesso
       
     </span>
   </a>
@@ -1516,10 +1543,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-finding-a-way-in" class="md-nav__link">
+  <a href="#un-bootloader-senza-ritardo-di-avvio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Finding a way in
+        Un bootloader senza ritardo di avvio
       
     </span>
   </a>
@@ -1527,10 +1554,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-a-zerodelay-bootloader" class="md-nav__link">
+  <a href="#da-bridge-a-guardian" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. A zero‑delay bootloader
+        Da bridge a guardian
       
     </span>
   </a>
@@ -1538,10 +1565,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-building-a-guardian-instead-of-a-bridge" class="md-nav__link">
+  <a href="#dalla-spi-a-unimmagine-verificata" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Building a guardian instead of a bridge
+        Dalla SPI a un'immagine verificata
       
     </span>
   </a>
@@ -1549,10 +1576,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-from-spi-to-a-verified-image" class="md-nav__link">
+  <a href="#spostare-lindagine-offline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. From SPI to a verified image
+        Spostare l'indagine offline
       
     </span>
   </a>
@@ -1560,10 +1587,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-moving-the-investigation-offline" class="md-nav__link">
+  <a href="#ricostruire-la-flash" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Moving the investigation offline
+        Ricostruire la flash
       
     </span>
   </a>
@@ -1571,10 +1598,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-reconstructing-the-flash" class="md-nav__link">
+  <a href="#scoprire-la-ridondanza" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. Reconstructing the flash
+        Scoprire la ridondanza
       
     </span>
   </a>
@@ -1582,10 +1609,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-what-this-project-demonstrates" class="md-nav__link">
+  <a href="#i-risultati-dellindagine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8. What this project demonstrates
+        I risultati dell'indagine
       
     </span>
   </a>
@@ -1593,10 +1620,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#explore-the-code" class="md-nav__link">
+  <a href="#metodo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Explore the code
+        Metodo
       
     </span>
   </a>
@@ -1604,10 +1631,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#read-next" class="md-nav__link">
+  <a href="#esplora-humaxguardian-su-github" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Read next
+        Esplora HumaxGuardian su GitHub
       
     </span>
   </a>
@@ -1832,10 +1859,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#la-sfida" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        La sfida
       
     </span>
   </a>
@@ -1843,10 +1870,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-the-challenge" class="md-nav__link">
+  <a href="#trovare-un-punto-di-accesso" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. The challenge
+        Trovare un punto di accesso
       
     </span>
   </a>
@@ -1854,10 +1881,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-finding-a-way-in" class="md-nav__link">
+  <a href="#un-bootloader-senza-ritardo-di-avvio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Finding a way in
+        Un bootloader senza ritardo di avvio
       
     </span>
   </a>
@@ -1865,10 +1892,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-a-zerodelay-bootloader" class="md-nav__link">
+  <a href="#da-bridge-a-guardian" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. A zero‑delay bootloader
+        Da bridge a guardian
       
     </span>
   </a>
@@ -1876,10 +1903,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-building-a-guardian-instead-of-a-bridge" class="md-nav__link">
+  <a href="#dalla-spi-a-unimmagine-verificata" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Building a guardian instead of a bridge
+        Dalla SPI a un'immagine verificata
       
     </span>
   </a>
@@ -1887,10 +1914,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-from-spi-to-a-verified-image" class="md-nav__link">
+  <a href="#spostare-lindagine-offline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. From SPI to a verified image
+        Spostare l'indagine offline
       
     </span>
   </a>
@@ -1898,10 +1925,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-moving-the-investigation-offline" class="md-nav__link">
+  <a href="#ricostruire-la-flash" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Moving the investigation offline
+        Ricostruire la flash
       
     </span>
   </a>
@@ -1909,10 +1936,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-reconstructing-the-flash" class="md-nav__link">
+  <a href="#scoprire-la-ridondanza" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. Reconstructing the flash
+        Scoprire la ridondanza
       
     </span>
   </a>
@@ -1920,10 +1947,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-what-this-project-demonstrates" class="md-nav__link">
+  <a href="#i-risultati-dellindagine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8. What this project demonstrates
+        I risultati dell'indagine
       
     </span>
   </a>
@@ -1931,10 +1958,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#explore-the-code" class="md-nav__link">
+  <a href="#metodo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Explore the code
+        Metodo
       
     </span>
   </a>
@@ -1942,10 +1969,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#read-next" class="md-nav__link">
+  <a href="#esplora-humaxguardian-su-github" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Read next
+        Esplora HumaxGuardian su GitHub
       
     </span>
   </a>
@@ -1969,118 +1996,206 @@
 
 
 
-<h1 id="humaxguardian-guarded-firmware-acquisition-and-boot-investigation">HumaxGuardian — guarded firmware acquisition and boot investigation</h1>
-<p><strong>Type:</strong> Open-source toolchain &amp; case study<br />
-<strong>Role:</strong> Investigator, designer, implementer<br />
-<strong>Period:</strong> 2022<br />
-<strong>Domain:</strong> Embedded systems, firmware acquisition, reverse engineering, automation<br />
-<strong>Repository:</strong> <a href="https://github.com/atellaluca/humax-mstar-guardian">HumaxGuardian on GitHub — guardian firmware and host tooling</a></p>
+<p class="portfolio-eyebrow">2026 / REVERSE ENGINEERING EMBEDDED · ANALISI FIRMWARE</p>
+
+<h1 id="humaxguardian">HumaxGuardian</h1>
+<p class="portfolio-lead">Da una UART non documentata a un'immagine firmware verificata.</p>
+
+<p>Un percorso controllato di reverse engineering su un sistema embedded basato su MStar, che combina una policy applicata sull'ESP32, interazione con MBoot, acquisizione verificata della SPI e analisi offline del firmware.</p>
+<p><strong>Tipo:</strong> Caso studio / Strumenti open source<br>
+<strong>Ruolo:</strong> Ricerca e sviluppo indipendenti<br>
+<strong>Periodo:</strong> 2026<br>
+<strong>Ambito:</strong> Sistemi embedded · Firmware · Reverse engineering<br>
+<strong>Repository:</strong> <a href="https://github.com/atellaluca/humax-mstar-guardian">HumaxGuardian su GitHub</a></p>
 <hr />
-<h2 id="overview">Overview</h2>
-<p>This case study explains how an engineering-first, evidence-driven approach was used to investigate an undocumented DVB‑T set‑top box, control its boot process and produce a verified firmware image for offline analysis. The resulting tooling — HumaxGuardian — was created as a consequence of the constraints discovered during the investigation and is published as an open-source companion to this case study.</p>
-<p>The emphasis here is on the method: observe → hypothesize → test → verify → automate → analyze offline. The narrative highlights what was observed on the hardware, how experiments were constrained to reduce risk, and how a small embedded guardian was designed to enforce safety policies during live interaction.</p>
-<h2 id="1-the-challenge">1. The challenge</h2>
-<p>Observed: a consumer DVB‑T decoder (Humax/Changhong, MStar platform) with little or no public documentation. The goal was to obtain a verified copy of the SPI flash and to reason about the boot process without risking irreversible changes to the device.</p>
-<p>Key constraints that shaped the work:</p>
-<ul>
-<li>limited visibility into the platform and bootloader  </li>
-<li>need for repeatable, low‑risk experiments  </li>
-<li>requirement to stop live manipulation once an offline image was available</li>
-</ul>
-<h2 id="2-finding-a-way-in">2. Finding a way in</h2>
-<p>Observed: a UART header exposed on the motherboard. The interface ran at <code>115200 8N1</code>.</p>
-<p>Initial bridge wiring (observed):</p>
-<ul>
-<li>Target TX → ESP32 GPIO16  </li>
-<li>Target RX ← ESP32 GPIO17  </li>
-<li>common GND  </li>
-</ul>
-<p>An ESP32‑WROOM‑32 module was used as a USB‑serial bridge to the host computer; a relay controlled by the ESP32 allowed deterministic power cycles and cold boots.</p>
-<h2 id="3-a-zerodelay-bootloader">3. A zero‑delay bootloader</h2>
-<p>Observed: the bootloader (a MStar-derived MBoot/U‑Boot build) prints boot messages with <code>bootdelay=0</code> configured.</p>
-<p>Observed (UART excerpt):</p>
-<div class="highlight"><pre><span></span><code>bootdelay=0
+<h2 id="la-sfida">La sfida</h2>
+<p>Il punto di partenza era un ricevitore DVB-T Humax/Changhong costruito su una piattaforma MStar non documentata. Volevo comprenderne l'avvio e acquisire una rappresentazione verificabile del firmware mantenendo inalterata la SPI del dispositivo.</p>
+<p>Le sigle sulla scheda e l'output di avvio hanno progressivamente identificato il sistema: <strong>MStar MSD3T273 / MSA3T273Z-Z00-DA0E</strong>, <strong>U-Boot 2011.06 / MStar MBoot personalizzato</strong>, con una build interna di MBoot datata <strong>Apr 27 2020</strong>. Le evidenze nell'applicazione hanno poi indicato un <strong>ambiente CH_RTOS / riconducibile a eCos</strong>. Non si trattava di un sistema Linux convenzionale: l'indagine doveva seguire le interfacce e le strutture effettivamente presenti.</p>
+<p>Il primo problema era quindi ottenere visibilità. Ogni esperimento doveva rispondere a una domanda circoscritta, conservare evidenze sufficienti per controllare il risultato e orientare il passo successivo. HumaxGuardian è nato da questi vincoli.</p>
+<div class="portfolio-proof">
+<p><strong>Come leggere le evidenze</strong></p>
+<p><em>Osservato</em> indica un dato ottenuto direttamente dalla scheda, dalla UART, dal bootloader o dal dump acquisito. <em>Verificato</em> indica una conferma tramite un controllo aggiuntivo. <em>Inferito</em> identifica un'interpretazione sostenuta dalle evidenze, il cui significato non è stato dimostrato completamente.</p>
+</div>
+<h2 id="trovare-un-punto-di-accesso">Trovare un punto di accesso</h2>
+<p>Una connessione UART rendeva visibile la sequenza di avvio a <strong>115200 baud, 8N1</strong>. Un <strong>ESP32-WROOM-32</strong> era interposto tra il dispositivo e il computer host, consentendo di osservare gli eventi seriali e controllare localmente l'alimentazione.</p>
+<table>
+<thead>
+<tr>
+<th>Collegamento</th>
+<th>Configurazione di ricerca</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Humax TX → ESP32 RX2</td>
+<td><code>GPIO16</code></td>
+</tr>
+<tr>
+<td>Humax RX ← ESP32 TX2</td>
+<td><code>GPIO17</code></td>
+</tr>
+<tr>
+<td>Massa</td>
+<td>GND comune</td>
+</tr>
+<tr>
+<td>Seriale USB ESP32 → host</td>
+<td><code>921600</code> baud</td>
+</tr>
+<tr>
+<td>Controllo del relè</td>
+<td><code>GPIO25</code>, attivo LOW; commuta i <code>+12 V</code> del dispositivo</td>
+</tr>
+</tbody>
+</table>
+<p>Il relè rendeva ripetibili gli esperimenti di avvio a freddo. I cicli di alimentazione e l'osservazione della UART potevano essere coordinati dall'ESP32, senza dipendere dai tempi di un collegamento manuale dell'alimentazione o di uno scambio seriale con l'host.</p>
+<h2 id="un-bootloader-senza-ritardo-di-avvio">Un bootloader senza ritardo di avvio</h2>
+<p>La configurazione osservata conteneva <code>bootdelay=0</code>. Di fatto non esisteva una normale finestra interattiva per interrompere l'autoboot, quindi digitare manualmente nella console non offriva un modo affidabile per fermare l'avvio.</p>
+<p>Ripetendo gli avvii a freddo è emerso un riferimento temporale utile nell'output UART: <code>Changelist</code>. Sulla build MBoot esaminata, inviare <strong>un solo carriage return (<code>0x0D</code>)</strong> alla comparsa di quel marcatore interrompeva l'autoboot e produceva il prompt <code>k5tn#</code>.</p>
+<p>L'ESP32 rilevava il marcatore localmente e inviava il CR prima di inoltrare la telemetria all'host. Il riconoscimento del prompt disarmava poi l'intercettazione. Si tratta di un comportamento osservato sperimentalmente su quella specifica build, senza affermare l'esistenza di un exploit generico del bootloader.</p>
+<h2 id="da-bridge-a-guardian">Da bridge a guardian</h2>
+<p>Il bridge seriale iniziale aveva risolto il problema dell'accesso. Una volta disponibile la console del bootloader, però, un percorso trasparente dall'input dell'operatore a MBoot esponeva anche comandi potenti a errori di digitazione e problemi lato host. La decisione progettuale successiva è stata spostare la policy dei comandi sull'ESP32.</p>
+<div class="portfolio-card-grid">
+<div class="portfolio-proof">
+<p><strong>Bridge trasparente</strong></p>
+<p>Host ↔ UART ↔ Dispositivo</p>
+<p>L'input dell'operatore raggiunge il bootloader attraverso un percorso di inoltro.</p>
+</div>
+<div class="portfolio-proof">
+<p><strong>Guardian</strong></p>
+<p>Host → Policy ESP32 → Dispositivo</p>
+<p><strong>Comportamento predefinito: negare.</strong> Le stringhe dei comandi MBoot devono corrispondere esattamente all'allowlist del firmware.</p>
+</div>
+</div>
+<figure class="case-study-visual">
+<p><img alt="La SPI del dispositivo e MBoot si collegano via UART al confine di policy dell'ESP32, quindi agli strumenti Python sull'host e all'analisi offline. MBoot esporta il dump su memoria USB esterna." decoding="async" height="844" loading="lazy" src="../../../assets/visuals/humax-guardian-pipeline.svg" width="380" /></p>
+<figcaption>L'ESP32 governa i comandi diretti al dispositivo. I dati acquisiti passano dalla RAM del dispositivo alla memoria USB esterna attraverso MBoot.</figcaption>
+</figure>
+<p><strong>Sicurezza nell'architettura:</strong> l'ESP32 è l'autorità che applica la policy dei comandi. Controlla l'alimentazione del dispositivo, rileva gli eventi di avvio, temporizza il CR, riconosce il prompt, verifica l'allowlist esatta e riporta i dati UART e gli eventi del guardian. Le richieste di esecuzione vengono rifiutate se la console non è pronta o il comando è assente dall'allowlist.</p>
+<p>L'host Python fornisce l'interfaccia operatore, i log testuali e grezzi e la gestione del ciclo di vita della sessione. Modificare soltanto il client Python non consente di inviare comandi MBoot arbitrari attraverso il firmware pubblico del guardian.</p>
+<p>Il comportamento fail-safe ha un ambito preciso: l'ESP32 inizializza il relè mantenendo spento il dispositivo; Python tenta di disarmare l'intercettazione e togliere alimentazione durante la chiusura della sessione, anche in caso di errori seriali gestiti e Ctrl+C. L'implementazione pubblica non offre una garanzia tramite watchdog di spegnimento immediato quando l'host viene scollegato.</p>
+<p>Le categorie di comandi distinguono ispezione, letture dal dispositivo, letture USB e scritture USB. <strong>L'allowlist pubblica non espone intenzionalmente operazioni di cancellazione o scrittura della SPI.</strong> <code>fatwrite</code> scrive su un filesystem FAT di una memoria USB esterna, quindi il flusso completo non è di sola lettura. <strong>La SPI del dispositivo è rimasta inalterata durante l'acquisizione.</strong></p>
+<h2 id="dalla-spi-a-unimmagine-verificata">Dalla SPI a un'immagine verificata</h2>
+<p>Il dispositivo utilizzava una <strong>SPI NOR W25Q64FV</strong>: <strong>8 MiB (<code>0x00800000</code> byte)</strong>, organizzati qui in <strong>128 settori da 64 KiB (<code>0x10000</code> byte)</strong>. MBoot esponeva una primitiva capace di copiare l'intera flash in RAM con una sola operazione:</p>
+<div class="highlight"><pre><span></span><code>spi rdc 0x81000000 0x00000000 0x00800000
 </code></pre></div>
-<p>Observed: a <code>Changelist</code> marker in the bootlog correlated with a narrow timing window. Experimentally, sending a single carriage return (<code>0x0D</code>) at that moment produced an interactive prompt on the observed build.</p>
-<p>Verified: prompt received in that specific build — <code>k5tn#</code> — allowed interaction with MBoot.</p>
-<p>Note: this is an experimental observation on the analysed build. It is not presented as a general exploit; it was discovered and used under controlled conditions.</p>
-<h2 id="4-building-a-guardian-instead-of-a-bridge">4. Building a guardian instead of a bridge</h2>
-<p>As interaction with MBoot grew more powerful, the risk of accidental destructive commands (for example SPI erase/write) increased.</p>
-<p>Design decision: transform the ESP32 from a passive bridge into an active guardian enforcing policy at the hardware boundary. This architectural choice baked safety into the system rather than treating it as an afterthought.</p>
-<p>Architecture (conceptual):</p>
-<p><img alt="HumaxGuardian pipeline" src="../../../assets/visuals/humax-guardian-pipeline.svg" /></p>
-<p>Trust boundary summary (Verified by design):</p>
+<p>Il CRC32 del buffer in RAM restituiva <code>89BFAD81</code>. Il passo successivo esportava il buffer su una memoria FAT collegata alla porta USB del dispositivo. Una particolarità osservata di MBoot era determinante: <strong>il file di destinazione doveva già esistere</strong> perché il flusso con <code>fatwrite</code> riuscisse.</p>
+<p>Il comando di esportazione ammesso era <code>fatwrite usb 0 0x81000000 firmware.bin 0x00800000</code>. Il file <code>firmware.bin</code> risultante conteneva <strong>8,388,608 byte</strong>. Per controllare il passaggio attraverso la memoria USB, l'ho ricaricato in una regione RAM separata:</p>
+<div class="highlight"><pre><span></span><code>fatload usb 0:1 0x82000000 firmware.bin
+</code></pre></div>
+<p>Il CRC32 dopo il caricamento era nuovamente <code>89BFAD81</code>. Offline, anche l'immagine master verificata e la sua copia producevano lo stesso SHA-256.</p>
+<div class="portfolio-proof">
+<p><strong>Verifica dell'acquisizione</strong></p>
 <ul>
-<li><code>Host Python</code> ↔ <code>ESP32 policy boundary</code> ↔ <code>Target UART</code>  </li>
-<li>The ESP32 enforces <code>deny-by-default</code>, a command allowlist, timed injection of the interrupting CR, local boot event detection, relay-based power control and logging.  </li>
-<li>The host cannot convert the guardian into a transparent MBoot console merely by changing the client — the policy is enforced on the ESP32.</li>
+<li><strong>SPI NOR:</strong> 8 MiB</li>
+<li><strong>Dimensione del dump:</strong> 8,388,608 byte</li>
+<li><strong>CRC32, RAM sorgente e ricaricamento USB:</strong> <code>89BFAD81</code></li>
 </ul>
-<p>Security properties enforced by architecture (Observed / Verified):</p>
-<ul>
-<li>Deny‑by‑default command handling (Verified).  </li>
-<li>No SPI erase/write operations performed by public tooling (Verified).  </li>
-<li>The pipeline writes to external USB storage (<code>fatwrite</code>) — this writes the acquired image to USB, not to the target SPI (Observed &amp; Verified).  </li>
-<li>Important property: the target SPI remained unmodified during acquisition (Verified).</li>
-</ul>
-<h2 id="5-from-spi-to-a-verified-image">5. From SPI to a verified image</h2>
-<p>Observed in bootlog: boot command reading SPI into DRAM and invoking LZMA decompression:</p>
+<p><strong>SHA-256, master verificato e copia:</strong><br><code class="case-study-digest">de7b98ffea94c77f15e12c8e644d52586ba6dff24c5ae3f08108f9f1ed252e64</code></p>
+</div>
+<p>La corrispondenza dei CRC32 è una forte evidenza che esportazione e ricaricamento abbiano preservato i dati, ma non costituisce una prova matematica dell'identità byte per byte. La corrispondenza degli SHA-256 ha fornito il controllo d'integrità offline più forte usato per la coppia master/copia. Nessuno dei due controlli stabilisce che il firmware sia di per sé affidabile o completamente compreso.</p>
+<h2 id="spostare-lindagine-offline">Spostare l'indagine offline</h2>
+<p>Una volta acquisita e controllata l'immagine completa, la maggior parte delle domande non richiedeva più una console sul dispositivo acceso. L'analisi si è spostata sulla copia verificata, riducendo l'interazione con il dispositivo e rendendo ogni ispezione ripetibile senza un nuovo ciclo di avvio.</p>
+<p>Il comando di avvio osservato forniva un'ipotesi concreta sulla disposizione dell'applicazione:</p>
 <div class="highlight"><pre><span></span><code>spi_rdc 0x82B00000 0x00120000 0x4e0000;
 LzmaDec 0x82B00000 0x4e0000 0x80000180 0x82500000;
 go 0x80000224;
 </code></pre></div>
-<p>Interpretation: the application is read from SPI at offset <code>0x120000</code> (observed). In the dumped image an LZMA stream was present at the same offset and decompresses to the embedded application (Verified by offline decompression).</p>
-<p>Acquisition pipeline (Observed → Verified):</p>
-<p>SPI NOR → DRAM (via MBoot primitive) → CRC32 check → USB/FAT write → <code>firmware.bin</code> → re‑read into RAM → CRC32 check → offline analysis</p>
-<p>Image integrity checks performed (Verified):</p>
+<p>La sequenza indicava dati applicativi a partire da circa l'offset SPI <code>0x120000</code>, seguiti da decompressione ed esecuzione in RAM. <strong>Verificato:</strong> a quell'offset nel dump era presente un flusso LZMA valido; la decompressione offline ha prodotto un'immagine applicativa di circa <strong>16,2 MB</strong>. Questo collegava il comportamento osservato durante l'avvio a una struttura esaminabile in modo indipendente.</p>
+<p>L'applicazione decompressa conteneva <code>CHANGHONG Application R&amp;d</code>, <code>Chip MSD3T273</code>, <code>CH_RTOS</code> e la stringa interna del firmware <strong><code>Build Feb 24 2022</code></strong>. Quest'ultima data appartiene al firmware del dispositivo; <strong>il progetto di ricerca è del 2026</strong>.</p>
+<p>Altre evidenze includevano <code>MXL608</code>, <code>DVB-T</code> / <code>DVB-T2</code>, <code>PVR</code>, <code>Wi-Fi</code>, <code>Ethernet</code> e <code>FTP</code>. La presenza di codice e stringhe correlati indica materiale disponibile per ulteriori analisi. Non dimostra che Wi-Fi, FTP o tutte le funzionalità citate fossero abilitate nel prodotto commerciale.</p>
+<h2 id="ricostruire-la-flash">Ricostruire la flash</h2>
+<p>Parametri di avvio, decompressione e ispezione dei byte acquisiti sostenevano una mappa di lavoro dell'immagine da 8 MiB. La mappa distingueva codice di avvio, applicazione compressa, risorse grafiche e dati persistenti, lasciando esplicitamente non classificate le regioni incerte.</p>
+<figure class="case-study-visual">
+<p><img alt="Mappa verticale dell'intera SPI da 8 MiB, da MBoot a 0x000000 fino alla fine a 0x800000, con applicazione, risorse, regioni non classificate e quattro coppie A/B." decoding="async" height="1010" loading="lazy" src="../../../assets/visuals/humax-guardian-flashmap.svg" width="380" /></p>
+<figcaption>Una mappa di lavoro, con i record piccoli ingranditi per facilitarne la lettura. I confini approssimativi e le classificazioni incomplete restano espliciti.</figcaption>
+</figure>
+<table>
+<thead>
+<tr>
+<th>Offset / intervallo SPI</th>
+<th>Interpretazione di lavoro</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0x000000</code></td>
+<td>Bootloader / MBoot</td>
+</tr>
+<tr>
+<td>Circa <code>0x09xxxx</code></td>
+<td>Inizio di una regione prevalentemente cancellata; confine approssimativo</td>
+</tr>
+<tr>
+<td><code>0x100000</code> / <code>0x110000</code></td>
+<td>Loader Info A / B</td>
+</tr>
+<tr>
+<td><code>0x120000</code></td>
+<td>Applicazione CHANGHONG compressa; flusso LZMA valido</td>
+</tr>
+<tr>
+<td>Intorno a <code>0x600000</code></td>
+<td>Risorse grafiche / OSD, inclusi file <code>.gam</code></td>
+</tr>
+<tr>
+<td>Intorno a <code>0x700000</code></td>
+<td>Area persistente / di configurazione, non completamente classificata</td>
+</tr>
+<tr>
+<td><code>0x710000–0x75FFFF</code></td>
+<td>Database A</td>
+</tr>
+<tr>
+<td><code>0x760000–0x7AFFFF</code></td>
+<td>Database B</td>
+</tr>
+<tr>
+<td><code>0x7B0000</code></td>
+<td>Prevalentemente cancellata</td>
+</tr>
+<tr>
+<td><code>0x7C0000</code> / <code>0x7D0000</code></td>
+<td>System Info A / B</td>
+</tr>
+<tr>
+<td><code>0x7E0000</code> / <code>0x7F0000</code></td>
+<td>Environment A / B</td>
+</tr>
+<tr>
+<td><code>0x800000</code></td>
+<td>Fine della SPI</td>
+</tr>
+</tbody>
+</table>
+<p>Questa mappa è una base per l'indagine e non implica che ogni struttura sia stata ricostruita tramite reverse engineering. Riconoscere una regione e decodificare completamente un formato dati sono risultati diversi.</p>
+<h2 id="scoprire-la-ridondanza">Scoprire la ridondanza</h2>
+<p>Le strutture persistenti hanno rivelato quattro coppie: <strong>Loader Info A/B, Database A/B, System Info A/B ed Environment A/B</strong>. Le corrispondenti coppie A/B esaminate erano identiche nel dump acquisito.</p>
+<p>Questo confronto verifica la duplicazione nell'immagine. La ridondanza è un'interpretazione sostenuta dalla disposizione dei dati, ma il solo confronto non stabilisce l'ordine di aggiornamento, il comportamento di ripristino o quale copia l'applicazione in esecuzione preferirebbe dopo un guasto.</p>
+<p>Gli identificatori del database includevano <code>xpdr0001</code>, <code>serv0001</code> e <code>tmer0001</code>. <strong>Inferito:</strong> sono coerenti rispettivamente con strutture per transponder, servizi/canali e timer. La loro presenza ha aiutato a organizzare le analisi successive; il formato del database non è stato decodificato completamente.</p>
+<h2 id="i-risultati-dellindagine">I risultati dell'indagine</h2>
+<p>Il risultato è stato un insieme collegato di strumenti ed evidenze tecniche:</p>
 <ul>
-<li>CRC32 of the SPI-loaded RAM image: <code>89BFAD81</code>  </li>
-<li>SHA‑256 of the final master image: <code>de7b98ffea94c77f15e12c8e644d52586ba6dff24c5ae3f08108f9f1ed252e64</code></li>
+<li>Una configurazione ripetibile per l'avvio a freddo e un metodo stabilito sperimentalmente per raggiungere il prompt della build MBoot esaminata.</li>
+<li>Un firmware guardian ESP32/C++ che applica localmente una policy esatta dei comandi, affiancato da strumenti Python per operatività, ciclo di vita e registrazione delle evidenze.</li>
+<li>Un'acquisizione completa da 8 MiB, controllata tramite esportazione e ricaricamento USB e hash offline di master e copia.</li>
+<li>Un'applicazione decompressa, una mappa di lavoro della flash e coppie duplicate confermate, con i limiti interpretativi ancora presenti documentati.</li>
+<li>Codice sorgente pubblico e documentazione tecnica sugli strumenti e sui vincoli specifici del dispositivo esaminato.</li>
 </ul>
-<div class="highlight"><pre><span></span><code>CRC32 ... ==&gt; 89BFAD81
-SHA256 ... ==&gt; de7b98ffea94c77f15e12c8e644d52586ba6dff24c5ae3f08108f9f1ed252e64
-</code></pre></div>
-<p>Guiding rule: once a verified master image existed, live experimentation was stopped and the rest of the work moved offline.</p>
-<h2 id="6-moving-the-investigation-offline">6. Moving the investigation offline</h2>
-<p>Principle: minimise live interaction once an offline artifact is available. Offline analysis reduces risk and enables deeper, repeatable investigation without placing the target at risk.</p>
-<h2 id="7-reconstructing-the-flash">7. Reconstructing the flash</h2>
-<p>Offline analysis identified a plausible flash map inside the 8 MiB SPI image. The offsets below are reconstructed from observed evidence and offline interpretation; where appropriate the writeup marks interpretations that are not fully proven.</p>
-<p><img alt="Flash map" src="../../../assets/visuals/humax-guardian-flashmap.svg" /></p>
-<p>Key regions (approximate/observed):</p>
-<ul>
-<li><code>0x000000</code> — Bootloader / MBoot (Observed)  </li>
-<li><code>0x100000</code> — Loader Info A (Observed)  </li>
-<li><code>0x110000</code> — Loader Info B (Observed)  </li>
-<li><code>0x120000</code> — Compressed application (LZMA) (Observed &amp; Verified by decompression)  </li>
-<li><code>0x600000</code> — OSD / graphical resources (Observed)  </li>
-<li><code>0x700000</code> — persistent / configuration area (Observed, partially classified)  </li>
-<li><code>0x710000–0x75FFFF</code> — Database A (Observed)  </li>
-<li><code>0x760000–0x7AFFFF</code> — Database B (Observed)  </li>
-<li><code>0x7B0000</code> — mostly erased (Observed)  </li>
-<li><code>0x7C0000</code> — System Info A (Observed)  </li>
-<li><code>0x7D0000</code> — System Info B (Observed)  </li>
-<li><code>0x7E0000</code> — Environment A (Observed)  </li>
-<li><code>0x7F0000</code> — Environment B (Observed)  </li>
-<li><code>0x800000</code> — end (Observed)</li>
-</ul>
-<p>Duplication and redundancy (Inferred / Observed): pairs such as Loader Info A/B, Database A/B, System Info A/B and Environment A/B are present and were identical in the acquired image. This suggests redundancy by design; the interpretation of internal formats remains partial and is presented as an evidence‑led inference, not a full decode.</p>
-<h2 id="8-what-this-project-demonstrates">8. What this project demonstrates</h2>
-<p>This investigation highlights a methodical engineering approach to hardware‑adjacent reverse engineering where the primary artefact of value is the engineering method rather than a single technical trick.</p>
-<p>Storyline captured by the workflow:</p>
-<ul>
-<li>board inspection → UART discovery  </li>
-<li>observation of boot behaviour → narrow injection window  </li>
-<li>design of an embedded guardian enforcing policy at the hardware boundary  </li>
-<li>verified readout of SPI → offline verification and analysis  </li>
-</ul>
-<p>Skills and domains that naturally emerge from the narrative: embedded systems, serial communication, ESP32 firmware, automation, binary acquisition, offline decompression and analysis, and careful safety‑first engineering. These are shown through the sequence of decisions and verifications rather than as a checklist.</p>
-<h2 id="explore-the-code">Explore the code</h2>
-<p>Explore HumaxGuardian on GitHub — the repository contains the ESP32 guardian firmware, Python host tooling and architecture/protocol documentation. The repository does not contain proprietary device firmware.</p>
-<p><a href="https://github.com/atellaluca/humax-mstar-guardian">Explore HumaxGuardian on GitHub</a></p>
+<p>La sequenza ha collegato l'osservazione della scheda alla temporizzazione seriale, al comportamento del bootloader, alla policy embedded, all'integrità dell'acquisizione e all'analisi binaria. Ogni livello ha fornito evidenze per il successivo.</p>
+<h2 id="metodo">Metodo</h2>
+<div class="portfolio-proof">
+<p><strong>Osservare → Formulare ipotesi → Sperimentare → Verificare → Automatizzare → Analizzare offline</strong></p>
+</div>
+<p>L'osservazione ha fornito il marcatore temporale; i test controllati hanno stabilito l'intervento; il guardian ha codificato i vincoli operativi. La verifica ha permesso di allontanare l'indagine dal dispositivo acceso ed esaminarne una rappresentazione stabile.</p>
+<p>Il principio è trasferibile: costruire un modello a partire dalle evidenze, codificare i vincoli negli strumenti e <strong>ridurre l'interazione con il dispositivo acceso una volta disponibile una rappresentazione verificata</strong>.</p>
+<div class="portfolio-contact">
+<h2 id="esplora-humaxguardian-su-github">Esplora HumaxGuardian su GitHub</h2>
+<p>Il repository contiene il firmware guardian per ESP32, gli strumenti host Python e la documentazione tecnica dell'architettura e del protocollo. Il codice scritto dall'autore è distribuito con licenza MIT. <strong>Il firmware proprietario del dispositivo e i dump binari non vengono distribuiti.</strong></p>
+<p><a class="md-button md-button--primary" href="https://github.com/atellaluca/humax-mstar-guardian">Esplora HumaxGuardian su GitHub</a></p>
+</div>
 <hr />
-<h2 id="read-next">Read next</h2>
-<ul>
-<li><a href="../">Back to case studies</a></li>
-</ul>
+<p><a href="../">Torna ai casi studio</a></p>
 
 
 
