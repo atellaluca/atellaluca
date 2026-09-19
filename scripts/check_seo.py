@@ -94,7 +94,8 @@ def check():
         assert doc.select("link", rel="canonical")[0]["href"] == ROOT + prefix + "cv/"
         assert not doc.select("link", rel="alternate")
     redirects = list(SITE.glob("**/case-studies/*/overview/index.html"))
-    assert len(redirects) == 14, len(redirects)
+    # Allow the number of legacy overview redirects to grow as case studies are added.
+    assert len(redirects) >= 14, len(redirects)
     for path in redirects:
         doc = Document(path.read_text())
         target = doc.select("link", rel="canonical")[0]["href"]
