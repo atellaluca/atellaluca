@@ -813,7 +813,7 @@
   <span class="md-ellipsis">
     
   
-    Validation System (Deep Dive)
+    Runtime Validation (Historical)
   
 
     
@@ -841,7 +841,7 @@
   <span class="md-ellipsis">
     
   
-    Runtime Contracts (Deep Dive)
+    Provider–Consumer Contracts (Historical)
   
 
     
@@ -869,7 +869,7 @@
   <span class="md-ellipsis">
     
   
-    Violation System and Contract Diagnostics (Deep Dive)
+    Evidence and Admission Diagnostics
   
 
     
@@ -1793,10 +1793,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#importspy-runtime-contract-validation-engine" class="md-nav__link">
+  <a href="#importspy-policy-as-code-admission" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ImportSpy — Runtime Contract Validation Engine
+        ImportSpy — Policy-as-Code Admission
       
     </span>
   </a>
@@ -2081,10 +2081,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#importspy-runtime-contract-validation-engine" class="md-nav__link">
+  <a href="#importspy-policy-as-code-admission" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ImportSpy — Runtime Contract Validation Engine
+        ImportSpy — Policy-as-Code Admission
       
     </span>
   </a>
@@ -2274,18 +2274,15 @@ Basilicata, Italy · Email: <a href="mailto:info@atellaluca.com">info@atellaluca
 <h3 id="unified-backend-for-heterogeneous-data-sources">Unified Backend for Heterogeneous Data Sources</h3>
 <p><strong>Vemar · framework behind delis.app</strong></p>
 <p>Plugin-based backend framework I developed at Vemar and on which delis.app is based. The case study presents integration separation, explicit contracts, and a unified API model in SAFE form; it does not attribute every architectural generalization to the product itself.</p>
-<h3 id="importspy-runtime-contract-validation-engine">ImportSpy — Runtime Contract Validation Engine</h3>
-<p><strong>Open-source Python project</strong></p>
-<p>Created and maintain ImportSpy, a runtime contract enforcement engine for Python modules.</p>
-<p>ImportSpy validates structural, contextual, and execution constraints at import time, making architectural assumptions explicit in modular and long-lived Python systems.</p>
-<p>Highlights:</p>
+<h3 id="importspy-policy-as-code-admission">ImportSpy — Policy-as-Code Admission</h3>
+<p>I design and maintain ImportSpy, an open-source project for assessing Python modules and dependencies before explicit execution.</p>
 <ul>
-<li>YAML-based declarative contracts</li>
-<li>runtime validation of module structure and execution context</li>
-<li>deterministic failure model</li>
-<li>15,000+ downloads on PyPI</li>
-<li>presented at GDG Basilicata</li>
+<li>Static preflight, dependency resolution and normalized evidence</li>
+<li>Declarative policy and ADMIT/DENY decisions with human, JSON and SARIF reports</li>
+<li>Separation between non-executing checks and loading with fresh admission</li>
+<li>Documentation, packaging and releases; earlier runtime model presented at GDG Basilicata</li>
 </ul>
+<p><a href="../case-studies/importspy/">ImportSpy engineering case study</a></p>
 <h3 id="b3do-basilicata-3d-open">B3DO — Basilicata 3D Open</h3>
 <p><strong>Geospatial processing pipeline · unpublished / in development</strong></p>
 <p>Designed a Python-based pipeline for transforming public Basilicata terrain datasets into 3D terrain models.</p>

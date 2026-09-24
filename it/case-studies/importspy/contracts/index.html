@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Approfondimento sui runtime contracts di ImportSpy per integrazione sicura di moduli Python, vincoli strutturali, requisiti di esecuzione e validazione della compatibilità dei plugin.">
+        <meta name="description" content="I contratti provider–consumer storici di ImportSpy: requisiti espliciti, limiti rispetto all’esecuzione e passaggio alle policy di ammissione.">
       
       
         <meta name="author" content="Luca Atella">
@@ -33,7 +33,7 @@
     
     
   
-  <title>Runtime Contracts | Integrazione Sicura di Moduli Python con ImportSpy · Luca Atella</title>
+  <title>Storia di ImportSpy | Contratti runtime provider–consumer · Luca Atella</title>
 
     
       <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
@@ -81,18 +81,18 @@
   
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Luca Atella">
-  <meta property="og:title" content="Runtime Contracts | Integrazione Sicura di Moduli Python con ImportSpy">
-  <meta property="og:description" content="Approfondimento sui runtime contracts di ImportSpy per integrazione sicura di moduli Python, vincoli strutturali, requisiti di esecuzione e validazione della compatibilità dei plugin.">
+  <meta property="og:title" content="Storia di ImportSpy | Contratti runtime provider–consumer">
+  <meta property="og:description" content="I contratti provider–consumer storici di ImportSpy: requisiti espliciti, limiti rispetto all’esecuzione e passaggio alle policy di ammissione.">
   <meta property="og:url" content="https://profile.atellaluca.com/it/case-studies/importspy/contracts/">
   <meta property="og:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
   
-    <meta property="og:image:alt" content="Runtime contracts per integrazione sicura di moduli Python con ImportSpy">
-    <meta name="twitter:image:alt" content="Runtime contracts per integrazione sicura di moduli Python con ImportSpy">
+    <meta property="og:image:alt" content="ImportSpy — Luca Atella">
+    <meta name="twitter:image:alt" content="ImportSpy — Luca Atella">
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Runtime Contracts | Integrazione Sicura di Moduli Python con ImportSpy">
-  <meta name="twitter:description" content="Approfondimento sui runtime contracts di ImportSpy per integrazione sicura di moduli Python, vincoli strutturali, requisiti di esecuzione e validazione della compatibilità dei plugin.">
+  <meta name="twitter:title" content="Storia di ImportSpy | Contratti runtime provider–consumer">
+  <meta name="twitter:description" content="I contratti provider–consumer storici di ImportSpy: requisiti espliciti, limiti rispetto all’esecuzione e passaggio alle policy di ammissione.">
   <meta name="twitter:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
   
@@ -102,8 +102,8 @@
     "@context": "https://schema.org",
     "@type": "TechArticle",
     "inLanguage": "it",
-    "name": "Runtime Contracts | Integrazione Sicura di Moduli Python con ImportSpy",
-    "description": "Approfondimento sui runtime contracts di ImportSpy per integrazione sicura di moduli Python, vincoli strutturali, requisiti di esecuzione e validazione della compatibilit\u00e0 dei plugin.",
+    "name": "Storia di ImportSpy | Contratti runtime provider\u2013consumer",
+    "description": "I contratti provider\u2013consumer storici di ImportSpy: requisiti espliciti, limiti rispetto all\u2019esecuzione e passaggio alle policy di ammissione.",
     "url": "https://profile.atellaluca.com/it/case-studies/importspy/contracts/",
     "image": "https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png",
     
@@ -131,6 +131,8 @@
         "FastAPI",
         "DynamoDB",
         "Runtime contract validation",
+        "Python admission control",
+        "Policy-as-code",
         "Modular Python systems",
         "IoT backend architecture",
         "Digital Twin architecture",
@@ -160,7 +162,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#runtime-contracts-per-integrazione-sicura-dei-moduli" class="md-skip">
+        <a href="#design-storico-contratti-providerconsumer" class="md-skip">
           Vai al contenuto
         </a>
       
@@ -193,7 +195,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Runtime Contracts | Integrazione Sicura di Moduli Python con ImportSpy
+              Storia di ImportSpy | Contratti runtime provider–consumer
             
           </span>
         </div>
@@ -840,7 +842,7 @@
   <span class="md-ellipsis">
     
   
-    Sistema di Validazione
+    Validazione runtime (storico)
   
 
     
@@ -877,7 +879,7 @@
   <span class="md-ellipsis">
     
   
-    Runtime Contracts
+    Contratti provider–consumer (storico)
   
 
     
@@ -895,7 +897,7 @@
   <span class="md-ellipsis">
     
   
-    Runtime Contracts
+    Contratti provider–consumer (storico)
   
 
     
@@ -921,10 +923,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#perche-i-runtime-contracts" class="md-nav__link">
+  <a href="#rendere-esplicite-le-assunzioni" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Perché i Runtime Contracts
+        Rendere esplicite le assunzioni
       
     </span>
   </a>
@@ -932,10 +934,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cosa-puo-descrivere-un-contratto" class="md-nav__link">
+  <a href="#il-limite-importante" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cosa Può Descrivere un Contratto
+        Il limite importante
       
     </span>
   </a>
@@ -943,21 +945,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#beneficio-architetturale" class="md-nav__link">
+  <a href="#dal-contratto-runtime-alla-policy-di-ammissione" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Beneficio Architetturale
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scenari-duso" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Scenari d'Uso
+        Dal contratto runtime alla policy di ammissione
       
     </span>
   </a>
@@ -987,7 +978,7 @@
   <span class="md-ellipsis">
     
   
-    Diagnostica Contratti
+    Evidenze e diagnostica di ammissione
   
 
     
@@ -1780,10 +1771,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#perche-i-runtime-contracts" class="md-nav__link">
+  <a href="#rendere-esplicite-le-assunzioni" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Perché i Runtime Contracts
+        Rendere esplicite le assunzioni
       
     </span>
   </a>
@@ -1791,10 +1782,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cosa-puo-descrivere-un-contratto" class="md-nav__link">
+  <a href="#il-limite-importante" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cosa Può Descrivere un Contratto
+        Il limite importante
       
     </span>
   </a>
@@ -1802,21 +1793,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#beneficio-architetturale" class="md-nav__link">
+  <a href="#dal-contratto-runtime-alla-policy-di-ammissione" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Beneficio Architetturale
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scenari-duso" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Scenari d'Uso
+        Dal contratto runtime alla policy di ammissione
       
     </span>
   </a>
@@ -1840,32 +1820,19 @@
 
 
 
-<h1 id="runtime-contracts-per-integrazione-sicura-dei-moduli">Runtime Contracts per Integrazione Sicura dei Moduli</h1>
-<h2 id="perche-i-runtime-contracts">Perché i Runtime Contracts</h2>
-<p>Nei sistemi modulari, la correttezza dell’integrazione è spesso implicita. Si assume che un modulo esponga certe funzioni, rispetti certe versioni o venga eseguito in un contesto compatibile.</p>
-<p>ImportSpy rende queste assunzioni esplicite tramite contratti dichiarativi.</p>
-<hr />
-<h2 id="cosa-puo-descrivere-un-contratto">Cosa Può Descrivere un Contratto</h2>
-<ul>
-<li>struttura attesa del modulo</li>
-<li>funzioni o classi richieste</li>
-<li>versione Python minima</li>
-<li>sistema operativo supportato</li>
-<li>variabili d’ambiente richieste</li>
-<li>vincoli contestuali di esecuzione</li>
-</ul>
-<hr />
-<h2 id="beneficio-architetturale">Beneficio Architetturale</h2>
-<p>Il contratto diventa un confine leggibile dalla macchina tra provider e consumer. Questo riduce coupling nascosto, documentazione fragile ed errori tardivi.</p>
-<hr />
-<h2 id="scenari-duso">Scenari d'Uso</h2>
-<ul>
-<li>ecosistemi plugin-based</li>
-<li>backend modulari</li>
-<li>runtime embedded</li>
-<li>validazione CI/CD</li>
-<li>sicurezza operativa in sistemi long-running</li>
-</ul>
+<h1 id="design-storico-contratti-providerconsumer">Design storico — Contratti provider–consumer</h1>
+<blockquote>
+<p><strong>Contesto storico.</strong> Queste note descrivono il precedente modello runtime. Per l’ammissione policy-as-code attuale, leggi <a href="../">il percorso progettuale</a>. La pagina non è una guida di integrazione per l’API corrente.</p>
+</blockquote>
+<h2 id="rendere-esplicite-le-assunzioni">Rendere esplicite le assunzioni</h2>
+<p>Il modello provider–consumer iniziale permetteva al provider di dichiarare requisiti per i moduli che interagivano con esso. I contratti rappresentavano struttura e ambiente attesi, anziché affidare le assunzioni soltanto alla documentazione o a controlli specifici dell’applicazione.</p>
+<p>Requisiti strutturali, condizioni runtime e vincoli di base potevano essere discussi indipendentemente dalle singole integrazioni. Questo aiutava a evidenziare incompatibilità e rendeva la diagnostica parte intenzionale dell’architettura.</p>
+<h2 id="il-limite-importante">Il limite importante</h2>
+<p>Controllare un oggetto runtime è diverso dal decidere se eseguirne il sorgente. Il contratto di un provider non può impedire retroattivamente il codice top-level già eseguito nel consumer. Il design storico va quindi inteso come validazione della compatibilità, non come garanzia di ammissione sicura dei moduli.</p>
+<h2 id="dal-contratto-runtime-alla-policy-di-ammissione">Dal contratto runtime alla policy di ammissione</h2>
+<p>Il design attuale ispeziona il sorgente senza importare il target, risolve le identità delle dipendenze e valuta evidenze esplicite. Una policy può esprimere struttura statica richiesta, vincoli sull’ambiente e requisiti delle dipendenze prima di un <code>load</code> esplicito.</p>
+<p>La continuità è l’uso di requisiti leggibili dalla macchina. Cambiano il punto in cui vengono valutati e le informazioni che possono accertare. I fatti sconosciuti restano espliciti, senza essere risolti eseguendo il target.</p>
+<p><a href="../validation/">Precedente motore di validazione</a> · <a href="../architecture/">Architettura di ammissione attuale</a> · <a href="https://importspy.atellaluca.com/">Documentazione ufficiale dei contratti</a></p>
 
 
 
@@ -1904,7 +1871,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Piede" >
         
           
-          <a href="../validation/" class="md-footer__link md-footer__link--prev" aria-label="Precedente: Sistema di Validazione">
+          <a href="../validation/" class="md-footer__link md-footer__link--prev" aria-label="Precedente: Validazione runtime (storico)">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1914,20 +1881,20 @@
                 Precedente
               </span>
               <div class="md-ellipsis">
-                Sistema di Validazione
+                Validazione runtime (storico)
               </div>
             </div>
           </a>
         
         
           
-          <a href="../violations/" class="md-footer__link md-footer__link--next" aria-label="Successivo: Diagnostica Contratti">
+          <a href="../violations/" class="md-footer__link md-footer__link--next" aria-label="Successivo: Evidenze e diagnostica di ammissione">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Successivo
               </span>
               <div class="md-ellipsis">
-                Diagnostica Contratti
+                Evidenze e diagnostica di ammissione
               </div>
             </div>
             <div class="md-footer__button md-icon">
