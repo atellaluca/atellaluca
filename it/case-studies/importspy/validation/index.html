@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Note storiche su introspezione runtime e SpyModel in ImportSpy, e sul passaggio all’ammissione prima dell’esecuzione.">
+        <meta name="description" content="Design del runtime validation engine di ImportSpy per sistemi Python modulari: controlli deterministici, caricamento dei contratti, diagnostica degli errori e validazione CI/CD.">
       
       
         <meta name="author" content="Luca Atella">
@@ -33,7 +33,7 @@
     
     
   
-  <title>Storia di ImportSpy | Il precedente motore di validazione runtime · Luca Atella</title>
+  <title>Runtime Validation Engine | Sistema di Contratti Python ImportSpy · Luca Atella</title>
 
     
       <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
@@ -81,18 +81,18 @@
   
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Luca Atella">
-  <meta property="og:title" content="Storia di ImportSpy | Il precedente motore di validazione runtime">
-  <meta property="og:description" content="Note storiche su introspezione runtime e SpyModel in ImportSpy, e sul passaggio all’ammissione prima dell’esecuzione.">
+  <meta property="og:title" content="Runtime Validation Engine | Sistema di Contratti Python ImportSpy">
+  <meta property="og:description" content="Design del runtime validation engine di ImportSpy per sistemi Python modulari: controlli deterministici, caricamento dei contratti, diagnostica degli errori e validazione CI/CD.">
   <meta property="og:url" content="https://profile.atellaluca.com/it/case-studies/importspy/validation/">
   <meta property="og:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
   
-    <meta property="og:image:alt" content="ImportSpy — Luca Atella">
-    <meta name="twitter:image:alt" content="ImportSpy — Luca Atella">
+    <meta property="og:image:alt" content="Runtime validation engine ImportSpy per sistemi Python modulari">
+    <meta name="twitter:image:alt" content="Runtime validation engine ImportSpy per sistemi Python modulari">
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Storia di ImportSpy | Il precedente motore di validazione runtime">
-  <meta name="twitter:description" content="Note storiche su introspezione runtime e SpyModel in ImportSpy, e sul passaggio all’ammissione prima dell’esecuzione.">
+  <meta name="twitter:title" content="Runtime Validation Engine | Sistema di Contratti Python ImportSpy">
+  <meta name="twitter:description" content="Design del runtime validation engine di ImportSpy per sistemi Python modulari: controlli deterministici, caricamento dei contratti, diagnostica degli errori e validazione CI/CD.">
   <meta name="twitter:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
   
@@ -102,8 +102,8 @@
     "@context": "https://schema.org",
     "@type": "TechArticle",
     "inLanguage": "it",
-    "name": "Storia di ImportSpy | Il precedente motore di validazione runtime",
-    "description": "Note storiche su introspezione runtime e SpyModel in ImportSpy, e sul passaggio all\u2019ammissione prima dell\u2019esecuzione.",
+    "name": "Runtime Validation Engine | Sistema di Contratti Python ImportSpy",
+    "description": "Design del runtime validation engine di ImportSpy per sistemi Python modulari: controlli deterministici, caricamento dei contratti, diagnostica degli errori e validazione CI/CD.",
     "url": "https://profile.atellaluca.com/it/case-studies/importspy/validation/",
     "image": "https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png",
     
@@ -131,8 +131,6 @@
         "FastAPI",
         "DynamoDB",
         "Runtime contract validation",
-        "Python admission control",
-        "Policy-as-code",
         "Modular Python systems",
         "IoT backend architecture",
         "Digital Twin architecture",
@@ -162,7 +160,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#design-storico-motore-di-validazione-runtime" class="md-skip">
+        <a href="#progettare-un-runtime-validation-engine" class="md-skip">
           Vai al contenuto
         </a>
       
@@ -195,7 +193,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Storia di ImportSpy | Il precedente motore di validazione runtime
+              Runtime Validation Engine | Sistema di Contratti Python ImportSpy
             
           </span>
         </div>
@@ -851,7 +849,7 @@
   <span class="md-ellipsis">
     
   
-    Validazione runtime (storico)
+    Sistema di Validazione
   
 
     
@@ -869,7 +867,7 @@
   <span class="md-ellipsis">
     
   
-    Validazione runtime (storico)
+    Sistema di Validazione
   
 
     
@@ -895,10 +893,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#la-domanda-progettuale-iniziale" class="md-nav__link">
+  <a href="#il-problema" class="md-nav__link">
     <span class="md-ellipsis">
       
-        La domanda progettuale iniziale
+        Il Problema
       
     </span>
   </a>
@@ -906,10 +904,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#che-cosa-poteva-accertare-il-modello" class="md-nav__link">
+  <a href="#pipeline-di-validazione" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Che cosa poteva accertare il modello
+        Pipeline di Validazione
       
     </span>
   </a>
@@ -917,10 +915,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#che-cosa-rimane-nel-nuovo-design" class="md-nav__link">
+  <a href="#obiettivi-del-motore" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Che cosa rimane nel nuovo design
+        Obiettivi del Motore
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risultato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risultato
       
     </span>
   </a>
@@ -950,7 +959,7 @@
   <span class="md-ellipsis">
     
   
-    Contratti provider–consumer (storico)
+    Runtime Contracts
   
 
     
@@ -978,7 +987,7 @@
   <span class="md-ellipsis">
     
   
-    Evidenze e diagnostica di ammissione
+    Diagnostica Contratti
   
 
     
@@ -1771,10 +1780,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#la-domanda-progettuale-iniziale" class="md-nav__link">
+  <a href="#il-problema" class="md-nav__link">
     <span class="md-ellipsis">
       
-        La domanda progettuale iniziale
+        Il Problema
       
     </span>
   </a>
@@ -1782,10 +1791,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#che-cosa-poteva-accertare-il-modello" class="md-nav__link">
+  <a href="#pipeline-di-validazione" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Che cosa poteva accertare il modello
+        Pipeline di Validazione
       
     </span>
   </a>
@@ -1793,10 +1802,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#che-cosa-rimane-nel-nuovo-design" class="md-nav__link">
+  <a href="#obiettivi-del-motore" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Che cosa rimane nel nuovo design
+        Obiettivi del Motore
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risultato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risultato
       
     </span>
   </a>
@@ -1820,20 +1840,31 @@
 
 
 
-<h1 id="design-storico-motore-di-validazione-runtime">Design storico — Motore di validazione runtime</h1>
-<blockquote>
-<p><strong>Contesto storico.</strong> Questa pagina descrive il precedente design dei contratti runtime, non la pipeline di ammissione attuale. Leggi <a href="../">il caso studio corrente</a> e <a href="../architecture/">l’architettura di ammissione</a> per il modello odierno.</p>
-</blockquote>
-<h2 id="la-domanda-progettuale-iniziale">La domanda progettuale iniziale</h2>
-<p>Il motore iniziale esplicitava i requisiti dei moduli: ispezionare un modulo runtime, rappresentarne le proprietà tramite <code>SpyModel</code>, confrontarle con un contratto dichiarativo e restituire diagnostica strutturata.</p>
-<p>Separare modello, regole di validazione e diagnostica permetteva di discutere i requisiti d’integrazione senza disseminare controlli ad hoc nel codice applicativo. Vincoli di base e specializzazioni esprimevano aspettative su struttura dei moduli e contesto di esecuzione.</p>
-<h2 id="che-cosa-poteva-accertare-il-modello">Che cosa poteva accertare il modello</h2>
-<p>L’introspezione operava su oggetti già esistenti: funzioni, classi, valori e ambiente circostante. Era utile per verificare compatibilità nelle applicazioni modulari. Significava però che la costruzione del modello poteva richiedere che il modulo fosse già stato eseguito.</p>
-<p>Questa distinzione limita il design originario. Un errore poteva diagnosticare un’incompatibilità, ma non impedire o annullare effetti top-level precedenti. L’ispezione di attributi dinamici poteva a sua volta eseguire Python. Il meccanismo non era un sandbox.</p>
-<h2 id="che-cosa-rimane-nel-nuovo-design">Che cosa rimane nel nuovo design</h2>
-<p>Contratti espliciti, regole indipendenti e diagnostica strutturata restano utili. Il modello di ammissione sposta ispezione del sorgente e analisi delle dipendenze prima dell’esecuzione, con evidenze normalizzate su cui valutare la policy.</p>
-<p>La validazione runtime ha ora una posizione esplicita dopo che <code>load</code> esegue il sorgente ammesso. Il suo risultato non va confuso con un’ispezione preventiva o con un rollback.</p>
-<p><a href="../contracts/">Contratti provider–consumer storici</a> · <a href="../violations/">Evidenze e decisioni attuali</a> · <a href="../#storia-del-progetto-e-divulgazione">Evoluzione e talk GDG</a></p>
+<h1 id="progettare-un-runtime-validation-engine">Progettare un Runtime Validation Engine</h1>
+<h2 id="il-problema">Il Problema</h2>
+<p>Nei sistemi modulari, la validazione dei componenti avviene spesso troppo tardi: durante l’esecuzione, dopo che il modulo è stato caricato e magari ha già prodotto side effect.</p>
+<p>ImportSpy sposta la validazione al momento dell’import.</p>
+<hr />
+<h2 id="pipeline-di-validazione">Pipeline di Validazione</h2>
+<ol>
+<li>intercettazione della richiesta di import</li>
+<li>risoluzione del contratto</li>
+<li>ispezione del modulo e del contesto runtime</li>
+<li>applicazione delle validation rules</li>
+<li>produzione di un risultato valido o di una violazione strutturata</li>
+</ol>
+<hr />
+<h2 id="obiettivi-del-motore">Obiettivi del Motore</h2>
+<ul>
+<li>essere deterministico</li>
+<li>produrre errori leggibili</li>
+<li>supportare nuove regole senza riscrivere il core</li>
+<li>rimanere indipendente dal dominio applicativo</li>
+<li>funzionare sia in runtime sia in pipeline di validazione</li>
+</ul>
+<hr />
+<h2 id="risultato">Risultato</h2>
+<p>Il validation engine trasforma l’import dinamico da punto fragile a confine controllato, riducendo il rischio di moduli incompatibili in sistemi plugin-based.</p>
 
 
 
@@ -1889,13 +1920,13 @@
         
         
           
-          <a href="../contracts/" class="md-footer__link md-footer__link--next" aria-label="Successivo: Contratti provider–consumer (storico)">
+          <a href="../contracts/" class="md-footer__link md-footer__link--next" aria-label="Successivo: Runtime Contracts">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Successivo
               </span>
               <div class="md-ellipsis">
-                Contratti provider–consumer (storico)
+                Runtime Contracts
               </div>
             </div>
             <div class="md-footer__button md-icon">

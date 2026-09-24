@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="How ImportSpy separates observations, policy failures and admission outcomes, with shared human, JSON and SARIF diagnostics.">
+        <meta name="description" content="ImportSpy violation system deep dive: structured diagnostics, deterministic error reporting and runtime contract failures for modular Python architectures.">
       
       
         <meta name="author" content="Luca Atella">
@@ -33,7 +33,7 @@
     
     
   
-  <title>ImportSpy | Evidence, Violations and Admission Decisions · Luca Atella</title>
+  <title>Contract Diagnostics | ImportSpy Violation System · Luca Atella</title>
 
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
@@ -81,18 +81,18 @@
   
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Luca Atella">
-  <meta property="og:title" content="ImportSpy | Evidence, Violations and Admission Decisions">
-  <meta property="og:description" content="How ImportSpy separates observations, policy failures and admission outcomes, with shared human, JSON and SARIF diagnostics.">
+  <meta property="og:title" content="Contract Diagnostics | ImportSpy Violation System">
+  <meta property="og:description" content="ImportSpy violation system deep dive: structured diagnostics, deterministic error reporting and runtime contract failures for modular Python architectures.">
   <meta property="og:url" content="https://profile.atellaluca.com/case-studies/importspy/violations/">
   <meta property="og:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
   
-    <meta property="og:image:alt" content="ImportSpy — Luca Atella">
-    <meta name="twitter:image:alt" content="ImportSpy — Luca Atella">
+    <meta property="og:image:alt" content="ImportSpy contract diagnostics and violation system">
+    <meta name="twitter:image:alt" content="ImportSpy contract diagnostics and violation system">
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ImportSpy | Evidence, Violations and Admission Decisions">
-  <meta name="twitter:description" content="How ImportSpy separates observations, policy failures and admission outcomes, with shared human, JSON and SARIF diagnostics.">
+  <meta name="twitter:title" content="Contract Diagnostics | ImportSpy Violation System">
+  <meta name="twitter:description" content="ImportSpy violation system deep dive: structured diagnostics, deterministic error reporting and runtime contract failures for modular Python architectures.">
   <meta name="twitter:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
   
@@ -102,8 +102,8 @@
     "@context": "https://schema.org",
     "@type": "TechArticle",
     "inLanguage": "en",
-    "name": "ImportSpy | Evidence, Violations and Admission Decisions",
-    "description": "How ImportSpy separates observations, policy failures and admission outcomes, with shared human, JSON and SARIF diagnostics.",
+    "name": "Contract Diagnostics | ImportSpy Violation System",
+    "description": "ImportSpy violation system deep dive: structured diagnostics, deterministic error reporting and runtime contract failures for modular Python architectures.",
     "url": "https://profile.atellaluca.com/case-studies/importspy/violations/",
     "image": "https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png",
     
@@ -131,8 +131,6 @@
         "FastAPI",
         "DynamoDB",
         "Runtime contract validation",
-        "Python admission control",
-        "Policy-as-code",
         "Modular Python systems",
         "IoT backend architecture",
         "Digital Twin architecture",
@@ -162,7 +160,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#evidence-violations-and-admission-decisions" class="md-skip">
+        <a href="#violation-system-and-contract-diagnostics" class="md-skip">
           Skip to content
         </a>
       
@@ -195,7 +193,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ImportSpy | Evidence, Violations and Admission Decisions
+              Contract Diagnostics | ImportSpy Violation System
             
           </span>
         </div>
@@ -842,7 +840,7 @@
   <span class="md-ellipsis">
     
   
-    Runtime Validation (Historical)
+    Validation System (Deep Dive)
   
 
     
@@ -870,7 +868,7 @@
   <span class="md-ellipsis">
     
   
-    Provider–Consumer Contracts (Historical)
+    Runtime Contracts (Deep Dive)
   
 
     
@@ -907,7 +905,7 @@
   <span class="md-ellipsis">
     
   
-    Evidence and Admission Diagnostics
+    Violation System and Contract Diagnostics (Deep Dive)
   
 
     
@@ -925,7 +923,7 @@
   <span class="md-ellipsis">
     
   
-    Evidence and Admission Diagnostics
+    Violation System and Contract Diagnostics (Deep Dive)
   
 
     
@@ -951,10 +949,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#observation-is-not-a-verdict" class="md-nav__link">
+  <a href="#why-a-dedicated-violation-system" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Observation is not a verdict
+        Why a Dedicated Violation System?
       
     </span>
   </a>
@@ -962,10 +960,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#a-violation-explains-a-requirement-failure" class="md-nav__link">
+  <a href="#contract-violations-as-first-class-objects" class="md-nav__link">
     <span class="md-ellipsis">
       
-        A violation explains a requirement failure
+        Contract Violations as First-Class Objects
       
     </span>
   </a>
@@ -973,10 +971,98 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#present-the-same-result-to-different-audiences" class="md-nav__link">
+  <a href="#violation-taxonomy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Present the same result to different audiences
+        Violation Taxonomy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#domain-specific-violation-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Domain-Specific Violation Types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-templates-and-payload-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Message Templates and Payload Injection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#separation-of-concerns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Separation of Concerns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deterministic-failure-semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deterministic Failure Semantics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#human-readable-and-machine-readable-diagnostics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Human-Readable and Machine-Readable Diagnostics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-with-the-validation-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration with the Validation Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architectural-implications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architectural Implications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lessons-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lessons Learned
       
     </span>
   </a>
@@ -1771,10 +1857,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#observation-is-not-a-verdict" class="md-nav__link">
+  <a href="#why-a-dedicated-violation-system" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Observation is not a verdict
+        Why a Dedicated Violation System?
       
     </span>
   </a>
@@ -1782,10 +1868,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#a-violation-explains-a-requirement-failure" class="md-nav__link">
+  <a href="#contract-violations-as-first-class-objects" class="md-nav__link">
     <span class="md-ellipsis">
       
-        A violation explains a requirement failure
+        Contract Violations as First-Class Objects
       
     </span>
   </a>
@@ -1793,10 +1879,98 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#present-the-same-result-to-different-audiences" class="md-nav__link">
+  <a href="#violation-taxonomy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Present the same result to different audiences
+        Violation Taxonomy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#domain-specific-violation-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Domain-Specific Violation Types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-templates-and-payload-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Message Templates and Payload Injection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#separation-of-concerns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Separation of Concerns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deterministic-failure-semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deterministic Failure Semantics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#human-readable-and-machine-readable-diagnostics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Human-Readable and Machine-Readable Diagnostics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-with-the-validation-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration with the Validation Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architectural-implications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architectural Implications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lessons-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lessons Learned
       
     </span>
   </a>
@@ -1820,18 +1994,235 @@
 
 
 
-<h1 id="evidence-violations-and-admission-decisions">Evidence, Violations and Admission Decisions</h1>
-<p>The current diagnostic model explains both the outcome and the information used to reach it. It builds on the earlier project’s structured diagnostics without treating the old exception taxonomy as the current admission API.</p>
-<h2 id="observation-is-not-a-verdict">Observation is not a verdict</h2>
-<p><code>Evidence</code> records a subject, provider, phase and status. <code>observed</code> metadata differs from a <code>verified</code> claim; <code>unknown</code> and <code>unavailable</code> represent different information gaps. A verified claim is not a general safety certificate for the module.</p>
-<p>For example, a distribution may have an observed version while a required provenance claim is unavailable. Policy decides whether that combination is acceptable. The reporter should expose the missing requirement rather than replace it with a generic import error.</p>
-<h2 id="a-violation-explains-a-requirement-failure">A violation explains a requirement failure</h2>
-<p><code>Violation</code> records a code, category, phase, subject, message and severity. Source locations can help tools identify the relevant input. The core evaluates failures into a structured result rather than requiring consumers to infer the decision from human prose.</p>
-<p><code>AdmissionDecision</code> holds the outcome, dependencies, evidence and violations. Error-severity violations produce DENY. It also records whether execution occurred: a denial during static admission differs from a denial raised by a runtime validator after initialization.</p>
-<h2 id="present-the-same-result-to-different-audiences">Present the same result to different audiences</h2>
-<p>Human, JSON and SARIF reporters render the shared result without repeating admission. A person needs a readable explanation; automation needs stable structure; source-analysis tooling benefits from rule and location information.</p>
-<p>Reports are not inherently free of sensitive data. Subject paths and provider observations need review before publication. The engine’s redaction measures do not remove the application’s responsibility for data supplied by extensions.</p>
-<p><a href="../architecture/">Read the architecture</a> · <a href="../">Return to the engineering story</a> · <a href="https://importspy.atellaluca.com/">Official reference</a></p>
+<h1 id="violation-system-and-contract-diagnostics">Violation System and Contract Diagnostics</h1>
+<h2 id="why-a-dedicated-violation-system">Why a Dedicated Violation System?</h2>
+<p>In most runtime validation frameworks, failures are reported through:</p>
+<ul>
+<li>generic exceptions  </li>
+<li>unstructured error messages  </li>
+<li>stack traces disconnected from domain semantics  </li>
+</ul>
+<p>This approach conflates two fundamentally different concerns:</p>
+<ul>
+<li>detecting a contract violation  </li>
+<li>explaining why the contract was violated  </li>
+</ul>
+<p>As a result:</p>
+<ul>
+<li>errors are hard to interpret  </li>
+<li>diagnostics are inconsistent  </li>
+<li>debugging becomes expensive  </li>
+<li>failure semantics are ambiguous  </li>
+</ul>
+<p>ImportSpy introduces a dedicated Violation System<br />
+to treat contract violations as first-class architectural events,<br />
+rather than as incidental runtime errors.</p>
+<hr />
+<h2 id="contract-violations-as-first-class-objects">Contract Violations as First-Class Objects</h2>
+<p>In ImportSpy, a contract violation is not represented as a raw exception.</p>
+<p>It is modeled as a first-class object implementing a formal<br />
+ContractViolation abstraction.</p>
+<p>This means that a violation:</p>
+<ul>
+<li>has a semantic type  </li>
+<li>carries structured contextual data  </li>
+<li>belongs to a specific validation domain  </li>
+<li>produces a deterministic diagnostic message  </li>
+</ul>
+<p>This design separates:</p>
+<ul>
+<li>violation detection  </li>
+<li>from violation representation  </li>
+<li>from violation reporting  </li>
+</ul>
+<p>and turns failures into structured domain artifacts.</p>
+<hr />
+<h2 id="violation-taxonomy">Violation Taxonomy</h2>
+<p>Contract violations are organized into a small, explicit taxonomy<br />
+reflecting the semantics of failure.</p>
+<p>The three primary violation categories are:</p>
+<ul>
+<li>
+<p>MISSING<br />
+  A required element is not present in the runtime model.</p>
+</li>
+<li>
+<p>MISMATCH<br />
+  An element is present but does not satisfy the expected value<br />
+  or structural constraint.</p>
+</li>
+<li>
+<p>INVALID<br />
+  An element exists but has a value that is not allowed<br />
+  under the contract.</p>
+</li>
+</ul>
+<p>This taxonomy provides:</p>
+<ul>
+<li>semantic clarity  </li>
+<li>consistent error classification  </li>
+<li>predictable failure modes  </li>
+</ul>
+<p>across all validation domains.</p>
+<hr />
+<h2 id="domain-specific-violation-types">Domain-Specific Violation Types</h2>
+<p>Violations are further specialized by validation domain.</p>
+<p>Each domain defines its own violation type, including:</p>
+<ul>
+<li>ModuleContractViolation  </li>
+<li>FunctionContractViolation  </li>
+<li>VariableContractViolation  </li>
+<li>RuntimeContractViolation  </li>
+<li>PythonContractViolation  </li>
+<li>SystemContractViolation  </li>
+</ul>
+<p>Each specialized violation class is responsible for:</p>
+<ul>
+<li>interpreting domain-specific context  </li>
+<li>selecting appropriate message templates  </li>
+<li>producing semantically precise diagnostics  </li>
+</ul>
+<p>This avoids a single monolithic error type<br />
+and preserves semantic locality.</p>
+<hr />
+<h2 id="message-templates-and-payload-injection">Message Templates and Payload Injection</h2>
+<p>Violation messages in ImportSpy are not hard-coded.</p>
+<p>Instead, they are generated from message templates<br />
+associated with each violation category and domain.</p>
+<p>At runtime, a mutable payload object is built,<br />
+containing contextual metadata such as:</p>
+<ul>
+<li>expected values  </li>
+<li>actual values  </li>
+<li>module names  </li>
+<li>variable names  </li>
+<li>runtime properties  </li>
+</ul>
+<p>This payload is then injected into the message template<br />
+to produce a fully contextualized diagnostic.</p>
+<p>This design enables:</p>
+<ul>
+<li>consistent phrasing across violations  </li>
+<li>localized message formatting  </li>
+<li>deterministic message output  </li>
+<li>future internationalization  </li>
+</ul>
+<p>without coupling validation logic to presentation.</p>
+<hr />
+<h2 id="separation-of-concerns">Separation of Concerns</h2>
+<p>The Violation System enforces a strict separation between:</p>
+<ul>
+<li>validation rules  </li>
+<li>violation construction  </li>
+<li>message rendering  </li>
+<li>error propagation  </li>
+</ul>
+<p>Validation rules never:</p>
+<ul>
+<li>format messages  </li>
+<li>raise raw exceptions  </li>
+<li>embed presentation logic  </li>
+</ul>
+<p>They only:</p>
+<ul>
+<li>detect constraint failures  </li>
+<li>construct domain violations  </li>
+<li>attach contextual payloads  </li>
+</ul>
+<p>This makes the validation engine:</p>
+<ul>
+<li>simpler  </li>
+<li>more testable  </li>
+<li>easier to extend  </li>
+<li>independent from UX concerns.</li>
+</ul>
+<hr />
+<h2 id="deterministic-failure-semantics">Deterministic Failure Semantics</h2>
+<p>When a contract is violated:</p>
+<ul>
+<li>provider–consumer interaction is aborted  </li>
+<li>one or more ContractViolation objects are produced  </li>
+<li>a structured validation error is raised  </li>
+</ul>
+<p>This guarantees that:</p>
+<ul>
+<li>invalid modules never enter the system  </li>
+<li>failures are deterministic  </li>
+<li>system state remains consistent  </li>
+<li>diagnostics are reproducible  </li>
+</ul>
+<p>and eliminates entire classes of late runtime failures.</p>
+<hr />
+<h2 id="human-readable-and-machine-readable-diagnostics">Human-Readable and Machine-Readable Diagnostics</h2>
+<p>Violation diagnostics in ImportSpy are designed to be both:</p>
+<ul>
+<li>human-readable, for developers  </li>
+<li>machine-readable, for CI/CD and tooling  </li>
+</ul>
+<p>A typical diagnostic includes:</p>
+<ul>
+<li>a semantic scope label (e.g., [MODULE], [VARIABLE])  </li>
+<li>the expected condition  </li>
+<li>the actual runtime condition  </li>
+<li>an optional remediation hint  </li>
+</ul>
+<p>Example:</p>
+<blockquote>
+<p>[MODULE] Expected variable <code>timeout: int</code> not found in <code>my_module.py</code><br />
+→ Please add the variable or update your contract.</p>
+</blockquote>
+<p>This dual nature makes violations usable in:</p>
+<ul>
+<li>local development  </li>
+<li>automated pipelines  </li>
+<li>static analysis tooling  </li>
+<li>observability systems  </li>
+</ul>
+<hr />
+<h2 id="integration-with-the-validation-pipeline">Integration with the Validation Pipeline</h2>
+<p>The Violation System is fully integrated<br />
+into the rule-based validation pipeline.</p>
+<p>Each rule:</p>
+<ul>
+<li>validates exactly one constraint  </li>
+<li>produces zero or more ContractViolation objects  </li>
+<li>never raises raw domain exceptions  </li>
+</ul>
+<p>The pipeline then:</p>
+<ul>
+<li>aggregates all violations  </li>
+<li>determines overall contract satisfaction  </li>
+<li>decides whether to abort integration  </li>
+</ul>
+<p>This ensures that:</p>
+<ul>
+<li>multiple independent violations<br />
+  can be reported in a single run  </li>
+<li>diagnostics are complete  </li>
+<li>failures are not masked by early exits.</li>
+</ul>
+<hr />
+<h2 id="architectural-implications">Architectural Implications</h2>
+<p>Introducing a dedicated Violation System:</p>
+<ul>
+<li>formalizes the semantics of failure  </li>
+<li>decouples detection from reporting  </li>
+<li>stabilizes diagnostics across versions  </li>
+<li>enables tooling and automation  </li>
+<li>supports long-term contract evolution  </li>
+</ul>
+<p>and elevates error handling<br />
+from a technical afterthought<br />
+to a first-class architectural concern.</p>
+<hr />
+<h2 id="lessons-learned">Lessons Learned</h2>
+<ul>
+<li>Failure semantics are part of system architecture.  </li>
+<li>Structured diagnostics dramatically improve usability.  </li>
+<li>Separation of concerns simplifies extensibility.  </li>
+<li>Deterministic errors enable reliable automation.  </li>
+<li>Contracts are only useful if violations are intelligible.</li>
+</ul>
 
 
 
@@ -1870,7 +2261,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../contracts/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Provider–Consumer Contracts (Historical)">
+          <a href="../contracts/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Runtime Contracts (Deep Dive)">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1880,7 +2271,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Provider–Consumer Contracts (Historical)
+                Runtime Contracts (Deep Dive)
               </div>
             </div>
           </a>

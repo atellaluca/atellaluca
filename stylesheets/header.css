@@ -45,12 +45,6 @@
 .md-typeset .portfolio-card .portfolio-eyebrow { font-size: .58rem; margin: 0; }
 .md-typeset .portfolio-stack { color: #596963; font-size: .65rem; }
 .portfolio-card p:last-child { margin-top: auto; padding-top: .7rem; margin-bottom: 0; font-weight: 650; }
-/* Secondary work stays discoverable without competing with flagship cards. */
-.portfolio-work-list { margin: 1rem 0 1.5rem; }
-.portfolio-work { padding: .75rem 0; border-bottom: 1px solid #d8dfda; }
-.md-typeset .portfolio-work h3 { margin: 0 0 .25rem; font-size: .9rem; }
-.md-typeset .portfolio-work p { margin: .25rem 0; font-size: .76rem; }
-.md-typeset .portfolio-work .portfolio-stack { font-size: .65rem; }
 .portfolio-contact { padding: 1.8rem 2rem; margin-top: 2.5rem; background: #e9efeb; border-radius: .6rem; border-left: 4px solid #11685e; }
 .md-typeset .portfolio-contact h2 { margin-top: .5rem; line-height: 1.3; }
 /* Technical figures retain readable labels without widening the article. */

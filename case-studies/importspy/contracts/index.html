@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Historical provider–consumer contracts in ImportSpy: explicit requirements, their execution limits and the transition to admission policy.">
+        <meta name="description" content="Deep dive into ImportSpy runtime contracts for safe Python module integration, structural constraints, execution requirements and plugin compatibility validation.">
       
       
         <meta name="author" content="Luca Atella">
@@ -33,7 +33,7 @@
     
     
   
-  <title>ImportSpy History | Provider–Consumer Runtime Contracts · Luca Atella</title>
+  <title>Runtime Contracts | Safe Python Module Integration with ImportSpy · Luca Atella</title>
 
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
@@ -81,18 +81,18 @@
   
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Luca Atella">
-  <meta property="og:title" content="ImportSpy History | Provider–Consumer Runtime Contracts">
-  <meta property="og:description" content="Historical provider–consumer contracts in ImportSpy: explicit requirements, their execution limits and the transition to admission policy.">
+  <meta property="og:title" content="Runtime Contracts | Safe Python Module Integration with ImportSpy">
+  <meta property="og:description" content="Deep dive into ImportSpy runtime contracts for safe Python module integration, structural constraints, execution requirements and plugin compatibility validation.">
   <meta property="og:url" content="https://profile.atellaluca.com/case-studies/importspy/contracts/">
   <meta property="og:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
   
-    <meta property="og:image:alt" content="ImportSpy — Luca Atella">
-    <meta name="twitter:image:alt" content="ImportSpy — Luca Atella">
+    <meta property="og:image:alt" content="Runtime contracts for safe Python module integration with ImportSpy">
+    <meta name="twitter:image:alt" content="Runtime contracts for safe Python module integration with ImportSpy">
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ImportSpy History | Provider–Consumer Runtime Contracts">
-  <meta name="twitter:description" content="Historical provider–consumer contracts in ImportSpy: explicit requirements, their execution limits and the transition to admission policy.">
+  <meta name="twitter:title" content="Runtime Contracts | Safe Python Module Integration with ImportSpy">
+  <meta name="twitter:description" content="Deep dive into ImportSpy runtime contracts for safe Python module integration, structural constraints, execution requirements and plugin compatibility validation.">
   <meta name="twitter:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
   
@@ -102,8 +102,8 @@
     "@context": "https://schema.org",
     "@type": "TechArticle",
     "inLanguage": "en",
-    "name": "ImportSpy History | Provider\u2013Consumer Runtime Contracts",
-    "description": "Historical provider\u2013consumer contracts in ImportSpy: explicit requirements, their execution limits and the transition to admission policy.",
+    "name": "Runtime Contracts | Safe Python Module Integration with ImportSpy",
+    "description": "Deep dive into ImportSpy runtime contracts for safe Python module integration, structural constraints, execution requirements and plugin compatibility validation.",
     "url": "https://profile.atellaluca.com/case-studies/importspy/contracts/",
     "image": "https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png",
     
@@ -131,8 +131,6 @@
         "FastAPI",
         "DynamoDB",
         "Runtime contract validation",
-        "Python admission control",
-        "Policy-as-code",
         "Modular Python systems",
         "IoT backend architecture",
         "Digital Twin architecture",
@@ -162,7 +160,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#historical-design-providerconsumer-contracts" class="md-skip">
+        <a href="#runtime-contracts-for-safe-module-integration" class="md-skip">
           Skip to content
         </a>
       
@@ -195,7 +193,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ImportSpy History | Provider–Consumer Runtime Contracts
+              Runtime Contracts | Safe Python Module Integration with ImportSpy
             
           </span>
         </div>
@@ -842,7 +840,7 @@
   <span class="md-ellipsis">
     
   
-    Runtime Validation (Historical)
+    Validation System (Deep Dive)
   
 
     
@@ -879,7 +877,7 @@
   <span class="md-ellipsis">
     
   
-    Provider–Consumer Contracts (Historical)
+    Runtime Contracts (Deep Dive)
   
 
     
@@ -897,7 +895,7 @@
   <span class="md-ellipsis">
     
   
-    Provider–Consumer Contracts (Historical)
+    Runtime Contracts (Deep Dive)
   
 
     
@@ -923,10 +921,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#making-assumptions-explicit" class="md-nav__link">
+  <a href="#why-runtime-contracts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Making assumptions explicit
+        Why Runtime Contracts?
       
     </span>
   </a>
@@ -934,10 +932,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-important-limit" class="md-nav__link">
+  <a href="#providerconsumer-contracts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The important limit
+        Provider–Consumer Contracts
       
     </span>
   </a>
@@ -945,10 +943,87 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#from-runtime-contract-to-admission-policy" class="md-nav__link">
+  <a href="#contracts-as-first-class-objects" class="md-nav__link">
     <span class="md-ellipsis">
       
-        From runtime contract to admission policy
+        Contracts as First-Class Objects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structural-contextual-and-environmental-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structural, Contextual, and Environmental Constraints
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#baseline-contracts-and-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Baseline Contracts and Governance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contract-satisfaction-semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contract Satisfaction Semantics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deterministic-failure-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deterministic Failure Modes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Patterns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architectural-implications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architectural Implications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lessons-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lessons Learned
       
     </span>
   </a>
@@ -978,7 +1053,7 @@
   <span class="md-ellipsis">
     
   
-    Evidence and Admission Diagnostics
+    Violation System and Contract Diagnostics (Deep Dive)
   
 
     
@@ -1771,10 +1846,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#making-assumptions-explicit" class="md-nav__link">
+  <a href="#why-runtime-contracts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Making assumptions explicit
+        Why Runtime Contracts?
       
     </span>
   </a>
@@ -1782,10 +1857,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-important-limit" class="md-nav__link">
+  <a href="#providerconsumer-contracts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The important limit
+        Provider–Consumer Contracts
       
     </span>
   </a>
@@ -1793,10 +1868,87 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#from-runtime-contract-to-admission-policy" class="md-nav__link">
+  <a href="#contracts-as-first-class-objects" class="md-nav__link">
     <span class="md-ellipsis">
       
-        From runtime contract to admission policy
+        Contracts as First-Class Objects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structural-contextual-and-environmental-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structural, Contextual, and Environmental Constraints
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#baseline-contracts-and-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Baseline Contracts and Governance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contract-satisfaction-semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contract Satisfaction Semantics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deterministic-failure-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deterministic Failure Modes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Patterns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architectural-implications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architectural Implications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lessons-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lessons Learned
       
     </span>
   </a>
@@ -1820,19 +1972,183 @@
 
 
 
-<h1 id="historical-design-providerconsumer-contracts">Historical Design — Provider–Consumer Contracts</h1>
+<h1 id="runtime-contracts-for-safe-module-integration">Runtime Contracts for Safe Module Integration</h1>
+<h2 id="why-runtime-contracts">Why Runtime Contracts?</h2>
+<p>In most modular systems, integration correctness is enforced implicitly.</p>
+<p>Developers rely on:</p>
+<ul>
+<li>documentation  </li>
+<li>naming conventions  </li>
+<li>informal interface agreements  </li>
+<li>late runtime failures  </li>
+</ul>
+<p>As a result:</p>
+<ul>
+<li>incompatibilities are discovered too late  </li>
+<li>failures occur deep in the execution flow  </li>
+<li>error propagation becomes unpredictable  </li>
+<li>debugging becomes expensive  </li>
+</ul>
+<p>In dynamic languages such as Python, these problems are amplified by:</p>
+<ul>
+<li>the lack of a formal module interface system  </li>
+<li>the widespread use of dynamic imports  </li>
+<li>late binding of components  </li>
+</ul>
+<p>ImportSpy introduces <strong>runtime contracts</strong> to shift integration correctness<br />
+from an implicit, assumption-based model<br />
+to an explicit, enforceable, and fail-fast one.</p>
+<hr />
+<h2 id="providerconsumer-contracts">Provider–Consumer Contracts</h2>
+<p>In ImportSpy, contracts are defined by the <strong>provider module</strong><br />
+and enforced on the <strong>consumer modules</strong> that import it.</p>
+<p>This establishes a clear integration model:</p>
+<ul>
+<li>the provider declares what it expects  </li>
+<li>the consumer must satisfy those expectations  </li>
+<li>the framework enforces correctness at runtime  </li>
+</ul>
+<p>This inversion of responsibility makes integration rules:</p>
+<ul>
+<li>explicit  </li>
+<li>centralized  </li>
+<li>enforceable  </li>
+</ul>
+<p>and transforms module boundaries into formal architectural contracts.</p>
+<hr />
+<h2 id="contracts-as-first-class-objects">Contracts as First-Class Objects</h2>
+<p>In ImportSpy, a contract is not a comment or a configuration file.</p>
+<p>It is a <strong>first-class object</strong> represented by a SpyModel instance.</p>
+<p>This means that a contract is:</p>
+<ul>
+<li>structured  </li>
+<li>typed  </li>
+<li>serializable  </li>
+<li>introspectable  </li>
+<li>independently validatable  </li>
+</ul>
+<p>Treating contracts as first-class objects enables:</p>
+<ul>
+<li>formal reasoning about integration  </li>
+<li>static analysis of contract schemas  </li>
+<li>versioning and evolution of contracts  </li>
+<li>tooling and visualization  </li>
+</ul>
+<hr />
+<h2 id="structural-contextual-and-environmental-constraints">Structural, Contextual, and Environmental Constraints</h2>
+<p>Runtime contracts in ImportSpy can express constraints across multiple dimensions:</p>
+<ul>
+<li>
+<p><strong>Structural constraints</strong><br />
+  Required classes, functions, attributes, and method signatures.</p>
+</li>
+<li>
+<p><strong>Interface constraints</strong><br />
+  Consistency between what a consumer exposes<br />
+  and what a provider expects.</p>
+</li>
+<li>
+<p><strong>Runtime constraints</strong><br />
+  Python version, interpreter implementation, CPU architecture.</p>
+</li>
+<li>
+<p><strong>Environmental constraints</strong><br />
+  Operating system, environment variables, external configuration.</p>
+</li>
+</ul>
+<p>This multi-dimensional contract model allows integration correctness<br />
+to be expressed far beyond simple API shape validation.</p>
+<hr />
+<h2 id="baseline-contracts-and-governance">Baseline Contracts and Governance</h2>
+<p>SpyModel introduces the notion of a <strong>baseline contract</strong><br />
+representing a minimal set of constraints that are always enforced.</p>
+<p>This baseline expresses lower-bound requirements such as:</p>
+<ul>
+<li>minimal Python version  </li>
+<li>supported operating systems  </li>
+<li>interpreter compatibility  </li>
+<li>minimal environment assumptions  </li>
+</ul>
+<p>Baseline contracts act as a form of <strong>architectural governance</strong>:</p>
+<ul>
+<li>they enforce global compatibility rules  </li>
+<li>they prevent unsupported runtimes from entering the system  </li>
+<li>they provide a consistent execution foundation  </li>
+</ul>
+<p>before any domain-specific, provider-defined contract is applied.</p>
+<hr />
+<h2 id="contract-satisfaction-semantics">Contract Satisfaction Semantics</h2>
+<p>ImportSpy adopts a <strong>contract satisfaction semantics</strong><br />
+rather than a strict structural equality model.</p>
+<p>In this approach:</p>
+<ul>
+<li>the contract SpyModel represents declared requirements  </li>
+<li>the runtime SpyModel represents effective properties  </li>
+<li>validation checks whether the runtime satisfies the contract  </li>
+</ul>
+<p>Formally:</p>
 <blockquote>
-<p><strong>Historical context.</strong> These notes describe the earlier runtime model. For current policy-as-code admission, read <a href="../">the engineering story</a>. This page is not an integration guide for the current API.</p>
+<p><strong>contract model ⊆ runtime model</strong><br />
+i.e., the runtime satisfies the contract.</p>
 </blockquote>
-<h2 id="making-assumptions-explicit">Making assumptions explicit</h2>
-<p>The original provider–consumer model let a provider declare requirements for modules interacting with it. Contracts represented expected structure and environment rather than leaving those assumptions only in prose or application-specific checks.</p>
-<p>Structural requirements, runtime conditions and baseline constraints could be discussed independently from individual integrations. This helped expose incompatibilities and made error reporting a deliberate part of the architecture.</p>
-<h2 id="the-important-limit">The important limit</h2>
-<p>Checking a runtime object is different from deciding whether its source should execute. A provider’s contract cannot retrospectively prevent earlier top-level code in its consumer. The historical design should therefore be understood as compatibility validation, not a guarantee of safe module admission.</p>
-<h2 id="from-runtime-contract-to-admission-policy">From runtime contract to admission policy</h2>
-<p>The current design inspects source without importing the target, resolves dependency identities and evaluates explicit evidence. A policy can express required static structure, host-runtime constraints and dependency requirements before explicit <code>load</code>.</p>
-<p>The continuity is the use of machine-readable requirements. The change is where those requirements are evaluated and what information they can establish. Unknown facts remain explicit rather than being resolved by executing the target.</p>
-<p><a href="../validation/">Earlier validation engine</a> · <a href="../architecture/">Current admission architecture</a> · <a href="https://importspy.atellaluca.com/">Official contract documentation</a></p>
+<p>This semantics allows:</p>
+<ul>
+<li>partial specifications  </li>
+<li>forward compatibility  </li>
+<li>graceful contract evolution  </li>
+</ul>
+<p>and avoids fragile equality-based validation.</p>
+<hr />
+<h2 id="deterministic-failure-modes">Deterministic Failure Modes</h2>
+<p>When a contract is not satisfied:</p>
+<ul>
+<li>module interaction is aborted  </li>
+<li>a structured validation error is raised  </li>
+<li>no partial initialization occurs  </li>
+</ul>
+<p>This guarantees that:</p>
+<ul>
+<li>invalid modules never enter the system  </li>
+<li>failures are deterministic  </li>
+<li>system state remains consistent  </li>
+</ul>
+<p>and eliminates entire classes of late runtime failures.</p>
+<hr />
+<h2 id="integration-patterns">Integration Patterns</h2>
+<p>Runtime contracts are particularly useful in:</p>
+<ul>
+<li>plugin-based architectures  </li>
+<li>modular backends  </li>
+<li>extensible platforms  </li>
+<li>microservice bootstrapping  </li>
+<li>secure runtime environments  </li>
+</ul>
+<p>In these contexts, contracts provide:</p>
+<ul>
+<li>explicit integration boundaries  </li>
+<li>enforceable compatibility rules  </li>
+<li>predictable failure semantics  </li>
+</ul>
+<hr />
+<h2 id="architectural-implications">Architectural Implications</h2>
+<p>Introducing runtime contracts shifts system design toward:</p>
+<ul>
+<li>explicit integration governance  </li>
+<li>formalized module boundaries  </li>
+<li>deterministic failure behavior  </li>
+<li>contract-driven evolution  </li>
+</ul>
+<p>and makes integration correctness a first-class architectural concern<br />
+rather than an emergent runtime property.</p>
+<hr />
+<h2 id="lessons-learned">Lessons Learned</h2>
+<ul>
+<li>Integration rules should be explicit and enforceable.  </li>
+<li>Contracts are architectural artifacts, not documentation.  </li>
+<li>Baseline constraints simplify long-term maintenance.  </li>
+<li>Satisfaction semantics enables safe contract evolution.  </li>
+<li>Early failure is cheaper than late recovery.</li>
+</ul>
 
 
 
@@ -1871,7 +2187,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../validation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Runtime Validation (Historical)">
+          <a href="../validation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Validation System (Deep Dive)">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1881,20 +2197,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Runtime Validation (Historical)
+                Validation System (Deep Dive)
               </div>
             </div>
           </a>
         
         
           
-          <a href="../violations/" class="md-footer__link md-footer__link--next" aria-label="Next: Evidence and Admission Diagnostics">
+          <a href="../violations/" class="md-footer__link md-footer__link--next" aria-label="Next: Violation System and Contract Diagnostics (Deep Dive)">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Evidence and Admission Diagnostics
+                Violation System and Contract Diagnostics (Deep Dive)
               </div>
             </div>
             <div class="md-footer__button md-icon">

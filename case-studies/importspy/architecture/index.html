@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Architecture decisions behind ImportSpy: static inspection, dependency resolution, normalized evidence, policy evaluation and explicit execution.">
+        <meta name="description" content="System architecture of ImportSpy, Luca Atella runtime validation framework for Python modules, provider-consumer contracts, plugin safety and architectural governance.">
       
       
         <meta name="author" content="Luca Atella">
@@ -33,7 +33,7 @@
     
     
   
-  <title>ImportSpy Architecture | Policy-as-Code Admission · Luca Atella</title>
+  <title>ImportSpy Architecture | Runtime Validation Engine for Python Modules · Luca Atella</title>
 
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
@@ -81,18 +81,18 @@
   
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Luca Atella">
-  <meta property="og:title" content="ImportSpy Architecture | Policy-as-Code Admission">
-  <meta property="og:description" content="Architecture decisions behind ImportSpy: static inspection, dependency resolution, normalized evidence, policy evaluation and explicit execution.">
+  <meta property="og:title" content="ImportSpy Architecture | Runtime Validation Engine for Python Modules">
+  <meta property="og:description" content="System architecture of ImportSpy, Luca Atella runtime validation framework for Python modules, provider-consumer contracts, plugin safety and architectural governance.">
   <meta property="og:url" content="https://profile.atellaluca.com/case-studies/importspy/architecture/">
   <meta property="og:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
   
-    <meta property="og:image:alt" content="ImportSpy — Luca Atella">
-    <meta name="twitter:image:alt" content="ImportSpy — Luca Atella">
+    <meta property="og:image:alt" content="ImportSpy architecture for Python runtime validation and modular systems">
+    <meta name="twitter:image:alt" content="ImportSpy architecture for Python runtime validation and modular systems">
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ImportSpy Architecture | Policy-as-Code Admission">
-  <meta name="twitter:description" content="Architecture decisions behind ImportSpy: static inspection, dependency resolution, normalized evidence, policy evaluation and explicit execution.">
+  <meta name="twitter:title" content="ImportSpy Architecture | Runtime Validation Engine for Python Modules">
+  <meta name="twitter:description" content="System architecture of ImportSpy, Luca Atella runtime validation framework for Python modules, provider-consumer contracts, plugin safety and architectural governance.">
   <meta name="twitter:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
   
@@ -102,8 +102,8 @@
     "@context": "https://schema.org",
     "@type": "TechArticle",
     "inLanguage": "en",
-    "name": "ImportSpy Architecture | Policy-as-Code Admission",
-    "description": "Architecture decisions behind ImportSpy: static inspection, dependency resolution, normalized evidence, policy evaluation and explicit execution.",
+    "name": "ImportSpy Architecture | Runtime Validation Engine for Python Modules",
+    "description": "System architecture of ImportSpy, Luca Atella runtime validation framework for Python modules, provider-consumer contracts, plugin safety and architectural governance.",
     "url": "https://profile.atellaluca.com/case-studies/importspy/architecture/",
     "image": "https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png",
     
@@ -131,8 +131,6 @@
         "FastAPI",
         "DynamoDB",
         "Runtime contract validation",
-        "Python admission control",
-        "Policy-as-code",
         "Modular Python systems",
         "IoT backend architecture",
         "Digital Twin architecture",
@@ -162,7 +160,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#importspy-admission-architecture" class="md-skip">
+        <a href="#importspy-system-architecture" class="md-skip">
           Skip to content
         </a>
       
@@ -195,7 +193,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ImportSpy Architecture | Policy-as-Code Admission
+              ImportSpy Architecture | Runtime Validation Engine for Python Modules
             
           </span>
         </div>
@@ -867,10 +865,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#separate-questions-before-composing-the-pipeline" class="md-nav__link">
+  <a href="#architectural-vision" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Separate questions before composing the pipeline
+        Architectural Vision
       
     </span>
   </a>
@@ -878,10 +876,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#one-decision-model-several-entry-points" class="md-nav__link">
+  <a href="#core-architectural-principles" class="md-nav__link">
     <span class="md-ellipsis">
       
-        One decision model, several entry points
+        Core Architectural Principles
       
     </span>
   </a>
@@ -889,10 +887,71 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#extensions-without-a-second-admission-engine" class="md-nav__link">
+  <a href="#conceptual-components" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Extensions without a second admission engine
+        Conceptual Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conceptual Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-contract-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Contract Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-validation-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Validation Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-execution-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Execution Context
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-providerconsumer-integration-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Provider–Consumer Integration Point
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conceptual-validation-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conceptual Validation Flow
       
     </span>
   </a>
@@ -900,10 +959,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-keep-the-boundaries-explicit" class="md-nav__link">
+  <a href="#architectural-trade-offs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why keep the boundaries explicit?
+        Architectural Trade-offs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-outcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Outcome
       
     </span>
   </a>
@@ -933,7 +1003,7 @@
   <span class="md-ellipsis">
     
   
-    Runtime Validation (Historical)
+    Validation System (Deep Dive)
   
 
     
@@ -961,7 +1031,7 @@
   <span class="md-ellipsis">
     
   
-    Provider–Consumer Contracts (Historical)
+    Runtime Contracts (Deep Dive)
   
 
     
@@ -989,7 +1059,7 @@
   <span class="md-ellipsis">
     
   
-    Evidence and Admission Diagnostics
+    Violation System and Contract Diagnostics (Deep Dive)
   
 
     
@@ -1782,10 +1852,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#separate-questions-before-composing-the-pipeline" class="md-nav__link">
+  <a href="#architectural-vision" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Separate questions before composing the pipeline
+        Architectural Vision
       
     </span>
   </a>
@@ -1793,10 +1863,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#one-decision-model-several-entry-points" class="md-nav__link">
+  <a href="#core-architectural-principles" class="md-nav__link">
     <span class="md-ellipsis">
       
-        One decision model, several entry points
+        Core Architectural Principles
       
     </span>
   </a>
@@ -1804,10 +1874,71 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#extensions-without-a-second-admission-engine" class="md-nav__link">
+  <a href="#conceptual-components" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Extensions without a second admission engine
+        Conceptual Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conceptual Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-contract-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Contract Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-validation-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Validation Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-execution-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Execution Context
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-providerconsumer-integration-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Provider–Consumer Integration Point
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conceptual-validation-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conceptual Validation Flow
       
     </span>
   </a>
@@ -1815,10 +1946,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-keep-the-boundaries-explicit" class="md-nav__link">
+  <a href="#architectural-trade-offs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why keep the boundaries explicit?
+        Architectural Trade-offs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-outcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Outcome
       
     </span>
   </a>
@@ -1842,56 +1984,161 @@
 
 
 
-<h1 id="importspy-admission-architecture">ImportSpy — Admission Architecture</h1>
-<p>This page describes the current admission design. For the reasons behind the transition from runtime contracts, start with the <a href="../">engineering story</a>.</p>
-<h2 id="separate-questions-before-composing-the-pipeline">Separate questions before composing the pipeline</h2>
-<p>A module loader needs to distinguish what source declares, which distributions its imports refer to, which facts are available and which facts policy requires. Combining these questions inside import interception would make uncertainty and side effects difficult to reason about.</p>
-<table>
-<thead>
-<tr>
-<th>Boundary</th>
-<th>Responsibility</th>
-<th>Limit</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Source inspection</td>
-<td>Read/hash source and inspect its AST without executing it.</td>
-<td>Lexical facts do not establish all runtime behavior.</td>
-</tr>
-<tr>
-<td>Dependency resolution</td>
-<td>Map observed imports to project source and installed distributions.</td>
-<td>Metadata is not cryptographic provenance or a full import emulator.</td>
-</tr>
-<tr>
-<td>Evidence collection</td>
-<td>Normalize observations with provider, subject, status and phase.</td>
-<td>Missing information remains unknown or unavailable.</td>
-</tr>
-<tr>
-<td>Policy evaluation</td>
-<td>Produce violations and an ADMIT/DENY decision.</td>
-<td>Admission means the supplied policy was satisfied.</td>
-</tr>
-<tr>
-<td>Explicit execution</td>
-<td>Revalidate and execute inspected source bytes through <code>load</code>.</td>
-<td>The environment and dependency artifacts are not frozen.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="one-decision-model-several-entry-points">One decision model, several entry points</h2>
-<p><code>check</code> and <code>init</code> do not execute target top-level code. <code>check</code> returns a decision; <code>init</code> prepares a contract to review. <code>load</code> refreshes dependency metadata and repeats admission rather than accepting an old check result as authorization.</p>
-<p>After ADMIT during <code>load</code>, the captured source is executed and optional runtime validators can inspect resulting objects. A runtime denial cannot undo earlier effects. This ordering keeps pre-execution policy distinct from post-execution validation.</p>
-<h2 id="extensions-without-a-second-admission-engine">Extensions without a second admission engine</h2>
-<p>Evidence providers collect facts, policy validators evaluate them, runtime validators inspect executed objects and reporters render the same decision. The admission core orchestrates these responsibilities while specialized integrations can evolve separately.</p>
-<p>Core operation is offline-first. Providers that require network access must be explicitly allowed; providers themselves are trusted Python code, not sandboxed code. Human, JSON and SARIF reports expose the same underlying decision.</p>
-<h2 id="why-keep-the-boundaries-explicit">Why keep the boundaries explicit?</h2>
-<p>An unresolved dependency must not become an invented package identity. An unavailable provider must not become evidence of safety. A successful check must not become permission to execute changed source without another admission pass.</p>
-<p>These distinctions are the architecture’s main contribution. It does not guarantee complete static safety, recursive checking of transitive imports or elimination of all time-of-check/time-of-use races.</p>
-<p><a href="../violations/">Evidence and diagnostics</a> · <a href="../validation/">Earlier runtime model</a> · <a href="https://importspy.atellaluca.com/">Official integration documentation</a></p>
+<h1 id="importspy-system-architecture">ImportSpy — System Architecture</h1>
+<h2 id="architectural-vision">Architectural Vision</h2>
+<p>ImportSpy is designed as a <strong>generic runtime validation framework</strong> operating at the integration boundary between Python modules.</p>
+<p>Rather than being tied to a specific application domain, it was conceived as a reusable architectural component for:</p>
+<ul>
+<li>plugin frameworks  </li>
+<li>modular backends  </li>
+<li>extensible platforms  </li>
+<li>secure runtime environments  </li>
+</ul>
+<p>The core idea is to introduce a contract enforcement layer between a <em>provider</em> module and the modules that import it.</p>
+<p>In its current implementation, ImportSpy is adopted by a <strong>Module A</strong> within a codebase to declare formal constraints that must be satisfied by <strong>Module B</strong> modules importing A.</p>
+<p>In this model:</p>
+<ul>
+<li>Module A acts as the <em>provider</em>  </li>
+<li>Modules B act as <em>consumers</em>  </li>
+<li>contracts define the requirements that consumers must satisfy  </li>
+</ul>
+<p>The module exposing functionality becomes the point where integration requirements are defined, while consumer modules are validated against those requirements before meaningful interaction can occur.</p>
+<p>From an architectural standpoint, this mechanism is a first step toward a more general import-time enforcement layer, designed to evolve toward validation of dynamically loaded modules even outside a controlled application perimeter.</p>
+<hr />
+<h2 id="core-architectural-principles">Core Architectural Principles</h2>
+<p>ImportSpy’s architecture follows a set of explicit principles:</p>
+<ul>
+<li>
+<p><strong>Separation of concerns</strong><br />
+  Contracts, validation logic, execution context, and the integration point are kept as independent components.</p>
+</li>
+<li>
+<p><strong>Declarative over imperative</strong><br />
+  Integration requirements are expressed as structured schemas rather than scattered procedural checks.</p>
+</li>
+<li>
+<p><strong>Fail-fast semantics</strong><br />
+  Validation happens before any significant interaction between provider and consumer can take place.</p>
+</li>
+<li>
+<p><strong>Low coupling</strong><br />
+  Importing application code should not need to know how validation is implemented.</p>
+</li>
+<li>
+<p><strong>Extensibility</strong><br />
+  New validation rules and constraints can be introduced without changing the core engine.</p>
+</li>
+</ul>
+<hr />
+<h2 id="conceptual-components">Conceptual Components</h2>
+<p>At a conceptual level, ImportSpy is organized into four primary components.</p>
+<hr />
+<h3 id="1-contract-model">1. Contract Model</h3>
+<p>The contract model represents the <strong>expected properties</strong> of a consumer module with respect to a provider module.</p>
+<p>It can express constraints such as:</p>
+<ul>
+<li>presence of required classes, functions, or attributes  </li>
+<li>method signatures and parameter structures  </li>
+<li>interpreter or platform requirements  </li>
+<li>runtime environment conditions  </li>
+</ul>
+<p>The model is intentionally separated from concrete Python objects to ensure:</p>
+<ul>
+<li>portability  </li>
+<li>serializability  </li>
+<li>schema-driven validation  </li>
+</ul>
+<hr />
+<h3 id="2-validation-engine">2. Validation Engine</h3>
+<p>The validation engine is responsible for:</p>
+<ul>
+<li>interpreting contract schemas  </li>
+<li>executing validation rules  </li>
+<li>producing structured validation results  </li>
+</ul>
+<p>It is designed as a <strong>rule-based engine</strong>, where:</p>
+<ul>
+<li>each rule validates a single constraint  </li>
+<li>rules are independent from each other  </li>
+<li>results are aggregated into a final outcome  </li>
+</ul>
+<p>This approach improves:</p>
+<ul>
+<li>maintainability  </li>
+<li>testability  </li>
+<li>incremental extension of the system  </li>
+</ul>
+<hr />
+<h3 id="3-execution-context">3. Execution Context</h3>
+<p>The execution context provides runtime metadata used during validation, including:</p>
+<ul>
+<li>Python interpreter version  </li>
+<li>operating system  </li>
+<li>CPU architecture  </li>
+<li>environment variables  </li>
+<li>runtime configuration  </li>
+</ul>
+<p>This allows contracts to express <strong>context-dependent constraints</strong>.</p>
+<hr />
+<h3 id="4-providerconsumer-integration-point">4. Provider–Consumer Integration Point</h3>
+<p>The integration point represents the mechanism through which ImportSpy is inserted into the interaction flow between modules.</p>
+<p>In the current implementation, ImportSpy is imported by a provider module (Module A), which uses the framework to define formal contracts on consumer modules (Modules B) that import A.</p>
+<p>In this scheme:</p>
+<ul>
+<li>Module A acts as the <em>provider</em>  </li>
+<li>Modules B act as <em>consumers</em>  </li>
+<li>contracts define the requirements that consumers must satisfy  </li>
+</ul>
+<p>This enables validation within a controlled perimeter, without altering the global behavior of Python’s import system.</p>
+<p>From an architectural standpoint, this component is designed to evolve toward a more general mechanism capable of:</p>
+<ul>
+<li>intercepting requests to load dynamically imported modules  </li>
+<li>building the execution context  </li>
+<li>triggering validation  </li>
+<li>preventing execution of non-compliant modules  </li>
+<li>propagating structured validation errors  </li>
+</ul>
+<hr />
+<h2 id="conceptual-validation-flow">Conceptual Validation Flow</h2>
+<p>The following flow represents the target architecture of the system.</p>
+<p>In the current implementation, validation is applied to consumer modules (Modules B) importing a provider module (Module A) that explicitly adopts ImportSpy.</p>
+<ol>
+<li>A Module B imports a Module A that adopts ImportSpy.  </li>
+<li>The integration point intercepts the interaction between B and A.  </li>
+<li>The execution context is built.  </li>
+<li>The provider-defined contract schema is loaded.  </li>
+<li>The validation engine executes all rules.  </li>
+<li>Results are aggregated.  </li>
+<li>If validation succeeds, interaction can proceed.  </li>
+<li>If validation fails, the import is aborted.</li>
+</ol>
+<hr />
+<h2 id="architectural-trade-offs">Architectural Trade-offs</h2>
+<p>Several trade-offs were considered during design:</p>
+<ul>
+<li>
+<p><strong>Strictness vs flexibility</strong><br />
+  Stronger contracts increase safety but reduce system dynamism.</p>
+</li>
+<li>
+<p><strong>Performance vs depth of validation</strong><br />
+  Deeper introspection increases import-time latency.</p>
+</li>
+<li>
+<p><strong>Generality vs domain specificity</strong><br />
+  Generic rules are less optimized than domain-specific rules.</p>
+</li>
+</ul>
+<hr />
+<h2 id="design-outcome">Design Outcome</h2>
+<p>The resulting architecture provides:</p>
+<ul>
+<li>a clear separation between contracts and code  </li>
+<li>deterministic behavior at integration time  </li>
+<li>predictable failure modes  </li>
+<li>strong runtime safety guarantees  </li>
+</ul>
+<p>without requiring invasive changes to application code.</p>
 
 
 
@@ -1947,13 +2194,13 @@
         
         
           
-          <a href="../validation/" class="md-footer__link md-footer__link--next" aria-label="Next: Runtime Validation (Historical)">
+          <a href="../validation/" class="md-footer__link md-footer__link--next" aria-label="Next: Validation System (Deep Dive)">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Runtime Validation (Historical)
+                Validation System (Deep Dive)
               </div>
             </div>
             <div class="md-footer__button md-icon">

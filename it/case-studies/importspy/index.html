@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Il percorso progettuale di ImportSpy: preflight statico, identità delle dipendenze, evidenze e policy-as-code prima dell’esecuzione Python.">
+        <meta name="description" content="Caso studio ImportSpy di Luca Atella: runtime contract engine open-source per Python, validazione dei plugin, confini architetturali e diagnostica deterministica.">
       
       
         <meta name="author" content="Luca Atella">
@@ -33,7 +33,7 @@
     
     
   
-  <title>ImportSpy | Dalla validazione runtime all’admission control Python · Luca Atella</title>
+  <title>ImportSpy | Runtime Contract Validation per Python Modulare · Luca Atella</title>
 
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
@@ -79,20 +79,20 @@
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta property="og:locale" content="it_IT">
   
-  <meta property="og:type" content="article">
+  <meta property="og:type" content="website">
   <meta property="og:site_name" content="Luca Atella">
-  <meta property="og:title" content="ImportSpy | Dalla validazione runtime all’admission control Python">
-  <meta property="og:description" content="Il percorso progettuale di ImportSpy: preflight statico, identità delle dipendenze, evidenze e policy-as-code prima dell’esecuzione Python.">
+  <meta property="og:title" content="ImportSpy | Runtime Contract Validation per Python Modulare">
+  <meta property="og:description" content="Caso studio ImportSpy di Luca Atella: runtime contract engine open-source per Python, validazione dei plugin, confini architetturali e diagnostica deterministica.">
   <meta property="og:url" content="https://profile.atellaluca.com/it/case-studies/importspy/">
   <meta property="og:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
   
-    <meta property="og:image:alt" content="Caso studio sullo sviluppo di ImportSpy di Luca Atella">
-    <meta name="twitter:image:alt" content="Caso studio sullo sviluppo di ImportSpy di Luca Atella">
+    <meta property="og:image:alt" content="ImportSpy runtime contract validation per sistemi Python modulari">
+    <meta name="twitter:image:alt" content="ImportSpy runtime contract validation per sistemi Python modulari">
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ImportSpy | Dalla validazione runtime all’admission control Python">
-  <meta name="twitter:description" content="Il percorso progettuale di ImportSpy: preflight statico, identità delle dipendenze, evidenze e policy-as-code prima dell’esecuzione Python.">
+  <meta name="twitter:title" content="ImportSpy | Runtime Contract Validation per Python Modulare">
+  <meta name="twitter:description" content="Caso studio ImportSpy di Luca Atella: runtime contract engine open-source per Python, validazione dei plugin, confini architetturali e diagnostica deterministica.">
   <meta name="twitter:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
   
@@ -100,10 +100,10 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "TechArticle",
+    "@type": "SoftwareSourceCode",
     "inLanguage": "it",
-    "name": "ImportSpy | Dalla validazione runtime all\u2019admission control Python",
-    "description": "Il percorso progettuale di ImportSpy: preflight statico, identit\u00e0 delle dipendenze, evidenze e policy-as-code prima dell\u2019esecuzione Python.",
+    "name": "ImportSpy | Runtime Contract Validation per Python Modulare",
+    "description": "Caso studio ImportSpy di Luca Atella: runtime contract engine open-source per Python, validazione dei plugin, confini architetturali e diagnostica deterministica.",
     "url": "https://profile.atellaluca.com/it/case-studies/importspy/",
     "image": "https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png",
     
@@ -112,32 +112,6 @@
       "name": "Luca Atella",
       "@id": "https://profile.atellaluca.com/#website",
       "url": "https://profile.atellaluca.com/"
-    },
-    "author": {
-      "@type": "Person",
-      "@id": "https://profile.atellaluca.com/#person",
-      "name": "Luca Atella",
-      "url": "https://profile.atellaluca.com/",
-      "sameAs": [
-        "https://github.com/atellaluca",
-        "https://www.linkedin.com/in/luca-atella/"
-      ],
-      "jobTitle": "Software Architect and Backend Platform Engineer",
-      "knowsAbout": [
-        "Backend architecture",
-        "Platform engineering",
-        "AWS serverless architecture",
-        "Cloud-portable backend systems",
-        "FastAPI",
-        "DynamoDB",
-        "Runtime contract validation",
-        "Python admission control",
-        "Policy-as-code",
-        "Modular Python systems",
-        "IoT backend architecture",
-        "Digital Twin architecture",
-        "Geospatial data pipelines"
-      ]
     }
   }
   </script>
@@ -162,7 +136,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#importspy-dalla-validazione-runtime-alladmission-control-python" class="md-skip">
+        <a href="#importspy-runtime-import-contracts-per-sistemi-python-modulari" class="md-skip">
           Vai al contenuto
         </a>
       
@@ -195,7 +169,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ImportSpy | Dalla validazione runtime all’admission control Python
+              ImportSpy | Runtime Contract Validation per Python Modulare
             
           </span>
         </div>
@@ -839,10 +813,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#il-problema-iniziale-e-il-limite-della-validazione-runtime" class="md-nav__link">
+  <a href="#panoramica" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Il problema iniziale e il limite della validazione runtime
+        Panoramica
       
     </span>
   </a>
@@ -850,10 +824,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#portare-la-decisione-prima-dellesecuzione" class="md-nav__link">
+  <a href="#problema" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Portare la decisione prima dell’esecuzione
+        Problema
       
     </span>
   </a>
@@ -861,10 +835,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#lidentita-delle-dipendenze-e-un-problema-distinto" class="md-nav__link">
+  <a href="#obiettivi-di-design" class="md-nav__link">
     <span class="md-ellipsis">
       
-        L’identità delle dipendenze è un problema distinto
+        Obiettivi di Design
       
     </span>
   </a>
@@ -872,10 +846,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#le-evidenze-descrivono-la-policy-decide" class="md-nav__link">
+  <a href="#architettura" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Le evidenze descrivono, la policy decide
+        Architettura
       
     </span>
   </a>
@@ -883,10 +857,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#il-confine-di-esecuzione-e-i-suoi-limiti" class="md-nav__link">
+  <a href="#scenari-duso" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Il confine di esecuzione e i suoi limiti
+        Scenari d'Uso
       
     </span>
   </a>
@@ -894,10 +868,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#comporre-evidenze-sulla-supply-chain" class="md-nav__link">
+  <a href="#community" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Comporre evidenze sulla supply chain
+        Community
       
     </span>
   </a>
@@ -905,10 +879,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#offline-first-e-compromessi-espliciti" class="md-nav__link">
+  <a href="#il-mio-contributo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Offline-first e compromessi espliciti
+        Il mio contributo
       
     </span>
   </a>
@@ -916,32 +890,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#il-mio-contributo-e-le-competenze-dimostrate" class="md-nav__link">
+  <a href="#approfondisci-il-progetto" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Il mio contributo e le competenze dimostrate
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#storia-del-progetto-e-divulgazione" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Storia del progetto e divulgazione
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#continua-lesplorazione" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Continua l’esplorazione
+        Approfondisci il progetto
       
     </span>
   </a>
@@ -999,7 +951,7 @@
   <span class="md-ellipsis">
     
   
-    Validazione runtime (storico)
+    Sistema di Validazione
   
 
     
@@ -1027,7 +979,7 @@
   <span class="md-ellipsis">
     
   
-    Contratti provider–consumer (storico)
+    Runtime Contracts
   
 
     
@@ -1055,7 +1007,7 @@
   <span class="md-ellipsis">
     
   
-    Evidenze e diagnostica di ammissione
+    Diagnostica Contratti
   
 
     
@@ -1848,10 +1800,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#il-problema-iniziale-e-il-limite-della-validazione-runtime" class="md-nav__link">
+  <a href="#panoramica" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Il problema iniziale e il limite della validazione runtime
+        Panoramica
       
     </span>
   </a>
@@ -1859,10 +1811,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#portare-la-decisione-prima-dellesecuzione" class="md-nav__link">
+  <a href="#problema" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Portare la decisione prima dell’esecuzione
+        Problema
       
     </span>
   </a>
@@ -1870,10 +1822,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#lidentita-delle-dipendenze-e-un-problema-distinto" class="md-nav__link">
+  <a href="#obiettivi-di-design" class="md-nav__link">
     <span class="md-ellipsis">
       
-        L’identità delle dipendenze è un problema distinto
+        Obiettivi di Design
       
     </span>
   </a>
@@ -1881,10 +1833,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#le-evidenze-descrivono-la-policy-decide" class="md-nav__link">
+  <a href="#architettura" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Le evidenze descrivono, la policy decide
+        Architettura
       
     </span>
   </a>
@@ -1892,10 +1844,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#il-confine-di-esecuzione-e-i-suoi-limiti" class="md-nav__link">
+  <a href="#scenari-duso" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Il confine di esecuzione e i suoi limiti
+        Scenari d'Uso
       
     </span>
   </a>
@@ -1903,10 +1855,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#comporre-evidenze-sulla-supply-chain" class="md-nav__link">
+  <a href="#community" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Comporre evidenze sulla supply chain
+        Community
       
     </span>
   </a>
@@ -1914,10 +1866,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#offline-first-e-compromessi-espliciti" class="md-nav__link">
+  <a href="#il-mio-contributo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Offline-first e compromessi espliciti
+        Il mio contributo
       
     </span>
   </a>
@@ -1925,32 +1877,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#il-mio-contributo-e-le-competenze-dimostrate" class="md-nav__link">
+  <a href="#approfondisci-il-progetto" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Il mio contributo e le competenze dimostrate
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#storia-del-progetto-e-divulgazione" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Storia del progetto e divulgazione
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#continua-lesplorazione" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Continua l’esplorazione
+        Approfondisci il progetto
       
     </span>
   </a>
@@ -1974,89 +1904,79 @@
 
 
 
-<h1 id="importspy-dalla-validazione-runtime-alladmission-control-python">ImportSpy — Dalla validazione runtime all’admission control Python</h1>
-<p><strong>Progettare un confine policy-as-code tra codice Python, dipendenze ed esecuzione.</strong></p>
-<p><strong>Contesto:</strong> progetto open source di developer tooling Python.</p>
-<p><strong>Il mio ruolo:</strong> progettazione, implementazione, documentazione, packaging e workflow di rilascio.</p>
-<p><strong>Problema:</strong> ispezionare un modulo importandolo può eseguire proprio il codice che l’applicazione non ha ancora deciso di ammettere.</p>
-<p><strong>Intervento:</strong> evolvere i contratti runtime in una pipeline che separa ispezione del sorgente, identità delle dipendenze, evidenze, policy ed esecuzione esplicita.</p>
-<p><strong>Risultato implementato:</strong> <code>check</code> e <code>init</code> non eseguono il codice top-level del target; <code>load</code> ripete l’ammissione prima di eseguire il sorgente ispezionato. È un confine di policy, non una prova di comportamento sicuro.</p>
-<p><a href="https://github.com/atellaluca/ImportSpy">Codice, issue e contributi</a> · <a href="https://importspy.atellaluca.com/">Documentazione ufficiale: installazione e integrazione</a></p>
-<h2 id="il-problema-iniziale-e-il-limite-della-validazione-runtime">Il problema iniziale e il limite della validazione runtime</h2>
-<p>ImportSpy nasce da un problema dei sistemi modulari: interfacce e requisiti di esecuzione esistevano come assunzioni tra provider e consumer. I contratti runtime rendevano quelle assunzioni esplicite e producevano diagnostica strutturata in caso di violazione.</p>
-<p>Quel modello poteva ispezionare gli oggetti dopo l’importazione del modulo. Non poteva annullare gli effetti top-level già avvenuti. Usare l’introspezione runtime per decidere se un codice avrebbe dovuto essere eseguito metteva in evidenza una distanza tra la domanda e il momento della risposta.</p>
-<p>Il cambio architetturale è stato chiedersi: <strong>che cosa può stabilire un sistema Python su un modulo prima di ammetterlo all’esecuzione?</strong> La validazione runtime resta utile, ma si colloca dopo un confine di esecuzione esplicito.</p>
-<h2 id="portare-la-decisione-prima-dellesecuzione">Portare la decisione prima dell’esecuzione</h2>
-<pre class="mermaid"><code>flowchart TB
-    S[Sorgente] --&gt; P[Preflight statico]
-    P --&gt; D[Risoluzione dipendenze]
-    D --&gt; E[Raccolta evidenze]
-    E --&gt; V[Valutazione policy]
-    V --&gt; A{ADMIT / DENY}
-    A --&gt;|check o DENY| STOP[Solo report&lt;br/&gt;Nessuna esecuzione]
-    A --&gt;|load + ADMIT| X[Esecuzione dei&lt;br/&gt;byte ispezionati]
-    X --&gt; R[Validazione runtime&lt;br/&gt;opzionale]
-    style X fill:#f7ead8,stroke:#8a531c,stroke-width:2px</code></pre>
-<p><code>check</code> si ferma alla decisione, anche quando ammette il modulo. <code>init</code> genera un contratto iniziale dalle informazioni sul sorgente e sulle dipendenze senza importare il target. Nessuna delle due operazioni esegue il codice top-level del target.</p>
-<p>Il preflight legge il sorgente, ne analizza l’AST e verifica dichiarazioni, annotazioni, valori letterali e riferimenti di import. Valori calcolati, decorator o interfacce costruite dinamicamente possono lasciare sconosciuti alcuni fatti richiesti. Il motore non esegue il modulo per colmare questi vuoti: i requisiti statici non accertabili causano un rifiuto.</p>
-<p>È una scelta tra dinamicità di Python e verificabilità della decisione. L’analisi statica non diventa una previsione completa del comportamento runtime.</p>
-<h2 id="lidentita-delle-dipendenze-e-un-problema-distinto">L’identità delle dipendenze è un problema distinto</h2>
-<p>Un nome di import non è un’identità di distribuzione: <code>import yaml</code> usa il nome <code>yaml</code>, mentre la distribuzione installata può essere <code>PyYAML</code>.</p>
-<p>La policy richiede quindi un resolver, non un semplice confronto tra stringhe. L’inventario distingue libreria standard, sorgenti locali/di progetto, distribuzioni esterne, contributori di namespace, origini dirette/VCS e dipendenze non risolte. I metadati delle installazioni editable sono considerati esplicitamente; le mappature incomplete restano irrisolte.</p>
-<p>Un namespace può avere più distribuzioni contribuenti. Conservare contributori e incertezza è preferibile a inventare un’identità univoca. I metadati installati e gli URL di origine sono osservazioni, non prove crittografiche della provenienza degli artefatti.</p>
-<h2 id="le-evidenze-descrivono-la-policy-decide">Le evidenze descrivono, la policy decide</h2>
-<p>Il nucleo separa tre concetti:</p>
-<table>
-<thead>
-<tr>
-<th>Concetto</th>
-<th>Responsabilità architetturale</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Evidence</code></td>
-<td>Un’osservazione normalizzata con soggetto, provider, fase e stato.</td>
-</tr>
-<tr>
-<td><code>Violation</code></td>
-<td>Una spiegazione strutturata del mancato rispetto di una policy, con codice e severità.</td>
-</tr>
-<tr>
-<td><code>AdmissionDecision</code></td>
-<td>L’esito dell’ammissione insieme a evidenze, dipendenze e violazioni che lo motivano.</td>
-</tr>
-</tbody>
-</table>
-<p>Le evidenze possono essere <code>verified</code>, <code>observed</code>, <code>unknown</code> o <code>unavailable</code>. Un fatto sconosciuto è uno stato esplicito, non un motivo per inventare una risposta favorevole. Se la policy richiede un’evidenza che il provider non può fornire, quell’assenza deve restare visibile nella decisione.</p>
-<p>La verifica riguarda una specifica affermazione di uno specifico provider. Non significa che il codice sia sicuro. La stessa decisione alimenta reporter leggibili da persone, JSON e SARIF: cambiare destinatario non richiede di ripetere i controlli.</p>
-<h2 id="il-confine-di-esecuzione-e-i-suoi-limiti">Il confine di esecuzione e i suoi limiti</h2>
-<p>Un <code>check</code> isolato fotografa la situazione al momento del controllo: non è un’autorizzazione immutabile. <code>load</code> aggiorna la risoluzione delle dipendenze, ripete l’ammissione ed esegue i byte del sorgente acquisito dopo ADMIT. Rifiuta un nome di esecuzione già presente in <code>sys.modules</code>.</p>
-<p>Questo riduce la distanza tra il sorgente ispezionato e quello eseguito. <strong>Non</strong> congela dipendenze installate, import hook personalizzati, file o processo circostante. L’inventario degli import del sorgente selezionato non equivale all’ammissione ricorsiva di ogni dipendenza transitiva o import dinamico; gli artefatti delle dipendenze non sono tutti legati crittograficamente alla decisione.</p>
-<p>I validatori runtime opzionali operano dopo l’inizializzazione del modulo. Possono rilevare una violazione, ma non annullare effetti già avvenuti. Le applicazioni che richiedono isolamento tramite processi o container devono predisporlo separatamente.</p>
-<h2 id="comporre-evidenze-sulla-supply-chain">Comporre evidenze sulla supply chain</h2>
-<p>Il nucleo valuta osservazioni normalizzate da provider selezionati. Valutazioni di vulnerabilità, verifiche di provenienza o inventari software esistenti potrebbero così alimentare una policy attraverso adapter specializzati.</p>
-<p>Gli adapter per OSV, Sigstore e formati SBOM sono <strong>possibilità di estensione, non integrazioni incluse</strong> nel design 0.5 esaminato. ImportSpy non sostituisce questi sistemi e non ricava i loro risultati di verifica dai soli metadati dei pacchetti.</p>
-<p>I confini di estensione separano le responsabilità:</p>
+<h1 id="importspy-runtime-import-contracts-per-sistemi-python-modulari">ImportSpy — Runtime Import Contracts per Sistemi Python Modulari</h1>
+<p><strong>Tipo:</strong> progetto open-source<br />
+<strong>Ruolo:</strong> Project Lead &amp; Software Architect<br />
+<strong>Periodo:</strong> 2024 - Present<br />
+<strong>Dominio:</strong> Python, sistemi modulari, runtime validation<br />
+<strong>Repository:</strong> <a href="https://github.com/atellaluca/importspy">ImportSpy su GitHub</a><br />
+<strong>Adozione:</strong> 15.000+ download su PyPI  </p>
+<hr />
+<h2 id="panoramica">Panoramica</h2>
+<p>ImportSpy è una libreria Python open-source progettata per applicare runtime contracts durante l’import dei moduli.</p>
+<p>Il problema nasce nei sistemi modulari, plugin-based ed estendibili: i componenti caricati dinamicamente spesso vengono considerati validi sulla base di assunzioni implicite. ImportSpy introduce un layer di validazione contract-driven che intercetta l’import e verifica struttura, contesto e ambiente prima dell’esecuzione.</p>
+<hr />
+<h2 id="problema">Problema</h2>
+<p>Il sistema di import di Python non verifica automaticamente:</p>
 <ul>
-<li><code>EvidenceProvider</code> raccoglie osservazioni.</li>
-<li><code>PolicyValidator</code> valuta la policy rispetto alle osservazioni.</li>
-<li><code>RuntimeValidator</code> controlla oggetti dopo l’esecuzione esplicita.</li>
-<li><code>Reporter</code> presenta la decisione a una persona o a un altro strumento.</li>
+<li>presenza di funzioni, classi o interfacce richieste</li>
+<li>compatibilità con versione Python, OS o environment</li>
+<li>vincoli strutturali</li>
+<li>condizioni minime di esecuzione</li>
 </ul>
-<p>Le estensioni sono codice Python eseguibile di cui l’applicazione si fida. La loro indipendenza agevola l’integrazione, non isola plugin malevoli.</p>
-<h2 id="offline-first-e-compromessi-espliciti">Offline-first e compromessi espliciti</h2>
-<p>Il nucleo opera su sorgenti locali e metadati installati senza richiedere rete o telemetria. I provider che richiedono rete devono essere abilitati esplicitamente. La dichiarazione controlla la raccolta da parte del motore; non è un firewall intorno al codice del provider.</p>
-<p>Il sorgente attuale dichiara supporto Python 3.10–3.14. Compatibilità, diagnostica e incertezza esplicita contano perché lo strumento opera su un confine di integrazione: anche un rifiuto non spiegato diventa un problema operativo.</p>
-<p>I compromessi principali riguardano ispezione conservativa e comportamento dinamico, cache dei metadati e aggiornamento, estensibilità e fiducia nelle estensioni, precisione delle affermazioni e promesse generiche di sicurezza.</p>
-<h2 id="il-mio-contributo-e-le-competenze-dimostrate">Il mio contributo e le competenze dimostrate</h2>
-<p>Ho progettato e implementato il progetto: modello dei contratti, meccanismi di validazione, architettura di ammissione e workflow per gli sviluppatori. Curo anche documentazione, packaging e rilascio.</p>
-<p>Il lavoro dimostra progettazione Python, modellazione delle dipendenze, separazione tra osservazioni e decisioni, diagnostica elaborabile da strumenti e API di esecuzione con limiti espliciti. L’evoluzione conta quanto i componenti: riconoscere i limiti dell’introspezione runtime ha cambiato il punto in cui il sistema decide.</p>
-<h2 id="storia-del-progetto-e-divulgazione">Storia del progetto e divulgazione</h2>
-<p>Il talk al GDG Basilicata <strong>“Quando i moduli Python sanno dire di no”</strong> presentava il modello precedente dei contratti runtime. Documenta la storia del progetto e la comunicazione tecnica, non la presentazione dell’attuale architettura di ammissione.</p>
-<p><a href="../../../assets/talks/importspy-gdg-basilicata-it.pdf">Slide originali italiane</a> · <a href="../../../assets/talks/importspy-runtime-contract-validation-en.pdf">Traduzione tecnica inglese</a> · <a href="https://gdg.community.dev/events/details/google-gdg-basilicata-presents-flash-talks-arena/">Evento GDG</a></p>
-<h2 id="continua-lesplorazione">Continua l’esplorazione</h2>
-<p><a href="architecture/">Architettura attuale</a> · <a href="violations/">Evidenze e diagnostica</a> · <a href="validation/">Precedente modello di validazione runtime</a> · <a href="../../contact/">Parliamo di un’opportunità</a></p>
+<p>Questo porta a errori tardivi, integrazioni fragili e debugging complesso.</p>
+<hr />
+<h2 id="obiettivi-di-design">Obiettivi di Design</h2>
+<ul>
+<li>fallire presto, al momento dell’import</li>
+<li>descrivere i requisiti in contratti dichiarativi</li>
+<li>mantenere basso il coupling tra contratto e implementazione</li>
+<li>impedire l’ingresso di moduli incompatibili nel sistema</li>
+<li>produrre diagnostica chiara e deterministica</li>
+</ul>
+<hr />
+<h2 id="architettura">Architettura</h2>
+<p>ImportSpy opera come pipeline di runtime governance:</p>
+<ol>
+<li>intercetta una richiesta di import</li>
+<li>carica il contratto associato</li>
+<li>valuta requisiti strutturali e contestuali</li>
+<li>restituisce un risultato valido o una violazione strutturata</li>
+<li>consente l’esecuzione solo se il modulo rispetta il contratto</li>
+</ol>
+<hr />
+<h2 id="scenari-duso">Scenari d'Uso</h2>
+<p>ImportSpy è utile per:</p>
+<ul>
+<li>sistemi plugin-based</li>
+<li>backend modulari</li>
+<li>CI/CD validation</li>
+<li>piattaforme IoT ed edge</li>
+<li>ambienti runtime sicuri</li>
+<li>sistemi Python long-running</li>
+</ul>
+<hr />
+<h2 id="community">Community</h2>
+<p>I concetti architetturali di ImportSpy sono stati presentati al GDG Basilicata nel talk “Quando i moduli Python sanno dire di no”, dedicato agli import-time contracts e alla governance runtime dei sistemi modulari.</p>
+<p><strong>Risorse</strong></p>
+<ul>
+<li><a href="../../../assets/talks/importspy-gdg-basilicata-it.pdf">Slide italiane</a></li>
+<li><a href="../../../assets/talks/importspy-runtime-contract-validation-en.pdf">Slide inglesi</a></li>
+<li><a href="https://gdg.community.dev/events/details/google-gdg-basilicata-presents-flash-talks-arena/">Evento GDG Basilicata</a></li>
+</ul>
+<hr />
+<h2 id="il-mio-contributo">Il mio contributo</h2>
+<p>Ho progettato e implementato ImportSpy, dalla definizione del modello dei contratti al motore di validazione e al meccanismo di intercettazione degli import. Ho curato anche documentazione, packaging e workflow di rilascio del progetto open-source.</p>
+<p>Il caso studio raccoglie le decisioni su confini tra moduli, requisiti di esecuzione e diagnostica delle violazioni: aspetti che applico anche nella progettazione di backend modulari e piattaforme a plugin.</p>
+<h2 id="approfondisci-il-progetto">Approfondisci il progetto</h2>
+<ul>
+<li><a href="architecture/">Architettura di ImportSpy</a></li>
+<li><a href="validation/">Motore di validazione</a></li>
+<li><a href="contracts/">Modello dei contratti runtime</a></li>
+<li><a href="violations/">Violazioni e diagnostica</a></li>
+<li><a href="../">Tutti i casi studio</a></li>
+</ul>
+<p><a href="../../profile/">Profilo tecnico di Luca Atella</a> · <a href="../../cv/">CV</a> · <a href="../../contact/">Contattami per un’opportunità</a></p>
 
 
 

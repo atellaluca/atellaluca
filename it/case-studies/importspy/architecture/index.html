@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Decisioni architetturali di ImportSpy: ispezione statica, dipendenze, evidenze normalizzate, valutazione delle policy ed esecuzione esplicita.">
+        <meta name="description" content="Architettura di ImportSpy, framework di Luca Atella per runtime validation di moduli Python, contratti provider-consumer, sicurezza dei plugin e governance architetturale.">
       
       
         <meta name="author" content="Luca Atella">
@@ -33,7 +33,7 @@
     
     
   
-  <title>Architettura ImportSpy | Ammissione Policy-as-Code · Luca Atella</title>
+  <title>Architettura ImportSpy | Runtime Validation Engine per Moduli Python · Luca Atella</title>
 
     
       <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
@@ -81,18 +81,18 @@
   
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Luca Atella">
-  <meta property="og:title" content="Architettura ImportSpy | Ammissione Policy-as-Code">
-  <meta property="og:description" content="Decisioni architetturali di ImportSpy: ispezione statica, dipendenze, evidenze normalizzate, valutazione delle policy ed esecuzione esplicita.">
+  <meta property="og:title" content="Architettura ImportSpy | Runtime Validation Engine per Moduli Python">
+  <meta property="og:description" content="Architettura di ImportSpy, framework di Luca Atella per runtime validation di moduli Python, contratti provider-consumer, sicurezza dei plugin e governance architetturale.">
   <meta property="og:url" content="https://profile.atellaluca.com/it/case-studies/importspy/architecture/">
   <meta property="og:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
   
-    <meta property="og:image:alt" content="ImportSpy — Luca Atella">
-    <meta name="twitter:image:alt" content="ImportSpy — Luca Atella">
+    <meta property="og:image:alt" content="Architettura ImportSpy per runtime validation Python">
+    <meta name="twitter:image:alt" content="Architettura ImportSpy per runtime validation Python">
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Architettura ImportSpy | Ammissione Policy-as-Code">
-  <meta name="twitter:description" content="Decisioni architetturali di ImportSpy: ispezione statica, dipendenze, evidenze normalizzate, valutazione delle policy ed esecuzione esplicita.">
+  <meta name="twitter:title" content="Architettura ImportSpy | Runtime Validation Engine per Moduli Python">
+  <meta name="twitter:description" content="Architettura di ImportSpy, framework di Luca Atella per runtime validation di moduli Python, contratti provider-consumer, sicurezza dei plugin e governance architetturale.">
   <meta name="twitter:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
   
@@ -102,8 +102,8 @@
     "@context": "https://schema.org",
     "@type": "TechArticle",
     "inLanguage": "it",
-    "name": "Architettura ImportSpy | Ammissione Policy-as-Code",
-    "description": "Decisioni architetturali di ImportSpy: ispezione statica, dipendenze, evidenze normalizzate, valutazione delle policy ed esecuzione esplicita.",
+    "name": "Architettura ImportSpy | Runtime Validation Engine per Moduli Python",
+    "description": "Architettura di ImportSpy, framework di Luca Atella per runtime validation di moduli Python, contratti provider-consumer, sicurezza dei plugin e governance architetturale.",
     "url": "https://profile.atellaluca.com/it/case-studies/importspy/architecture/",
     "image": "https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png",
     
@@ -131,8 +131,6 @@
         "FastAPI",
         "DynamoDB",
         "Runtime contract validation",
-        "Python admission control",
-        "Policy-as-code",
         "Modular Python systems",
         "IoT backend architecture",
         "Digital Twin architecture",
@@ -162,7 +160,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#importspy-architettura-di-ammissione" class="md-skip">
+        <a href="#importspy-architettura-di-sistema" class="md-skip">
           Vai al contenuto
         </a>
       
@@ -195,7 +193,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Architettura ImportSpy | Ammissione Policy-as-Code
+              Architettura ImportSpy | Runtime Validation Engine per Moduli Python
             
           </span>
         </div>
@@ -867,10 +865,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#separare-le-domande-prima-di-comporre-la-pipeline" class="md-nav__link">
+  <a href="#visione-architetturale" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Separare le domande prima di comporre la pipeline
+        Visione Architetturale
       
     </span>
   </a>
@@ -878,10 +876,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#un-modello-di-decisione-piu-punti-di-ingresso" class="md-nav__link">
+  <a href="#perche-conta" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Un modello di decisione, più punti di ingresso
+        Perché Conta
       
     </span>
   </a>
@@ -889,21 +887,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#estensioni-senza-duplicare-il-motore-di-ammissione" class="md-nav__link">
+  <a href="#proprieta-chiave" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Estensioni senza duplicare il motore di ammissione
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#perche-esplicitare-questi-confini" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Perché esplicitare questi confini?
+        Proprietà Chiave
       
     </span>
   </a>
@@ -933,7 +920,7 @@
   <span class="md-ellipsis">
     
   
-    Validazione runtime (storico)
+    Sistema di Validazione
   
 
     
@@ -961,7 +948,7 @@
   <span class="md-ellipsis">
     
   
-    Contratti provider–consumer (storico)
+    Runtime Contracts
   
 
     
@@ -989,7 +976,7 @@
   <span class="md-ellipsis">
     
   
-    Evidenze e diagnostica di ammissione
+    Diagnostica Contratti
   
 
     
@@ -1782,10 +1769,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#separare-le-domande-prima-di-comporre-la-pipeline" class="md-nav__link">
+  <a href="#visione-architetturale" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Separare le domande prima di comporre la pipeline
+        Visione Architetturale
       
     </span>
   </a>
@@ -1793,10 +1780,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#un-modello-di-decisione-piu-punti-di-ingresso" class="md-nav__link">
+  <a href="#perche-conta" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Un modello di decisione, più punti di ingresso
+        Perché Conta
       
     </span>
   </a>
@@ -1804,21 +1791,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#estensioni-senza-duplicare-il-motore-di-ammissione" class="md-nav__link">
+  <a href="#proprieta-chiave" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Estensioni senza duplicare il motore di ammissione
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#perche-esplicitare-questi-confini" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Perché esplicitare questi confini?
+        Proprietà Chiave
       
     </span>
   </a>
@@ -1842,56 +1818,33 @@
 
 
 
-<h1 id="importspy-architettura-di-ammissione">ImportSpy — Architettura di ammissione</h1>
-<p>Questa pagina descrive il design attuale. Per comprendere il passaggio dai contratti runtime, parti dal <a href="../">percorso progettuale</a>.</p>
-<h2 id="separare-le-domande-prima-di-comporre-la-pipeline">Separare le domande prima di comporre la pipeline</h2>
-<p>Un loader deve distinguere cosa dichiara il sorgente, a quali distribuzioni si riferiscono gli import, quali fatti sono disponibili e quali richiede la policy. Riunire queste domande nell’intercettazione degli import renderebbe più difficile ragionare su incertezza ed effetti collaterali.</p>
-<table>
-<thead>
-<tr>
-<th>Confine</th>
-<th>Responsabilità</th>
-<th>Limite</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Ispezione del sorgente</td>
-<td>Leggere il sorgente, calcolarne l’hash e ispezionare l’AST senza eseguirlo.</td>
-<td>I fatti lessicali non determinano tutto il comportamento runtime.</td>
-</tr>
-<tr>
-<td>Risoluzione dipendenze</td>
-<td>Mappare gli import osservati a sorgenti di progetto e distribuzioni installate.</td>
-<td>I metadati non sono provenienza crittografica né un emulatore completo degli import.</td>
-</tr>
-<tr>
-<td>Raccolta evidenze</td>
-<td>Normalizzare osservazioni con provider, soggetto, stato e fase.</td>
-<td>Le informazioni mancanti restano sconosciute o indisponibili.</td>
-</tr>
-<tr>
-<td>Valutazione policy</td>
-<td>Produrre violazioni e una decisione ADMIT/DENY.</td>
-<td>L’ammissione indica che la policy fornita è soddisfatta.</td>
-</tr>
-<tr>
-<td>Esecuzione esplicita</td>
-<td>Ripetere l’ammissione ed eseguire i byte ispezionati tramite <code>load</code>.</td>
-<td>Ambiente e artefatti delle dipendenze non vengono congelati.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="un-modello-di-decisione-piu-punti-di-ingresso">Un modello di decisione, più punti di ingresso</h2>
-<p><code>check</code> e <code>init</code> non eseguono codice top-level del target. <code>check</code> restituisce una decisione; <code>init</code> prepara un contratto da rivedere. <code>load</code> aggiorna i metadati delle dipendenze e ripete l’ammissione, invece di accettare un vecchio risultato come autorizzazione.</p>
-<p>Dopo ADMIT durante <code>load</code>, il sorgente acquisito viene eseguito e validatori runtime opzionali possono ispezionare gli oggetti risultanti. Un rifiuto runtime non annulla effetti precedenti. Questo ordine distingue le policy prima dell’esecuzione dalla validazione successiva.</p>
-<h2 id="estensioni-senza-duplicare-il-motore-di-ammissione">Estensioni senza duplicare il motore di ammissione</h2>
-<p>I provider raccolgono fatti, i validatori di policy li valutano, i validatori runtime ispezionano oggetti eseguiti e i reporter presentano la stessa decisione. Il nucleo orchestra queste responsabilità mentre le integrazioni specializzate possono evolvere separatamente.</p>
-<p>Il nucleo è offline-first. I provider che richiedono rete devono essere abilitati esplicitamente; sono comunque codice Python fidato, non isolato in un sandbox. I report per persone, JSON e SARIF espongono la stessa decisione sottostante.</p>
-<h2 id="perche-esplicitare-questi-confini">Perché esplicitare questi confini?</h2>
-<p>Una dipendenza irrisolta non deve diventare un’identità di pacchetto inventata. Un provider indisponibile non deve diventare una prova di sicurezza. Un check riuscito non deve autorizzare sorgenti cambiati senza un nuovo passaggio di ammissione.</p>
-<p>Queste distinzioni sono il contributo principale del design. Non garantiscono sicurezza statica completa, controllo ricorsivo degli import transitivi o eliminazione di tutte le race tra controllo e utilizzo.</p>
-<p><a href="../violations/">Evidenze e diagnostica</a> · <a href="../validation/">Precedente modello runtime</a> · <a href="https://importspy.atellaluca.com/">Documentazione ufficiale di integrazione</a></p>
+<h1 id="importspy-architettura-di-sistema">ImportSpy — Architettura di Sistema</h1>
+<p>ImportSpy è progettato come framework generico di runtime validation al confine tra moduli Python.</p>
+<p>L’idea è trattare l’import non come un semplice dettaglio tecnico, ma come un punto di controllo architetturale: prima che un modulo entri nel sistema, ImportSpy verifica se rispetta i contratti previsti.</p>
+<hr />
+<h2 id="visione-architetturale">Visione Architetturale</h2>
+<p>Il sistema è composto da:</p>
+<ul>
+<li>layer di intercettazione degli import</li>
+<li>layer di definizione dei contratti</li>
+<li>validation engine</li>
+<li>ispezione del contesto di esecuzione</li>
+<li>modello strutturato delle violazioni</li>
+</ul>
+<p>Questi elementi permettono di validare struttura del modulo, ambiente runtime, variabili richieste, OS, versione Python e requisiti contestuali.</p>
+<hr />
+<h2 id="perche-conta">Perché Conta</h2>
+<p>Nei sistemi plugin-based, un componente incompatibile può causare errori tardivi e difficili da diagnosticare. ImportSpy porta la validazione all’ingresso del modulo, rendendo gli errori più prevedibili.</p>
+<hr />
+<h2 id="proprieta-chiave">Proprietà Chiave</h2>
+<ul>
+<li>contratti dichiarativi</li>
+<li>errori deterministici</li>
+<li>basso coupling con l’applicazione</li>
+<li>diagnostica strutturata</li>
+<li>estendibilità del validation engine</li>
+<li>uso possibile in CI/CD e runtime</li>
+</ul>
 
 
 
@@ -1947,13 +1900,13 @@
         
         
           
-          <a href="../validation/" class="md-footer__link md-footer__link--next" aria-label="Successivo: Validazione runtime (storico)">
+          <a href="../validation/" class="md-footer__link md-footer__link--next" aria-label="Successivo: Sistema di Validazione">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Successivo
               </span>
               <div class="md-ellipsis">
-                Validazione runtime (storico)
+                Sistema di Validazione
               </div>
             </div>
             <div class="md-footer__button md-icon">

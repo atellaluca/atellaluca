@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Come ImportSpy separa osservazioni, violazioni delle policy ed esiti di ammissione, con diagnostica condivisa per persone, JSON e SARIF.">
+        <meta name="description" content="Approfondimento sul violation system di ImportSpy: diagnostica strutturata, error reporting deterministico e violazioni di runtime contracts per architetture Python modulari.">
       
       
         <meta name="author" content="Luca Atella">
@@ -33,7 +33,7 @@
     
     
   
-  <title>ImportSpy | Evidenze, violazioni e decisioni di ammissione · Luca Atella</title>
+  <title>Diagnostica Contratti | Violation System di ImportSpy · Luca Atella</title>
 
     
       <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
@@ -81,18 +81,18 @@
   
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Luca Atella">
-  <meta property="og:title" content="ImportSpy | Evidenze, violazioni e decisioni di ammissione">
-  <meta property="og:description" content="Come ImportSpy separa osservazioni, violazioni delle policy ed esiti di ammissione, con diagnostica condivisa per persone, JSON e SARIF.">
+  <meta property="og:title" content="Diagnostica Contratti | Violation System di ImportSpy">
+  <meta property="og:description" content="Approfondimento sul violation system di ImportSpy: diagnostica strutturata, error reporting deterministico e violazioni di runtime contracts per architetture Python modulari.">
   <meta property="og:url" content="https://profile.atellaluca.com/it/case-studies/importspy/violations/">
   <meta property="og:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
   
-    <meta property="og:image:alt" content="ImportSpy — Luca Atella">
-    <meta name="twitter:image:alt" content="ImportSpy — Luca Atella">
+    <meta property="og:image:alt" content="Diagnostica contratti e violation system di ImportSpy">
+    <meta name="twitter:image:alt" content="Diagnostica contratti e violation system di ImportSpy">
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ImportSpy | Evidenze, violazioni e decisioni di ammissione">
-  <meta name="twitter:description" content="Come ImportSpy separa osservazioni, violazioni delle policy ed esiti di ammissione, con diagnostica condivisa per persone, JSON e SARIF.">
+  <meta name="twitter:title" content="Diagnostica Contratti | Violation System di ImportSpy">
+  <meta name="twitter:description" content="Approfondimento sul violation system di ImportSpy: diagnostica strutturata, error reporting deterministico e violazioni di runtime contracts per architetture Python modulari.">
   <meta name="twitter:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
   
@@ -102,8 +102,8 @@
     "@context": "https://schema.org",
     "@type": "TechArticle",
     "inLanguage": "it",
-    "name": "ImportSpy | Evidenze, violazioni e decisioni di ammissione",
-    "description": "Come ImportSpy separa osservazioni, violazioni delle policy ed esiti di ammissione, con diagnostica condivisa per persone, JSON e SARIF.",
+    "name": "Diagnostica Contratti | Violation System di ImportSpy",
+    "description": "Approfondimento sul violation system di ImportSpy: diagnostica strutturata, error reporting deterministico e violazioni di runtime contracts per architetture Python modulari.",
     "url": "https://profile.atellaluca.com/it/case-studies/importspy/violations/",
     "image": "https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png",
     
@@ -131,8 +131,6 @@
         "FastAPI",
         "DynamoDB",
         "Runtime contract validation",
-        "Python admission control",
-        "Policy-as-code",
         "Modular Python systems",
         "IoT backend architecture",
         "Digital Twin architecture",
@@ -162,7 +160,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#evidenze-violazioni-e-decisioni-di-ammissione" class="md-skip">
+        <a href="#violation-system-e-contract-diagnostics" class="md-skip">
           Vai al contenuto
         </a>
       
@@ -195,7 +193,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ImportSpy | Evidenze, violazioni e decisioni di ammissione
+              Diagnostica Contratti | Violation System di ImportSpy
             
           </span>
         </div>
@@ -842,7 +840,7 @@
   <span class="md-ellipsis">
     
   
-    Validazione runtime (storico)
+    Sistema di Validazione
   
 
     
@@ -870,7 +868,7 @@
   <span class="md-ellipsis">
     
   
-    Contratti provider–consumer (storico)
+    Runtime Contracts
   
 
     
@@ -907,7 +905,7 @@
   <span class="md-ellipsis">
     
   
-    Evidenze e diagnostica di ammissione
+    Diagnostica Contratti
   
 
     
@@ -925,7 +923,7 @@
   <span class="md-ellipsis">
     
   
-    Evidenze e diagnostica di ammissione
+    Diagnostica Contratti
   
 
     
@@ -951,10 +949,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#unosservazione-non-e-un-verdetto" class="md-nav__link">
+  <a href="#perche-un-sistema-di-violazioni" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Un’osservazione non è un verdetto
+        Perché un Sistema di Violazioni
       
     </span>
   </a>
@@ -962,10 +960,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#una-violazione-spiega-il-mancato-rispetto-di-un-requisito" class="md-nav__link">
+  <a href="#cosa-contiene-una-violazione" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Una violazione spiega il mancato rispetto di un requisito
+        Cosa Contiene una Violazione
       
     </span>
   </a>
@@ -973,10 +971,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#presentare-lo-stesso-risultato-a-destinatari-diversi" class="md-nav__link">
+  <a href="#benefici" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Presentare lo stesso risultato a destinatari diversi
+        Benefici
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#valore-architetturale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valore Architetturale
       
     </span>
   </a>
@@ -1771,10 +1780,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#unosservazione-non-e-un-verdetto" class="md-nav__link">
+  <a href="#perche-un-sistema-di-violazioni" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Un’osservazione non è un verdetto
+        Perché un Sistema di Violazioni
       
     </span>
   </a>
@@ -1782,10 +1791,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#una-violazione-spiega-il-mancato-rispetto-di-un-requisito" class="md-nav__link">
+  <a href="#cosa-contiene-una-violazione" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Una violazione spiega il mancato rispetto di un requisito
+        Cosa Contiene una Violazione
       
     </span>
   </a>
@@ -1793,10 +1802,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#presentare-lo-stesso-risultato-a-destinatari-diversi" class="md-nav__link">
+  <a href="#benefici" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Presentare lo stesso risultato a destinatari diversi
+        Benefici
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#valore-architetturale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valore Architetturale
       
     </span>
   </a>
@@ -1820,18 +1840,29 @@
 
 
 
-<h1 id="evidenze-violazioni-e-decisioni-di-ammissione">Evidenze, violazioni e decisioni di ammissione</h1>
-<p>Il modello diagnostico attuale spiega sia l’esito sia le informazioni usate per raggiungerlo. Riprende la diagnostica strutturata del progetto iniziale senza presentare la vecchia tassonomia delle eccezioni come API di ammissione corrente.</p>
-<h2 id="unosservazione-non-e-un-verdetto">Un’osservazione non è un verdetto</h2>
-<p><code>Evidence</code> registra soggetto, provider, fase e stato. Un metadato <code>observed</code> è diverso da un’affermazione <code>verified</code>; <code>unknown</code> e <code>unavailable</code> rappresentano lacune informative differenti. Una verifica non è un certificato generale di sicurezza del modulo.</p>
-<p>Una distribuzione può, per esempio, avere una versione osservata ma nessuna evidenza disponibile per la provenienza richiesta. La policy decide se la combinazione sia accettabile. Il reporter deve mostrare il requisito mancante, senza sostituirlo con un generico errore di import.</p>
-<h2 id="una-violazione-spiega-il-mancato-rispetto-di-un-requisito">Una violazione spiega il mancato rispetto di un requisito</h2>
-<p><code>Violation</code> registra codice, categoria, fase, soggetto, messaggio e severità. Le posizioni nel sorgente possono aiutare gli strumenti a identificare l’input interessato. Il nucleo produce un risultato strutturato, senza costringere i consumer a dedurre la decisione dal testo per le persone.</p>
-<p><code>AdmissionDecision</code> raccoglie esito, dipendenze, evidenze e violazioni. Le violazioni con severità error producono DENY. Registra anche se l’esecuzione è avvenuta: un rifiuto statico è diverso da quello di un validatore runtime dopo l’inizializzazione.</p>
-<h2 id="presentare-lo-stesso-risultato-a-destinatari-diversi">Presentare lo stesso risultato a destinatari diversi</h2>
-<p>I reporter per persone, JSON e SARIF presentano il risultato condiviso senza ripetere l’ammissione. Una persona richiede una spiegazione leggibile; l’automazione una struttura stabile; gli strumenti di analisi beneficiano delle informazioni su regole e posizioni.</p>
-<p>I report non sono automaticamente privi di dati sensibili. Percorsi del sorgente e osservazioni dei provider vanno verificati prima della pubblicazione. Le misure di redazione del motore non eliminano la responsabilità dell’applicazione sui dati forniti dalle estensioni.</p>
-<p><a href="../architecture/">Leggi l’architettura</a> · <a href="../">Torna al percorso progettuale</a> · <a href="https://importspy.atellaluca.com/">Reference ufficiale</a></p>
+<h1 id="violation-system-e-contract-diagnostics">Violation System e Contract Diagnostics</h1>
+<h2 id="perche-un-sistema-di-violazioni">Perché un Sistema di Violazioni</h2>
+<p>Un runtime contract engine non deve limitarsi a lanciare eccezioni generiche. Deve spiegare cosa non ha funzionato, quale contratto è stato violato e quale parte del contesto ha causato il problema.</p>
+<hr />
+<h2 id="cosa-contiene-una-violazione">Cosa Contiene una Violazione</h2>
+<ul>
+<li>codice o tipo della violazione</li>
+<li>messaggio diagnostico</li>
+<li>contratto coinvolto</li>
+<li>modulo o requisito non conforme</li>
+<li>contesto runtime rilevante</li>
+</ul>
+<hr />
+<h2 id="benefici">Benefici</h2>
+<ul>
+<li>debugging più rapido</li>
+<li>errori leggibili in CI/CD</li>
+<li>errori più utili per sviluppatori e operatori</li>
+<li>separazione tra rilevazione del problema e presentazione diagnostica</li>
+</ul>
+<hr />
+<h2 id="valore-architetturale">Valore Architetturale</h2>
+<p>Il violation system rende ImportSpy adatto a sistemi long-running, ecosistemi plugin-based e ambienti dove l’incompatibilità di un modulo deve essere intercettata in modo chiaro e ripetibile.</p>
 
 
 
@@ -1870,7 +1901,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Piede" >
         
           
-          <a href="../contracts/" class="md-footer__link md-footer__link--prev" aria-label="Precedente: Contratti provider–consumer (storico)">
+          <a href="../contracts/" class="md-footer__link md-footer__link--prev" aria-label="Precedente: Runtime Contracts">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1880,7 +1911,7 @@
                 Precedente
               </span>
               <div class="md-ellipsis">
-                Contratti provider–consumer (storico)
+                Runtime Contracts
               </div>
             </div>
           </a>
