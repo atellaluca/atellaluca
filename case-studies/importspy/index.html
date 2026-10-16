@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="ImportSpy case study by Luca Atella: open-source Python runtime contract engine for modular systems, plugin validation, architectural boundaries and deterministic diagnostics.">
+        <meta name="description" content="How Luca Atella designed ImportSpy: static Python preflight, dependency identity, evidence and policy decisions before explicit module execution.">
       
       
         <meta name="author" content="Luca Atella">
@@ -22,9 +22,9 @@
       
       
         
-          <link rel="alternate" href="https://profile.atellaluca.com/case-studies/importspy/" hreflang="en">
+          
         
-          <link rel="alternate" href="https://profile.atellaluca.com/it/case-studies/importspy/" hreflang="it">
+          
         
       
       
@@ -33,7 +33,7 @@
     
     
   
-  <title>ImportSpy | Runtime Contract Validation for Modular Python Systems · Luca Atella</title>
+  <title>ImportSpy | Python Admission Control with Policy-as-Code · Luca Atella</title>
 
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
@@ -64,6 +64,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/header.css">
     
+      <link rel="stylesheet" href="../../stylesheets/services.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -81,18 +83,18 @@
   
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Luca Atella">
-  <meta property="og:title" content="ImportSpy | Runtime Contract Validation for Modular Python Systems">
-  <meta property="og:description" content="ImportSpy case study by Luca Atella: open-source Python runtime contract engine for modular systems, plugin validation, architectural boundaries and deterministic diagnostics.">
+  <meta property="og:title" content="ImportSpy | Python Admission Control with Policy-as-Code">
+  <meta property="og:description" content="How Luca Atella designed ImportSpy: static Python preflight, dependency identity, evidence and policy decisions before explicit module execution.">
   <meta property="og:url" content="https://profile.atellaluca.com/case-studies/importspy/">
   <meta property="og:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
   
-    <meta property="og:image:alt" content="ImportSpy runtime contract validation for modular Python systems by Luca Atella">
-    <meta name="twitter:image:alt" content="ImportSpy runtime contract validation for modular Python systems by Luca Atella">
+    <meta property="og:image:alt" content="Luca Atella, creator of ImportSpy for Python admission control">
+    <meta name="twitter:image:alt" content="Luca Atella, creator of ImportSpy for Python admission control">
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ImportSpy | Runtime Contract Validation for Modular Python Systems">
-  <meta name="twitter:description" content="ImportSpy case study by Luca Atella: open-source Python runtime contract engine for modular systems, plugin validation, architectural boundaries and deterministic diagnostics.">
+  <meta name="twitter:title" content="ImportSpy | Python Admission Control with Policy-as-Code">
+  <meta name="twitter:description" content="How Luca Atella designed ImportSpy: static Python preflight, dependency identity, evidence and policy decisions before explicit module execution.">
   <meta name="twitter:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
   
@@ -102,8 +104,8 @@
     "@context": "https://schema.org",
     "@type": "SoftwareSourceCode",
     "inLanguage": "en",
-    "name": "ImportSpy | Runtime Contract Validation for Modular Python Systems",
-    "description": "ImportSpy case study by Luca Atella: open-source Python runtime contract engine for modular systems, plugin validation, architectural boundaries and deterministic diagnostics.",
+    "name": "ImportSpy | Python Admission Control with Policy-as-Code",
+    "description": "How Luca Atella designed ImportSpy: static Python preflight, dependency identity, evidence and policy decisions before explicit module execution.",
     "url": "https://profile.atellaluca.com/case-studies/importspy/",
     "image": "https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png",
     
@@ -116,8 +118,7 @@
   }
   </script>
 
-  <link rel="alternate" hreflang="x-default" href="https://profile.atellaluca.com/case-studies/importspy/">
-</head>
+  </head>
   
   
     
@@ -136,7 +137,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#importspy-runtime-import-contracts-for-modular-python-systems" class="md-skip">
+        <a href="#importspy-python-admission-control-with-policy-as-code" class="md-skip">
           Skip to content
         </a>
       
@@ -169,7 +170,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ImportSpy | Runtime Contract Validation for Modular Python Systems
+              ImportSpy | Python Admission Control with Policy-as-Code
             
           </span>
         </div>
@@ -327,6 +328,25 @@
     
   
   Methodology
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../services/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Services
 
       </a>
     </li>
@@ -529,6 +549,33 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../../services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -548,10 +595,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -569,8 +616,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -626,10 +673,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
             
   
   
@@ -647,8 +694,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -714,10 +761,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
             
   
   
@@ -735,8 +782,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -813,10 +860,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#the-problem-importing-is-already-execution" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        The problem: importing is already execution
       
     </span>
   </a>
@@ -824,38 +871,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problem-statement" class="md-nav__link">
+  <a href="#what-changed-in-version-05" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problem Statement
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Problem Statement">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#problem-solution-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem → Solution Flow
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#design-goals" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Design Goals
+        What changed in version 0.5
       
     </span>
   </a>
@@ -863,10 +882,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#high-level-architecture" class="md-nav__link">
+  <a href="#architectural-decision" class="md-nav__link">
     <span class="md-ellipsis">
       
-        High-Level Architecture
+        Architectural decision
       
     </span>
   </a>
@@ -874,10 +893,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#applications-and-use-cases" class="md-nav__link">
+  <a href="#static-preflight" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Applications and Use Cases
+        Static preflight
       
     </span>
   </a>
@@ -885,38 +904,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#talks-community" class="md-nav__link">
+  <a href="#dependency-identity" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Talks &amp; Community
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Talks &amp; Community">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#importspy-quando-i-moduli-python-sanno-dire-di-no" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ImportSpy: Quando i moduli Python sanno dire di no.
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#my-role" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        My Role
+        Dependency identity
       
     </span>
   </a>
@@ -924,10 +915,65 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#read-next" class="md-nav__link">
+  <a href="#evidence-policy-and-the-admission-decision" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Read Next
+        Evidence, policy and the admission decision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution-is-a-separate-responsibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Execution is a separate responsibility
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supply-chain-role-and-extension-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supply-chain role and extension design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-contribution-and-outcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My contribution and outcome
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-presentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public presentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-the-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explore the engineering
       
     </span>
   </a>
@@ -971,90 +1017,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="validation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Validation System (Deep Dive)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="contracts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Runtime Contracts (Deep Dive)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="violations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Violation System and Contract Diagnostics (Deep Dive)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1081,10 +1043,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
         
           
-          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
             
   
   
@@ -1102,8 +1064,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1167,10 +1129,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
         
           
-          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
             
   
   
@@ -1188,8 +1150,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1365,10 +1327,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
         
           
-          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
             
   
   
@@ -1386,8 +1348,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1451,10 +1413,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
         
           
-          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
             
   
   
@@ -1472,8 +1434,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1565,10 +1527,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" >
         
           
-          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
             
   
   
@@ -1586,8 +1548,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1651,10 +1613,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_9" >
         
           
-          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_9" id="__nav_5_9_label" tabindex="0">
             
   
   
@@ -1672,8 +1634,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1834,10 +1796,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#the-problem-importing-is-already-execution" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        The problem: importing is already execution
       
     </span>
   </a>
@@ -1845,38 +1807,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problem-statement" class="md-nav__link">
+  <a href="#what-changed-in-version-05" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problem Statement
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Problem Statement">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#problem-solution-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem → Solution Flow
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#design-goals" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Design Goals
+        What changed in version 0.5
       
     </span>
   </a>
@@ -1884,10 +1818,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#high-level-architecture" class="md-nav__link">
+  <a href="#architectural-decision" class="md-nav__link">
     <span class="md-ellipsis">
       
-        High-Level Architecture
+        Architectural decision
       
     </span>
   </a>
@@ -1895,10 +1829,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#applications-and-use-cases" class="md-nav__link">
+  <a href="#static-preflight" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Applications and Use Cases
+        Static preflight
       
     </span>
   </a>
@@ -1906,38 +1840,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#talks-community" class="md-nav__link">
+  <a href="#dependency-identity" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Talks &amp; Community
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Talks &amp; Community">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#importspy-quando-i-moduli-python-sanno-dire-di-no" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ImportSpy: Quando i moduli Python sanno dire di no.
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#my-role" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        My Role
+        Dependency identity
       
     </span>
   </a>
@@ -1945,10 +1851,65 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#read-next" class="md-nav__link">
+  <a href="#evidence-policy-and-the-admission-decision" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Read Next
+        Evidence, policy and the admission decision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution-is-a-separate-responsibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Execution is a separate responsibility
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supply-chain-role-and-extension-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supply-chain role and extension design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-contribution-and-outcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My contribution and outcome
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-presentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public presentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-the-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explore the engineering
       
     </span>
   </a>
@@ -1972,137 +1933,78 @@
 
 
 
-<h1 id="importspy-runtime-import-contracts-for-modular-python-systems">ImportSpy — Runtime Import Contracts for Modular Python Systems</h1>
-<p><strong>Type:</strong> Open-source software project<br />
-<strong>Role:</strong> Project Lead &amp; Software Architect<br />
-<strong>Period:</strong> 2024 – Present<br />
-<strong>Domain:</strong> Python, modular systems, runtime validation<br />
-<strong>Repository:</strong> <a href="https://github.com/atellaluca/importspy">ImportSpy on GitHub — runtime contract engine for Python</a><br />
-<strong>Adoption:</strong> 15,000+ downloads on PyPI  </p>
-<hr />
-<h2 id="overview">Overview</h2>
-<p>ImportSpy is an open-source Python library designed to enforce <strong>runtime contracts at module import time</strong>.<br />
-Its goal is to prevent unsafe or incompatible modules from being loaded into a running system by validating their structural, environmental, and contextual properties before execution.</p>
-<p>The project was conceived to address a recurring problem in <strong>modular architectures, plugin-based systems, and extensible platforms</strong>:<br />
-the lack of a reliable mechanism to ensure that dynamically loaded components satisfy predefined integration requirements.</p>
-<p>ImportSpy introduces a <strong>contract-driven validation layer</strong> that operates at import time, enabling developers to:</p>
+<h1 id="importspy-python-admission-control-with-policy-as-code">ImportSpy — Python Admission Control with Policy-as-Code</h1>
+<p><strong>Version covered: 0.5.0 · September 23, 2026.</strong> This is the latest release listed on <a href="https://pypi.org/project/importspy/">PyPI</a> as of October 16, 2026. The current generation is an admission pipeline <em>before</em> execution, not the earlier runtime-contract validator wrapped around importing.</p>
+<p><strong>Type:</strong> open-source Python developer tooling<br>
+<strong>Role:</strong> creator and maintainer · architecture and implementation<br>
+<strong>Domain:</strong> Python · Developer Tooling · Policy-as-Code · Software Supply Chain<br>
+<strong>Current source and reference:</strong> <a href="https://github.com/atellaluca/ImportSpy">ImportSpy on GitHub</a> · <a href="https://pypi.org/project/importspy/0.5.0/">0.5.0 on PyPI</a></p>
+<p>ImportSpy decides whether a Python module and its observed dependencies satisfy policy <strong>before admitting the module for execution</strong>. I designed and implemented the admission pipeline, from static inspection and dependency resolution to structured diagnostics and an explicit loader.</p>
+<h2 id="the-problem-importing-is-already-execution">The problem: importing is already execution</h2>
+<p>A plugin host may import a module to discover its functions, inspect its dependencies or check compatibility. By then, Python may already have run the module's top-level code. A rejected component can therefore have produced effects before the host decides whether it belongs in the system.</p>
+<p>ImportSpy started by making assumptions between Python modules explicit. That work exposed a more fundamental boundary: validation performed after import cannot prevent earlier execution. The architectural question became: <strong>how can a Python system reason about a module before trusting it enough to execute it?</strong></p>
+<h2 id="what-changed-in-version-05">What changed in version 0.5</h2>
+<p>Earlier releases centered on declarative contracts and checks around the importing context. In <strong>0.5</strong> I moved the decision boundary: ImportSpy inspects Python source <strong>without importing it</strong>, resolves observed dependencies and evaluates policy before any explicit target load.</p>
+<p>This is more than a rebrand. The CLI workflow (<code>init</code>, <code>check</code>), library API and decision model have changed. <code>check</code> returns <code>ADMIT</code> or <code>DENY</code> with CI-friendly diagnostics, but <strong>does not execute</strong> the module. Explicit execution uses the Python library's <code>AdmissionEngine.load(request)</code>, which performs fresh admission before running the target.</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>importspy
+importspy<span class="w"> </span>init<span class="w"> </span>path/to/plugin.py
+<span class="c1"># Review the generated contract</span>
+importspy<span class="w"> </span>check<span class="w"> </span>path/to/plugin.py<span class="w"> </span>--format<span class="w"> </span>json
+</code></pre></div>
+<p>The 2025 talk explains the earlier generation. It remains project history—not documentation of how 0.5 behaves.</p>
+<h2 id="architectural-decision">Architectural decision</h2>
+<p>I separated admission from execution. Inspection gathers facts; policy evaluates those facts; loading is an explicit later operation.</p>
+<pre class="mermaid"><code>flowchart TD
+    accTitle: ImportSpy admission and execution boundary
+    accDescr: Source inspection, dependency resolution and evidence collection feed policy evaluation. Denied modules stop; execution requires admission and an explicit load.
+    A[Source] --&gt; B[Static preflight]
+    B --&gt; C[Dependency resolution]
+    C --&gt; D[Evidence collection]
+    D --&gt; E[Policy evaluation]
+    E --&gt; F{ADMIT / DENY}
+    F --&gt;|DENY| G[Structured diagnostics]
+    F --&gt;|ADMIT + explicit load| H[Execution boundary]
+    H --&gt; I[Execution]</code></pre>
+<p>A successful standalone <code>check</code> stops at the decision. It does not execute the target and does not grant immutable permission to load it later.</p>
+<h2 id="static-preflight">Static preflight</h2>
+<p>The inspector captures the source bytes, parses the syntax tree and compiles it to check syntax and scope rules without executing the result. Both <code>check</code> and <code>init</code> inspect the target without running its top-level code or importing its observed dependencies. <code>init</code> produces a starter policy for the developer to review, not an automatic approval.</p>
+<p>This establishes source-level facts such as declarations, literal values and import references. It cannot prove arbitrary Python behavior. Decorators, computed values or dynamically built interfaces may leave a required fact unknown. Required static constraints then fail closed instead of executing the target to fill the gap.</p>
+<h2 id="dependency-identity">Dependency identity</h2>
+<p>An import name is not necessarily the package identity used by policy:</p>
+<div class="highlight"><pre><span></span><code>import yaml → import name: yaml → distribution: PyYAML
+</code></pre></div>
+<p>The resolver connects source imports to installed distribution metadata. It distinguishes standard-library, project/local, installed, namespace, direct-origin and unresolved dependencies; editable installation and VCS/direct-URL origin are additional facts. Namespace imports may have several distribution contributors.</p>
+<p>That distinction makes version, declaration, origin and editable-install policies meaningful. Otherwise, a rule could be applied to the wrong package or silently overlook uncertainty. Missing origin metadata remains unknown; it does not prove that a package came from PyPI. The inventory covers imports visible in the selected source, not a complete transitive dependency graph.</p>
+<h2 id="evidence-policy-and-the-admission-decision">Evidence, policy and the admission decision</h2>
+<p>A YAML contract expresses requirements as reviewable code: expected module structure, dependency rules, required evidence and host runtime conditions. Implemented host checks cover Python version, operating system, architecture, interpreter implementation and environment requirements. The contract can be versioned with the application and checked in CI. It defines the admission criteria; it does not rewrite or isolate the target.</p>
+<p>Evidence records what a collector knows. Policy decides whether that knowledge is sufficient. Keeping them separate lets the same observation support different application requirements without hiding policy inside the collector.</p>
+<p><code>Evidence</code> distinguishes <strong>verified</strong>, <strong>observed</strong>, <strong>unknown</strong> and <strong>unavailable</strong> facts. Installed metadata is an observation. “Verified” applies to the specific fact and verification procedure; it is never a statement that the code is safe. Required evidence that is unknown or unavailable cannot satisfy policy.</p>
+<p>The result is an <code>AdmissionDecision</code> containing the outcome, source and contract identity, dependencies, evidence, structured <code>Violation</code> records and whether execution occurred. Human-readable, JSON and SARIF reporters consume the same decision. Developers can diagnose a denial while CI receives machine-readable results without rerunning inspection.</p>
+<h2 id="execution-is-a-separate-responsibility">Execution is a separate responsibility</h2>
+<p><code>AdmissionEngine.load(request)</code> refreshes dependency metadata, performs fresh admission and, if admitted, executes the captured source bytes. This keeps execution tied to the inspected target snapshot even if the file changes during collection. It is a library operation, separate from the CLI checks.</p>
+<p>That is a deliberately bounded guarantee. Installed dependencies, import hooks and the surrounding environment are not frozen. Ordinary and dynamic imports can still run during execution. Optional runtime validators inspect initialized objects <strong>after execution</strong> and cannot undo top-level effects. ImportSpy is not a sandbox and does not eliminate every check-to-execution race.</p>
+<h2 id="supply-chain-role-and-extension-design">Supply-chain role and extension design</h2>
+<p>ImportSpy turns evidence into an admission decision. It does not replace a package manager, vulnerability scanner or SBOM generator, and does not bundle OSV or Sigstore verification. Package metadata and origin URLs are not cryptographic provenance.</p>
+<p>I separated <code>EvidenceProvider</code>, <code>PolicyValidator</code>, <code>RuntimeValidator</code> and <code>Reporter</code> extension points so that collection, decisions, post-execution checks and presentation can evolve independently. These protocols are implemented. The repository includes an <a href="https://github.com/atellaluca/ImportSpy/blob/main/docs/extensions.md">offline provider and validator example</a>; example code is separate from the installed package and does not verify external supply-chain claims.</p>
+<p>Adapters for vulnerability results, Sigstore, PyPI attestations and SBOM inventories are <a href="https://github.com/atellaluca/ImportSpy/blob/main/docs/community-roadmap.md">roadmap proposals</a>, not built-in integrations. Organizational policy registries, dashboards and approval workflows are also future work.</p>
+<p>Core checks work offline. Network collection requires explicit provider selection and authorization. With fixed policy and facts, evaluation is deterministic; making I/O explicit helps testing and reproducibility without pretending that external evidence never changes.</p>
+<h2 id="my-contribution-and-outcome">My contribution and outcome</h2>
+<p>I own the Python implementation, static analysis, dependency resolution, domain models, extension interfaces, CLI, reporting, tests, documentation and release workflow. Regression tests in the project exercise the execution boundary, including source that attempts output, file writes, environment changes, subprocesses or network operations.</p>
+<p>The result is an inspectable admission decision and a separate execution path. The engineering lesson is to make uncertainty and trust boundaries part of the model rather than hide them behind a successful import.</p>
+<p>Concrete applications include plugin admission, internal Python platforms, dependency governance and CI policy checks. These are use cases for the design, not claims of production adoption.</p>
+<h2 id="public-presentation">Public presentation</h2>
+<p><strong>GDG Basilicata · Flash Talks Arena · 20 May 2025</strong> — <em>ImportSpy: Quando i moduli Python sanno dire “no”</em>. A technical talk about the <strong>earlier generation</strong> of ImportSpy and its runtime contracts. Version 0.5 now uses static preflight and admission control before execution.</p>
+<p><a href="../../assets/talks/importspy-gdg-basilicata-it.pdf">Original presentation — Italian (PDF)</a> · <a href="https://gdg.community.dev/events/details/google-gdg-basilicata-presents-flash-talks-arena/">Event and talk details</a></p>
+<p>Related material: <a href="../../assets/talks/importspy-runtime-contract-validation-en.pdf">English technical presentation (PDF)</a>.</p>
+<h2 id="explore-the-engineering">Explore the engineering</h2>
 <ul>
-<li>enforce structural constraints on modules  </li>
-<li>validate runtime environment assumptions  </li>
-<li>prevent unsafe or incompatible imports  </li>
-<li>fail fast before corrupted system states are reached  </li>
+<li><a href="architecture/">Architecture: evidence, policy and execution boundaries</a></li>
+<li><a href="https://github.com/atellaluca/ImportSpy">Repository, tests and contribution work</a></li>
+<li><a href="https://github.com/atellaluca/ImportSpy/blob/main/docs/migration-0.5.md">Migration from 0.4</a> · <a href="https://github.com/atellaluca/ImportSpy/blob/main/docs/security-model.md">Security model and limits</a></li>
+<li><a href="https://github.com/atellaluca/ImportSpy/tree/main/docs">Version 0.5 documentation in the repository</a> · <a href="https://pypi.org/project/importspy/0.5.0/">PyPI release 0.5.0</a></li>
+<li><a href="../">All case studies</a></li>
 </ul>
-<hr />
-<h2 id="problem-statement">Problem Statement</h2>
-<p>In modern Python systems, dynamic imports are widely used to support:</p>
-<ul>
-<li>plugin architectures  </li>
-<li>runtime extensibility  </li>
-<li>dependency injection  </li>
-<li>distributed and modular services  </li>
-</ul>
-<p>However, Python’s import system provides <strong>no built-in mechanism</strong> to:</p>
-<ul>
-<li>verify the structure of imported modules  </li>
-<li>validate required functions, classes, or interfaces  </li>
-<li>enforce environmental or contextual constraints  </li>
-<li>prevent incompatible runtime conditions  </li>
-</ul>
-<p>As a result, many systems rely on:</p>
-<ul>
-<li>implicit assumptions  </li>
-<li>ad-hoc runtime checks  </li>
-<li>late failures occurring deep in the execution flow  </li>
-</ul>
-<p>This leads to fragile integrations, unpredictable failures, and difficult-to-debug runtime errors.</p>
-<h3 id="problem-solution-flow">Problem → Solution Flow</h3>
-<pre class="mermaid"><code>flowchart LR
-    A[Dynamic Import in Python] --&gt; B[Implicit Assumptions]
-    B --&gt; C[Late Runtime Failures]
-    C --&gt; D[Fragile Integrations]
-    D --&gt; E[Difficult Debugging]
-
-    A --&gt; F[ImportSpy Intercepts Import]
-    F --&gt; G[Contract Validation]
-    G --&gt; H[Deterministic Failure]
-    H --&gt; I[Safe Module Execution]
-
-    style A fill:#f5f5f5,stroke:#333
-    style F fill:#e8f0fe,stroke:#333
-    style H fill:#e8f0fe,stroke:#333</code></pre>
-<hr />
-<h2 id="design-goals">Design Goals</h2>
-<p>ImportSpy was designed around the following core principles:</p>
-<ul>
-<li><strong>Fail fast:</strong> detect incompatibilities at import time  </li>
-<li><strong>Declarative contracts:</strong> express requirements as structured schemas  </li>
-<li><strong>Low coupling:</strong> keep contracts independent from implementation  </li>
-<li><strong>Runtime safety:</strong> prevent invalid modules from entering the system  </li>
-<li><strong>Extensibility:</strong> support future validation rules and constraints  </li>
-<li><strong>Minimal intrusion:</strong> avoid invasive changes to application code  </li>
-</ul>
-<hr />
-<h2 id="high-level-architecture">High-Level Architecture</h2>
-<p>At a conceptual level, ImportSpy is structured as a runtime governance pipeline that intercepts module imports and validates them against declarative contracts before execution.</p>
-<pre class="mermaid"><code>flowchart TB
-    U[Application Code] --&gt; I[Import Request]
-    I --&gt; H[Import Interception Layer]
-    H --&gt; C[Contract Definition Layer]
-    C --&gt; V[Validation Engine]
-    V --&gt; R[Validation Result]
-
-    R --&gt;|Valid| M[Module Execution]
-    R --&gt;|Invalid| E[Structured Failure]
-
-    V --&gt; X[Execution Context]
-    X --&gt; OS[Operating System]
-    X --&gt; PY[Python Runtime]
-    X --&gt; ENV[Environment Variables]
-    X --&gt; CFG[Configuration]
-
-    style H fill:#e8f0fe,stroke:#333
-    style V fill:#e8f0fe,stroke:#333
-    style R fill:#e8f0fe,stroke:#333</code></pre>
-<hr />
-<h2 id="applications-and-use-cases">Applications and Use Cases</h2>
-<p>ImportSpy is applicable to a wide range of scenarios, including:</p>
-<ul>
-<li>plugin-based systems  </li>
-<li>modular backends  </li>
-<li>microservice bootstrapping  </li>
-<li>CI/CD validation pipelines  </li>
-<li>IoT and edge platforms  </li>
-<li>secure runtime environments  </li>
-</ul>
-<hr />
-<h2 id="talks-community">Talks &amp; Community</h2>
-<p>The architectural concepts behind ImportSpy have been shared publicly within technical communities as part of a broader effort to promote runtime governance patterns for modular and extensible Python systems.</p>
-<h3 id="importspy-quando-i-moduli-python-sanno-dire-di-no">ImportSpy: Quando i moduli Python sanno dire di no.</h3>
-<p><strong>GDG Basilicata · Flash Talks Arena</strong></p>
-<p>A community talk focused on <em>import-time contracts</em> and how modular systems can enforce architectural assumptions (Python version, OS, environment variables, and other runtime constraints) before executing non-conforming modules.</p>
-<p>This talk introduces ImportSpy not as a utility library, but as an architectural governance layer for plugin-based and long-running backend systems.</p>
-<p><strong>Resources</strong></p>
-<ul>
-<li>Slides (PDF, Italian): <a href="../../assets/talks/importspy-gdg-basilicata-it.pdf">ImportSpy GDG Basilicata talk — Runtime import contracts for Python</a>  </li>
-<li>Slides (PDF, English — technical translation): <a href="../../assets/talks/importspy-runtime-contract-validation-en.pdf">Runtime Contract Validation in Modular Python Systems</a>  </li>
-<li>Official GDG Basilicata event page: <a href="https://gdg.community.dev/events/details/google-gdg-basilicata-presents-flash-talks-arena/">Flash Talks Arena — ImportSpy session</a>  </li>
-<li>Community listing: <a href="https://www.pignolalug.it/iniziative/flash-talks-arena/">PignolaLUG — Flash Talks Arena (ImportSpy)</a></li>
-</ul>
-<hr />
-<h2 id="my-role">My Role</h2>
-<p>I designed and implemented ImportSpy end-to-end, starting from the conceptual architecture and evolving it into a production-ready open-source system.</p>
-<p>My work covered the definition of the contract model, the design of the validation engine, and the implementation of the runtime import interception mechanism, with a strong focus on determinism, clarity, and architectural correctness. I also curated the project documentation, packaging, and release workflow to ensure long-term maintainability and ease of adoption.</p>
-<p>Through this project, I consolidated my experience in software architecture, runtime systems, modular design, and DevSecOps-oriented tooling, while leading the full lifecycle of an open-source initiative from initial design to public release.</p>
-<hr />
-<h2 id="read-next">Read Next</h2>
-<ul>
-<li><a href="../">Back to case studies</a></li>
-<li><a href="architecture/">ImportSpy architecture deep dive</a></li>
-<li><a href="validation/">Runtime validation engine</a></li>
-<li><a href="https://github.com/atellaluca/importspy">GitHub repository</a></li>
-<li><a href="../../profile/">Technical profile</a></li>
-<li><a href="../../contact/">Contact</a></li>
-</ul>
+<p><a href="../../profile/">Technical profile</a> · <a href="../../cv/">CV</a> · <a href="../../contact/">Discuss an opportunity</a></p>
 
 
 
@@ -2232,10 +2134,6 @@ the lack of a reliable mechanism to ensure that dynamically loaded components sa
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
-      
-        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
-      
-        <script src="../../javascripts/mermaid-init.js"></script>
       
     
   </body>

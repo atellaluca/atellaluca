@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Architettura di ImportSpy, framework di Luca Atella per runtime validation di moduli Python, contratti provider-consumer, sicurezza dei plugin e governance architetturale.">
+        <meta name="description" content="Come ImportSpy di Luca Atella separa ispezione del sorgente, identità delle dipendenze, raccolta delle evidenze, valutazione delle policy ed esecuzione Python esplicita.">
       
       
         <meta name="author" content="Luca Atella">
@@ -18,13 +18,13 @@
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../validation/">
+        <link rel="next" href="../../b3do/">
       
       
         
-          <link rel="alternate" href="https://profile.atellaluca.com/case-studies/importspy/architecture/" hreflang="en">
+          
         
-          <link rel="alternate" href="https://profile.atellaluca.com/it/case-studies/importspy/architecture/" hreflang="it">
+          
         
       
       
@@ -33,7 +33,7 @@
     
     
   
-  <title>Architettura ImportSpy | Runtime Validation Engine per Moduli Python · Luca Atella</title>
+  <title>Architettura ImportSpy | Evidenze, Policy e Ammissione Python · Luca Atella</title>
 
     
       <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
@@ -64,6 +64,8 @@
     
       <link rel="stylesheet" href="../../../../stylesheets/header.css">
     
+      <link rel="stylesheet" href="../../../../stylesheets/services.css">
+    
     <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -81,18 +83,18 @@
   
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Luca Atella">
-  <meta property="og:title" content="Architettura ImportSpy | Runtime Validation Engine per Moduli Python">
-  <meta property="og:description" content="Architettura di ImportSpy, framework di Luca Atella per runtime validation di moduli Python, contratti provider-consumer, sicurezza dei plugin e governance architetturale.">
+  <meta property="og:title" content="Architettura ImportSpy | Evidenze, Policy e Ammissione Python">
+  <meta property="og:description" content="Come ImportSpy di Luca Atella separa ispezione del sorgente, identità delle dipendenze, raccolta delle evidenze, valutazione delle policy ed esecuzione Python esplicita.">
   <meta property="og:url" content="https://profile.atellaluca.com/it/case-studies/importspy/architecture/">
   <meta property="og:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
   
-    <meta property="og:image:alt" content="Architettura ImportSpy per runtime validation Python">
-    <meta name="twitter:image:alt" content="Architettura ImportSpy per runtime validation Python">
+    <meta property="og:image:alt" content="Luca Atella, autore dell’architettura di ammissione Python di ImportSpy">
+    <meta name="twitter:image:alt" content="Luca Atella, autore dell’architettura di ammissione Python di ImportSpy">
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Architettura ImportSpy | Runtime Validation Engine per Moduli Python">
-  <meta name="twitter:description" content="Architettura di ImportSpy, framework di Luca Atella per runtime validation di moduli Python, contratti provider-consumer, sicurezza dei plugin e governance architetturale.">
+  <meta name="twitter:title" content="Architettura ImportSpy | Evidenze, Policy e Ammissione Python">
+  <meta name="twitter:description" content="Come ImportSpy di Luca Atella separa ispezione del sorgente, identità delle dipendenze, raccolta delle evidenze, valutazione delle policy ed esecuzione Python esplicita.">
   <meta name="twitter:image" content="https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png">
   
   
@@ -102,8 +104,8 @@
     "@context": "https://schema.org",
     "@type": "TechArticle",
     "inLanguage": "it",
-    "name": "Architettura ImportSpy | Runtime Validation Engine per Moduli Python",
-    "description": "Architettura di ImportSpy, framework di Luca Atella per runtime validation di moduli Python, contratti provider-consumer, sicurezza dei plugin e governance architetturale.",
+    "name": "Architettura ImportSpy | Evidenze, Policy e Ammissione Python",
+    "description": "Come ImportSpy di Luca Atella separa ispezione del sorgente, identit\u00e0 delle dipendenze, raccolta delle evidenze, valutazione delle policy ed esecuzione Python esplicita.",
     "url": "https://profile.atellaluca.com/it/case-studies/importspy/architecture/",
     "image": "https://profile.atellaluca.com/assets/luca-atella-software-architect-backend-platform-engineer.png",
     
@@ -140,8 +142,7 @@
   }
   </script>
 
-  <link rel="alternate" hreflang="x-default" href="https://profile.atellaluca.com/case-studies/importspy/architecture/">
-</head>
+  </head>
   
   
     
@@ -160,7 +161,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#importspy-architettura-di-sistema" class="md-skip">
+        <a href="#importspy-architettura" class="md-skip">
           Vai al contenuto
         </a>
       
@@ -193,7 +194,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Architettura ImportSpy | Runtime Validation Engine per Moduli Python
+              Architettura ImportSpy | Evidenze, Policy e Ammissione Python
             
           </span>
         </div>
@@ -351,6 +352,25 @@
     
   
   Metodo
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../servizi/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Servizi
 
       </a>
     </li>
@@ -553,6 +573,33 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../servizi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Servizi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -572,10 +619,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -593,8 +640,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -650,10 +697,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
             
   
   
@@ -671,8 +718,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -738,10 +785,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
             
   
   
@@ -759,8 +806,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -865,10 +912,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#visione-architetturale" class="md-nav__link">
+  <a href="#snapshot-del-sorgente-e-confine-di-esecuzione" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Visione Architetturale
+        Snapshot del sorgente e confine di esecuzione
       
     </span>
   </a>
@@ -876,10 +923,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#perche-conta" class="md-nav__link">
+  <a href="#identita-delle-dipendenze-senza-false-certezze" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Perché Conta
+        Identità delle dipendenze senza false certezze
       
     </span>
   </a>
@@ -887,10 +934,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#proprieta-chiave" class="md-nav__link">
+  <a href="#evidenze-separate-dalle-policy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Proprietà Chiave
+        Evidenze separate dalle policy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estensioni-e-fasi-di-esecuzione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estensioni e fasi di esecuzione
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#una-decisione-piu-destinatari" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Una decisione, più destinatari
       
     </span>
   </a>
@@ -901,90 +970,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../validation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Sistema di Validazione
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../contracts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Runtime Contracts
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../violations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Diagnostica Contratti
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -1016,10 +1001,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
         
           
-          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
             
   
   
@@ -1037,8 +1022,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1102,10 +1087,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
         
           
-          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
             
   
   
@@ -1123,8 +1108,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1300,10 +1285,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
         
           
-          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
             
   
   
@@ -1321,8 +1306,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1386,10 +1371,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
         
           
-          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
             
   
   
@@ -1407,8 +1392,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1500,10 +1485,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" >
         
           
-          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
             
   
   
@@ -1521,8 +1506,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1586,10 +1571,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_9" >
         
           
-          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_9" id="__nav_5_9_label" tabindex="0">
             
   
   
@@ -1607,8 +1592,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1769,10 +1754,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#visione-architetturale" class="md-nav__link">
+  <a href="#snapshot-del-sorgente-e-confine-di-esecuzione" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Visione Architetturale
+        Snapshot del sorgente e confine di esecuzione
       
     </span>
   </a>
@@ -1780,10 +1765,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#perche-conta" class="md-nav__link">
+  <a href="#identita-delle-dipendenze-senza-false-certezze" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Perché Conta
+        Identità delle dipendenze senza false certezze
       
     </span>
   </a>
@@ -1791,10 +1776,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#proprieta-chiave" class="md-nav__link">
+  <a href="#evidenze-separate-dalle-policy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Proprietà Chiave
+        Evidenze separate dalle policy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estensioni-e-fasi-di-esecuzione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estensioni e fasi di esecuzione
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#una-decisione-piu-destinatari" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Una decisione, più destinatari
       
     </span>
   </a>
@@ -1818,33 +1825,81 @@
 
 
 
-<h1 id="importspy-architettura-di-sistema">ImportSpy — Architettura di Sistema</h1>
-<p>ImportSpy è progettato come framework generico di runtime validation al confine tra moduli Python.</p>
-<p>L’idea è trattare l’import non come un semplice dettaglio tecnico, ma come un punto di controllo architetturale: prima che un modulo entri nel sistema, ImportSpy verifica se rispetta i contratti previsti.</p>
-<hr />
-<h2 id="visione-architetturale">Visione Architetturale</h2>
-<p>Il sistema è composto da:</p>
-<ul>
-<li>layer di intercettazione degli import</li>
-<li>layer di definizione dei contratti</li>
-<li>validation engine</li>
-<li>ispezione del contesto di esecuzione</li>
-<li>modello strutturato delle violazioni</li>
-</ul>
-<p>Questi elementi permettono di validare struttura del modulo, ambiente runtime, variabili richieste, OS, versione Python e requisiti contestuali.</p>
-<hr />
-<h2 id="perche-conta">Perché Conta</h2>
-<p>Nei sistemi plugin-based, un componente incompatibile può causare errori tardivi e difficili da diagnosticare. ImportSpy porta la validazione all’ingresso del modulo, rendendo gli errori più prevedibili.</p>
-<hr />
-<h2 id="proprieta-chiave">Proprietà Chiave</h2>
-<ul>
-<li>contratti dichiarativi</li>
-<li>errori deterministici</li>
-<li>basso coupling con l’applicazione</li>
-<li>diagnostica strutturata</li>
-<li>estendibilità del validation engine</li>
-<li>uso possibile in CI/CD e runtime</li>
-</ul>
+<h1 id="importspy-architettura">ImportSpy — Architettura</h1>
+<p>ImportSpy separa <strong>la raccolta di informazioni sul modulo</strong>, <strong>la decisione sulla conformità alle policy</strong> e <strong>l’esecuzione</strong>. Ogni passaggio ha un diverso confine di fiducia. Questa separazione permette a sviluppatori, pipeline CI e sistemi di plugin di usare il risultato senza rendere l’esecuzione una conseguenza implicita della validazione.</p>
+<p>Il <a href="../">case study</a> presenta il contesto; questa pagina approfondisce i compromessi architetturali di <strong>ImportSpy 0.5.0</strong>.</p>
+<h2 id="snapshot-del-sorgente-e-confine-di-esecuzione">Snapshot del sorgente e confine di esecuzione</h2>
+<p>L’ispettore legge i byte del sorgente, ne calcola l’hash, analizza l’AST e lo compila per verificarne la sintassi senza eseguire il codice risultante. I fatti descrivono dichiarazioni e import, non tutti i possibili oggetti runtime. Decoratori, metaclassi e valori calcolati possono lasciare proprietà richieste sconosciute; l’ispezione non li esegue per eliminare l’incertezza.</p>
+<p><code>check</code> restituisce una decisione anche quando l’ammissione riesce. Per eseguire serve un <code>load</code> esplicito, che aggiorna i metadati delle dipendenze e ripete il controllo di ammissione. Dopo l’approvazione, esegue i byte acquisiti senza riaprire il percorso. Un test modifica il file durante la raccolta delle evidenze e verifica l’esecuzione dello snapshot ispezionato.</p>
+<p>Questo limita il divario tra controllo e uso del <strong>sorgente selezionato</strong>. Non congela dipendenze installate, import hook, file esterni o processo circostante. I validatori runtime intervengono dopo l’inizializzazione del modulo; rimuovere da <code>sys.modules</code> un modulo che ha fallito non ne annulla gli effetti. Il loader non è un import hook né una sandbox.</p>
+<p>Le API di compatibilità mantenute, <code>Spy.importspy</code> e <code>SpyModel.from_module</code>, ispezionano moduli già eseguiti. Appartengono alla precedente architettura dei contratti runtime e non acquisiscono il confine prima dell’esecuzione della pipeline di ammissione. Si vedano il <a href="https://github.com/atellaluca/ImportSpy/blob/main/docs/modes/embedded.md">flusso della libreria e le indicazioni di migrazione</a>.</p>
+<h2 id="identita-delle-dipendenze-senza-false-certezze">Identità delle dipendenze senza false certezze</h2>
+<p>Il nome di importazione e quello della distribuzione rispondono a domande diverse. Un import può corrispondere a più distribuzioni installate, mentre una distribuzione può fornire più import. ImportSpy conserva queste relazioni senza scegliere arbitrariamente un solo contributore. Per i namespace adotta quindi un criterio conservativo: la policy valuta tutti i contributori identificati.</p>
+<p>Il resolver distingue dipendenze della libreria standard, interne, esterne, namespace, con origine diretta e non risolte. Legge percorsi del sorgente e metadati installati senza importare le dipendenze candidate. Le corrispondenze mancanti restano non risolte; se un fatto richiesto non può essere accertato, l’ammissione viene negata.</p>
+<p>Questa prudenza può includere contributori del namespace inutilizzati da uno specifico import figlio. L’inventario comprende gli import osservati nel file selezionato, inclusi quelli condizionali e nei corpi delle funzioni. Non ricostruisce ricorsivamente il grafo delle dipendenze transitive e non intercetta gli import dinamici.</p>
+<h2 id="evidenze-separate-dalle-policy">Evidenze separate dalle policy</h2>
+<p>I record normalizzati <code>Evidence</code> contengono soggetto, osservazione, provider, fase e stato. Quattro stati conservano distinzioni che un booleano perderebbe:</p>
+<table>
+<thead>
+<tr>
+<th>Stato</th>
+<th>Significato</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>verified</code></td>
+<td>Il produttore ha accertato lo specifico fatto dichiarato.</td>
+</tr>
+<tr>
+<td><code>observed</code></td>
+<td>Il dato è disponibile senza una verifica più forte.</td>
+</tr>
+<tr>
+<td><code>unknown</code></td>
+<td>Il metodo non permette di accertare il fatto.</td>
+</tr>
+<tr>
+<td><code>unavailable</code></td>
+<td>La raccolta è fallita o è stata disabilitata.</td>
+</tr>
+</tbody>
+</table>
+<p>I metadati sull’origine installata sono un’osservazione, non una prova crittografica di provenienza. Analogamente, una sintassi verificata non dimostra che il comportamento arbitrario del codice Python sia sicuro. La policy stabilisce quali fatti e stati siano sufficienti; un’evidenza richiesta sconosciuta o indisponibile non può diventare implicitamente un’approvazione.</p>
+<p>Separare raccolta e valutazione rende la policy deterministica <strong>a parità di policy e fatti</strong>. I controlli di base funzionano offline, senza account o telemetria. Controlli distinti possono comunque differire perché cambiano sorgente, metadati installati, stato dell’host e timestamp. Le cache delle dipendenze appartengono a un’istanza del motore; il caricamento esplicito le aggiorna.</p>
+<h2 id="estensioni-e-fasi-di-esecuzione">Estensioni e fasi di esecuzione</h2>
+<table>
+<thead>
+<tr>
+<th>Estensione</th>
+<th>Responsabilità e fase di esecuzione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>EvidenceProvider</code></td>
+<td>Raccoglie fatti locali o esterni selezionati durante l’ammissione.</td>
+</tr>
+<tr>
+<td><code>PolicyValidator</code></td>
+<td>Valuta i fatti raccolti senza I/O nella fase di policy.</td>
+</tr>
+<tr>
+<td><code>RuntimeValidator</code></td>
+<td>Ispeziona oggetti runtime dopo l’esecuzione esplicita del modulo.</td>
+</tr>
+<tr>
+<td><code>Reporter</code></td>
+<td>Formatta una decisione esistente senza ripetere l’ammissione.</td>
+</tr>
+</tbody>
+</table>
+<p>Sono estensioni Python considerate attendibili. I provider vengono selezionati esplicitamente; il motore non carica tutti i plugin installati. La raccolta via rete richiede un’abilitazione esplicita: un accordo di cooperazione, non un firewall attorno all’inizializzazione o al codice dei plugin.</p>
+<p>I protocolli sono implementati; l’<a href="https://github.com/atellaluca/ImportSpy/blob/main/docs/extensions.md">esempio di estensione offline</a> ne dimostra l’uso senza verifiche esterne. Gli adattatori per OSV/pip-audit, Sigstore, attestazioni PyPI, CycloneDX, SPDX e metadati GitHub restano <a href="https://github.com/atellaluca/ImportSpy/blob/main/docs/community-roadmap.md">integrazioni proposte</a>, non funzionalità native.</p>
+<h2 id="una-decisione-piu-destinatari">Una decisione, più destinatari</h2>
+<p><code>AdmissionDecision</code> riunisce identità e hash di sorgente e policy, versione del motore, fatti sull’host, dipendenze, evidenze, violazioni ed esito. Le fasi e il flag <code>target_executed</code> distinguono l’ispezione dell’host dall’esecuzione del modulo. Una <code>Violation</code> contiene codice stabile, severità, spiegazione e posizione nel sorgente quando nota.</p>
+<p>I reporter leggibili da persone, JSON e SARIF usano la stessa decisione. JSON conserva inventario ed evidenze; SARIF presenta le violazioni per i flussi di code scanning. La formattazione non ripete la raccolta e non esegue il modulo. L’automazione ottiene così diagnostica strutturata, mantenendo le evidenze necessarie a spiegare un rifiuto.</p>
+<p>Implementazione e limiti della <strong>0.5.0</strong>: <a href="https://github.com/atellaluca/ImportSpy/blob/main/docs/architecture.md">architettura ufficiale</a>, <a href="https://github.com/atellaluca/ImportSpy/blob/main/docs/security-model.md">modello di sicurezza</a> e <a href="https://github.com/atellaluca/ImportSpy">codice sorgente</a>.</p>
 
 
 
@@ -1900,13 +1955,13 @@
         
         
           
-          <a href="../validation/" class="md-footer__link md-footer__link--next" aria-label="Successivo: Sistema di Validazione">
+          <a href="../../b3do/" class="md-footer__link md-footer__link--next" aria-label="Successivo: Panoramica">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Successivo
               </span>
               <div class="md-ellipsis">
-                Sistema di Validazione
+                Panoramica
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1974,10 +2029,6 @@
     
     
       <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
-      
-        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
-      
-        <script src="../../../../javascripts/mermaid-init.js"></script>
       
     
   </body>
