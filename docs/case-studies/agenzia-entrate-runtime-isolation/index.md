@@ -89,4 +89,4 @@ It does not imply tax consulting, regulatory certification, auditor work, or com
 
 This case is different from backend projects, but it follows the same principle: governing the relationships between components, dependencies, and execution environments while considering the effects of changes on the whole system.
 
-The same thread appears in [ImportSpy](../importspy/index.md), where contracts make module incompatibilities explicit, and in the [Cloud-Portable Fleet Management Platform](../cloud-portable-fleet-platform/index.md), where application logic is separated from infrastructure services.
+The same thread appears in [ImportSpy](../importspy/index.md), where static preflight and policy evaluation produce structured admission decisions before explicit Python execution, and in the [Cloud-Portable Fleet Management Platform](../cloud-portable-fleet-platform/index.md), where application logic is separated from infrastructure services.

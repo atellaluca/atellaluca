@@ -9,7 +9,7 @@ schema_type: "TechArticle"
 # Cloud-Portable Fleet Management Platform
 
 - **Tipo:** applicazione fleet management in produzione
-- **Utilizzo reale:** in uso presso Studio Lambda
+- **Utilizzo reale:** in uso presso [Studio Lambda](https://studiolambda.net/)
 - **Processo supportato:** gestione del turnover dei veicoli di 50 dipendenti
 - **Ruolo:** Software Architect · Backend Engineer · Cloud Deployment
 - **Periodo:** 2026
@@ -133,4 +133,10 @@ Questo progetto dimostra la capacità di trasformare un’esigenza operativa rea
 - uso di AWS come ambiente di produzione senza far entrare i servizi cloud nel dominio;
 - attenzione a configurazione, ambiente locale, deploy e manutenzione.
 
-Questo progetto è distinto dal caso [Backend Telemetria Fleet Real-Time](../fleet-tracking/index.md), relativo all’infrastruttura per 80 tracker realizzata in Vemar.
+Questo progetto è distinto dal caso [Backend Telemetria Fleet Real-Time](../fleet-tracking/index.md), relativo all’infrastruttura per 80 tracker realizzata in [Vemar](https://www.vemarsas.it/en).
+
+## Presentazione { #presentation }
+
+**[CTE Matera — Casa delle Tecnologie Emergenti](https://www.ctematera.it/)** — Presentazione collegata al caso Studio Lambda Fleet Management.
+
+[Altri talk e presentazioni](../../index.md#talks-presentations)

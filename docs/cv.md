@@ -21,7 +21,7 @@ Basilicata, Italy · Email: [info@atellaluca.com](mailto:info@atellaluca.com) ·
 
 Software Architect, Tech Lead, and Backend/Platform Engineer. I design and directly build backends, APIs, and application infrastructure, with attention to architectural boundaries, integrations, deployment, and maintainability.
 
-At Vemar, from April 2021 to October 2024, I worked as Tech Lead with continuous technical coordination responsibility for a 4-person team. I personally designed and implemented the infrastructure for 80 trackers and developed the framework on which delis.app is based.
+At [Vemar](https://www.vemarsas.it/en), from April 2021 to October 2024, I worked as Tech Lead with continuous technical coordination responsibility for a 4-person team. I personally designed and implemented the infrastructure for 80 trackers and developed the framework on which [delis.app](https://www.delis.app/) is based.
 
 I also work on geospatial processing and model-generation pipelines, applying the same architectural discipline to data transformation workflows outside traditional backend systems.
 
@@ -104,7 +104,7 @@ The platform remained operational and structurally stable after delivery, demons
 ### Cloud-Portable Fleet Management Platform  
 **Full-stack AWS production deployment · 2026**
 
-Fleet Management System used by Studio Lambda to manage vehicle turnover for 50 employees. The system is deployed on AWS and designed with separation between application logic, persistence, cloud services, and web runtime.
+Fleet Management System used by [Studio Lambda](https://studiolambda.net/) to manage vehicle turnover for 50 employees. The system is deployed on AWS and designed with separation between application logic, persistence, cloud services, and web runtime.
 
 The system includes a FastAPI backend, React/TypeScript frontend, abstracted persistence and storage layers, local Docker Compose environment, and AWS deployment using Lambda, ECR, DynamoDB, S3, CloudFront, CloudFormation, and CloudWatch.
 
@@ -127,20 +127,17 @@ Infrastructure distinct from the Studio Lambda platform, personally designed and
 
 Plugin-based backend framework I developed at Vemar and on which delis.app is based. The case study presents integration separation, explicit contracts, and a unified API model in SAFE form; it does not attribute every architectural generalization to the product itself.
 
-### ImportSpy — Runtime Contract Validation Engine  
+### ImportSpy — Policy-as-Code Admission for Python
 **Open-source Python project**
 
-Created and maintain ImportSpy, a runtime contract enforcement engine for Python modules.
-
-ImportSpy validates structural, contextual, and execution constraints at import time, making architectural assumptions explicit in modular and long-lived Python systems.
+Created and maintain ImportSpy, a policy-as-code admission layer that evaluates Python code and dependencies before explicit execution.
 
 Highlights:
 
-- YAML-based declarative contracts
-- runtime validation of module structure and execution context
-- deterministic failure model
-- 15,000+ downloads on PyPI
-- presented at GDG Basilicata
+- Static preflight and dependency identity analysis
+- Evidence and policy evaluation with structured admission decisions
+- 15,000+ PyPI downloads across project releases
+- Talk on explicit module contracts at GDG Basilicata, 20 May 2025
 
 ### B3DO — Basilicata 3D Open  
 **Geospatial processing pipeline · unpublished / in development**

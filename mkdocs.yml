@@ -1,7 +1,10 @@
 site_name: "Luca Atella"
-site_description: "Luca Atella portfolio: software architect and backend platform engineer focused on AWS, FastAPI, cloud-portable backend architecture, runtime contract validation, IoT and Digital Twin systems."
+site_description: "Luca Atella portfolio: software architect and backend platform engineer focused on AWS, FastAPI, cloud-portable backend architecture, policy-as-code admission for Python, IoT and Digital Twin systems."
 site_author: "Luca Atella"
 site_url: "https://profile.atellaluca.com/"
+
+exclude_docs: |
+  /build/
 
 hooks:
   - hooks/seo.py
@@ -42,18 +45,16 @@ plugins:
           name: Italiano
           build: true
           site_name: "Luca Atella"
-          site_description: "Portfolio di Luca Atella: software architect e backend platform engineer lucano, focalizzato su AWS, FastAPI, architetture backend cloud-portable, runtime contract validation, IoT e Digital Twin."
+          site_description: "Portfolio di Luca Atella: software architect e backend platform engineer lucano, focalizzato su AWS, FastAPI, architetture backend cloud-portable, controllo di ammissione Python con policy-as-code, IoT e Digital Twin."
           nav_translations:
             Home: Home
             About: Chi sono
             Methodology: Metodo
+            Services: Servizi
             Case Studies: Casi Studio
             Overview: Panoramica
             Cloud-Portable Fleet Management Platform: Piattaforma Fleet Cloud-Portable
             Architecture: Architettura
-            Validation System (Deep Dive): Sistema di Validazione
-            Runtime Contracts (Deep Dive): Runtime Contracts
-            Violation System and Contract Diagnostics (Deep Dive): Diagnostica Contratti
             Unified Backend for Heterogeneous Data Sources (SAFE): Backend Unificato per Sorgenti Eterogenee
             Plugin System (Deep Dive): Sistema Plugin
             Declarative UI Schema (Widget DSL): Schema UI Dichiarativo
@@ -82,15 +83,13 @@ extra_css:
   - stylesheets/cv-pdf.css
   - stylesheets/print.css
   - stylesheets/header.css
-
-extra_javascript:
-  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
-  - javascripts/mermaid-init.js
+  - stylesheets/services.css
 
 nav:
   - Home: index.md
   - About: about.md
   - Methodology: methodology.md
+  - Services: services.md
 
   - Case Studies:
       - Overview: case-studies/index.md
@@ -99,9 +98,6 @@ nav:
       - ImportSpy:
           - Overview: case-studies/importspy/index.md
           - Architecture: case-studies/importspy/architecture.md
-          - Validation System (Deep Dive): case-studies/importspy/validation.md
-          - Runtime Contracts (Deep Dive): case-studies/importspy/contracts.md
-          - Violation System and Contract Diagnostics (Deep Dive): case-studies/importspy/violations.md
 
       - B3DO:
           - Overview: case-studies/b3do/index.md

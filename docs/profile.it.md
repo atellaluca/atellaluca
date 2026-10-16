@@ -10,7 +10,7 @@ schema_type: "ProfilePage"
 
 Progetto e costruisco backend, API e piattaforme software per prodotti che devono restare comprensibili, verificabili e manutenibili nel tempo.
 
-In Vemar sono stato Tech Lead da aprile 2021 a ottobre 2024, con responsabilità continuativa di coordinamento tecnico di un team di 4 persone. In quel contesto ho progettato e realizzato personalmente l’infrastruttura per 80 tracker e ho sviluppato il framework su cui si fonda delis.app.
+In [Vemar](https://www.vemarsas.it/en) sono stato Tech Lead da aprile 2021 a ottobre 2024, con responsabilità continuativa di coordinamento tecnico di un team di 4 persone. In quel contesto ho progettato e realizzato personalmente l’infrastruttura per 80 tracker e ho sviluppato il framework su cui si fonda [delis.app](https://www.delis.app/).
 
 Il mio lavoro tende a concentrarsi sui confini: dove finisce la logica applicativa, dove inizia l’infrastruttura, come comunicano componenti e servizi, quali dipendenze possono cambiare e quali effetti una modifica può avere sull’intero sistema.
 
@@ -25,8 +25,8 @@ Vivo in Basilicata, in Italia, e sono aperto a collaborazioni da remoto o in mod
 - **Tech Lead in Vemar:** coordinamento tecnico continuativo di un team di 4 persone.
 - **Backend Telemetria Fleet Real-Time:** infrastruttura per 80 tracker progettata e realizzata personalmente, con comunicazione socket, dati CAN bus, persistenza e API REST.
 - **Backend Unificato per Sorgenti Eterogenee:** framework sviluppato in Vemar e alla base di delis.app, con integrazioni separate e contratti espliciti.
-- **Piattaforma Fleet Cloud-Portable:** Fleet Management System in uso presso Studio Lambda per il turnover dei veicoli di 50 dipendenti, deployato su AWS.
-- **ImportSpy:** progetto open source per rendere espliciti i contratti runtime tra moduli.
+- **Piattaforma Fleet Cloud-Portable:** Fleet Management System in uso presso [Studio Lambda](https://studiolambda.net/) per il turnover dei veicoli di 50 dipendenti, deployato su AWS.
+- **ImportSpy:** progetto open source di admission control per Python con policy-as-code, preflight statico e decisioni strutturate prima dell’esecuzione esplicita.
 - **Applicativi Agenzia delle Entrate:** isolamento di runtime Java e coesistenza di strumenti legacy in uno studio commercialista.
 
 ---
@@ -64,7 +64,7 @@ Gli esempi più rappresentativi sono:
 - [Backend Unificato per Sorgenti Eterogenee](case-studies/unified-backend/index.md), per framework, integrazioni e delis.app;
 - [Backend Telemetria Fleet Real-Time](case-studies/fleet-tracking/index.md), per infrastruttura real-time e 80 tracker in Vemar;
 - [Cloud-Portable Fleet Management Platform](case-studies/cloud-portable-fleet-platform/index.md), per Studio Lambda, AWS e indipendenza infrastrutturale progettuale;
-- [ImportSpy](case-studies/importspy/index.md), per contratti runtime e modularità;
+- [ImportSpy](case-studies/importspy/index.md), per preflight statico, identità delle dipendenze e decisioni di ammissione basate su evidenze;
 - [Compatibilità runtime Agenzia delle Entrate](case-studies/agenzia-entrate-runtime-isolation/index.md), per diagnosi legacy e isolamento dipendenze.
 
 Per una sintesi professionale compatta, vedi il [CV](cv.md). Per una conversazione tecnica o progettuale, usa [Contatti](contact.md).

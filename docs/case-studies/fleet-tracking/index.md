@@ -10,13 +10,13 @@ schema_type: "TechArticle"
 
 ## Summary
 
-- **Context:** Vemar experience on real-time fleet telemetry infrastructure.
+- **Context:** [Vemar](https://www.vemarsas.it/en) experience on real-time fleet telemetry infrastructure.
 - **My role:** I personally designed and implemented the full infrastructure for 80 trackers.
 - **Problem:** ingest, normalize, persist, and expose tracker and CAN bus data so it could support operational workflows.
 - **Intervention:** socket communication with devices, CAN bus data handling, persistence, and REST APIs.
 - **Observed result:** infrastructure implemented to make telemetry data available downstream from the trackers.
 
-This project is distinct from the [Cloud-Portable Fleet Management Platform](../cloud-portable-fleet-platform/index.md), used by Studio Lambda for vehicle turnover management for 50 employees.
+This project is distinct from the [Cloud-Portable Fleet Management Platform](../cloud-portable-fleet-platform/index.md), used by [Studio Lambda](https://studiolambda.net/) for vehicle turnover management for 50 employees.
 
 ## Context and Motivation
 

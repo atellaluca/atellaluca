@@ -18,14 +18,14 @@ hide:
 
 <p class="portfolio-lead">From architecture to software<br>that works in production.</p>
 
-I design and build Python backends, APIs and cloud platforms directly. At Vemar I worked as Tech Lead, coordinating a 4-person team and building backend systems used in real operational contexts.
+I design and build Python backends, APIs and cloud platforms directly. At [Vemar](https://www.vemarsas.it/en) I worked as Tech Lead, coordinating a 4-person team and building backend systems used in real operational contexts.
 
 <p class="portfolio-location">Basilicata, Italy · Open to remote and hybrid work conversations</p>
 
 [Discuss an opportunity](contact.md){ .md-button .md-button--primary }
 [Explore the projects](#selected-projects){ .md-button }
 
-[Read my CV](cv.md) · [LinkedIn](https://www.linkedin.com/in/luca-atella/) · [Versione italiana](/it/)
+[Services for businesses](services.md) · [Read my CV](cv.md) · [LinkedIn](https://www.linkedin.com/in/luca-atella/) · [Versione italiana](/it/)
 
 </div>
 <div class="portfolio-identity" markdown>
@@ -38,12 +38,12 @@ I design and build Python backends, APIs and cloud platforms directly. At Vemar 
 <div class="portfolio-proof" markdown>
 **Production experience**
 
-Fleet Management System used by Studio Lambda for vehicle turnover management for 50 employees.
+Fleet Management System used by [Studio Lambda](https://studiolambda.net/) for vehicle turnover management for 50 employees.
 </div>
 <div class="portfolio-proof" markdown>
 **Tech Lead at Vemar**
 
-Continuous technical coordination of a 4-person team, an infrastructure for 80 trackers, and the framework behind delis.app.
+Continuous technical coordination of a 4-person team, an infrastructure for 80 trackers, and the framework behind [delis.app](https://www.delis.app/).
 </div>
 <div class="portfolio-proof" markdown>
 **Direct engineering and diagnosis**
@@ -86,15 +86,15 @@ The problem, the design decisions and the resulting system. Each case study dist
 <div class="portfolio-card" markdown>
 <p class="portfolio-eyebrow">03 / OPEN-SOURCE PROJECT</p>
 
-### ImportSpy: explicit contracts between modules
+### ImportSpy 0.5 — Policy-as-code admission for Python
 
-**The problem:** plugin systems can fail when a module breaks expected structural or execution constraints.
+**The problem:** Python imports can execute code before a system decides whether a module and its dependencies satisfy policy.
 
-**The work:** a Python engine that checks contracts during import and returns structured violations to make integration failures diagnosable.
+**The work:** static preflight, dependency identity and evidence-based policy evaluation, with structured ADMIT / DENY decisions before explicit execution.
 
-<p class="portfolio-stack">Python · Plugins · Runtime validation · DSL</p>
+<p class="portfolio-stack">Python · Policy-as-code · Dependency policy · Developer tooling</p>
 
-[Explore the validation engine →](case-studies/importspy/index.md)
+[Read the ImportSpy case study →](case-studies/importspy/index.md)
 </div>
 <div class="portfolio-card" markdown>
 <p class="portfolio-eyebrow">04 / PROFESSIONAL INTERVENTION</p>
@@ -133,7 +133,24 @@ An edge-to-cloud architecture for integrating sensors, devices and heterogeneous
 </div>
 </div>
 
-[All case studies, including unified backends and telemetry →](case-studies/index.md)
+[Explore all case studies →](case-studies/index.md)
+
+## Talks & Presentations { #talks-presentations }
+
+<div class="portfolio-proof" markdown>
+### ImportSpy — GDG Basilicata
+
+**Flash Talks Arena · 20 May 2025** — *Quando i moduli Python sanno dire “no”*. A talk on ImportSpy’s earlier runtime-contract generation; version 0.5 now performs admission checks before execution.
+
+[Original presentation — Italian (PDF) →](assets/talks/importspy-gdg-basilicata-it.pdf) · [Event details](https://gdg.community.dev/events/details/google-gdg-basilicata-presents-flash-talks-arena/)
+</div>
+<div class="portfolio-proof" markdown>
+### Fleet Management — [CTE Matera](https://www.ctematera.it/) / Studio Lambda
+
+The Studio Lambda Fleet Management case study: vehicle turnover for 50 employees, application boundaries and AWS deployment.
+
+[Read the accompanying Fleet Management case study →](case-studies/cloud-portable-fleet-platform/index.md)
+</div>
 
 ## What I bring to a team
 
@@ -155,7 +172,7 @@ Explicit contracts, understandable failures and reasoned choices. A system shoul
 </div>
 </div>
 
-[My methodology](methodology.md) · [Technical profile](profile.md) · [Experience and certifications in my CV](cv.md) · [About me](about.md)
+[Professional services](services.md) · [My methodology](methodology.md) · [Technical profile](profile.md) · [Experience and certifications in my CV](cv.md) · [About me](about.md)
 
 <div class="portfolio-contact" markdown>
 <p class="portfolio-eyebrow">THE NEXT PROJECT</p>

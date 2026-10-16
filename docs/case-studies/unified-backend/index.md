@@ -10,8 +10,8 @@ schema_type: "TechArticle"
 
 ## Summary
 
-- **Context:** at Vemar, the product needed a backend framework able to connect heterogeneous data sources and device families behind coherent APIs and models.
-- **My role:** as Tech Lead, I developed the framework on which delis.app is based and continuously coordinated a 4-person technical team.
+- **Context:** at [Vemar](https://www.vemarsas.it/en), the product needed a backend framework able to connect heterogeneous data sources and device families behind coherent APIs and models.
+- **My role:** as Tech Lead, I developed the framework on which [delis.app](https://www.delis.app/) is based and continuously coordinated a 4-person technical team.
 - **Problem:** different integrations and protocols risked duplicating logic, hiding coupling, and making failures hard to diagnose.
 - **Intervention:** I designed plugin-based boundaries, integration contracts, REST/WebSocket APIs, and separation between the core and adapters.
 - **Observed result:** the framework became the technical foundation for delis.app.

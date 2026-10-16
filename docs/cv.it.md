@@ -21,7 +21,7 @@ Basilicata, Italia · Email: [info@atellaluca.com](mailto:info@atellaluca.com) �
 
 Software Architect, Tech Lead e Backend/Platform Engineer. Progetto e sviluppo direttamente backend, API e infrastrutture applicative, con attenzione a confini architetturali, integrazioni, deployment e manutenzione.
 
-In Vemar sono stato Tech Lead da aprile 2021 a ottobre 2024, con responsabilità continuativa di coordinamento tecnico di un team di 4 persone. Ho progettato e realizzato personalmente l’infrastruttura per 80 tracker e ho sviluppato il framework su cui si fonda delis.app.
+In [Vemar](https://www.vemarsas.it/en) sono stato Tech Lead da aprile 2021 a ottobre 2024, con responsabilità continuativa di coordinamento tecnico di un team di 4 persone. Ho progettato e realizzato personalmente l’infrastruttura per 80 tracker e ho sviluppato il framework su cui si fonda [delis.app](https://www.delis.app/).
 
 ---
 
@@ -91,7 +91,7 @@ Responsabilità principali:
 
 ### Cloud-Portable Fleet Management Platform
 
-Fleet Management System in uso presso Studio Lambda per gestire il turnover dei veicoli di 50 dipendenti. Il sistema è deployato su AWS ed è progettato con separazione fra logica applicativa, persistenza, servizi cloud e runtime web.
+Fleet Management System in uso presso [Studio Lambda](https://studiolambda.net/) per gestire il turnover dei veicoli di 50 dipendenti. Il sistema è deployato su AWS ed è progettato con separazione fra logica applicativa, persistenza, servizi cloud e runtime web.
 
 ### Backend Telemetria Fleet Real-Time
 
@@ -101,9 +101,14 @@ Infrastruttura distinta dal progetto Studio Lambda, progettata e realizzata pers
 
 Framework backend plugin-based sviluppato in Vemar e alla base di delis.app, con separazione delle integrazioni, contratti espliciti e modello API unificato. Non attribuisco automaticamente a delis.app tutte le generalizzazioni architetturali descritte nel caso SAFE.
 
-### ImportSpy
+### ImportSpy — Admission control per Python con policy-as-code
 
-Progetto open-source Python per runtime contract validation dei moduli, con 15.000+ download su PyPI e presentazione pubblica al GDG Basilicata.
+Ho creato e mantengo ImportSpy, un progetto open source che valuta codice Python e dipendenze tramite policy-as-code prima dell’esecuzione esplicita.
+
+- Preflight statico e analisi dell’identità delle dipendenze
+- Valutazione di evidenze e policy con decisioni strutturate di ammissione
+- Oltre 15.000 download PyPI complessivi tra le release del progetto
+- Talk sui contratti espliciti dei moduli al GDG Basilicata, 20 maggio 2025
 
 ### B3DO — Basilicata 3D Open
 

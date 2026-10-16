@@ -1,5 +1,6 @@
 # MkDocs build output
 site/
+docs/build
 
 # MkDocs cache
 .mkdocs_cache/

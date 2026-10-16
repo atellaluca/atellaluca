@@ -10,7 +10,7 @@ schema_type: "AboutPage"
 
 Sono un Tech Lead e Backend/Platform Engineer. Progetto e sviluppo software per sistemi che devono funzionare in contesti operativi reali, non solo dimostrare un’idea.
 
-In Vemar ho coordinato tecnicamente un team di 4 persone, ho progettato e realizzato l’infrastruttura per 80 tracker e ho sviluppato il framework su cui si fonda delis.app. In altri contesti ho lavorato su una piattaforma fleet management in uso presso Studio Lambda, su runtime isolati per applicativi Agenzia delle Entrate e su strumenti open source come ImportSpy.
+In [Vemar](https://www.vemarsas.it/en) ho coordinato tecnicamente un team di 4 persone, ho progettato e realizzato l’infrastruttura per 80 tracker e ho sviluppato il framework su cui si fonda [delis.app](https://www.delis.app/). In altri contesti ho lavorato su una piattaforma fleet management in uso presso [Studio Lambda](https://studiolambda.net/), su runtime isolati per applicativi Agenzia delle Entrate e su strumenti open source come ImportSpy.
 
 Mi interessa il punto in cui il codice incontra l’ambiente: dati, servizi, protocolli, runtime, deployment, dipendenze e persone che dovranno mantenere il sistema dopo il rilascio.
 
