@@ -9,7 +9,7 @@ schema_type: "TechArticle"
 # Cloud-Portable Fleet Management Platform
 
 - **Type:** production fleet management application
-- **Real use:** used by Studio Lambda
+- **Real use:** used by [Studio Lambda](https://studiolambda.net/)
 - **Supported process:** vehicle turnover management for 50 employees
 - **Role:** Software Architect · Backend Engineer · Cloud Deployment
 - **Period:** 2026
@@ -133,4 +133,10 @@ This project shows the ability to turn a real operational need into a production
 - use of AWS as the production environment without letting cloud services shape the domain model;
 - attention to configuration, local development, deployment, and maintenance.
 
-This project is distinct from the [End-to-End Real-Time Fleet Telemetry Backend](../fleet-tracking/index.md), which describes the 80-tracker infrastructure I built at Vemar.
+This project is distinct from the [End-to-End Real-Time Fleet Telemetry Backend](../fleet-tracking/index.md), which describes the 80-tracker infrastructure I built at [Vemar](https://www.vemarsas.it/en).
+
+## Presentation { #presentation }
+
+**MT Academy** — Presentation connected to the Studio Lambda Fleet Management case study.
+
+[More talks and presentations](../../index.md#talks-presentations)

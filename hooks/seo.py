@@ -79,13 +79,18 @@ def on_post_build(config):
     for landing in site.glob("**/case-studies/*/index.html"):
         relative = landing.parent.relative_to(site).as_posix() + "/"
         destination = urljoin(config.site_url, relative)
-        old = landing.parent / "overview" / "index.html"
-        old.parent.mkdir(parents=True, exist_ok=True)
-        target = escape(destination, quote=True)
         language = "it" if "/it/" in destination else "en"
         label = "Pagina spostata" if language == "it" else "Page moved"
-        old.write_text(f'<!doctype html><html lang="{language}"><head><meta charset="utf-8">'
-                       f'<meta http-equiv="refresh" content="0; url={target}">'
-                       f'<link rel="canonical" href="{target}"><title>{label} · Luca Atella</title>'
-                       f'</head><body><h1>{label}</h1><a href="{target}">{label}</a></body></html>',
-                       encoding="utf-8")
+        redirects = {"overview": destination}
+        if landing.parent.name == "importspy":
+            redirects.update({slug: urljoin(destination, "architecture/")
+                              for slug in ("validation", "contracts", "violations")})
+        for slug, destination in redirects.items():
+            old = landing.parent / slug / "index.html"
+            old.parent.mkdir(parents=True, exist_ok=True)
+            target = escape(destination, quote=True)
+            old.write_text(f'<!doctype html><html lang="{language}"><head><meta charset="utf-8">'
+                           f'<meta http-equiv="refresh" content="0; url={target}">'
+                           f'<link rel="canonical" href="{target}"><title>{label} · Luca Atella</title>'
+                           f'</head><body><h1>{label}</h1><a href="{target}">{label}</a></body></html>',
+                           encoding="utf-8")

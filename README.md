@@ -33,17 +33,17 @@ My work sits at the intersection of software architecture, production backend en
 ## Selected Work
 
 ### ImportSpy
-A runtime contract and validation framework for Python modules.
+A policy-as-code admission layer for Python code and dependencies.
 
-It is designed around declarative contracts, clear failure semantics, and provider-consumer integration models.
+It separates static inspection, evidence collection, and policy evaluation from explicit code execution, making admission decisions inspectable before loading a target.
 
 Key concepts:
 
-- runtime contracts and baseline constraints
-- declarative DSLs for contract modeling
-- rule-based validation engine
-- structured violation and diagnostics system
-- fail-fast integration semantics
+- static preflight without executing the inspected code
+- explicit dependency identity and execution context
+- evidence collection and declarative policy evaluation
+- structured admission decisions and diagnostics
+- explicit execution after admission
 
 ---
 

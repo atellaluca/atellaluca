@@ -23,7 +23,7 @@ Use this hub as the evidence layer of the portfolio: each page connects a techni
 ## Cloud-Portable Fleet Management Platform  
 **Full-Stack Fleet Management System with AWS Production Deployment**
 
-A Fleet Management System used by Studio Lambda to manage vehicle turnover for 50 employees. It is deployed on AWS and designed to separate application logic from persistence, cloud services, and the web runtime.
+A Fleet Management System used by [Studio Lambda](https://studiolambda.net/) to manage vehicle turnover for 50 employees. It is deployed on AWS and designed to separate application logic from persistence, cloud services, and the web runtime.
 
 - Focus: Cloud portability, infrastructure abstraction, production deployment  
 - Topics: AWS, FastAPI, React, DynamoDB, S3, Docker Compose, CloudFormation  
@@ -35,14 +35,14 @@ A Fleet Management System used by Studio Lambda to manage vehicle turnover for 5
 <div class="portfolio-card" markdown>
 
 ## ImportSpy  
-**Runtime Contract Enforcement for Modular Python Systems**
+**Policy-as-Code Admission for Python Modules and Dependencies**
 
-ImportSpy is an open-source Python project that checks runtime contracts for modules.
+Python imports can run code before compatibility or dependency policy has been checked. ImportSpy separates that decision from execution.
 
-It helps plugin-based and modular systems detect incompatible modules early, with structured diagnostics instead of hidden assumptions.
+I built static preflight, dependency identity resolution and evidence-based policy evaluation that return structured ADMIT / DENY decisions before an explicit load.
 
-- Focus: Runtime contracts, modular safety, architectural invariants  
-- Topics: Plugin governance, deterministic failure modes, validation models  
+- Focus: Admission control, dependency policy, execution boundaries
+- Topics: Python, static analysis, evidence, CLI and CI reporting
 
 → [View case study](importspy/index.md)
 
@@ -67,9 +67,9 @@ It demonstrates data pipeline architecture outside traditional web backends: DTM
 <div class="portfolio-card" markdown>
 
 ## Unified Backend Architecture  
-**Plugin-Based Backend Framework Behind delis.app**
+**Plugin-Based Backend Framework Behind [delis.app](https://www.delis.app/)**
 
-The backend framework I developed at Vemar and on which delis.app is based, presented in SAFE form to show integration separation, contracts, and a unified API surface.
+The backend framework I developed at [Vemar](https://www.vemarsas.it/en) and on which delis.app is based, presented in SAFE form to show integration separation, contracts, and a unified API surface.
 
 - Focus: Framework development, plugin systems, deployment architecture
 - Topics: Device modeling, REST APIs, WebSockets, deployment workflows  

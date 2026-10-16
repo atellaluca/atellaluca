@@ -29,7 +29,7 @@ robots: noindex, nofollow
 
 Software Architect, Tech Lead, and Backend/Platform Engineer focused on **modular systems**, **cloud-portable architectures**, **runtime governance**, and **long-lived backend platforms**.
 
-I design and directly build backends, APIs, and application infrastructure. At Vemar, from April 2021 to October 2024, I worked as Tech Lead with continuous technical coordination responsibility for a 4-person team, personally designed and implemented the infrastructure for 80 trackers, and developed the framework on which delis.app is based.
+I design and directly build backends, APIs, and application infrastructure. At [Vemar](https://www.vemarsas.it/en), from April 2021 to October 2024, I worked as Tech Lead with continuous technical coordination responsibility for a 4-person team, personally designed and implemented the infrastructure for 80 trackers, and developed the framework on which [delis.app](https://www.delis.app/) is based.
 
 ---
 
@@ -74,7 +74,7 @@ I design and directly build backends, APIs, and application infrastructure. At V
 
 ### Cloud-Portable Fleet Management Platform
 
-- Fleet Management System used by Studio Lambda to manage vehicle turnover for 50 employees
+- Fleet Management System used by [Studio Lambda](https://studiolambda.net/) to manage vehicle turnover for 50 employees
 - Built a FastAPI backend and worked on React/TypeScript frontend integration
 - Abstracted persistence and object storage through repository and storage contracts
 - Used Docker Compose, DynamoDB Local, and MinIO for local development
@@ -92,12 +92,12 @@ I design and directly build backends, APIs, and application infrastructure. At V
 - Integration separation, explicit contracts, and unified API model presented in SAFE form
 - Does not attribute every architectural generalization to delis.app itself
 
-### ImportSpy (Open Source)
+### ImportSpy — Policy-as-Code Admission for Python
 
-- Runtime contract enforcement engine for Python modules
-- YAML-based declarative contracts for structural, contextual, and execution constraints
-- Deterministic import-time validation model for modular and long-lived Python systems
-- 15,000+ downloads on PyPI and presentation at GDG Basilicata
+- Created and maintain an open-source admission layer that evaluates Python code and dependencies before explicit execution
+- Static preflight, dependency identity analysis, and evidence/policy evaluation with structured admission decisions
+- 15,000+ PyPI downloads across project releases
+- Talk on explicit module contracts at GDG Basilicata, 20 May 2025
 
 ### B3DO — Basilicata 3D Open
 

@@ -18,7 +18,7 @@ hide:
 
 <p class="portfolio-lead">Dall’architettura al software<br>che lavora in produzione.</p>
 
-Progetto e sviluppo direttamente backend Python, API e piattaforme cloud. In Vemar sono stato Tech Lead, coordinando tecnicamente un team di 4 persone e realizzando sistemi backend usati in contesti operativi reali.
+Progetto e sviluppo direttamente backend Python, API e piattaforme cloud. In [Vemar](https://www.vemarsas.it/en) sono stato Tech Lead, coordinando tecnicamente un team di 4 persone e realizzando sistemi backend usati in contesti operativi reali.
 
 <p class="portfolio-location">Basilicata, Italia · Collaborazioni da remoto e in modalità ibrida</p>
 
@@ -38,12 +38,12 @@ Progetto e sviluppo direttamente backend Python, API e piattaforme cloud. In Vem
 <div class="portfolio-proof" markdown>
 **Esperienza in produzione**
 
-Fleet Management System in uso presso Studio Lambda per il turnover dei veicoli di 50 dipendenti.
+Fleet Management System in uso presso [Studio Lambda](https://studiolambda.net/) per il turnover dei veicoli di 50 dipendenti.
 </div>
 <div class="portfolio-proof" markdown>
 **Tech Lead in Vemar**
 
-Coordinamento continuativo di un team di 4 persone, infrastruttura per 80 tracker e framework alla base di delis.app.
+Coordinamento continuativo di un team di 4 persone, infrastruttura per 80 tracker e framework alla base di [delis.app](https://www.delis.app/).
 </div>
 <div class="portfolio-proof" markdown>
 **Sviluppo diretto e diagnosi**
@@ -86,15 +86,15 @@ Il problema, le scelte progettuali e il sistema risultante. Ogni caso studio dis
 <div class="portfolio-card" markdown>
 <p class="portfolio-eyebrow">03 / PROGETTO OPEN SOURCE</p>
 
-### ImportSpy: contratti espliciti tra moduli
+### ImportSpy — Policy-as-code per l’ammissione di moduli Python
 
-**Il problema:** i sistemi a plugin possono fallire quando un modulo non rispetta struttura e vincoli di esecuzione attesi.
+**Il problema:** un import Python può eseguire codice prima che il sistema decida se un modulo e le sue dipendenze rispettano le policy.
 
-**Il lavoro:** un motore Python che verifica contratti durante l’import e restituisce violazioni strutturate per rendere diagnosticabili le incompatibilità.
+**Il lavoro:** preflight statico, identità delle dipendenze e valutazione delle policy su evidenze, con decisioni ADMIT / DENY strutturate prima dell’esecuzione esplicita.
 
-<p class="portfolio-stack">Python · Plugin · Runtime validation · DSL</p>
+<p class="portfolio-stack">Python · Policy-as-code · Policy sulle dipendenze · Developer tooling</p>
 
-[Esplora il motore di validazione →](case-studies/importspy/index.md)
+[Leggi il caso studio ImportSpy →](case-studies/importspy/index.md)
 </div>
 <div class="portfolio-card" markdown>
 <p class="portfolio-eyebrow">04 / INTERVENTO PROFESSIONALE</p>
@@ -133,7 +133,24 @@ Un’architettura edge-to-cloud per integrare sensori, dispositivi e sorgenti et
 </div>
 </div>
 
-[Tutti i casi studio, inclusi backend unificato e telemetria →](case-studies/index.md)
+[Esplora tutti i case study →](case-studies/index.md)
+
+## Talk e presentazioni { #talks-presentations }
+
+<div class="portfolio-proof" markdown>
+### ImportSpy — GDG Basilicata
+
+**Flash Talks Arena · 20 maggio 2025** — *Quando i moduli Python sanno dire “no”*. Un talk tecnico sui contratti espliciti e sui vincoli del contesto di esecuzione nei sistemi Python modulari.
+
+[Presentazione originale — Italiano (PDF) →](assets/talks/importspy-gdg-basilicata-it.pdf) · [Dettagli dell’evento](https://gdg.community.dev/events/details/google-gdg-basilicata-presents-flash-talks-arena/)
+</div>
+<div class="portfolio-proof" markdown>
+### Fleet Management — MT Academy / Studio Lambda
+
+Il caso Studio Lambda Fleet Management: turnover dei veicoli di 50 dipendenti, confini applicativi e deployment su AWS.
+
+[Leggi il caso studio Fleet Management collegato →](case-studies/cloud-portable-fleet-platform/index.md)
+</div>
 
 ## Cosa porto nel team
 

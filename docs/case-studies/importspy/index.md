@@ -1,173 +1,107 @@
 ---
-title: "ImportSpy | Runtime Contract Validation for Modular Python Systems"
-description: "ImportSpy case study by Luca Atella: open-source Python runtime contract engine for modular systems, plugin validation, architectural boundaries and deterministic diagnostics."
+title: "ImportSpy | Python Admission Control with Policy-as-Code"
+description: "How Luca Atella designed ImportSpy: static Python preflight, dependency identity, evidence and policy decisions before explicit module execution."
 image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
-image_alt: "ImportSpy runtime contract validation for modular Python systems by Luca Atella"
+image_alt: "Luca Atella, creator of ImportSpy for Python admission control"
 schema_type: "SoftwareSourceCode"
 ---
 
-# ImportSpy — Runtime Import Contracts for Modular Python Systems
+# ImportSpy — Python Admission Control with Policy-as-Code
 
-**Type:** Open-source software project  
-**Role:** Project Lead & Software Architect  
-**Period:** 2024 – Present  
-**Domain:** Python, modular systems, runtime validation  
-**Repository:** [ImportSpy on GitHub — runtime contract engine for Python](https://github.com/atellaluca/importspy)  
-**Adoption:** 15,000+ downloads on PyPI  
+**Type:** open-source Python developer tooling<br>
+**Role:** creator and maintainer · architecture and implementation<br>
+**Domain:** Python · Developer Tooling · Policy-as-Code · Software Supply Chain<br>
+**Source:** [ImportSpy on GitHub](https://github.com/atellaluca/ImportSpy) · [Official documentation](https://importspy.atellaluca.com/)
 
----
+ImportSpy decides whether a Python module and its observed dependencies satisfy policy **before admitting the module for execution**. I designed and implemented the admission pipeline, from static inspection and dependency resolution to structured diagnostics and an explicit loader.
 
-## Overview
+## The problem: importing is already execution
 
-ImportSpy is an open-source Python library designed to enforce **runtime contracts at module import time**.  
-Its goal is to prevent unsafe or incompatible modules from being loaded into a running system by validating their structural, environmental, and contextual properties before execution.
+A plugin host may import a module to discover its functions, inspect its dependencies or check compatibility. By then, Python may already have run the module's top-level code. A rejected component can therefore have produced effects before the host decides whether it belongs in the system.
 
-The project was conceived to address a recurring problem in **modular architectures, plugin-based systems, and extensible platforms**:  
-the lack of a reliable mechanism to ensure that dynamically loaded components satisfy predefined integration requirements.
+ImportSpy started by making assumptions between Python modules explicit. That work exposed a more fundamental boundary: validation performed after import cannot prevent earlier execution. The architectural question became: **how can a Python system reason about a module before trusting it enough to execute it?**
 
-ImportSpy introduces a **contract-driven validation layer** that operates at import time, enabling developers to:
+## Architectural decision
 
-- enforce structural constraints on modules  
-- validate runtime environment assumptions  
-- prevent unsafe or incompatible imports  
-- fail fast before corrupted system states are reached  
-
----
-
-## Problem Statement
-
-In modern Python systems, dynamic imports are widely used to support:
-
-- plugin architectures  
-- runtime extensibility  
-- dependency injection  
-- distributed and modular services  
-
-However, Python’s import system provides **no built-in mechanism** to:
-
-- verify the structure of imported modules  
-- validate required functions, classes, or interfaces  
-- enforce environmental or contextual constraints  
-- prevent incompatible runtime conditions  
-
-As a result, many systems rely on:
-
-- implicit assumptions  
-- ad-hoc runtime checks  
-- late failures occurring deep in the execution flow  
-
-This leads to fragile integrations, unpredictable failures, and difficult-to-debug runtime errors.
-
-### Problem → Solution Flow
+I separated admission from execution. Inspection gathers facts; policy evaluates those facts; loading is an explicit later operation.
 
 ```mermaid
-flowchart LR
-    A[Dynamic Import in Python] --> B[Implicit Assumptions]
-    B --> C[Late Runtime Failures]
-    C --> D[Fragile Integrations]
-    D --> E[Difficult Debugging]
-
-    A --> F[ImportSpy Intercepts Import]
-    F --> G[Contract Validation]
-    G --> H[Deterministic Failure]
-    H --> I[Safe Module Execution]
-
-    style A fill:#f5f5f5,stroke:#333
-    style F fill:#e8f0fe,stroke:#333
-    style H fill:#e8f0fe,stroke:#333
+flowchart TD
+    accTitle: ImportSpy admission and execution boundary
+    accDescr: Source inspection, dependency resolution and evidence collection feed policy evaluation. Denied modules stop; execution requires admission and an explicit load.
+    A[Source] --> B[Static preflight]
+    B --> C[Dependency resolution]
+    C --> D[Evidence collection]
+    D --> E[Policy evaluation]
+    E --> F{ADMIT / DENY}
+    F -->|DENY| G[Structured diagnostics]
+    F -->|ADMIT + explicit load| H[Execution boundary]
+    H --> I[Execution]
 ```
 
----
+A successful standalone `check` stops at the decision. It does not execute the target and does not grant immutable permission to load it later.
 
-## Design Goals
+## Static preflight
 
-ImportSpy was designed around the following core principles:
+The inspector captures the source bytes, parses the syntax tree and compiles it to check syntax and scope rules without executing the result. Both `check` and `init` inspect the target without running its top-level code or importing its observed dependencies. `init` produces a starter policy for the developer to review, not an automatic approval.
 
-- **Fail fast:** detect incompatibilities at import time  
-- **Declarative contracts:** express requirements as structured schemas  
-- **Low coupling:** keep contracts independent from implementation  
-- **Runtime safety:** prevent invalid modules from entering the system  
-- **Extensibility:** support future validation rules and constraints  
-- **Minimal intrusion:** avoid invasive changes to application code  
+This establishes source-level facts such as declarations, literal values and import references. It cannot prove arbitrary Python behavior. Decorators, computed values or dynamically built interfaces may leave a required fact unknown. Required static constraints then fail closed instead of executing the target to fill the gap.
 
----
+## Dependency identity
 
-## High-Level Architecture
+An import name is not necessarily the package identity used by policy:
 
-At a conceptual level, ImportSpy is structured as a runtime governance pipeline that intercepts module imports and validates them against declarative contracts before execution.
-
-```mermaid
-flowchart TB
-    U[Application Code] --> I[Import Request]
-    I --> H[Import Interception Layer]
-    H --> C[Contract Definition Layer]
-    C --> V[Validation Engine]
-    V --> R[Validation Result]
-
-    R -->|Valid| M[Module Execution]
-    R -->|Invalid| E[Structured Failure]
-
-    V --> X[Execution Context]
-    X --> OS[Operating System]
-    X --> PY[Python Runtime]
-    X --> ENV[Environment Variables]
-    X --> CFG[Configuration]
-
-    style H fill:#e8f0fe,stroke:#333
-    style V fill:#e8f0fe,stroke:#333
-    style R fill:#e8f0fe,stroke:#333
+```text
+import yaml → import name: yaml → distribution: PyYAML
 ```
 
----
+The resolver connects source imports to installed distribution metadata. It distinguishes standard-library, project/local, installed, namespace, direct-origin and unresolved dependencies; editable installation and VCS/direct-URL origin are additional facts. Namespace imports may have several distribution contributors.
 
-## Applications and Use Cases
+That distinction makes version, declaration, origin and editable-install policies meaningful. Otherwise, a rule could be applied to the wrong package or silently overlook uncertainty. Missing origin metadata remains unknown; it does not prove that a package came from PyPI. The inventory covers imports visible in the selected source, not a complete transitive dependency graph.
 
-ImportSpy is applicable to a wide range of scenarios, including:
+## Evidence, policy and the admission decision
 
-- plugin-based systems  
-- modular backends  
-- microservice bootstrapping  
-- CI/CD validation pipelines  
-- IoT and edge platforms  
-- secure runtime environments  
+Evidence records what a collector knows. Policy decides whether that knowledge is sufficient. Keeping them separate lets the same observation support different application requirements without hiding policy inside the collector.
 
----
+`Evidence` distinguishes **verified**, **observed**, **unknown** and **unavailable** facts. Installed metadata is an observation. “Verified” applies to the specific fact and verification procedure; it is never a statement that the code is safe. Required evidence that is unknown or unavailable cannot satisfy policy.
 
-## Talks & Community
+The result is an `AdmissionDecision` containing the outcome, source and contract identity, dependencies, evidence, structured `Violation` records and whether execution occurred. Human-readable, JSON and SARIF reporters consume the same decision. Developers can diagnose a denial while CI receives machine-readable results without rerunning inspection.
 
-The architectural concepts behind ImportSpy have been shared publicly within technical communities as part of a broader effort to promote runtime governance patterns for modular and extensible Python systems.
+## Execution is a separate responsibility
 
-### ImportSpy: Quando i moduli Python sanno dire di no.
-**GDG Basilicata · Flash Talks Arena**
+`load` refreshes dependency metadata, performs fresh admission and, if admitted, executes the captured source bytes. This keeps execution tied to the inspected target snapshot even if the file changes during collection.
 
-A community talk focused on *import-time contracts* and how modular systems can enforce architectural assumptions (Python version, OS, environment variables, and other runtime constraints) before executing non-conforming modules.
+That is a deliberately bounded guarantee. Installed dependencies, import hooks and the surrounding environment are not frozen. Ordinary and dynamic imports can still run during execution. Optional runtime validators inspect initialized objects **after execution** and cannot undo top-level effects. ImportSpy is not a sandbox and does not eliminate every check-to-execution race.
 
-This talk introduces ImportSpy not as a utility library, but as an architectural governance layer for plugin-based and long-running backend systems.
+## Supply-chain role and extension design
 
-**Resources**
+ImportSpy turns evidence into an admission decision. It does not replace a package manager, vulnerability scanner or SBOM generator, and does not bundle OSV or Sigstore verification. Package metadata and origin URLs are not cryptographic provenance.
 
-- Slides (PDF, Italian): [ImportSpy GDG Basilicata talk — Runtime import contracts for Python](../../assets/talks/importspy-gdg-basilicata-it.pdf)  
-- Slides (PDF, English — technical translation): [Runtime Contract Validation in Modular Python Systems](../../assets/talks/importspy-runtime-contract-validation-en.pdf)  
-- Official GDG Basilicata event page: [Flash Talks Arena — ImportSpy session](https://gdg.community.dev/events/details/google-gdg-basilicata-presents-flash-talks-arena/)  
-- Community listing: [PignolaLUG — Flash Talks Arena (ImportSpy)](https://www.pignolalug.it/iniziative/flash-talks-arena/)
+I separated `EvidenceProvider`, `PolicyValidator`, `RuntimeValidator` and `Reporter` extension points so that collection, decisions, post-execution checks and presentation can evolve independently. External verification tools can supply evidence through explicitly selected, trusted providers; proposed integrations are not built-in capabilities.
 
----
+Core checks work offline. Network collection requires explicit provider selection and authorization. With fixed policy and facts, evaluation is deterministic; making I/O explicit helps testing and reproducibility without pretending that external evidence never changes.
 
-## My Role
+## My contribution and outcome
 
-I designed and implemented ImportSpy end-to-end, starting from the conceptual architecture and evolving it into a production-ready open-source system.
+I own the Python implementation, static analysis, dependency resolution, domain models, extension interfaces, CLI, reporting, tests, documentation and release workflow. Regression tests in the project exercise the execution boundary, including source that attempts output, file writes, environment changes, subprocesses or network operations.
 
-My work covered the definition of the contract model, the design of the validation engine, and the implementation of the runtime import interception mechanism, with a strong focus on determinism, clarity, and architectural correctness. I also curated the project documentation, packaging, and release workflow to ensure long-term maintainability and ease of adoption.
+The result is an inspectable admission decision and a separate execution path. The engineering lesson is to make uncertainty and trust boundaries part of the model rather than hide them behind a successful import.
 
-Through this project, I consolidated my experience in software architecture, runtime systems, modular design, and DevSecOps-oriented tooling, while leading the full lifecycle of an open-source initiative from initial design to public release.
+Concrete applications include plugin admission, internal Python platforms, dependency governance and CI policy checks. These are use cases for the design, not claims of production adoption.
 
----
+## Public presentation
 
-## Read Next
+**GDG Basilicata · Flash Talks Arena · 20 May 2025** — *ImportSpy: Quando i moduli Python sanno dire “no”*. A technical talk about explicit contracts and execution-context constraints in modular Python systems.
 
-- [Back to case studies](../index.md)
-- [ImportSpy architecture deep dive](architecture.md)
-- [Runtime validation engine](validation.md)
-- [GitHub repository](https://github.com/atellaluca/importspy)
-- [Technical profile](../../profile.md)
-- [Contact](../../contact.md)
+[Original presentation — Italian (PDF)](../../assets/talks/importspy-gdg-basilicata-it.pdf) · [Event and talk details](https://gdg.community.dev/events/details/google-gdg-basilicata-presents-flash-talks-arena/)
+
+Related material: [English technical presentation (PDF)](../../assets/talks/importspy-runtime-contract-validation-en.pdf).
+
+## Explore the engineering
+
+- [Architecture: evidence, policy and execution boundaries](architecture.md)
+- [Repository, tests and contribution work](https://github.com/atellaluca/ImportSpy)
+- [Official documentation: installation, integration and reference](https://importspy.atellaluca.com/)
+- [All case studies](../index.md)
+
+[Technical profile](../../profile.md) · [CV](../../cv.md) · [Discuss an opportunity](../../contact.md)

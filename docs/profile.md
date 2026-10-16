@@ -10,7 +10,7 @@ schema_type: "ProfilePage"
 
 I design and build backends, APIs, and software platforms for products that need to remain understandable, verifiable, and maintainable over time.
 
-At Vemar, from April 2021 to October 2024, I worked as Tech Lead with continuous technical coordination responsibility for a 4-person team. In that context, I personally designed and implemented the infrastructure for 80 trackers and developed the framework on which delis.app is based.
+At [Vemar](https://www.vemarsas.it/en), from April 2021 to October 2024, I worked as Tech Lead with continuous technical coordination responsibility for a 4-person team. In that context, I personally designed and implemented the infrastructure for 80 trackers and developed the framework on which [delis.app](https://www.delis.app/) is based.
 
 My work tends to focus on boundaries: where application logic ends, where infrastructure begins, how components and services communicate, which dependencies may change, and what effects a change can have on the whole system.
 
@@ -25,8 +25,8 @@ I am based in Basilicata, Italy, and I am open to remote or hybrid collaboration
 - **Tech Lead at Vemar:** continuous technical coordination of a 4-person team.
 - **Real-Time Fleet Telemetry Backend:** infrastructure for 80 trackers, personally designed and implemented with socket communication, CAN bus data, persistence, and REST APIs.
 - **Unified Backend for Heterogeneous Data Sources:** framework developed at Vemar and used as the foundation for delis.app, with separated integrations and explicit contracts.
-- **Cloud-Portable Fleet Management Platform:** Fleet Management System used by Studio Lambda for vehicle turnover management for 50 employees, deployed on AWS.
-- **ImportSpy:** open-source project for explicit runtime contracts between modules.
+- **Cloud-Portable Fleet Management Platform:** Fleet Management System used by [Studio Lambda](https://studiolambda.net/) for vehicle turnover management for 50 employees, deployed on AWS.
+- **ImportSpy:** open-source policy-as-code admission for Python, with static preflight and structured decisions before explicit execution.
 - **Agenzia delle Entrate applications:** Java runtime isolation and coexistence of legacy desktop tools in an accounting firm.
 
 ---
@@ -64,7 +64,7 @@ The most representative examples are:
 - [Unified Backend for Heterogeneous Data Sources](case-studies/unified-backend/index.md), for framework development, integrations, and delis.app;
 - [End-to-End Real-Time Fleet Telemetry Backend](case-studies/fleet-tracking/index.md), for real-time infrastructure and 80 trackers at Vemar;
 - [Cloud-Portable Fleet Management Platform](case-studies/cloud-portable-fleet-platform/index.md), for Studio Lambda, AWS, and design-level infrastructure independence;
-- [ImportSpy](case-studies/importspy/index.md), for runtime contracts and modularity;
+- [ImportSpy](case-studies/importspy/index.md), for static preflight, dependency identity, and evidence-based admission decisions;
 - [Runtime Compatibility for Agenzia delle Entrate Applications](case-studies/agenzia-entrate-runtime-isolation/index.md), for legacy diagnosis and dependency isolation.
 
 For a compact professional summary, see the [CV](cv.md). For project or architecture conversations, use [Contact](contact.md).

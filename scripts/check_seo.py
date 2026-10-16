@@ -46,6 +46,8 @@ def local_file(url):
 
 
 def check():
+    for prefix in ("", "it/"):
+        assert not (SITE / prefix / "build").exists(), "Internal build documentation was published"
     xml = (SITE / "sitemap.xml").read_bytes()
     assert gzip.decompress((SITE / "sitemap.xml.gz").read_bytes()) == xml
     entries = ET.fromstring(xml).findall("s:url", NS)
@@ -53,6 +55,7 @@ def check():
     assert len(locations) == len(set(locations)), "Duplicate sitemap locations"
     documents = {}
     for location in locations:
+        assert "/build/" not in location, (location, "Internal build documentation in sitemap")
         assert location.startswith(ROOT) and "/cv-pdf/" not in location and "/overview/" not in location
         path = local_file(location)
         assert path.is_file(), location
@@ -96,6 +99,15 @@ def check():
     redirects = list(SITE.glob("**/case-studies/*/overview/index.html"))
     # Allow the number of legacy overview redirects to grow as case studies are added.
     assert len(redirects) >= 14, len(redirects)
+    for prefix in ("", "it/"):
+        current = ROOT + prefix + "case-studies/importspy/architecture/"
+        for slug in ("validation", "contracts", "violations"):
+            old = ROOT + prefix + "case-studies/importspy/" + slug + "/"
+            assert old not in locations, (old, "Redirect in sitemap")
+            path = local_file(old)
+            doc = Document(path.read_text())
+            assert doc.select("link", rel="canonical") == [{"rel": "canonical", "href": current}], old
+            redirects.append(path)
     for path in redirects:
         doc = Document(path.read_text())
         target = doc.select("link", rel="canonical")[0]["href"]

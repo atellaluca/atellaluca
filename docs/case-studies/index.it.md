@@ -18,7 +18,7 @@ Usala come livello di evidenza tecnica del portfolio: ogni pagina collega un pro
 
 ## Cloud-Portable Fleet Management Platform
 
-Fleet Management System in uso presso Studio Lambda per gestire il turnover dei veicoli di 50 dipendenti. È deployato su AWS e progettato per separare logica applicativa, persistenza, servizi cloud e runtime web.
+Fleet Management System in uso presso [Studio Lambda](https://studiolambda.net/) per gestire il turnover dei veicoli di 50 dipendenti. È deployato su AWS e progettato per separare logica applicativa, persistenza, servizi cloud e runtime web.
 
 - Focus: cloud portability, astrazione infrastrutturale, deployment in produzione
 - Topics: AWS, FastAPI, React, DynamoDB, S3, Docker Compose, CloudFormation
@@ -27,10 +27,14 @@ Fleet Management System in uso presso Studio Lambda per gestire il turnover dei 
 
 ## ImportSpy
 
-Progetto open-source Python per runtime contract validation di moduli e sistemi plugin-based.
+**Ammissione di moduli e dipendenze Python con Policy-as-Code**
 
-- Focus: runtime contracts, sicurezza modulare, invarianti architetturali
-- Topics: plugin governance, errori deterministici, modelli di validazione
+Gli import Python possono eseguire codice prima della verifica di compatibilità e policy sulle dipendenze. ImportSpy separa questa decisione dall’esecuzione.
+
+Ho realizzato preflight statico, risoluzione dell’identità delle dipendenze e valutazione delle policy su evidenze, con decisioni ADMIT / DENY strutturate prima di un caricamento esplicito.
+
+- Focus: admission control, policy sulle dipendenze, confine di esecuzione
+- Topics: Python, analisi statica, evidenze, CLI e reporting CI
 
 → [Leggi il caso studio](importspy/index.md)
 
@@ -45,7 +49,7 @@ Pipeline geospaziale per trasformare dataset pubblici di Basilicata in modelli 3
 
 ## Unified Backend Architecture
 
-Framework backend plugin-driven che ho sviluppato in Vemar e su cui si fonda delis.app, presentato in forma SAFE per evidenziare separazione delle integrazioni, contratti e superficie API unificata.
+Framework backend plugin-driven che ho sviluppato in [Vemar](https://www.vemarsas.it/en) e su cui si fonda [delis.app](https://www.delis.app/), presentato in forma SAFE per evidenziare separazione delle integrazioni, contratti e superficie API unificata.
 
 → [Leggi il caso studio](unified-backend/index.md)
 

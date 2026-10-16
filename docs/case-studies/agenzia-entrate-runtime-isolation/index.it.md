@@ -89,4 +89,4 @@ Non riguarda consulenza fiscale, certificazione di conformità normativa, attivi
 
 Questo caso è diverso dai progetti backend, ma segue lo stesso principio: governare le relazioni fra componenti, dipendenze e ambiente di esecuzione considerando gli effetti delle modifiche sull’intero sistema.
 
-Lo stesso filo conduttore appare in [ImportSpy](../importspy/index.md), dove i contratti rendono esplicite le incompatibilità fra moduli, e nella [Piattaforma Fleet Cloud-Portable](../cloud-portable-fleet-platform/index.md), dove la logica applicativa è separata dai servizi infrastrutturali.
+Lo stesso filo conduttore appare in [ImportSpy](../importspy/index.md), dove preflight statico e valutazione delle policy producono decisioni strutturate di ammissione prima dell’esecuzione esplicita di codice Python, e nella [Piattaforma Fleet Cloud-Portable](../cloud-portable-fleet-platform/index.md), dove la logica applicativa è separata dai servizi infrastrutturali.

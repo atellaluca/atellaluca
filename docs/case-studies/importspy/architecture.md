@@ -1,185 +1,65 @@
 ---
-title: "ImportSpy Architecture | Runtime Validation Engine for Python Modules"
-description: "System architecture of ImportSpy, Luca Atella runtime validation framework for Python modules, provider-consumer contracts, plugin safety and architectural governance."
+title: "ImportSpy Architecture | Evidence, Policy and Python Admission"
+description: "How Luca Atella’s ImportSpy separates source inspection, dependency identity, evidence collection, policy evaluation and explicit Python execution."
 image: "assets/luca-atella-software-architect-backend-platform-engineer.png"
-image_alt: "ImportSpy architecture for Python runtime validation and modular systems"
+image_alt: "Luca Atella, author of ImportSpy’s Python admission architecture"
 schema_type: "TechArticle"
 ---
 
-# ImportSpy — System Architecture
+# ImportSpy — Architecture
 
-## Architectural Vision
+ImportSpy’s central design choice is to separate **learning about a module**, **deciding whether its facts satisfy policy**, and **executing it**. Each step has a different trust boundary. Keeping them explicit makes the admission result useful to a developer, a CI job or a plugin host without making execution an incidental part of validation.
 
-ImportSpy is designed as a **generic runtime validation framework** operating at the integration boundary between Python modules.
+The [case study](index.md) presents the project context; this page examines its architectural tradeoffs.
 
-Rather than being tied to a specific application domain, it was conceived as a reusable architectural component for:
+## Source snapshots and the execution boundary
 
-- plugin frameworks  
-- modular backends  
-- extensible platforms  
-- secure runtime environments  
+The inspector reads source bytes, hashes them, parses the AST and compiles it to validate syntax without running the resulting code. Its facts describe declarations and import references, not every object Python might eventually create. Decorators, metaclasses and computed values can leave required properties unknown; inspection does not execute them to resolve uncertainty.
 
-The core idea is to introduce a contract enforcement layer between a *provider* module and the modules that import it.
+`check` returns a decision even when admission succeeds. Execution requires an explicit `load`, which refreshes dependency metadata and performs a new admission check. Once admitted, it executes the captured source bytes rather than reopening the path. A test changes the source file during evidence collection and verifies that the inspected snapshot is what runs.
 
-In its current implementation, ImportSpy is adopted by a **Module A** within a codebase to declare formal constraints that must be satisfied by **Module B** modules importing A.
+This limits the gap between checking and using the **selected source**. It does not freeze installed dependencies, import hooks, external files or the surrounding process. Runtime validators run after module initialization; removing a failed module from `sys.modules` cannot undo its effects. The loader is neither an import hook nor a sandbox.
 
-In this model:
+## Dependency identity without false certainty
 
-- Module A acts as the *provider*  
-- Modules B act as *consumers*  
-- contracts define the requirements that consumers must satisfy  
+An import name and a distribution name answer different questions. One import can map to several installed distributions, while one distribution can supply several imports. ImportSpy retains these mappings rather than choosing one contributor arbitrarily. Namespace imports therefore receive conservative treatment: policy evaluates all mapped contributors.
 
-The module exposing functionality becomes the point where integration requirements are defined, while consumer modules are validated against those requirements before meaningful interaction can occur.
+The resolver distinguishes standard-library, internal, external, namespace, direct-origin and unresolved dependencies. It reads source paths and installed metadata without importing candidate dependencies. Missing mappings stay unresolved, and required facts that cannot be established fail closed.
 
-From an architectural standpoint, this mechanism is a first step toward a more general import-time enforcement layer, designed to evolve toward validation of dynamically loaded modules even outside a controlled application perimeter.
+This conservatism can check namespace contributors unused by a particular child import. The inventory covers imports observed in the selected file, including conditional and function-body imports. It does not recursively establish the transitive dependency graph or intercept dynamic imports.
 
----
+## Evidence is separate from policy
 
-## Core Architectural Principles
+Normalized `Evidence` records carry a subject, observation, provider, phase and status. Four states preserve distinctions that a boolean would lose:
 
-ImportSpy’s architecture follows a set of explicit principles:
+| Status | Meaning |
+| --- | --- |
+| `verified` | The producer established the particular stated fact. |
+| `observed` | Data is available without a stronger verification claim. |
+| `unknown` | The method cannot establish the fact. |
+| `unavailable` | Collection failed or was disabled. |
 
-- **Separation of concerns**  
-  Contracts, validation logic, execution context, and the integration point are kept as independent components.
+Installed origin metadata is an observation, not cryptographic provenance. Likewise, verified syntax says nothing about whether arbitrary Python behavior is safe. Policy decides which facts and status are sufficient; required unknown or unavailable evidence cannot silently become approval.
 
-- **Declarative over imperative**  
-  Integration requirements are expressed as structured schemas rather than scattered procedural checks.
+Separating collection from evaluation keeps policy deterministic **for the same policy and facts**. Core checks work offline without an account or telemetry. Separate checks can still differ because source, installed metadata, host state and timestamps change. Dependency caches belong to an engine instance; explicit loading refreshes them.
 
-- **Fail-fast semantics**  
-  Validation happens before any significant interaction between provider and consumer can take place.
+## Extension points expose when code runs
 
-- **Low coupling**  
-  Importing application code should not need to know how validation is implemented.
+| Extension | Responsibility and execution phase |
+| --- | --- |
+| `EvidenceProvider` | Collect selected local or external facts during admission. |
+| `PolicyValidator` | Evaluate collected facts without I/O during policy evaluation. |
+| `RuntimeValidator` | Inspect runtime objects after explicit target execution. |
+| `Reporter` | Format an existing decision without rerunning admission. |
 
-- **Extensibility**  
-  New validation rules and constraints can be introduced without changing the core engine.
+These are trusted Python extensions. Providers are selected explicitly; the engine does not load every installed plugin. Network-dependent collection requires opt-in, but that declaration is a cooperation boundary, not a firewall around plugin initialization or code.
 
----
+The protocols provide room for external supply-chain evidence. OSV/pip-audit, Sigstore, PyPI attestations, CycloneDX, SPDX and GitHub metadata adapters remain proposed integrations rather than native capabilities.
 
-## Conceptual Components
+## One decision, several consumers
 
-At a conceptual level, ImportSpy is organized into four primary components.
+`AdmissionDecision` keeps source and policy identity and hashes, engine version, host facts, dependencies, evidence, violations and the admission result together. Its phases and `target_executed` flag distinguish host inspection from target execution. A `Violation` carries a stable code, severity, explanation and a source location when known.
 
----
+Human, JSON and SARIF reporters consume that same decision. JSON preserves the inventory and evidence; SARIF presents violations for code-scanning workflows. Formatting does not repeat collection or execute the target. This gives automation structured diagnostics while preserving the evidence needed to explain a denial.
 
-### 1. Contract Model
-
-The contract model represents the **expected properties** of a consumer module with respect to a provider module.
-
-It can express constraints such as:
-
-- presence of required classes, functions, or attributes  
-- method signatures and parameter structures  
-- interpreter or platform requirements  
-- runtime environment conditions  
-
-The model is intentionally separated from concrete Python objects to ensure:
-
-- portability  
-- serializability  
-- schema-driven validation  
-
----
-
-### 2. Validation Engine
-
-The validation engine is responsible for:
-
-- interpreting contract schemas  
-- executing validation rules  
-- producing structured validation results  
-
-It is designed as a **rule-based engine**, where:
-
-- each rule validates a single constraint  
-- rules are independent from each other  
-- results are aggregated into a final outcome  
-
-This approach improves:
-
-- maintainability  
-- testability  
-- incremental extension of the system  
-
----
-
-### 3. Execution Context
-
-The execution context provides runtime metadata used during validation, including:
-
-- Python interpreter version  
-- operating system  
-- CPU architecture  
-- environment variables  
-- runtime configuration  
-
-This allows contracts to express **context-dependent constraints**.
-
----
-
-### 4. Provider–Consumer Integration Point
-
-The integration point represents the mechanism through which ImportSpy is inserted into the interaction flow between modules.
-
-In the current implementation, ImportSpy is imported by a provider module (Module A), which uses the framework to define formal contracts on consumer modules (Modules B) that import A.
-
-In this scheme:
-
-- Module A acts as the *provider*  
-- Modules B act as *consumers*  
-- contracts define the requirements that consumers must satisfy  
-
-This enables validation within a controlled perimeter, without altering the global behavior of Python’s import system.
-
-From an architectural standpoint, this component is designed to evolve toward a more general mechanism capable of:
-
-- intercepting requests to load dynamically imported modules  
-- building the execution context  
-- triggering validation  
-- preventing execution of non-compliant modules  
-- propagating structured validation errors  
-
----
-
-## Conceptual Validation Flow
-
-The following flow represents the target architecture of the system.
-
-In the current implementation, validation is applied to consumer modules (Modules B) importing a provider module (Module A) that explicitly adopts ImportSpy.
-
-1. A Module B imports a Module A that adopts ImportSpy.  
-2. The integration point intercepts the interaction between B and A.  
-3. The execution context is built.  
-4. The provider-defined contract schema is loaded.  
-5. The validation engine executes all rules.  
-6. Results are aggregated.  
-7. If validation succeeds, interaction can proceed.  
-8. If validation fails, the import is aborted.
-
----
-
-## Architectural Trade-offs
-
-Several trade-offs were considered during design:
-
-- **Strictness vs flexibility**  
-  Stronger contracts increase safety but reduce system dynamism.
-
-- **Performance vs depth of validation**  
-  Deeper introspection increases import-time latency.
-
-- **Generality vs domain specificity**  
-  Generic rules are less optimized than domain-specific rules.
-
----
-
-## Design Outcome
-
-The resulting architecture provides:
-
-- a clear separation between contracts and code  
-- deterministic behavior at integration time  
-- predictable failure modes  
-- strong runtime safety guarantees  
-
-without requiring invasive changes to application code.
+Implementation and configuration details: [official documentation](https://importspy.atellaluca.com/) and [source repository](https://github.com/atellaluca/ImportSpy).
