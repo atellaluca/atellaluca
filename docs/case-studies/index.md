@@ -34,7 +34,7 @@ A Fleet Management System used by [Studio Lambda](https://studiolambda.net/) to 
 
 <div class="portfolio-card" markdown>
 
-## ImportSpy  
+## ImportSpy — version 0.5
 **Policy-as-Code Admission for Python Modules and Dependencies**
 
 Python imports can run code before compatibility or dependency policy has been checked. ImportSpy separates that decision from execution.

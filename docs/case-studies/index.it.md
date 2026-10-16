@@ -25,7 +25,7 @@ Fleet Management System in uso presso [Studio Lambda](https://studiolambda.net/)
 
 → [Leggi il caso studio](cloud-portable-fleet-platform/index.md)
 
-## ImportSpy
+## ImportSpy — versione 0.5
 
 **Ammissione di moduli e dipendenze Python con Policy-as-Code**
 

@@ -10,7 +10,7 @@ schema_type: "TechArticle"
 
 ImportSpy separa **la raccolta di informazioni sul modulo**, **la decisione sulla conformità alle policy** e **l’esecuzione**. Ogni passaggio ha un diverso confine di fiducia. Questa separazione permette a sviluppatori, pipeline CI e sistemi di plugin di usare il risultato senza rendere l’esecuzione una conseguenza implicita della validazione.
 
-Il [case study](index.md) presenta il contesto; questa pagina approfondisce i compromessi architetturali.
+Il [case study](index.md) presenta il contesto; questa pagina approfondisce i compromessi architetturali di **ImportSpy 0.5.0**.
 
 ## Snapshot del sorgente e confine di esecuzione
 
@@ -19,6 +19,8 @@ L’ispettore legge i byte del sorgente, ne calcola l’hash, analizza l’AST e
 `check` restituisce una decisione anche quando l’ammissione riesce. Per eseguire serve un `load` esplicito, che aggiorna i metadati delle dipendenze e ripete il controllo di ammissione. Dopo l’approvazione, esegue i byte acquisiti senza riaprire il percorso. Un test modifica il file durante la raccolta delle evidenze e verifica l’esecuzione dello snapshot ispezionato.
 
 Questo limita il divario tra controllo e uso del **sorgente selezionato**. Non congela dipendenze installate, import hook, file esterni o processo circostante. I validatori runtime intervengono dopo l’inizializzazione del modulo; rimuovere da `sys.modules` un modulo che ha fallito non ne annulla gli effetti. Il loader non è un import hook né una sandbox.
+
+Le API di compatibilità mantenute, `Spy.importspy` e `SpyModel.from_module`, ispezionano moduli già eseguiti. Appartengono alla precedente architettura dei contratti runtime e non acquisiscono il confine prima dell’esecuzione della pipeline di ammissione. Si vedano il [flusso della libreria e le indicazioni di migrazione](https://github.com/atellaluca/ImportSpy/blob/main/docs/modes/embedded.md).
 
 ## Identità delle dipendenze senza false certezze
 
@@ -54,7 +56,7 @@ Separare raccolta e valutazione rende la policy deterministica **a parità di po
 
 Sono estensioni Python considerate attendibili. I provider vengono selezionati esplicitamente; il motore non carica tutti i plugin installati. La raccolta via rete richiede un’abilitazione esplicita: un accordo di cooperazione, non un firewall attorno all’inizializzazione o al codice dei plugin.
 
-I protocolli lasciano spazio a evidenze esterne sulla supply chain. Gli adattatori per OSV/pip-audit, Sigstore, attestazioni PyPI, CycloneDX, SPDX e metadati GitHub restano integrazioni proposte, non funzionalità native.
+I protocolli sono implementati; l’[esempio di estensione offline](https://github.com/atellaluca/ImportSpy/blob/main/docs/extensions.md) ne dimostra l’uso senza verifiche esterne. Gli adattatori per OSV/pip-audit, Sigstore, attestazioni PyPI, CycloneDX, SPDX e metadati GitHub restano [integrazioni proposte](https://github.com/atellaluca/ImportSpy/blob/main/docs/community-roadmap.md), non funzionalità native.
 
 ## Una decisione, più destinatari
 
@@ -62,4 +64,4 @@ I protocolli lasciano spazio a evidenze esterne sulla supply chain. Gli adattato
 
 I reporter leggibili da persone, JSON e SARIF usano la stessa decisione. JSON conserva inventario ed evidenze; SARIF presenta le violazioni per i flussi di code scanning. La formattazione non ripete la raccolta e non esegue il modulo. L’automazione ottiene così diagnostica strutturata, mantenendo le evidenze necessarie a spiegare un rifiuto.
 
-Implementazione e configurazione: [documentazione ufficiale](https://importspy.atellaluca.com/) e [repository sorgente](https://github.com/atellaluca/ImportSpy).
+Implementazione e limiti della **0.5.0**: [architettura ufficiale](https://github.com/atellaluca/ImportSpy/blob/main/docs/architecture.md), [modello di sicurezza](https://github.com/atellaluca/ImportSpy/blob/main/docs/security-model.md) e [codice sorgente](https://github.com/atellaluca/ImportSpy).

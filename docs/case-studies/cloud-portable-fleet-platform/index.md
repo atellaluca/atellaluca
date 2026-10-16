@@ -137,6 +137,6 @@ This project is distinct from the [End-to-End Real-Time Fleet Telemetry Backend]
 
 ## Presentation { #presentation }
 
-**MT Academy** — Presentation connected to the Studio Lambda Fleet Management case study.
+**[CTE Matera — House of Emerging Technologies](https://www.ctematera.it/)** — Presentation connected to the Studio Lambda Fleet Management case study.
 
 [More talks and presentations](../../index.md#talks-presentations)

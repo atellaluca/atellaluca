@@ -25,7 +25,7 @@ Progetto e sviluppo direttamente backend Python, API e piattaforme cloud. In [Ve
 [Parliamo di un’opportunità](contact.md){ .md-button .md-button--primary }
 [Esplora i progetti](#progetti-selezionati){ .md-button }
 
-[Leggi il CV](cv.md) · [LinkedIn](https://www.linkedin.com/in/luca-atella/) · [English version](/)
+[Servizi per studi e imprese](servizi.md) · [Leggi il CV](cv.md) · [LinkedIn](https://www.linkedin.com/in/luca-atella/) · [English version](/)
 
 </div>
 <div class="portfolio-identity" markdown>
@@ -86,7 +86,7 @@ Il problema, le scelte progettuali e il sistema risultante. Ogni caso studio dis
 <div class="portfolio-card" markdown>
 <p class="portfolio-eyebrow">03 / PROGETTO OPEN SOURCE</p>
 
-### ImportSpy — Policy-as-code per l’ammissione di moduli Python
+### ImportSpy 0.5 — Policy-as-code per l’ammissione di moduli Python
 
 **Il problema:** un import Python può eseguire codice prima che il sistema decida se un modulo e le sue dipendenze rispettano le policy.
 
@@ -140,12 +140,12 @@ Un’architettura edge-to-cloud per integrare sensori, dispositivi e sorgenti et
 <div class="portfolio-proof" markdown>
 ### ImportSpy — GDG Basilicata
 
-**Flash Talks Arena · 20 maggio 2025** — *Quando i moduli Python sanno dire “no”*. Un talk tecnico sui contratti espliciti e sui vincoli del contesto di esecuzione nei sistemi Python modulari.
+**Flash Talks Arena · 20 maggio 2025** — *Quando i moduli Python sanno dire “no”*. Un talk sulla prima generazione di ImportSpy, dedicata ai contratti runtime; la versione 0.5 oggi usa un controllo di ammissione prima dell’esecuzione.
 
 [Presentazione originale — Italiano (PDF) →](assets/talks/importspy-gdg-basilicata-it.pdf) · [Dettagli dell’evento](https://gdg.community.dev/events/details/google-gdg-basilicata-presents-flash-talks-arena/)
 </div>
 <div class="portfolio-proof" markdown>
-### Fleet Management — MT Academy / Studio Lambda
+### Fleet Management — [CTE Matera](https://www.ctematera.it/) / Studio Lambda
 
 Il caso Studio Lambda Fleet Management: turnover dei veicoli di 50 dipendenti, confini applicativi e deployment su AWS.
 
@@ -172,7 +172,7 @@ Contratti espliciti, errori comprensibili e scelte motivate. Un sistema deve pot
 </div>
 </div>
 
-[Il mio metodo](methodology.md) · [Profilo tecnico](profile.md) · [Percorso e certificazioni nel CV](cv.md) · [Chi sono](about.md)
+[Servizi professionali](servizi.md) · [Il mio metodo](methodology.md) · [Profilo tecnico](profile.md) · [Percorso e certificazioni nel CV](cv.md) · [Chi sono](about.md)
 
 <div class="portfolio-contact" markdown>
 <p class="portfolio-eyebrow">IL PROSSIMO PROGETTO</p>

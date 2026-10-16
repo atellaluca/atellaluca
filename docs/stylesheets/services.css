@@ -1,0 +1,17 @@
+/* The service landing page uses the existing portfolio visual system. */
+.md-typeset .portfolio-services > h1 { max-width: 18ch; font-size: clamp(2rem, 4.4vw, 3.4rem); line-height: 1.14; letter-spacing: -.045em; }
+.md-typeset .portfolio-services > .services-lead { max-width: 46ch; color: #35524c; font-size: clamp(1rem, 2.2vw, 1.36rem); line-height: 1.45; font-weight: 510; margin-top: .7rem; }
+.portfolio-services .md-button { max-width: 100%; white-space: normal; overflow-wrap: anywhere; text-align: center; }
+.portfolio-services > p > .md-button { margin: .65rem .3rem .4rem 0; }
+.portfolio-services .portfolio-card { min-height: 0; }
+.portfolio-services .portfolio-card ul { padding-left: 1.1rem; margin-bottom: 1.1rem; }
+.portfolio-services .portfolio-card li { font-size: .75rem; margin-bottom: .28rem; }
+.portfolio-services .portfolio-card .portfolio-stack { border-top: 1px solid #e3e9e4; padding-top: .75rem; }
+.portfolio-services .portfolio-card p:last-child { margin-top: .55rem; padding-top: .15rem; }
+.portfolio-steps { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: .9rem; margin: 1.5rem 0 2rem; }
+.portfolio-steps > div { background: #f0f3ef; border-top: 3px solid #11685e; border-radius: .25rem; padding: 1rem; }
+.md-typeset .portfolio-steps p { font-size: .73rem; }
+.md-typeset .portfolio-steps p:first-child { color: #183e38; margin-top: 0; }
+@media (max-width: 900px) { .portfolio-steps { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width: 560px) { .portfolio-steps { grid-template-columns: 1fr; } .md-typeset .portfolio-services > h1 { max-width: none; } }
+@media print { .portfolio-steps { display: block; } .portfolio-steps > div { break-inside: avoid; margin-bottom: .5rem; } }

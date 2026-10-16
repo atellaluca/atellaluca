@@ -9,7 +9,8 @@ from xml.etree import ElementTree as ET
 
 SITE = Path(sys.argv[1] if len(sys.argv) > 1 else "site")
 ROOT = "https://profile.atellaluca.com/"
-NS = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9", "x": "http://www.w3.org/1999/xhtml"}
+NS = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9", "x": "http://www.w3.org/1999/xhtml",
+      "image": "http://www.google.com/schemas/sitemap-image/1.1"}
 
 
 class Document(HTMLParser):
@@ -63,13 +64,31 @@ def check():
         doc = Document(text)
         documents[location] = doc
         assert len(doc.select("h1")) == 1, (location, "H1")
-        assert doc.select("meta", name="description")[0].get("content"), location
+        descriptions = doc.select("meta", name="description")
+        assert len(descriptions) == 1 and descriptions[0].get("content"), location
+        assert len(doc.select("title")) == 1, (location, "Title")
         assert doc.select("link", rel="canonical") == [{"rel": "canonical", "href": location}], location
         assert "noindex" not in doc.select("meta", name="robots")[0]["content"], location
+        assert not doc.select("meta", **{"http-equiv": "refresh"}), (location, "Indexable redirect")
         lang = "it" if urlsplit(location).path.startswith("/it/") else "en"
         assert doc.select("html")[0]["lang"] == lang, location
         assert "window.location.replace" not in text and "navigator.languages" not in text, location
         assert len(doc.schemas) == 1 and doc.schemas[0]["inLanguage"] == lang, location
+        assert doc.schemas[0]["url"] == location, (location, "JSON-LD URL")
+        for key in ("og:title", "og:description", "og:image", "og:locale", "og:url"):
+            metadata = doc.select("meta", property=key)
+            assert len(metadata) == 1 and metadata[0].get("content"), (location, key)
+        assert doc.select("meta", property="og:url")[0]["content"] == location, location
+        assert doc.select("meta", property="og:description")[0]["content"] == descriptions[0]["content"], location
+        assert doc.select("meta", property="og:locale")[0]["content"] == ("it_IT" if lang == "it" else "en_US"), location
+        for key in ("twitter:card", "twitter:title", "twitter:description", "twitter:image"):
+            metadata = doc.select("meta", name=key)
+            assert len(metadata) == 1 and metadata[0].get("content"), (location, key)
+        for image_url in (doc.schemas[0]["image"], doc.select("meta", property="og:image")[0]["content"],
+                          doc.select("meta", name="twitter:image")[0]["content"]):
+            assert image_url.startswith("https://"), (location, image_url)
+            if image_url.startswith(ROOT):
+                assert local_file(image_url).is_file(), (location, image_url, "Missing social image")
         if doc.schemas[0]["@type"] == "ProfilePage":
             assert doc.schemas[0]["mainEntity"]["@id"] == ROOT + "#person"
         for tag, attrs in doc.tags:
@@ -80,16 +99,61 @@ def check():
             if absolute.startswith(ROOT):
                 assert local_file(absolute).is_file(), (location, resource, "Broken internal URL")
 
+    sitemap_alternates = {
+        location: {a.get("hreflang"): a.get("href") for a in entry.findall("x:link", NS)}
+        for entry, location in zip(entries, locations)
+    }
     for entry, location in zip(entries, locations):
         doc = documents[location]
-        alternates = {a["hreflang"]: a["href"] for a in doc.select("link", rel="alternate") if "hreflang" in a}
+        assert not any("hreflang" in a for a in doc.select("link", rel="alternate")), (
+            location, "Head hreflang triggers Material's alternate-site sitemap probes")
+        alternate_links = entry.findall("x:link", NS)
+        assert len(alternate_links) == 3, (location, "Duplicate or missing hreflang")
+        assert all(a.get("rel") == "alternate" for a in alternate_links), location
+        alternates = sitemap_alternates[location]
         assert set(alternates) == {"en", "it", "x-default"}, (location, alternates)
         assert alternates["x-default"] == alternates["en"], location
-        assert {a.get("hreflang"): a.get("href") for a in entry.findall("x:link", NS)} == alternates, location
         for alternate in alternates.values():
             assert alternate in documents, (location, alternate)
-            reciprocal = {a["hreflang"]: a["href"] for a in documents[alternate].select("link", rel="alternate") if "hreflang" in a}
-            assert reciprocal == alternates, (location, "Non-reciprocal hreflang")
+            assert sitemap_alternates[alternate] == alternates, (location, "Non-reciprocal sitemap hreflang")
+        switcher = {a["hreflang"]: urljoin(location, a["href"]) for a in doc.select("a")
+                    if "md-select__link" in a.get("class", "").split()}
+        assert switcher == {lang: alternates[lang] for lang in ("en", "it")}, (location, "Language selector", switcher)
+
+    services_en = ROOT + "services/"
+    services_it = ROOT + "it/servizi/"
+    assert services_en in documents and services_it in documents, "Primary service pages missing"
+    for location in (services_en, services_it):
+        doc = documents[location]
+        assert sitemap_alternates[location] == {
+            "en": services_en, "it": services_it, "x-default": services_en}, location
+        assert any(urljoin(location, a["href"]) == location and "md-nav__link--active" in a.get("class", "").split()
+                   for a in doc.select("a") if a.get("href")), (location, "Services navigation is not active")
+    service_aliases = {
+        "servizi/": services_en,
+        "it/services/": services_it,
+        "en/services/": services_en,
+    }
+    for old, target in service_aliases.items():
+        old_url = ROOT + old
+        assert old_url not in locations, (old_url, "Service redirect in sitemap")
+        alias = Document((SITE / old / "index.html").read_text())
+        assert alias.select("link", rel="canonical") == [{"rel": "canonical", "href": target}]
+        assert alias.select("meta", **{"http-equiv": "refresh"})[0]["content"] == "0; url=" + target
+        assert "noindex" in alias.select("meta", name="robots")[0]["content"], old_url
+        assert not alias.select("link", rel="alternate"), old_url
+        assert target in documents, (old_url, "Redirect chain or missing destination")
+    for location, doc in documents.items():
+        targets = [urljoin(location, a["href"]) for a in doc.select("a") if a.get("href")]
+        assert not any(urlsplit(target).path.lstrip("/") in service_aliases for target in targets
+                       if target.startswith(ROOT)), (location, "Link to a service redirect")
+        services = services_it if urlsplit(location).path.startswith("/it/") else services_en
+        assert services in targets, (location, "Services navigation missing")
+    search_entries = json.loads((SITE / "search/search_index.json").read_text())["docs"]
+    search_locations = {urljoin(ROOT, entry["location"]).split("#", 1)[0] for entry in search_entries}
+    assert {services_en, services_it} <= search_locations, "Services missing from search"
+    assert not ({ROOT + alias for alias in service_aliases} & search_locations), "Service redirects in search"
+    assert not any("/cv-pdf/" in location for location in search_locations), "Print pages in search"
 
     for prefix in ("", "it/"):
         doc = Document((SITE / prefix / "cv-pdf/index.html").read_text())
@@ -112,10 +176,20 @@ def check():
         doc = Document(path.read_text())
         target = doc.select("link", rel="canonical")[0]["href"]
         assert target in documents, (path, target)
+        assert "noindex" in doc.select("meta", name="robots")[0]["content"], path
         assert doc.select("meta", **{"http-equiv": "refresh"})[0]["content"] == "0; url=" + target
     assert "noindex" in Document((SITE / "404.html").read_text()).select("meta", name="robots")[0]["content"]
-    assert "Disallow: /" not in (SITE / "robots.txt").read_text()
-    print(f"PASS: {len(locations)} indexable pages; reciprocal EN/IT/x-default, canonical, JSON-LD, internal URLs, sitemap/gzip, print exclusions and {len(redirects)} legacy redirects.")
+    robots = (SITE / "robots.txt").read_text()
+    assert "Disallow: /" not in robots
+    sitemap_urls = [line.split(":", 1)[1].strip() for line in robots.splitlines()
+                    if line.lower().startswith("sitemap:")]
+    assert ROOT + "sitemap.xml" in sitemap_urls, "Primary sitemap missing from robots.txt"
+    for sitemap_url in sitemap_urls:
+        assert sitemap_url.startswith(ROOT) and local_file(sitemap_url).is_file(), sitemap_url
+        sitemap = ET.parse(local_file(sitemap_url)).getroot()
+        for image in sitemap.findall(".//image:loc", NS):
+            assert image.text.startswith(ROOT) and local_file(image.text).is_file(), image.text
+    print(f"PASS: {len(locations)} indexable pages; reciprocal sitemap EN/IT/x-default, direct language selector and services navigation, canonical, social metadata, JSON-LD, internal URLs, search exclusions, robots/sitemaps/gzip, print exclusions, {len(service_aliases)} service redirects and {len(redirects)} legacy redirects.")
 
 
 if __name__ == "__main__":

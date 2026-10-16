@@ -50,6 +50,7 @@ plugins:
             Home: Home
             About: Chi sono
             Methodology: Metodo
+            Services: Servizi
             Case Studies: Casi Studio
             Overview: Panoramica
             Cloud-Portable Fleet Management Platform: Piattaforma Fleet Cloud-Portable
@@ -82,11 +83,13 @@ extra_css:
   - stylesheets/cv-pdf.css
   - stylesheets/print.css
   - stylesheets/header.css
+  - stylesheets/services.css
 
 nav:
   - Home: index.md
   - About: about.md
   - Methodology: methodology.md
+  - Services: services.md
 
   - Case Studies:
       - Overview: case-studies/index.md

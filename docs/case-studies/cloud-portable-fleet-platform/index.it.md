@@ -137,6 +137,6 @@ Questo progetto è distinto dal caso [Backend Telemetria Fleet Real-Time](../fle
 
 ## Presentazione { #presentation }
 
-**MT Academy** — Presentazione collegata al caso Studio Lambda Fleet Management.
+**[CTE Matera — Casa delle Tecnologie Emergenti](https://www.ctematera.it/)** — Presentazione collegata al caso Studio Lambda Fleet Management.
 
 [Altri talk e presentazioni](../../index.md#talks-presentations)

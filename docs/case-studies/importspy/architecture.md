@@ -10,7 +10,7 @@ schema_type: "TechArticle"
 
 ImportSpy’s central design choice is to separate **learning about a module**, **deciding whether its facts satisfy policy**, and **executing it**. Each step has a different trust boundary. Keeping them explicit makes the admission result useful to a developer, a CI job or a plugin host without making execution an incidental part of validation.
 
-The [case study](index.md) presents the project context; this page examines its architectural tradeoffs.
+The [case study](index.md) presents the project context; this page examines the architectural tradeoffs of **ImportSpy 0.5.0**.
 
 ## Source snapshots and the execution boundary
 
@@ -19,6 +19,8 @@ The inspector reads source bytes, hashes them, parses the AST and compiles it to
 `check` returns a decision even when admission succeeds. Execution requires an explicit `load`, which refreshes dependency metadata and performs a new admission check. Once admitted, it executes the captured source bytes rather than reopening the path. A test changes the source file during evidence collection and verifies that the inspected snapshot is what runs.
 
 This limits the gap between checking and using the **selected source**. It does not freeze installed dependencies, import hooks, external files or the surrounding process. Runtime validators run after module initialization; removing a failed module from `sys.modules` cannot undo its effects. The loader is neither an import hook nor a sandbox.
+
+The retained `Spy.importspy` and `SpyModel.from_module` compatibility APIs inspect modules that have already executed. They belong to the earlier runtime-contract design and do not acquire the admission pipeline's pre-execution boundary. See the [library workflow and migration guidance](https://github.com/atellaluca/ImportSpy/blob/main/docs/modes/embedded.md).
 
 ## Dependency identity without false certainty
 
@@ -54,7 +56,7 @@ Separating collection from evaluation keeps policy deterministic **for the same 
 
 These are trusted Python extensions. Providers are selected explicitly; the engine does not load every installed plugin. Network-dependent collection requires opt-in, but that declaration is a cooperation boundary, not a firewall around plugin initialization or code.
 
-The protocols provide room for external supply-chain evidence. OSV/pip-audit, Sigstore, PyPI attestations, CycloneDX, SPDX and GitHub metadata adapters remain proposed integrations rather than native capabilities.
+The protocols are implemented; the [offline extension example](https://github.com/atellaluca/ImportSpy/blob/main/docs/extensions.md) demonstrates them without external verification. OSV/pip-audit, Sigstore, PyPI attestations, CycloneDX, SPDX and GitHub metadata adapters remain [proposed integrations](https://github.com/atellaluca/ImportSpy/blob/main/docs/community-roadmap.md) rather than native capabilities.
 
 ## One decision, several consumers
 
@@ -62,4 +64,4 @@ The protocols provide room for external supply-chain evidence. OSV/pip-audit, Si
 
 Human, JSON and SARIF reporters consume that same decision. JSON preserves the inventory and evidence; SARIF presents violations for code-scanning workflows. Formatting does not repeat collection or execute the target. This gives automation structured diagnostics while preserving the evidence needed to explain a denial.
 
-Implementation and configuration details: [official documentation](https://importspy.atellaluca.com/) and [source repository](https://github.com/atellaluca/ImportSpy).
+Version **0.5.0** implementation and limits: [official architecture](https://github.com/atellaluca/ImportSpy/blob/main/docs/architecture.md), [security model](https://github.com/atellaluca/ImportSpy/blob/main/docs/security-model.md) and [source code](https://github.com/atellaluca/ImportSpy).

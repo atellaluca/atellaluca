@@ -30,4 +30,4 @@ Raccontami il ruolo o il progetto, il prodotto su cui lavora il team e la modali
 [Leggi il CV](cv.md){ .md-button }
 [Scarica il CV in PDF](assets/cv/Luca-Atella-CV.pdf){ .md-button }
 
-[Casi studio](case-studies/index.md) · [Profilo tecnico](profile.md) · [GitHub](https://github.com/atellaluca) · [Home](index.md)
+[Servizi per studi e imprese](servizi.md) · [Casi studio](case-studies/index.md) · [Profilo tecnico](profile.md) · [GitHub](https://github.com/atellaluca) · [Home](index.md)
